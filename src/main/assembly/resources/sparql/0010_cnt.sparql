@@ -1,0 +1,3 @@
+SELECT COUNT ( DISTINCT ?s ) {
+  { ?s a ?C }
+}
