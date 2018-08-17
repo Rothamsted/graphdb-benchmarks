@@ -5,7 +5,7 @@
   * See this [Excel file](gdb_benchmark_results.xlsx). It is recommended that you first read this document.
 
 
-## Test conditions
+## Test conditions
 
   * Hardware: MacBook Pro, 2.9 GHz Intel Core i7, 16GB RAM
   * Both the servers and the client (this package) are run on the same computer, thus network latency is minimsed
