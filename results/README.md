@@ -43,6 +43,11 @@
       	1. in real use cases it is a relevant time
     1. At the end of all the iterations, the times of each query are averaged and results are reported.    
   
+	* Each test type is run against database instances containing three different datasets: 
+    * BioPax: a small dataset with BioPAX and GeneOntology data
+    * Arabidopsis: the kNetMiner data set about arabidopsis, medium size
+    * Wheat: the kNetMiner data set about wheat, biggest size 
+
 	* Repeating the queries is done to get an average behavoir, running them in random order avoids biases like the 
   exploitation of caches. We are not testing the parallel performance (i.e., many clients running queries simultaneously)
   since we're interested in comparing speeds with respect to the query types.
