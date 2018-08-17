@@ -6,11 +6,11 @@ PREFIX bkr: <http://www.ondex.org/bioknet/resources/>
 PREFIX bka: <http://www.ondex.org/bioknet/attributes/>
 PREFIX dcterms: <http://purl.org/dc/terms/> 
 
-SELECT ?p ?name ?desct
+SELECT ?p ?name ?description
 {
   ?p a bk:Protein.
   
   OPTIONAL { ?p bk:prefName ?name }
-  OPTIONAL { ?p dcterms:description ?name }
+  OPTIONAL { ?p dcterms:description ?description }
 }
 LIMIT 100

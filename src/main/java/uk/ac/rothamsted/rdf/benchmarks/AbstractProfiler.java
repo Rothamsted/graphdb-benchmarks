@@ -60,6 +60,8 @@ public abstract class AbstractProfiler
 			int i = RandomUtils.nextInt ( 0, names.length );
 			counts [ i ]++;
 			times [ i ] += profileQuery ( names [ i ] );
+			
+			if ( rep > 0 && rep % 100 == 0) log.info ( "{} runs", rep );
 		}
 		
 		// Report
