@@ -1,3 +1,4 @@
-SELECT COUNT ( DISTINCT ?s ) {
+# Counts instances
+SELECT ( COUNT ( DISTINCT ?s ) AS ?ct ) {
   { ?s a ?C }
 }

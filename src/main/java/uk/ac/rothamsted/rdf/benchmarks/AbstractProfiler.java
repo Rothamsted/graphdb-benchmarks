@@ -9,11 +9,13 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
 import org.apache.commons.lang3.RandomUtils;
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,27 +37,21 @@ public abstract class AbstractProfiler
 	protected String basePath;
 	protected final String queryFileExtension;
 	
-	protected Logger log = LoggerFactory.getLogger ( SparqlUtils.class );	
+	protected Logger log = LoggerFactory.getLogger ( SparqlUtils.class );
+	protected String endPointUrl;	
 
 	protected AbstractProfiler ( String queryFileExtension )
 	{
 		super ();
 		this.queryFileExtension = queryFileExtension;
 	}
-	
+
 	
 	public void profile ( int repeats )
 	{
 		// all the tests
-		File dir = new File ( basePath );
-		File sparqlFiles [] = dir.listFiles ( (FileFilter) new WildcardFileFilter ( "*." + this.queryFileExtension ) );
-		
-		String [] names = Arrays.asList ( sparqlFiles )
-		.stream ()
-		.map ( f -> FilenameUtils.getBaseName ( f.getName () ) )
-		.collect ( Collectors.toList () )
-		.toArray ( new String [ 0 ] );
-		
+		String names[] = getQueryNames ( this.basePath, this.queryFileExtension );
+				
 		// Do it
 		int counts [] = new int [ names.length ];
 		double times [] = new double [ names.length ];
@@ -69,11 +65,13 @@ public abstract class AbstractProfiler
 		// Report
 		out.println ("Name\tAvgTime");
 		for ( int i = 0; i < names.length; i++  )
-			out.printf ( "%s\t%f\n", names [ i ], times [ i ] / counts [ i ] );
+			out.printf ( "%s\t%f\n", getQueryId ( names [ i ] ), times [ i ] / counts [ i ] );
 	}	
+	
 	
 	protected abstract long profileQuery ( String name );
 
+	
 	/**
 	 * Reads parameters from a table like basePath + name.csv.
 	 */
@@ -82,7 +80,8 @@ public abstract class AbstractProfiler
 		File csvf = new File ( basePath + name + ".csv" );
 		if ( !csvf.exists () ) return null;
 		
-		try ( CSVReader rdr = new CSVReader ( new FileReader ( csvf ), '\t', '"' ) ) {
+		try ( CSVReader rdr = new CSVReader ( new FileReader ( csvf ), '\t', '"' ) ) 
+		{
 		 return rdr.readAll ();
 		}
 		catch ( IOException ex ) {
@@ -91,6 +90,7 @@ public abstract class AbstractProfiler
 		}
 	}
 
+	
 	/**
 	 * Injects params into str, looking for $colName placeholders.
 	 */
@@ -119,6 +119,26 @@ public abstract class AbstractProfiler
 		}
 	}
 	
+	public static String[] getQueryNames ( String basePath, String queryFileExtension )
+	{
+		File dir = new File ( basePath );
+		File sparqlFiles [] = dir.listFiles ( (FileFilter) new WildcardFileFilter ( "*." + queryFileExtension ) );
+		
+		return Arrays.asList ( sparqlFiles )
+		.stream ()
+		.map ( f -> FilenameUtils.getBaseName ( f.getName () ) )
+		.sorted ()
+		.collect ( Collectors.toList () )
+		.toArray ( new String [ 0 ] );
+	}
+	
+	
+	public static String getQueryId ( String name )
+	{
+		return name.replaceFirst ( "^[0-9]+_", "" );
+	}
+	
+	
 	public String getBasePath ()
 	{
 		return basePath;
@@ -127,5 +147,17 @@ public abstract class AbstractProfiler
 	public void setBasePath ( String basePath )
 	{
 		this.basePath = basePath;
+	}
+
+
+	public String getEndPointUrl ()
+	{
+		return endPointUrl;
+	}
+
+
+	public void setEndPointUrl ( String endPointUrl )
+	{
+		this.endPointUrl = endPointUrl;
 	}
 }

@@ -93,8 +93,14 @@
 			<groupId>info.marcobrandizi</groupId>
 			<artifactId>rdfutils-jena</artifactId>
 			<version>2.0.1-SNAPSHOT</version>
-		</dependency>		
-
+		</dependency>
+		
+		<dependency>
+			<groupId>org.neo4j.driver</groupId>
+			<artifactId>neo4j-java-driver</artifactId>
+			<version>1.6.2</version>
+		</dependency> 
+		
 	</dependencies>
 
 	<build>

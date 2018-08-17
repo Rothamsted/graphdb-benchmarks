@@ -1,0 +1,37 @@
+# Complex union of paths over pathways
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX bk: <http://www.ondex.org/bioknet/terms/>
+PREFIX bkr: <http://www.ondex.org/bioknet/resources/>
+PREFIX bka: <http://www.ondex.org/bioknet/attributes/>
+
+SELECT ?protName ?pwName ?branch
+{
+  ?prot a bk:Protein.
+  {
+    ?prot bk:is_a|^bk:ac_by ?enz.
+    ?enz a bk:Enzyme.
+    {
+      BIND ( "enz/cmp/trn" AS ?branch )
+      ?enz bk:ac_by|bk:in_by ?cmp.
+      ?cmp a bk:Comp.
+      ?cmp bk:cs_by|bk:pd_by ?trn.
+    }
+    UNION {
+      BIND ( "enz/trn" AS ?branch )
+      ?trn bk:ca_by ?enz.
+    }
+    ?trn a bk:Transport.
+  }
+  UNION {
+    BIND ( "react" AS ?branch )
+    ?prot bk:pd_by|bk:cs_by ?react.
+    ?react a bk:Reaction.
+    ?react bk:part_of ?pw.
+  }
+  ?pw a bk:Path
+
+  OPTIONAL { ?prot bk:prefName ?protName }
+  OPTIONAL { ?pw bk:prefName ?pwName }
+}
+LIMIT 100

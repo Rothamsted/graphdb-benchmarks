@@ -1,3 +1,4 @@
-SELECT COUNT ( * ) {
+# Count relations
+SELECT ( COUNT ( * ) AS ?ct ) {
   ?s ?p ?o
 }
