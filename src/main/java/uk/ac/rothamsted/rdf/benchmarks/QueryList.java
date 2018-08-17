@@ -16,6 +16,9 @@ import uk.ac.ebi.utils.io.IOUtils;
  */
 public class QueryList
 {
+	/**
+	 * Reports a query list in Markdown format. This is used to update the main README.
+	 */
 	public static void listQueries ( String cypherPath, String sparqlPath, String urlPrefix )
 	{
 		String[] names = AbstractProfiler.getQueryNames ( sparqlPath, "sparql" );

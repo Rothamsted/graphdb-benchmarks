@@ -46,17 +46,20 @@ public abstract class AbstractProfiler
 		this.queryFileExtension = queryFileExtension;
 	}
 
-	
+	/**
+	 * The general profiling procedure, see the main README. 
+	 */
 	public void profile ( int repeats )
 	{
 		// all the tests
 		String names[] = getQueryNames ( this.basePath, this.queryFileExtension );
 				
-		// Do it
+		// Do a number of iterations
 		int counts [] = new int [ names.length ];
 		double times [] = new double [ names.length ];
 		for ( int rep = 0; rep < repeats; rep++ )
 		{
+			// pick up a random query
 			int i = RandomUtils.nextInt ( 0, names.length );
 			counts [ i ]++;
 			times [ i ] += profileQuery ( names [ i ] );
@@ -64,13 +67,18 @@ public abstract class AbstractProfiler
 			if ( rep > 0 && rep % 100 == 0) log.info ( "{} runs", rep );
 		}
 		
-		// Report
+		// And finally, compute the average times and report
 		out.println ("Name\tAvgTime");
 		for ( int i = 0; i < names.length; i++  )
 			out.printf ( "%s\t%f\n", getQueryId ( names [ i ] ), times [ i ] / counts [ i ] );
 	}	
 	
-	
+	/**
+	 * Should use {@link #getQueryString(String)}, issue the query and get the required time.
+	 * You should time the query from when you send the string to the server to when you get results back
+	 * It's OK to keep an HTTP connection pool, but you should reset the client session every time.
+	 * 
+	 */
 	protected abstract long profileQuery ( String name );
 
 	
@@ -121,6 +129,9 @@ public abstract class AbstractProfiler
 		}
 	}
 	
+	/**
+	 * Lists all the file names in basePath and extract the base names from them (i.e.m without any path or extension). 
+	 */
 	public static String[] getQueryNames ( String basePath, String queryFileExtension )
 	{
 		File dir = new File ( basePath );
@@ -134,7 +145,9 @@ public abstract class AbstractProfiler
 		.toArray ( new String [ 0 ] );
 	}
 	
-	
+	/**
+	 * Gets a query ID, ie, {@code NNNN_id => id}
+	 */
 	public static String getQueryId ( String name )
 	{
 		return name.replaceFirst ( "^[0-9]+_", "" );
