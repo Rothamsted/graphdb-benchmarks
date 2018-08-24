@@ -10,29 +10,30 @@
   * Hardware: MacBook Pro, 2.9 GHz Intel Core i7, 16GB RAM
   * Both the servers and the client (this package) are run on the same computer, thus network latency is minimsed
   * Only one server at a time is on while running a test of a given type (Neo4j/Virtuoso)
-  
+
 
 ## Test approach
 
-  * For each database (Neo4/Virtuoso) a number of query typed is tested (see below). For each query type  a Cypher 
-  and a SPARQL version were written, aiming at keeping the same or very similar semantics, as well as similar 
+  * For each database (Neo4/Virtuoso) a number of query typed is tested (see below). For each query type  a Cypher
+  and a SPARQL version were written, aiming at keeping the same or very similar semantics, as well as similar
   graph patterns and other language constructs known to affect the database performance (e.g., filters, `ORDER BY` clauses).
 
   * Queries were written cosidering:
   	* the typical query needs for our data
   	* the aim to test particular query language operations and features
-  	* taking example from existing benchmarks (e.g., TODO)
+  	* taking example from existing benchmarks (e.g., `nestAg`)
   	* Certain queries are instantiated with parameters at each execution (e.g., `joinFilter` retrieves proteins by name,
   	the name is a required parameter). For those cases, files with predefined parameter valued were prepared (taking values
-  	from the database). Every time the query has to be executed, a value is picked randomly and injected into the query.   
-  
-  * There are two test types: [Cypher](../src/main/java/uk/ac/rothamsted/rdf/benchmarks/CypherProfiler.java) and 
-	[Sparql](../src/main/java/uk/ac/rothamsted/rdf/benchmarks/SparqlProfiler.java), which are run separately. 
+  	from the database). Every time the query has to be executed, a value is picked randomly and injected into the query.
+    * Queries were written by first defining a data retrieval goal and then writing an implementation in both Cypher and SPARQL matching the goal as much as possible. Moreover, the respective language constructs we have used are chosen trying to replicate similar graph pattern structures and similar database engine challenges (e.g., [2union1Nest](src/main/assembly/resources/cypher/0130_2union1Nest.cypher) could be written by replicating branches, rather than unifying them with multiple WITH clauses, but the result would be significantly different than the corresponding SPARQL and would not contain the nested unions that the query is supposed to test).
+
+  * There are two test types: [Cypher](../src/main/java/uk/ac/rothamsted/rdf/benchmarks/CypherProfiler.java) and
+	[Sparql](../src/main/java/uk/ac/rothamsted/rdf/benchmarks/SparqlProfiler.java), which are run separately.
 	Every test type is based on the procedure:
 
     1. The Database server is started
     1. A number of predefined iterations (usually a few thousands) are run, for each iteration:
-      1. a query is randomly selected from the set of competence ([Cypher](../src/main/assembly/resources/cypher), 
+      1. a query is randomly selected from the set of competence ([Cypher](../src/main/assembly/resources/cypher),
 			or [SPARQL](src/main/assembly/resources/sparql))
       1. if it's a parametric query, a random parameter is chosen (see above)
       1. the query is run, the execution time is tracked. We track the time going from when the query string is sent to
@@ -42,18 +43,18 @@
       	compare the two)
       	1. in real use cases it is a relevant time
     1. At the end of all the iterations, the times of each query are averaged and results are reported.    
-  
-	* Each test type is run against database instances containing three different datasets: 
+
+	* Each test type is run against database instances containing three different datasets:
     * BioPax: a small dataset with BioPAX and GeneOntology data
     * Arabidopsis: the kNetMiner data set about arabidopsis, medium size
-    * Wheat: the kNetMiner data set about wheat, biggest size 
+    * Wheat: the kNetMiner data set about wheat, biggest size
 
-	* Repeating the queries is done to get an average behavoir, running them in random order avoids biases like the 
+	* Repeating the queries is done to get an average behavoir, running them in random order avoids biases like the
   exploitation of caches. We are not testing the parallel performance (i.e., many clients running queries simultaneously)
   since we're interested in comparing speeds with respect to the query types.
-  
 
-## Queries 
+
+## Queries
 
   1. **cnt**: Counts instances, [Cypher](../src/main/assembly/resources/cypher/0010_cnt.cypher), [SPARQL](../src/main/assembly/resources/sparql/0010_cnt.sparql)
   2. **cntType**: Instances of a given type, [Cypher](../src/main/assembly/resources/cypher/0020_cntType.cypher), [SPARQL](../src/main/assembly/resources/sparql/0020_cntType.sparql)
