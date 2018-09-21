@@ -30,7 +30,7 @@ Click on the images to see a bigger version.
 [<img src = 'results/query_results_chart.png' width = '100%' />](results/query_results_chart.png)
 
 
-A detailed table is [here](src/query_results_table.png).
+A detailed table is [here](results/query_results_table.png).
 
 ## Test conditions
 
