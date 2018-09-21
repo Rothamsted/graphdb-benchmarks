@@ -8,7 +8,7 @@ import java.io.UncheckedIOException;
 import uk.ac.ebi.utils.io.IOUtils;
 
 /**
- * TODO: comment me!
+ * Lists the test queries.
  *
  * @author brandizi
  * <dl><dt>Date:</dt><dd>16 Aug 2018</dd></dl>

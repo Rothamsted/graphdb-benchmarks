@@ -3,8 +3,10 @@ package uk.ac.rothamsted.rdf.benchmarks;
 import org.junit.Test;
 
 /**
- * TODO: comment me!
- *
+ * Entry point to perform SPARQL tests.
+ * 
+ * TODO: we have to turn tests like this into line commands.
+ * 
  * @author brandizi
  * <dl><dt>Date:</dt><dd>15 Aug 2018</dd></dl>
  *

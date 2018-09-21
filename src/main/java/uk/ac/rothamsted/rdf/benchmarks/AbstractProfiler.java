@@ -9,24 +9,25 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
 import org.apache.commons.lang3.RandomUtils;
-import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.opencsv.CSVParser;
+import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
+import com.opencsv.CSVReaderBuilder;
 
 import info.marcobrandizi.rdfutils.jena.SparqlUtils;
 import uk.ac.ebi.utils.io.IOUtils;
 
 /**
- * TODO: comment me!
+ * Abstract class to drive the a benchmark test with Cypher or SPARQL queries.
  *
  * @author brandizi
  * <dl><dt>Date:</dt><dd>15 Aug 2018</dd></dl>
@@ -90,7 +91,15 @@ public abstract class AbstractProfiler
 		File csvf = new File ( basePath + name + ".csv" );
 		if ( !csvf.exists () ) return null;
 		
-		try ( CSVReader rdr = new CSVReader ( new FileReader ( csvf ), '\t', '"' ) ) 
+		CSVParser csvParser = new CSVParserBuilder ()
+			.withSeparator ( '\t' )
+			.withQuoteChar ( '"' )
+			.build ();
+		
+		try ( CSVReader rdr = new CSVReaderBuilder ( new FileReader ( csvf ) )
+																.withCSVParser ( csvParser )
+																.build ();
+		) 
 		{
 		 return rdr.readAll ();
 		}
