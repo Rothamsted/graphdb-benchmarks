@@ -1,0 +1,24 @@
+# Join matching relation
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX bk: <http://www.ondex.org/bioknet/terms/>
+PREFIX bkr: <http://www.ondex.org/bioknet/resources/>
+PREFIX bka: <http://www.ondex.org/bioknet/attributes/>
+
+SELECT ?pname ?c1name ?evlabel {
+  ?p a bk:Protein.
+  
+  ?p bk:is_part_of ?cpx1.
+
+  ?cpx1 a bk:Protcmplx.
+
+  ?rel bk:relFrom ?p;
+       bk:relTo ?cpx1.
+
+  ?rel bk:evidence ?ev.
+  
+  ?p bk:prefName ?pname.
+  ?cpx1 bk:prefName ?c1name.
+  ?ev rdfs:label ?evlabel.  
+}
+LIMIT 100

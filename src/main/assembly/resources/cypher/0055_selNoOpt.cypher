@@ -1,0 +1,1 @@
+MATCH (p:Protein) RETURN p LIMIT 100
