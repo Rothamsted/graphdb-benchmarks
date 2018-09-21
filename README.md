@@ -3,7 +3,7 @@
 This module is used to perform tests with [KnetMiner](http://knetminer.rothamsted.ac.uk/) data, encoded either as RDF 
 or Neo4j, by means of the rdf2neo tool.
 
-## Contents
+## Contents
 
   * [Test results](#test-results)
     * [Figure 1: Loading performance](#figure-1-loading-performance)
@@ -96,7 +96,7 @@ are based on the graph pattern in figure, which models biological pathway relati
 [<img src = 'results/ara_knet_pattern.png' width = '45%' />](results/ara_knet_pattern.png)
 
  
-### Query list
+### Query list
 
   1. **cnt**: Counts instances, [Cypher](src/main/assembly/resources/cypher/0010_cnt.cypher), [SPARQL](src/main/assembly/resources/sparql/0010_cnt.sparql)
   2. **cntType**: Instances of a given type, [Cypher](src/main/assembly/resources/cypher/0020_cntType.cypher), [SPARQL](src/main/assembly/resources/sparql/0020_cntType.sparql)
