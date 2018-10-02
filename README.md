@@ -129,6 +129,6 @@ are based on the graph pattern in figure, which models biological pathway relati
   16. **grp**: Group by, [Cypher](src/main/assembly/resources/cypher/0150_grp.cypher), [SPARQL](src/main/assembly/resources/sparql/0150_grp.sparql)
   17. **grpAg**: Group by + 2 aggregation functions, [Cypher](src/main/assembly/resources/cypher/0170_grpAg.cypher), [SPARQL](src/main/assembly/resources/sparql/0170_grpAg.sparql)
   18. **mulGrpAg**: Multiple subqueries having aggregations , [Cypher](src/main/assembly/resources/cypher/0180_mulGrpAg.cypher), [SPARQL](src/main/assembly/resources/sparql/0180_mulGrpAg.sparql)
-  19. **nestAg**: Nested and outer aggregations (see Q6 at https://goo.gl/v4YbQ2), [Cypher](src/main/assembly/resources/cypher/0190_nestAg.cypher), [SPARQL](src/main/assembly/resources/sparql/0190_nestAg.sparql)
+  19. **nestAg**: Nested and outer aggregations (see Q6 from the [Berlin benchmark](https://goo.gl/v4YbQ2)), [Cypher](src/main/assembly/resources/cypher/0190_nestAg.cypher), [SPARQL](src/main/assembly/resources/sparql/0190_nestAg.sparql)
   20. **exist**: Not exists, [Cypher](src/main/assembly/resources/cypher/0200_exist.cypher), [SPARQL](src/main/assembly/resources/sparql/0200_exist.sparql)
   21. **existAg**: Not exists + aggregation, [Cypher](src/main/assembly/resources/cypher/0210_existAg.cypher), [SPARQL](src/main/assembly/resources/sparql/0210_existAg.sparql)
