@@ -95,7 +95,7 @@ Each test type is run against database instances containing three different data
   * Arabidopsis: the kNetMiner data set about arabidopsis, medium size.
     [RDF dump](https://tinyurl.com/yd65w6a3). [Neo4j dump](https://tinyurl.com/y8pg6str)
   * Wheat: the kNetMiner data set about wheat, biggest size.
-    [RDF dump](https://tinyurl.com/y9oz4zfj) [Neo4j dump](https://tinyurl.com/yd7beezu).
+    [RDF dump](https://tinyurl.com/y9oz4zfj). [Neo4j dump](https://tinyurl.com/yd7beezu).
 
 
 
