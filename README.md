@@ -1,45 +1,50 @@
-# Benchmarking kNetMiner data, Neo4j vs Virtuoso
+# Benchmarking kNetMiner Data, Neo4j vs Virtuoso
 
 This module is used to perform tests with [KnetMiner](http://knetminer.rothamsted.ac.uk/) data, encoded either as RDF 
 or Neo4j, by means of the rdf2neo tool.
 
+
 ## Contents
 
-  * [Test results](#test-results)
-    * [Figure 1: Loading performance](#figure-1-loading-performance)
-    * [Figure 2: Query performance](#figure-2-query-performance)
-  * [Test conditions](#test-conditions)
-  * [Test approach](#test-approach)
+  * [Contents](#contents)
+  * [Test Results](#test-results)
+    * [Figure 1: Loading Performance](#figure-1-loading-performance)
+    * [Figure 2: Query Performance](#figure-2-query-performance)
+  * [Test Conditions](#test-conditions)
+  * [Test Approach](#test-approach)
+  * [Test Data Sets](#test-data-sets)
   * [Queries](#queries)
-    * [Figure 3: graph pattern used with test queries](#figure-3-graph-pattern-used-with-test-queries)
+    * [Figure 3: Graph Pattern Used with Test Queries](#figure-3-graph-pattern-used-with-test-queries)
+    * [Query List](#query-list)
+    
 
-## Test results
+## Test Results
 
 Results are summarised in the following figures. It is recommended that you first read this hereby document.
 See this [Excel file](results/gdb_benchmark_results.xlsx) for details. 
 
 Click on the images to see a bigger version.
 
-### Figure 1: Loading performance
+### Figure 1: Loading Performance
 
 [<img src = 'results/loading_results.png' width = '45%' />](results/loading_results.png)
 
 
-### Figure 2: Query performance
+### Figure 2: Query Performance
 
 [<img src = 'results/query_results_chart.png' width = '100%' />](results/query_results_chart.png)
 
 
 A detailed table is [here](results/query_results_table.png).
 
-## Test conditions
+## Test Conditions
 
   * Hardware: MacBook Pro, 2.9 GHz Intel Core i7, 16GB RAM
   * Both the servers and the client (this package) are run on the same computer, thus network latency is minimsed
   * Only one server at a time is on while running a test of a given type (Neo4j/Virtuoso)
 
 
-## Test approach
+## Test Approach
 
   * For each database (Neo4/Virtuoso) a number of query typed is tested (see below). For each query type  a Cypher
   and a SPARQL version were written, aiming at keeping the same or very similar semantics, as well as similar
@@ -76,14 +81,22 @@ A detailed table is [here](results/query_results_table.png).
       	1. in real use cases it is a relevant time
     1. At the end of all the iterations, the times of each query are averaged and results are reported.    
 
-	* Each test type is run against database instances containing three different datasets:
-    * BioPax: a small dataset with BioPAX and GeneOntology data
-    * Arabidopsis: the kNetMiner data set about arabidopsis, medium size
-    * Wheat: the kNetMiner data set about wheat, biggest size
-
 	* Repeating the queries is done to get an average behavoir, running them in random order avoids biases like the
   exploitation of caches. We are not testing the parallel performance (i.e., many clients running queries simultaneously)
   since we're interested in comparing speeds with respect to the query types.
+
+
+## Test Data Sets
+
+Each test type is run against database instances containing three different datasets:
+
+  * BioPax: a small dataset with BioPAX and GeneOntology data.
+    [RDF dump](https://tinyurl.com/y832jbxw). [Neo4j dump](https://tinyurl.com/ycukubme)
+  * Arabidopsis: the kNetMiner data set about arabidopsis, medium size.
+    [RDF dump](https://tinyurl.com/yd65w6a3). [Neo4j dump](https://tinyurl.com/y8pg6str)
+  * Wheat: the kNetMiner data set about wheat, biggest size.
+    [RDF dump](https://tinyurl.com/y9oz4zfj) [Neo4j dump](https://tinyurl.com/yd7beezu).
+
 
 
 ## Queries
@@ -91,12 +104,12 @@ A detailed table is [here](results/query_results_table.png).
 All the queries listed below, and used in the tests, are based on the BioKNO ontology schematisation. Several of them
 are based on the graph pattern in figure, which models biological pathway relations in BioKNO.
 
-### Figure 3: graph pattern used with test queries
+### Figure 3: Graph Pattern Used with Test Queries
 
 [<img src = 'results/ara_knet_pattern.png' width = '45%' />](results/ara_knet_pattern.png)
 
  
-### Query list
+### Query List
 
   1. **cnt**: Counts instances, [Cypher](src/main/assembly/resources/cypher/0010_cnt.cypher), [SPARQL](src/main/assembly/resources/sparql/0010_cnt.sparql)
   2. **cntType**: Instances of a given type, [Cypher](src/main/assembly/resources/cypher/0020_cntType.cypher), [SPARQL](src/main/assembly/resources/sparql/0020_cntType.sparql)
