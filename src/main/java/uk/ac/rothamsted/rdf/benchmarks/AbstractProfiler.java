@@ -23,7 +23,6 @@ import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 
-import info.marcobrandizi.rdfutils.jena.SparqlUtils;
 import uk.ac.ebi.utils.io.IOUtils;
 
 /**
@@ -38,7 +37,7 @@ public abstract class AbstractProfiler
 	protected String basePath;
 	protected final String queryFileExtension;
 	
-	protected Logger log = LoggerFactory.getLogger ( SparqlUtils.class );
+	protected Logger log = LoggerFactory.getLogger ( this.getClass () );
 	protected String endPointUrl;	
 
 	protected AbstractProfiler ( String queryFileExtension )
