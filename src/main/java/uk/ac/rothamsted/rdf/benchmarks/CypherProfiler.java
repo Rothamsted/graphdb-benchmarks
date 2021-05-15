@@ -1,13 +1,13 @@
 package uk.ac.rothamsted.rdf.benchmarks;
 
-import org.neo4j.driver.v1.AccessMode;
-import org.neo4j.driver.v1.AuthToken;
-import org.neo4j.driver.v1.AuthTokens;
-import org.neo4j.driver.v1.Driver;
-import org.neo4j.driver.v1.GraphDatabase;
-import org.neo4j.driver.v1.Session;
-import org.neo4j.driver.v1.StatementResult;
-import org.neo4j.driver.v1.exceptions.Neo4jException;
+import org.neo4j.driver.AccessMode;
+import org.neo4j.driver.AuthToken;
+import org.neo4j.driver.AuthTokens;
+import org.neo4j.driver.Driver;
+import org.neo4j.driver.GraphDatabase;
+import org.neo4j.driver.Session;
+import org.neo4j.driver.SessionConfig;
+import org.neo4j.driver.exceptions.Neo4jException;
 
 import uk.ac.ebi.utils.time.XStopWatch;
 
@@ -55,11 +55,13 @@ public class CypherProfiler extends AbstractProfiler
 			this.driver = GraphDatabase.driver ( endPointUrl, auth ); 
 		}
 		
-		try ( Session session = this.driver.session ( AccessMode.READ ); )
+		var sc = SessionConfig.builder ().withDefaultAccessMode ( AccessMode.READ ).build ();
+		
+		try ( Session session = this.driver.session ( sc ); )
 		{
 			// Clock the query
 			return XStopWatch.profile ( () -> {
-				StatementResult rs = session.run ( cypher );
+				var rs = session.run ( cypher );
 				if ( rs.hasNext () ) rs.next ();					
 			});
 		}
