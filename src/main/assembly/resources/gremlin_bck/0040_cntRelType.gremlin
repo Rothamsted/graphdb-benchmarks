@@ -1,0 +1,1 @@
+g.E().has('labelE-idx',textContains('$label')).count()
