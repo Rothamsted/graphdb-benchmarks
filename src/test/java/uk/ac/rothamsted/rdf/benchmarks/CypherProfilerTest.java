@@ -19,7 +19,13 @@ public class CypherProfilerTest
 	@Test
 	public void testBasics ()
 	{
-		CypherProfiler profiler = new CypherProfiler ( "src/main/assembly/resources/cypher/" );
-		profiler.profile ( 2100 );
+		CypherProfiler profiler = new CypherProfiler ( 
+			"src/main/assembly/resources/cypher/",
+			"bolt://babvs65.rothamsted.ac.uk:7688",
+			"rouser",
+			"rouser"
+		);
+		//profiler.profile ( 2100 );
+		profiler.profile ( 100 );
 	}
 }
