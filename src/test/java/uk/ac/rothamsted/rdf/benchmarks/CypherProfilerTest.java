@@ -21,7 +21,7 @@ public class CypherProfilerTest
 	{
 		CypherProfiler profiler = new CypherProfiler ( 
 			"src/main/assembly/resources/cypher/",
-			"bolt://babvs65.rothamsted.ac.uk:7688",
+			"bolt://babvs65.rothamsted.ac.uk:7687",
 			"rouser",
 			"rouser"
 		);
