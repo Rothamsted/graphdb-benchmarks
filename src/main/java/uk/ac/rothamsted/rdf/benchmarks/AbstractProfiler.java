@@ -7,6 +7,7 @@ import java.io.FileFilter;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.UncheckedIOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,7 +24,7 @@ import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 
-import uk.ac.ebi.utils.io.IOUtils;
+import uk.ac.rothamsted.rdf.benchmarks.utils.IOUtils;
 
 /**
  * Abstract class to drive the a benchmark test with Cypher or SPARQL queries.
@@ -56,22 +57,55 @@ public abstract class AbstractProfiler
 				
 		// Do a number of iterations
 		int counts [] = new int [ names.length ];
-		double times [] = new double [ names.length ];
+		ArrayList<Double>[] times = new ArrayList[ names.length ];
+		
+		
+		
 		for ( int rep = 0; rep < repeats; rep++ )
 		{
+			try {
+				Thread.sleep(50);
+			}
+			catch (Exception e) {
+				
+			}
 			// pick up a random query
 			int i = RandomUtils.nextInt ( 0, names.length );
 			counts [ i ]++;
-			times [ i ] += profileQuery ( names [ i ] );
+			if (times[i] == null) {
+				times[i] = new ArrayList<Double>(); 
+			}
+			times [ i ].add( Double.valueOf(profileQuery ( names [ i ] ) ) );
 			
 			if ( rep > 0 && rep % 100 == 0) log.info ( "{} runs", rep );
 		}
 		
 		// And finally, compute the average times and report
-		out.println ("Name\tAvgTime");
-		for ( int i = 0; i < names.length; i++  )
-			out.printf ( "%s\t%f\n", getQueryId ( names [ i ] ), times [ i ] / counts [ i ] );
+		out.println ("Name\tAvgTime\tSTD\tMaxTime\tMinTime");
+		double mean; 
+		double std; 
+		double min; 
+		double max; 
+		for ( int i = 0; i < names.length; i++  ) {
+			mean = times[i].stream().mapToDouble(d->d).average().orElse(0.0);
+			std = stdeviation(times[i], mean); 
+			max = times[i].stream().mapToDouble(d->d).max().orElse(0.0); 
+			min = times[i].stream().mapToDouble(d->d).min().orElse(0.0); 
+			out.printf ( "%s\t%f\t%f\t%f\t%f\n", getQueryId ( names [ i ] ), mean, std, max, min );
+		}
+		
+		if (this instanceof GremlinProfiler) {
+			((GremlinProfiler)this).closeEverything(); 
+		}
 	}	
+	
+	protected Double stdeviation(ArrayList<Double> v, double mean) {
+		return v.stream()
+				.mapToDouble(d->d)
+				.map(x -> x - mean)
+				.map(x -> x * x).sum() / v.size();
+	}
+	
 	
 	/**
 	 * Should use {@link #getQueryString(String)}, issue the query and get the required time.

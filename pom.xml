@@ -69,11 +69,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>uk.ac.ebi</groupId>
-			<artifactId>jutils-io</artifactId>
-		</dependency>
-
-		<dependency>
 			<groupId>com.opencsv</groupId>
 			<artifactId>opencsv</artifactId>
 			<version>4.2</version>
@@ -142,8 +137,8 @@
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>11</source>
-					<target>11</target>
+					<source>1.8</source>
+					<target>1.8</target>
 					<encoding>utf-8</encoding>
 				</configuration>
 			</plugin>
@@ -154,9 +149,10 @@
 					<properties>
 						<property>
 							<name>listener</name>
-							<value>uk.ac.ebi.utils.test.junit.TestOutputDecorator</value>
+							<value>uk.ac.rothamsted.rdf.benchmarks.utils.TestOutputDecorator</value>
 						</property>
 					</properties>
+					 <argLine>-Xms512m -Xmx4096m</argLine>
 				</configuration>
 			</plugin>
 

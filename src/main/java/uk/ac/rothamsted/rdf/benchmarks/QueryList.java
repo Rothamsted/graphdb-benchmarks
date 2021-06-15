@@ -5,7 +5,7 @@ import static java.lang.System.out;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 
-import uk.ac.ebi.utils.io.IOUtils;
+import uk.ac.rothamsted.rdf.benchmarks.utils.IOUtils;
 
 /**
  * Lists the test queries.
