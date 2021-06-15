@@ -52,6 +52,9 @@ public abstract class AbstractProfiler
 	 */
 	public void profile ( int repeats )
 	{
+		
+		log.info("Start profiling ..."); 
+
 		// all the tests
 		String names[] = getQueryNames ( this.basePath, this.queryFileExtension );
 				
@@ -59,25 +62,19 @@ public abstract class AbstractProfiler
 		int counts [] = new int [ names.length ];
 		ArrayList<Double>[] times = new ArrayList[ names.length ];
 		
-		
-		
 		for ( int rep = 0; rep < repeats; rep++ )
 		{
-			try {
-				Thread.sleep(50);
-			}
-			catch (Exception e) {
-				
-			}
+			
 			// pick up a random query
 			int i = RandomUtils.nextInt ( 0, names.length );
+			log.info("QueryName: "+names[i]); 
 			counts [ i ]++;
 			if (times[i] == null) {
 				times[i] = new ArrayList<Double>(); 
 			}
 			times [ i ].add( Double.valueOf(profileQuery ( names [ i ] ) ) );
 			
-			if ( rep > 0 && rep % 100 == 0) log.info ( "{} runs", rep );
+			if ( rep > 0 && rep % 50 == 0) log.info ( "{} runs", rep );
 		}
 		
 		// And finally, compute the average times and report

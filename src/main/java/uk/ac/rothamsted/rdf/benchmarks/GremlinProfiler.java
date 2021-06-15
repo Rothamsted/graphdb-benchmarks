@@ -31,15 +31,6 @@ import uk.ac.rothamsted.rdf.benchmarks.utils.XStopWatch;
  */
 public class GremlinProfiler extends AbstractProfiler
 {
-	static class AuxCount {
-		static int count = 0; 
-		static synchronized void increment() {
-			count++; 
-		}
-		static synchronized int getValue() {
-			return count; 
-		}
-	}
 	
 	/* some configuration parameters that we have found useful via experimentation */ 
 	public static final int MIN_CONNECTION_POOL_SIZE = 4; 
@@ -125,19 +116,15 @@ public class GremlinProfiler extends AbstractProfiler
 			{
 				
 				 try {
-						 AuxCount.increment();
+					 
+					 	log.info("Query: "+gremlinQuery); 
 						 // this is the setup
-						 RequestOptions options = RequestOptions.build().timeout(500).create();
+						 RequestOptions options = RequestOptions.build().timeout(60000).create();
 						 // List<Result> list = client.submitAsync(gremlinQuery, options).get().all().getNow(null);
 						 ResultSet set = client.submit(gremlinQuery,options); 
 						 while (!set.allItemsAvailable()) {}
 						 for (Result l: set) {
-							 System.out.println(l); 
 						 }
-						 System.out.println(AuxCount.getValue());
-						  
-					
-					 
 			        } 
 //				 	catch (ExecutionException ex) {
 //				 		ex.printStackTrace();

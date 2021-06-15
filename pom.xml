@@ -152,7 +152,6 @@
 							<value>uk.ac.rothamsted.rdf.benchmarks.utils.TestOutputDecorator</value>
 						</property>
 					</properties>
-					 <argLine>-Xms512m -Xmx4096m</argLine>
 				</configuration>
 			</plugin>
 
