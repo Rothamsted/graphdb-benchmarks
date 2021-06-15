@@ -1,8 +1,11 @@
 package uk.ac.rothamsted.rdf.benchmarks;
 
+import static java.lang.System.out;
+
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+import org.apache.commons.lang3.RandomUtils;
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryException;
 import org.apache.jena.query.QueryExecution;
@@ -15,6 +18,7 @@ import org.apache.jena.rdfconnection.RDFConnectionFactory;
 import org.apache.tinkerpop.gremlin.driver.Client;
 import org.apache.tinkerpop.gremlin.driver.Cluster;
 import org.apache.tinkerpop.gremlin.driver.MessageSerializer;
+import org.apache.tinkerpop.gremlin.driver.RequestOptions;
 import org.apache.tinkerpop.gremlin.driver.ser.GryoMessageSerializerV3d0;
 import org.apache.tinkerpop.gremlin.driver.simple.WebSocketClient;
 import org.apache.tinkerpop.gremlin.structure.io.gryo.GryoMapper;
@@ -49,7 +53,10 @@ public class GremlinProfiler extends AbstractProfiler
     public static final int MAX_CONTENT_LENGTH = 65536000; 
     public static final int MAX_WAIT_FOR_CONNECTION = 30000; 
     public static final int RESULT_ITERATION_BATCH_SIZE = 64; 
-	
+
+    /* given the problems with executions in gremlin we count the potentials timeouts*/ 
+    protected int numberOfTimeouts = 0; 
+    
 	protected Cluster cluster;
 	protected Client client;
 	
@@ -112,17 +119,30 @@ public class GremlinProfiler extends AbstractProfiler
 	  
 		try{
 			
-			client = cluster.connect();  
+			client = cluster.connect();
 			return XStopWatch.profile ( () -> 
 			{
 				
 				 try {
-					 List<Result> list;
-			            list = client.submit(gremlinQuery).all().get();
-			        } catch (Exception ex) {
-			            ex.printStackTrace();
+//					 List<Result> list;
+//					 list = client.submit(gremlinQuery).all().get();
+//					 
+					 // this is the setup
+					 RequestOptions options = RequestOptions.build().timeout(500).create();
+					 List<Result> list = client.submit(gremlinQuery, options).all().get();
+					 					 
 			        } 
+				 	catch (ExecutionException ex) {
+				 		ex.printStackTrace();
+				 		this.numberOfTimeouts ++; 
+				 	}
+				 	catch (Exception ex) {
+			            ex.printStackTrace();
+			        }
+				client.close(); 
+				 
 			});
+			
 		}
 		catch ( Exception ex ) 
 		{
@@ -132,5 +152,18 @@ public class GremlinProfiler extends AbstractProfiler
 		finally {
 			client.close(); // client does not implement autocloseable interface
 		}
+	}
+
+
+
+	public int getNumberOfTimeouts() {
+		return numberOfTimeouts;
+	}	
+	
+	public void profile ( int repeats )
+	{
+		super.profile(repeats); 
+		out.println("----"); 
+		out.println("Number of timeouts: "+this.numberOfTimeouts); 
 	}	
 }

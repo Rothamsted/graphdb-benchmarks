@@ -1,5 +1,4 @@
 package uk.ac.rothamsted.rdf.benchmarks;
-
 import org.junit.Test;
 
 /**
@@ -17,7 +16,8 @@ public class GremlinProfilerTest
 	@Test
 	public void testBasics ()
 	{
-		GremlinProfiler profiler = new GremlinProfiler( "src/main/assembly/resources/gremlin/", "localhost", 8182 );
+		GremlinProfiler profiler = new GremlinProfiler( "src/main/assembly/resources/gremlin/", "localhost", 8182);
 		profiler.profile ( 2100 );
+		
 	}
 }

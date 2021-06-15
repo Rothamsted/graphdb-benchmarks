@@ -38,8 +38,8 @@ public abstract class AbstractProfiler
 	protected final String queryFileExtension;
 	
 	protected Logger log = LoggerFactory.getLogger ( this.getClass () );
-	protected String endPointUrl;	
-
+	protected String endPointUrl;
+	
 	protected AbstractProfiler ( String queryFileExtension )
 	{
 		super ();
