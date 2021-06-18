@@ -12,7 +12,7 @@ SELECT ?pwName (COUNT ( DISTINCT ?prot ) AS ?nprot)
   ?react a bk:Reaction.
   ?react bk:part_of ?pw.
   ?pw a bk:Path.
-  ?pw bk:prefName ?pwName
+  OPTIONAL { ?pw bk:prefName ?pwName }
 }
 GROUP BY ?pwName
 LIMIT 100
