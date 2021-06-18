@@ -11,7 +11,8 @@ SELECT ?pname ?c1name ?evlabel {
   ?cpx1 a bk:Protcmplx.
 
   ?rel bk:relFrom ?p;
-       bk:relTo ?cpx1.
+       bk:relTo ?cpx1;
+       bk:relTypeRef bk:is_part_of.
 
   ?rel bk:evidence ?ev.
 
