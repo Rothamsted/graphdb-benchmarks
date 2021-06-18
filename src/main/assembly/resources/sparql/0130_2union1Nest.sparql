@@ -11,13 +11,15 @@ SELECT ?pname ?ename ?rtype ?cname
     ?p a bk:Protein; bk:is_a ?e.
     ?e a bk:Enzyme.
     BIND ( "is_a" AS ?rtype )
-  } UNION {
+  }
+  UNION {
     ?e a bk:Enzyme; bk:ac_by ?p.
     ?p a bk:Protein.
     BIND ( "ac_by" AS ?rtype )
   }
 
   ?e bk:ac_by|bk:in_by ?c.
+  c a bk:Comp.
   
   OPTIONAL { ?p bk:prefName ?pname }
   OPTIONAL { ?e bk:prefName ?ename }
