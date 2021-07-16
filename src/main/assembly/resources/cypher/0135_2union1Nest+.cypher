@@ -1,4 +1,4 @@
-// This is like 2union1Nest, but realised with the new CALL() construct introuced in 
+// This is like 2union1Nest, but realised with the new CALL() construct introduced in 
 // recent Cypher. Performance should be the same, readability should be better
 CALL {
   MATCH (p:Protein)-[r:is_a]->(e:Enzyme)

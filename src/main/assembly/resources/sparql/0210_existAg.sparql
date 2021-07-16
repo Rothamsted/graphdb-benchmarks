@@ -16,7 +16,7 @@ SELECT ?pwName ( COUNT ( DISTINCT ?react ) AS ?nReact ) ( AVG ( ?np ) AS ?avgPro
       ?react bk:part_of ?pw.
       ?pw a bk:Path
       
-			OPTIONAL { ?pw bk:prefName ?pwName }      
+      OPTIONAL { ?pw bk:prefName ?pwName }      
 
       FILTER ( NOT EXISTS {
         ?prot bk:is_a|^bk:ac_by ?enz.
