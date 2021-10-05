@@ -25,7 +25,7 @@ public class CypherProfilerTest
 			"rouser",
 			"rouser"
 		);*/
-		var profiler = new CypherProfiler ();
+		var profiler = new CypherProfiler ("src/main/assembly/resources/cypher/");
 		profiler.profile ( 2100 );
 	}
 }

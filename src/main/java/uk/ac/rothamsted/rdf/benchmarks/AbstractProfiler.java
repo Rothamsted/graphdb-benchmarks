@@ -51,6 +51,7 @@ public abstract class AbstractProfiler
 	 */
 	public void profile ( int repeats )
 	{
+		
 		// all the tests
 		String names[] = getQueryNames ( this.basePath, this.queryFileExtension );
 				
