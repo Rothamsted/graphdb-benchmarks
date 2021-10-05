@@ -4,12 +4,5 @@ WHERE NOT EXISTS
   -[:cs_by|pd_by]->(:Transport)-[:part_of]->(:Path) )
 AND NOT EXISTS
   ( (p)-[:is_a|:ac_by]-(:Enzyme)<-[:ca_by]-(:Transport)-[:part_of]->(:Path) )
-WITH 
-  pwy.prefName AS pwy,
-  COUNT ( DISTINCT p ) AS np, r AS react
-WITH
-  pwy AS pwy, COUNT ( DISTINCT react ) AS nReact,
-  AVG ( np ) AS avgProt
-WHERE nReact <= avgProt
-RETURN pwy, nReact, avgProt
+RETURN DISTINCT pwy.prefName, p.prefName
 LIMIT 100

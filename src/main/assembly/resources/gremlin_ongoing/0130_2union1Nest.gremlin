@@ -1,5 +1,1 @@
-g.V().has('labelV-idx', 'Concept:Protein:Resource').as('p').union(
-	outE('is_a').as('r').inV().has('labelV-idx','Concept:Enzyme:Resource').as('e'), 
-	inE('ac_by').as('r').outE().has('labelV-idx','Concept:Enzyme:Resource').as('e')).
-	select('e').out('ac_by','in_by').has('labelV-idx', 'Comp:Concept:Resource').as('c').
-	select('p','e','c').by('prefName').limit(100)
+g.V().has('labelV-idx', 'Concept:Protein:Resource').as('p').union(__.out('is_a').has('labelV-idx', 'Concept:Enzyme:Resource').as('e').limit(100), 	__.in('ac_by').has('labelV-idx','Concept:Enzyme:Resource').as('e').limit(100)).select('e').out('ac_by','in_by').has('labelV-idx','Comp:Concept:Resource').as('c').select('p','e','c').by('prefName').limit(100)

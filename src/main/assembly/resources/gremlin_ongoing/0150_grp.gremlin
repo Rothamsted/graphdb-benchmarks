@@ -1,4 +1,1 @@
-g.V().has('labelV-idx', 'Concept:Protein:Resource').as('prot')
-	.out('pd_by','cs_by').has('labelV-idx', 'Concept:Reaction:Resource').as('react')
-	.out('part_of').has('labelV-idx','Concept:Path:Resource').as('pw')
-	.groupCount().by(select('pw').by('prefName')).limit(100)
+g.V().has('labelV-idx', 'Concept:Protein:Resource').as('prot').out('pd_by','cs_by').has('labelV-idx', 'Concept:Reaction:Resource').as('react')	.out('part_of').has('labelV-idx','Concept:Path:Resource').as('pw')	.groupCount().by(select('pw').by('prefName')).limit(100)

@@ -1,0 +1,1 @@
+g.V().has('labelV-idx', 'DataSource:EvidenceType:Resource').as('ev').V().has('labelV-idx', 'Concept:Protein:Resource').as('p').outE('is_part_of').as('pr').has('iri',select('ev').values('iri')[0]).inV().has('labelV-idx', 'Concept:Protcmplx:Resource').as('cpx1').limit(100).select('p', 'pr', 'ev').by('prefName').by('prefName').by('knetLabel')

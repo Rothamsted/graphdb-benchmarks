@@ -53,6 +53,7 @@ public abstract class AbstractProfiler
 	public void profile ( int repeats )
 	{
 		
+
 		log.info("Start profiling ..."); 
 
 		// all the tests

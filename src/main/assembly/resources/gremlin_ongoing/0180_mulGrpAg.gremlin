@@ -1,0 +1,26 @@
+g.V().union(	
+	union(
+		match(			
+			__.as('v1').has('labelV-idx','Concept:Protein:Resource').as('prot').both('is_a','ac_by').has('labelV-idx', 'Concept:Enzyme:Resource').as('enz'), 
+			__.as('v2').has('labelV-idx', 'Concept:Resource:Transport').as('trn').out('ca_by').has('labelV-idx','Concept:Path:Resource').as('pwy'), 
+			__.as('enz').out('ac_by','in_by').has('labelV-idx', 'Comp:Concept:Resource').out('cs_by','pd_by').as('trn')
+			).select('pwy','prot','type').by('prefName').by('prefName').by(constant('enz').groupCount().by('pwy').limit(1)
+		
+	,
+		match(			
+		__.as('v1').has('labelV-idx','Concept:Protein:Resource').as('prot').both('is_a','ac_by').has('labelV-idx', 'Concept:Enzyme:Resource').as('enz'), 
+		__.as('v2').has('labelV-idx', 'Concept:Resource:Transport').as('trn').out('ca_by').has('labelV-idx','Concept:Path:Resource').as('pwy'), 
+		__.as('trn').out('ca_by').as('enz')
+		).select('pwy','prot','type').by('prefName').by('prefName').by(constant('enz').groupCount().by('pwy').limit(100)
+	
+	), 
+	
+	has('labelV-idx','Concept:Protein:Resource').as('prot')
+	.out('cs_by','pd_by')
+	.has('labelV-idx','Concept:Reaction:Resource')
+	.out('part_of')
+	.has('labelV-idx','Concept:Path:Resource').as('pwy')	.select('pwy','prot','type').by('prefName').by('prefName').by(constant('react').groupCount().by('pwy').limit(100)
+
+)
+	
+	

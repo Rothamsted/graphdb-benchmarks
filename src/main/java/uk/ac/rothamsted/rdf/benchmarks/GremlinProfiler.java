@@ -120,16 +120,16 @@ public class GremlinProfiler extends AbstractProfiler
 					 	log.info("Query: "+gremlinQuery); 
 						 // this is the setup
 						 RequestOptions options = RequestOptions.build().timeout(60000).create();
-						 // List<Result> list = client.submitAsync(gremlinQuery, options).get().all().getNow(null);
-						 ResultSet set = client.submit(gremlinQuery,options); 
-						 while (!set.allItemsAvailable()) {}
-						 for (Result l: set) {
-						 }
+						 List<Result> list = client.submitAsync(gremlinQuery, options).get().all().getNow(null);
+						 //ResultSet set = client.submit(gremlinQuery,options); 
+						 //while (!set.allItemsAvailable()) {}
+						 //for (Result l: set) {
+						 //}
 			        } 
-//				 	catch (ExecutionException ex) {
-//				 		ex.printStackTrace();
-//				 		this.numberOfTimeouts ++; 
-//				 	}
+				 	catch (ExecutionException ex) {
+				 		log.debug("Probably timeout");
+						this.numberOfTimeouts ++; 
+				 	}
 				 	catch (Exception ex) {
 			            ex.printStackTrace();
 			        }
