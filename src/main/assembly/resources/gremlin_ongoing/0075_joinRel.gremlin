@@ -1,1 +1,24 @@
-g.V().has('labelV-idx', 'DataSource:EvidenceType:Resource').as('ev').V().has('labelV-idx', 'Concept:Protein:Resource').as('p').outE('is_part_of').as('pr').has('iri',select('ev').values('iri')[0]).inV().has('labelV-idx', 'Concept:Protcmplx:Resource').as('cpx1').limit(100).select('p', 'pr', 'ev').by('prefName').by('prefName').by('knetLabel')
+g.withSack{[:]}{it.clone();}.
+	V().or(has('labelV-idx', 'DataSource:EvidenceType:Resource'), has('labelV-idx', 'EvidenceType:Resource')).
+		sack{m,v->m['ev_iri'] = v.values('iri').next(); m['ev_label'] = v.label();m}.
+	V().has('labelV-idx','Concept:Protcmplx:Resource').
+		sack{m,v->m['cpx1_prefName']=v.values('prefName').next();m}.
+			inE().has('labelE-idx','is_part_of').
+			filter(project('a','b').by('evidenceValue').by(sack().select('ev_iri')).where('a',eq('b'))).
+				outV().has('labelV-idx', 'Concept:Protein:Resource').
+					sack{m,v->m['p_prefName']=v.values('prefName').next();m}.
+	sack().map{x->[p_prefName:x.get()['p_prefName'], cpx1_prefName:x.get()['cpx1_prefName'], ev_label:x.get()['ev_label']]}.limit(100)
+	
+	
+g.withSack{[:]}{it.clone();}.
+	V().or(has('labelV-idx', 'DataSource:EvidenceType:Resource'), has('labelV-idx', 'EvidenceType:Resource')).as('ev')
+		sack{m,v->m['ev_iri'] = v.values('iri').next(); m['ev_label'] = v.label();m}.
+	V().has('labelV-idx','Concept:Protcmplx:Resource').
+		sack{m,v->m['cpx1_prefName']=v.values('prefName').next();m}.
+			inE().has('labelE-idx','is_part_of').
+			where(values('evidenceValue').is(eq(sack().select('ev_iri')))).count()
+			filter(project('a','b').by('evidenceValue').by(sack().map{x->x.get()['ev_iri']}).where('a',eq('b'))).
+				outV().has('labelV-idx', 'Concept:Protein:Resource').
+					sack{m,v->m['p_prefName']=v.values('prefName').next();m}.
+	sack().map{x->[p_prefName:x.get()['p_prefName'], cpx1_prefName:x.get()['cpx1_prefName'], ev_label:x.get()['ev_label']]}.limit(100)
+	

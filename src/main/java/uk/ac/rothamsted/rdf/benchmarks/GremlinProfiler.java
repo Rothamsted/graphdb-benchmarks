@@ -2,6 +2,7 @@ package uk.ac.rothamsted.rdf.benchmarks;
 
 import static java.lang.System.out;
 
+import java.util.Hashtable;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -13,6 +14,9 @@ import org.apache.tinkerpop.gremlin.driver.ser.GryoMessageSerializerV3d0;
 import org.apache.tinkerpop.gremlin.driver.simple.WebSocketClient;
 import org.apache.tinkerpop.gremlin.structure.io.gryo.GryoMapper;
 import org.janusgraph.graphdb.tinkerpop.JanusGraphIoRegistry;
+
+import com.fasterxml.jackson.annotation.JacksonInject.Value;
+
 import org.apache.tinkerpop.gremlin.driver.Result;
 import org.apache.tinkerpop.gremlin.driver.ResultSet;
 
@@ -43,8 +47,10 @@ public class GremlinProfiler extends AbstractProfiler
     public static final int MAX_WAIT_FOR_CONNECTION = 30000; 
     public static final int RESULT_ITERATION_BATCH_SIZE = 256; 
 
-    /* given the problems with executions in gremlin we count the potentials timeouts*/ 
-    protected int numberOfTimeouts = 0; 
+    /* given the problems with executions in gremlin we count the potentials timeouts storing the
+     * culprit*/
+    
+    protected Hashtable<String, Integer> timeouts = null; 
     
 	protected static Cluster cluster;
 	protected static Client client;
@@ -60,6 +66,7 @@ public class GremlinProfiler extends AbstractProfiler
 		this.basePath = basePath; 
 		this.endPointUrl = endPointUrl;
 		this.port = port; 
+		this.timeouts = new Hashtable<>(); 
 		
 		
 		builder = GryoMapper.build().addRegistry(JanusGraphIoRegistry.getInstance());
@@ -128,7 +135,11 @@ public class GremlinProfiler extends AbstractProfiler
 			        } 
 				 	catch (ExecutionException ex) {
 				 		log.debug("Probably timeout");
-						this.numberOfTimeouts ++; 
+				 		if (!timeouts.containsKey(name)) {
+				 			timeouts.put(name, 0); 
+				 		}
+				 		// no concurrent access is done
+				 		timeouts.put(name, timeouts.get(name)+1); 
 				 	}
 				 	catch (Exception ex) {
 			            ex.printStackTrace();
@@ -146,15 +157,27 @@ public class GremlinProfiler extends AbstractProfiler
 
 
 
-	public int getNumberOfTimeouts() {
-		return numberOfTimeouts;
+	public Hashtable <String, Integer> getTimeouts() {
+		return timeouts;
 	}	
 	
 	public void profile ( int repeats )
 	{
+		int totalTimeouts = 0; 
 		super.profile(repeats); 
 		out.println("----"); 
-		out.println("Number of timeouts: "+this.numberOfTimeouts); 
+		out.println("Timeout Report"); 
+		out.println("----"); 
+		if (this.timeouts.isEmpty()) {
+			out.println("No timeouts"); 
+		}
+		else {
+			for (String name: this.timeouts.keySet()) {
+				out.println(name+" : "+this.timeouts.get(name));
+				totalTimeouts += this.timeouts.get(name); 
+			}
+			System.out.println("Total number of timeouts: "+ totalTimeouts); 
+		}
 	}	
 	
 	public void closeEverything() {
