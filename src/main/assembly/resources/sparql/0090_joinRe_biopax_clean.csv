@@ -12,7 +12,7 @@ pyruvate
 oxidoreductase
 glutathione
 dehydrogenase
-(ascorbate)
+\(ascorbate\)
 hydro-lyase
 AT2G13360-MONOMER
 AT1G62130.1
@@ -72,7 +72,7 @@ or
 phosphatidylinositol
 phosphatase
 glyceraldehyde-3-phosphate
-(phosphorylating)
+\(phosphorylating\)
 transferase
 AT1G50390
 AT1G58936
@@ -93,7 +93,7 @@ RUBISCO
 glucose-6-phosphate
 1-dehydrogenase
 "alpha,alpha-trehalose-phosphate"
-(UDP-forming)
+\(UDP-forming\)
 AT2G19550.1
 AT3G22560.1
 AT1G60990.1
@@ -113,7 +113,7 @@ AT3G26330
 glutamate
 decarboxylase
 AT5G38520.2
-poly-[gamma-glutamylcysteine]-glycine
+poly-\[gamma-glutamylcysteine\]-glycine
 AT4G29890
 AT3G61680.1
 NADH
@@ -180,7 +180,7 @@ NADP
 as
 acceptor
 hydroxyethylthiazole
-(ubiquinone)
+\(ubiquinone\)
 AT2G29735.1
 AT2G28070.1
 "phosphatidylinositol-4,5-bisphosphate"
@@ -208,7 +208,7 @@ ester
 hydroxycinnamoyltransferase
 sterol-4-alpha-carboxylate
 3-dehydrogenase
-(decarboxylating)
+\(decarboxylating\)
 AT3G48320
 cysteine
 gamma-glutamyltransferase
@@ -512,7 +512,7 @@ AT5G45340-MONOMER
 AT1G28480.1
 asparaginase
 succinate-CoA
-(GDP-forming)
+\(GDP-forming\)
 AT3G11430-MONOMER
 AT5G03340.1
 AT5G10920-MONOMER
@@ -531,7 +531,7 @@ AT1G54940.1
 AT1G12350-MONOMER
 long-chain-fatty-acid-CoA
 MONOMER-11913
-(Z)-gamma-bisabolene
+\(Z\)-gamma-bisabolene
 cytokinin
 oxidase/dehydrogenase
 AT3G50290.1
@@ -608,9 +608,9 @@ AT3G48420.1
 AT5G07270.1
 AT2G01320.3
 carbon-nitrogen
-(but
+\(but
 not
-peptide)
+peptide\)
 AT5G64687.1
 MONOMERQT-4146
 AT1G64900
@@ -677,8 +677,8 @@ AT3G47420.1
 cystathionine
 beta-lyase
 AT4G29010-MONOMER
-[NADPH-hemoprotein
-reductase]
+\[NADPH-hemoprotein
+reductase\]
 lipoic
 iron
 AT4G17080.1
@@ -728,7 +728,7 @@ AT2G33590-MONOMER
 AT4G22720
 fructose-bisphosphate
 aldolase
-(plastidic)
+\(plastidic\)
 AT5G18640.2
 AT1G78010.1
 AT3G43260.1
@@ -811,10 +811,10 @@ AT2G31790.1
 xyloglucan:xyloglucosyl
 AT1G75130
 AT5G48960
-(NAD)
+\(NAD\)
 MONOMER-14750
-holo-[acyl-carrier
-protein]
+holo-\[acyl-carrier
+protein\]
 glucosinolate
 S-oxygenase
 AT4G13990.1
@@ -833,7 +833,7 @@ aldose
 1-epimerase
 AT4G16730
 tRNA
-(5-methylaminomethyl-2-thiouridylate)-methyltransferase
+\(5-methylaminomethyl-2-thiouridylate\)-methyltransferase
 AT4G13510-MONOMER
 AT2G17650
 AT1G31095.1
@@ -942,7 +942,7 @@ AT2G02400-MONOMER
 AT2G31810
 AT1G75290.2
 cellulase
-(NADP+)
+\(NADP+\)
 AT5G52400
 AT4G22710
 flavonol
@@ -962,7 +962,7 @@ spermidine
 UDP-L-arabinose
 mutase
 AT1G02890.1
-[NAD(P)+]
+\[NAD\(P\)+\]
 AT3G18680.2
 AT2G37585.1
 AT1G02050-MONOMER
@@ -1024,7 +1024,7 @@ putative
 component
 AT2G02765.1
 asparagine
-(glutamine-hydrolyzing)
+\(glutamine-hydrolyzing\)
 polyamine
 AT1G67280-MONOMER
 AT5G48545-MONOMER
@@ -1150,7 +1150,7 @@ AT5G14980.1
 AT4G35250.1
 AT1G69526.2
 acetyl
-CoA:(Z)-3-hexen-1-ol
+CoA:\(Z\)-3-hexen-1-ol
 CYP79F1
 AT5G27410.2
 AT5G42600-MONOMER
@@ -1212,7 +1212,7 @@ cinnamoyl-CoA
 1-acylglycerol-3-phosphate
 O-acyltransferase
 PHYLLO
-[multifunctional]
+\[multifunctional\]
 AT3G61200.1
 AT4G28070.2
 glycerol-3-phosphate
@@ -1264,7 +1264,7 @@ CDP-diacylglycerol-serine
 O-phosphatidyltransferase
 chlorophyllide
 oxygenase
-N-(long-chain-acyl)ethanolamine
+N-\(long-chain-acyl\)ethanolamine
 deacylase
 AT5G57740.1
 AT2G43200.1
@@ -1301,11 +1301,11 @@ AT1G66235.1
 AT2G27680.1
 cyclohydrolase
 epsilon
-[biotin
+\[biotin
 carboxyl-carrier
 AT4G04040-MONOMER
 alpha
-"(1,2)"
+"\(1,2\)"
 beta-amyrin
 AT2G37700.3
 AT3G21730
@@ -1324,7 +1324,7 @@ AT2G42850
 folylpolyglutamate
 AT4G11030-MONOMER
 AT5G09910.1
-(NAD+)
+\(NAD+\)
 family
 member
 C9
@@ -1387,7 +1387,7 @@ AT5G06530.1
 AT2G27000
 AT3G01660.1
 monodehydroascorbate
-(NADH)
+\(NADH\)
 AT3G61010.1
 ferric-chelate
 AT5G61760-MONOMER
@@ -1445,7 +1445,7 @@ AT3G54150.1
 dolichyl-phosphate
 beta-D-mannosyltransferase
 AT1G72000.1
-(mitochondrial)
+\(mitochondrial\)
 AT1G35420.2
 AT1G64550.1
 AT1G67330.1
@@ -1478,7 +1478,7 @@ AT1G67110-MONOMER
 ferrocytochrome
 b5
 AT2G26910.1
-(omega-1)-hydroxylase
+\(omega-1\)-hydroxylase
 AT2G44520.1
 AT2G04020.2
 AT1G75920.1
@@ -1584,7 +1584,7 @@ D-cysteine
 desulfhydrase
 AT4G09467.1
 AT4G16130-MONOMER
-(acetyl-transferring)
+\(acetyl-transferring\)
 AT3G61510
 AT3G06470.1
 histidinol-phosphate
@@ -1599,7 +1599,7 @@ PSII-Q
 AT1G70630.3
 AT5G67310
 AT4G34920.1
-3-hydroxyacyl-[acyl-carrier-protein]
+3-hydroxyacyl-\[acyl-carrier-protein\]
 AT3G20040-MONOMER
 AT1G52700.2
 thymidine
@@ -1607,7 +1607,7 @@ AT1G69580.2
 AT3G56090
 AT5G50330.1
 AT2G38995.2
-NAD(P)H
+NAD\(P\)H
 AT3G14440-MONOMER
 AT2G22830-MONOMER
 AT1G03400.2
@@ -1666,18 +1666,18 @@ AT5G03270.1
 AT1G21350.5
 AT1G27570.1
 AT4G15350
-[L-cysteine
-desulfurase]
+\[L-cysteine
+desulfurase\]
 AT1G24540
 AT5G52190.1
 AT1G07745.1
 AT3G03780-MONOMER
 methylenetetrahydrofolate
-(NADPH)
+\(NADPH\)
 CYP79B2
 AT1G51420.2
 AT5G34581.1
-(chloroplastic)
+\(chloroplastic\)
 AT3G20130
 "GDP-D-mannose-3,5-epimerase"
 AT4G24730.1
@@ -1728,7 +1728,7 @@ AT5G19150.1
 AT5G43300.1
 D-erythro-sphingosine
 AT3G26130.2
-S-sulfanyl-[L-cysteine
+S-sulfanyl-\[L-cysteine
 reaction
 psaK
 AT2G33630-MONOMER
@@ -1738,7 +1738,7 @@ purine
 nucleoside
 inositol-polyphosphate
 urease
-[2Fe-2S]
+\[2Fe-2S\]
 cluster
 AT3G56130.1
 III
@@ -1764,7 +1764,7 @@ AT5G56260.3
 AT1G25210.2
 AT1G31930.1
 ferredoxin
-[iron-sulfur]
+\[iron-sulfur\]
 AT5G52860.1
 AT5G16340
 MONOMER-2367
@@ -1775,7 +1775,7 @@ thiosulfate
 AT5G48175.1
 nicotinate-nucleotide
 diphosphorylase
-(carboxylating)
+\(carboxylating\)
 AT5G38970-MONOMER
 AT1G80140.1
 AT1G23160.1
@@ -1812,7 +1812,7 @@ AT1G70760.1
 AT4G26460.2
 AT1G74710-MONOMER
 AT4G25240.1
-"3'(2'),5'-bisphosphate"
+"3'\(2'\),5'-bisphosphate"
 nucleotidase
 AT4G02620.1
 "kinase,"
@@ -1852,8 +1852,8 @@ AT3G12203
 phosphoribosylamine-glycine
 AT3G61650.1
 thiocarboxylated
-[small
-synthase]
+\[small
+synthase\]
 AT5G09970
 AT2G37820.1
 AT5G02780.1
@@ -1908,7 +1908,7 @@ Delta7-sterol-C5-desaturase
 AT5G48000-MONOMER
 AT1G28230.1
 AT3G04390.1
-peptide-N4-(N-acetyl-beta-glucosaminyl)asparagine
+peptide-N4-\(N-acetyl-beta-glucosaminyl\)asparagine
 amidase
 AT5G43280-MONOMER
 SAX1-MONOMER
@@ -1965,7 +1965,7 @@ nitrilase
 omega-6
 AT5G58910.2
 phosphatidylcholine-sterol
-bis(5'-adenosyl)-pentaphosphatase
+bis\(5'-adenosyl\)-pentaphosphatase
 AT1G13820.1
 AT1G26220.1
 AT4G34390.1
@@ -2102,7 +2102,7 @@ glutamine
 type
 AT3G13030.1
 leucoanthocyanidin
-(cytosolic)
+\(cytosolic\)
 AT5G16010.1
 AT3G62930.1
 AT1G15410.1
@@ -2279,7 +2279,7 @@ AT3G15350.1
 levanase
 AT1G21920.1
 AT4G13840.1
-"(1,2)fucosyltransferase"
+"\(1,2\)fucosyltransferase"
 AT3G51430.1
 AT1G78490
 AT3G04650.1
@@ -2311,8 +2311,8 @@ adenosyltransferase
 "glucan,"
 AT5G12460.1
 AtPLC2
-bis(5'-nucleosyl)-tetraphosphatase
-(asymmetrical)
+bis\(5'-nucleosyl\)-tetraphosphatase
+\(asymmetrical\)
 AT1G67410.1
 4-hydroxy-3-methylbut-2-en-1-yl
 ent-kaurene
@@ -2561,7 +2561,7 @@ AT1G76470-MONOMER
 AT4G12320
 AT3G01120-MONOMER
 AT3G24220-MONOMER
-3-oxoacyl-[acyl-carrier-protein]
+3-oxoacyl-\[acyl-carrier-protein\]
 AT4G01750.1
 AT4G25290.1
 AT1G65210.1
@@ -2573,7 +2573,7 @@ AT3G48290
 AT1G21480.1
 AT5G64150.1
 formaldehyde
-(glutathione)
+\(glutathione\)
 AT4G15370-MONOMER
 CDP-diacylglycerol-glycerol-3-phosphate
 3-phosphatidyltransferase
@@ -2621,7 +2621,7 @@ AT3G46500.5
 AT5G47990-MONOMER
 AT4G33330.2
 AT2G44160-MONOMER
-(ferredoxin)
+\(ferredoxin\)
 AT4G15700.1
 AT1G65980
 AT4G13940-MONOMER
@@ -2726,8 +2726,8 @@ AT5G38360.1
 AT3G47560.2
 AT3G26820.1
 AT5G24900
-4-(cytidine
-5'-diphospho)-2-C-methyl-D-erythritol
+4-\(cytidine
+5'-diphospho\)-2-C-methyl-D-erythritol
 AT5G07370-MONOMER
 AT1G14290-MONOMER
 AT1G33590.2
@@ -2777,13 +2777,13 @@ AT2G26810.1
 AT1G24170.1
 PsbH
 biotinylated
-[BCCP
-monomer]
+\[BCCP
+monomer\]
 AT1G18020
 AT4G26483.1
 AT4G24510.1
 carboxylated-biotinylated
-dimer]
+dimer\]
 AT2G02000
 AT2G34410.1
 PSII-W
@@ -2817,7 +2817,7 @@ sinapoylglucose:choline-O-sinapoyltransferase
 AT1G11530.1
 raffinose
 AT1G77130.1
-apo-[acyl-carrier
+apo-\[acyl-carrier
 AT4G13560.1
 AT3G54970.1
 AT4G39510.1
@@ -2906,7 +2906,7 @@ AT4G10950.2
 AT5G20260.2
 AT5G22490.1
 AT5G53050.4
-"g(E,E)-geranyllinalool"
+"g\(E,E\)-geranyllinalool"
 AT2G38680
 AT3G48780-MONOMER
 AT3G14140.1

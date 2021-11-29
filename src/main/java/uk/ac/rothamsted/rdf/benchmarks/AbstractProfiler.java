@@ -65,7 +65,7 @@ public abstract class AbstractProfiler
 			counts [ i ]++;
 			times [ i ] += profileQuery ( names [ i ] );
 			
-			if ( rep > 0 && rep % 100 == 0) log.info ( "{} runs", rep );
+			if ( rep > 0 && rep % 10 == 0) log.info ( "{} runs", rep );
 		}
 		
 		// And finally, compute the average times and report

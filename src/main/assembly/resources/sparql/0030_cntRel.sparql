@@ -1,4 +1,6 @@
 # Count relations
-SELECT ( COUNT ( * ) AS ?ct ) {
+SELECT ( COUNT ( * ) AS ?ct ) 
+FROM <http://knetminer.org/wheat>
+{
   ?s ?p ?o
 }

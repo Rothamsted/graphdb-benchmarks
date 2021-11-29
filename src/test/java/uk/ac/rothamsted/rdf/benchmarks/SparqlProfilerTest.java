@@ -16,8 +16,8 @@ public class SparqlProfilerTest
 	@Test
 	public void testBasics ()
 	{
-//		SparqlProfiler profiler = new SparqlProfiler ( "src/main/assembly/resources/sparql/", "http://localhost:8890/sparql" );
-		SparqlProfiler profiler = new SparqlProfiler ( "src/main/assembly/resources/sparql/", "http://localhost:3030/rdf2pg" );
+		SparqlProfiler profiler = new SparqlProfiler ( "src/main/assembly/resources/sparql/", "http://localhost:8890/sparql" );
+//		SparqlProfiler profiler = new SparqlProfiler ( "src/main/assembly/resources/sparql/", "http://localhost:3030/rdf2pg" );
 		profiler.profile ( 2100 );
 	}
 }

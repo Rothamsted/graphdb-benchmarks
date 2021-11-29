@@ -1,4 +1,6 @@
 # Counts instances
-SELECT ( COUNT ( DISTINCT ?s ) AS ?ct ) {
+SELECT ( COUNT ( DISTINCT ?s ) AS ?ct ) 
+FROM <http://knetminer.org/wheat>
+{
   { ?s a ?C }
 }

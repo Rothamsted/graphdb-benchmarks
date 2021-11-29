@@ -144,7 +144,7 @@ Ubiquitin-conjugating
 E2
 27
 AT3G46990.1
-Stearoyl-[acyl-carrier-protein]
+Stearoyl-\[acyl-carrier-protein\]
 "9-desaturase,"
 seed
 "specific,"
@@ -554,7 +554,7 @@ Sen2-1
 AT5G48980.1
 Superoxide
 dismutase
-[Mn]
+\[Mn\]
 "3.3,"
 AT2G47730.1
 AT1G54010.1
@@ -729,7 +729,7 @@ AT3G11650.1
 AT4G08690.1
 NADH
 dehydrogenase
-[ubiquinone]
+\[ubiquinone\]
 iron-sulfur
 "8,"
 AT1G75250.1
@@ -1720,7 +1720,7 @@ Organic
 cation/carnitine
 Syntaxin-122
 Malate
-[NADP]
+\[NADP\]
 AT3G61320.1
 AT4G34730.2
 49
@@ -3121,7 +3121,7 @@ AT2G20340.2
 AT1G61660.5
 AT3G19460.3
 Isocitrate
-[NAD]
+\[NAD\]
 "3,"
 AT2G43820.1
 AT3G30730.1
@@ -3318,7 +3318,7 @@ AT1G28130.2
 AT4G15215.3
 AT5G39471.1
 AT2G22410.1
-(6-4)DNA
+\(6-4\)DNA
 photolyase
 AT5G65410.1
 AT2G25420.1
@@ -3388,7 +3388,7 @@ AT2G23140.4
 AT5G28810.1
 AT4G19210.1
 Myosin-binding
-NAD(P)H-quinone
+NAD\(P\)H-quinone
 oxidoreductase
 AT2G23140.3
 AT5G50370.1
@@ -3849,7 +3849,7 @@ AT1G03100.1
 AT4G23515.1
 AT1G07570.1
 AT5G38290.1
-(S)-NAD(P)H-hydrate
+\(S\)-NAD\(P\)H-hydrate
 dehydratase
 AT3G54740.5
 AT4G20020.2
@@ -4108,7 +4108,7 @@ AT2G30690.2
 AT3G02720.1
 AT4G31790.2
 "alpha,alpha-trehalose-phosphate"
-[UDP-forming]
+\[UDP-forming\]
 AT5G42280.1
 AT4G18905.1
 AT2G29420.1
@@ -4487,7 +4487,7 @@ AT5G63770.1
 AT5G65080.3
 AT1G04710.1
 AT3G26560.1
-"[NADP],"
+"\[NADP\],"
 AT4G31680.2
 AT1G78870.4
 AT1G71250.1
@@ -5109,7 +5109,7 @@ AT2G47260.1
 AT1G04300.1
 AT3G48980.1
 Succinate--CoA
-[ADP-forming]
+\[ADP-forming\]
 "beta,"
 AT1G69935.1
 AT3G50330.1
@@ -5757,7 +5757,7 @@ AT1G01100.4
 AT2G21380.2
 AT3G30340.2
 AT2G45400.4
-(E)-beta-ocimene
+\(E\)-beta-ocimene
 AT5G03980.1
 alpha-4
 AT3G09350.1
@@ -6190,7 +6190,7 @@ AT3G09060.1
 AT2G38020.1
 AT4G13020.7
 AT4G39810.1
-[Cu-Zn]
+\[Cu-Zn\]
 AT5G42080.2
 AT5G46860.1
 AT1G48530.1
@@ -6659,7 +6659,7 @@ AT1G26110.2
 AT2G22920
 AT1G24170.1
 poly
-[ADP-ribose]
+\[ADP-ribose\]
 SRO5
 AT3G60320.1
 AT1G17640.3
@@ -6747,7 +6747,7 @@ AT3G45000.1
 AT1G23780.1
 AT2G18876.1
 tRNA
-(guanine(37)-N1)-methyltransferase
+\(guanine\(37\)-N1\)-methyltransferase
 AT3G62750.7
 AT1G64710.2
 AT3G13580.9
@@ -7824,7 +7824,7 @@ AT5G56580.1
 AT2G17787.1
 AT3G09240.3
 Nitrate
-[NADH]
+\[NADH\]
 AT5G42680.1
 AT5G05830.1
 AT3G03970.2
@@ -8176,7 +8176,7 @@ AT3G49970.2
 AT3G12070.3
 AT4G20980.3
 AT1G53310.2
-Acyl-[acyl-carrier-protein]
+Acyl-\[acyl-carrier-protein\]
 "desaturase,"
 AT5G49420.1
 AT4G22520.1
@@ -8190,7 +8190,7 @@ AT4G19900.2
 AT3G54230.5
 AT2G47230.2
 AT1G29870.1
-(guanine-N(7)-)-methyltransferase
+\(guanine-N\(7\)-\)-methyltransferase
 AT3G49970.1
 AT3G26300
 AT3G54170.1
@@ -8923,7 +8923,7 @@ AT3G26020.3
 AT4G21585.1
 AT5G62840.1
 AT5G49700.1
-(S)-ureidoglycine
+\(S\)-ureidoglycine
 aminohydrolase
 AT1G15750.4
 AT1G22870.4
@@ -9333,7 +9333,7 @@ L7-1
 AT1G63010.3
 AT5G54190.1
 AT4G21366.1
-(guanine(26)-N(2))-dimethyltransferase
+\(guanine\(26\)-N\(2\)\)-dimethyltransferase
 AT4G24460.3
 AT1G52570.1
 AT5G40360.1
@@ -10452,7 +10452,7 @@ AT5G08630.2
 AT1G54550.1
 Internal
 alternative
-NAD(P)H-ubiquinone
+NAD\(P\)H-ubiquinone
 "A1,"
 AT4G17615.4
 LIN
@@ -12184,7 +12184,7 @@ nitrilase
 AT3G10260.1
 AT1G72141.1
 AT2G44100.2
-"[ferredoxin],"
+"\[ferredoxin\],"
 AT1G04560.1
 AT4G28200.1
 AT4G33000.6
@@ -12379,7 +12379,7 @@ AT2G24710.1
 AT1G06190.3
 AT1G52230.1
 AT1G78260.1
-"[Cu-Zn],"
+"\[Cu-Zn\],"
 AT2G16700.1
 AT5G12050.1
 AT5G62165.4
@@ -12987,8 +12987,8 @@ Thylakoid
 AT3G27320.1
 AT4G11320.1
 AT5G06960.2
-holo-[acyl-carrier
-protein]
+holo-\[acyl-carrier
+protein\]
 AT3G45100.2
 reduced
 AT5G53300.3
@@ -13046,7 +13046,7 @@ AT2G38995.3
 AT2G37670.1
 AT4G24350.2
 AT4G18050.2
-[2Fe-2S]
+\[2Fe-2S\]
 ferredoxin
 ATCG01040.1
 AT5G14270.2
@@ -13155,8 +13155,8 @@ AT5G65210.4
 YTH
 ECT2
 AT4G29610.1
-[NADPH-hemoprotein
-reductase]
+\[NADPH-hemoprotein
+reductase\]
 AT3G52550.1
 AT4G37840.1
 AT5G10350.4
@@ -13340,14 +13340,14 @@ AT1G80360.1
 AT1G28100.6
 TIP3-2
 AT2G34110.1
-apo-[acyl-carrier
+apo-\[acyl-carrier
 SPL2
 phosphoglycolate
 AT5G17810.1
 AT1G60280.1
 AT5G60380.1
-S-sulfanyl-[L-cysteine
-desulfurase]
+S-sulfanyl-\[L-cysteine
+desulfurase\]
 AT4G35040.3
 AT1G19115.3
 AT1G53050.2
@@ -13469,7 +13469,7 @@ AT2G32700.4
 AT1G53130.1
 AT4G09610.1
 AT1G73180.2
-[iron-sulfur]
+\[iron-sulfur\]
 AT2G04041.1
 AT3G20670.1
 AT4G00960.2
@@ -14030,8 +14030,8 @@ AT5G43880.3
 AT1G55250.5
 AT4G27490.3
 carboxy-adenylated
-[small
-synthase]
+\[small
+synthase\]
 AT5G56600.2
 AT5G57410.2
 AT3G10605.1
@@ -14043,7 +14043,7 @@ AT5G09445.1
 AT5G07210.2
 AT5G18290.2
 AGENET
-(AGD)-CONTAINING
+\(AGD\)-CONTAINING
 P1
 AT1G06110.3
 AT4G02430.4
@@ -14339,7 +14339,7 @@ AT1G53310.1
 AT5G62180.1
 AT2G43640.1
 AT5G44180.1
-[Fe]
+\[Fe\]
 AT2G25770.2
 AT5G24620.1
 AT5G05610.2
@@ -14513,7 +14513,7 @@ AT4G21500.1
 Thionin-2.1
 Triosephosphate
 AT3G26190
-(UDP-forming)
+\(UDP-forming\)
 AT4G14180.1
 AT2G30750.1
 AT3G44540.1
@@ -14598,7 +14598,7 @@ AT1G71760.2
 AT1G80160.3
 AT5G46180.1
 AT1G17580.1
-(carboxymethyluridine(34)-5-O)-methyltransferase
+\(carboxymethyluridine\(34\)-5-O\)-methyltransferase
 AT5G17680.1
 AT4G25790.1
 AT5G39290.1
@@ -15056,7 +15056,7 @@ AT2G46530.3
 AT5G10540.1
 AT1G11300.1
 AT1G54730.2
-poly-[gamma-glutamylcysteine]-glycine
+poly-\[gamma-glutamylcysteine\]-glycine
 AT5G11510.5
 AT5G44785.1
 AT3G24310.1
@@ -15332,7 +15332,7 @@ AT1G52495.1
 AT4G00560.2
 AT3G58220.1
 AT5G22510.1
-(+)-epi-alpha-bisabolol
+\(+\)-epi-alpha-bisabolol
 AT2G07110.1
 AT2G36590.2
 AT1G51270.6
@@ -15624,7 +15624,7 @@ AT2G27810.4
 AT3G51430.1
 AT4G35660.1
 AT1G49030.1
-tRNA(adenine(34))
+tRNA\(adenine\(34\)\)
 "deaminase,"
 AT1G27860.1
 AT4G28860.2
@@ -20164,7 +20164,7 @@ AT3G17590.1
 AT1G23080.2
 AT1G49160.5
 AT4G39270.2
-"(E,E)-germacrene"
+"\(E,E\)-germacrene"
 AT1G63550.1
 AT2G21400.1
 AT2G22040.1
@@ -24730,7 +24730,7 @@ AT3G44620
 AT1G10830.1
 AT3G03120.1
 AT2G11810.1
-(-)-kolavenyl
+\(-\)-kolavenyl
 "TPS28,"
 AT5G61240.1
 AT5G47900.5
@@ -24802,7 +24802,7 @@ AT3G60890.2
 AT5G11530.3
 AT1G51340.1
 1.1
-(-)-germacrene
+\(-\)-germacrene
 AT5G40060.2
 Rab5
 AT3G03680.1
@@ -25119,7 +25119,7 @@ AT5G64480.1
 AT3G44530.1
 AT5G19660.3
 AT5G45450.1
-(+)-pulegone
+\(+\)-pulegone
 AT3G61860.1
 AT5G48390.1
 AT4G19130.1
@@ -25136,7 +25136,7 @@ AT5G52810.1
 AT4G28490.1
 AT4G16740.2
 AT1G60860.2
-tRNA(His)
+tRNA\(His\)
 guanylyltransferase
 AT5G64480.2
 AT5G49800.1
@@ -25321,7 +25321,7 @@ AT2G28830.1
 AT2G05520.5
 AT1G66510.4
 AT1G43010.1
-(R)-limonene
+\(R\)-limonene
 AT3G43920.6
 AT1G24880.2
 AT1G12220.1
@@ -25532,7 +25532,7 @@ AT1G33960.2
 "1,8-cineole"
 DELETION
 SUV3
-1(I)
+1\(I\)
 AT4G17300.2
 AT2G33740.1
 AT4G08950.1
@@ -26286,7 +26286,7 @@ AT4G34610.2
 AT5G39940.4
 AT3G01350.1
 AT3G14630.1
-"[Fe],"
+"\[Fe\],"
 AT3G59230.1
 AT5G15980.1
 4-hydroxy-4-methyl-2-oxoglutarate
@@ -26567,7 +26567,7 @@ AT1G24764.1
 AT2G35620.1
 HOX20
 Glycerol-3-phosphate
-[NAD(+)]
+\[NAD\(+\)\]
 AT3G45500.1
 AT5G57090.2
 AT3G09330.1
@@ -27544,7 +27544,7 @@ AT1G72530.1
 AT5G20360.4
 AT4G00335.2
 AT4G08740.1
-chlorophyll(ide)
+chlorophyll\(ide\)
 "NYC1,"
 b6
 AT3G07430.1
@@ -27984,7 +27984,7 @@ AT1G67180.7
 AT5G45660.1
 At1g71490
 AT3G13420.4
-S-(+)-linalool
+S-\(+\)-linalool
 AT3G62550.1
 AT1G72130.3
 AT5G16715.1
@@ -28644,7 +28644,7 @@ AT5G14700.2
 AT5G04230.2
 AT3G29250.3
 AT4G08868.1
-(E)-gamma-bisabolene
+\(E\)-gamma-bisabolene
 AT3G24170.3
 AT3G17650.1
 AT1G23680.1
@@ -28875,7 +28875,7 @@ AT2G37150.12
 AT3G51580.2
 AT2G28520.1
 AT1G54680.2
-(+)-menthofuran
+\(+\)-menthofuran
 NPR4
 AT2G43160.5
 AT4G38670.1
@@ -28953,7 +28953,7 @@ AT4G37540.1
 AT4G21440.1
 AT1G02990.5
 A1-II
-(S)-tetrahydroprotoberberine
+\(S\)-tetrahydroprotoberberine
 AT1G77170.1
 AT3G56600.3
 AT1G67500.5
@@ -29005,7 +29005,7 @@ AT2G44140.3
 MYB105
 AT4G24975.1
 AT1G02990.6
-(+)-neomenthol
+\(+\)-neomenthol
 AT1G67500.6
 AT5G14740.4
 Carboxylesterase
@@ -29289,7 +29289,7 @@ Glucose-6-phosphate
 1-dehydrogenase
 AT5G19090.3
 2-alkenal
-(NADP(+)-dependent)
+\(NADP\(+\)-dependent\)
 AT3G06790.1
 "Plastocyanin,"
 AT1G01650.1
@@ -29579,7 +29579,7 @@ Lysine-specific
 JMJ706
 AT5G18870.1
 4-hydroxy-3-methylbut-2-en-1-yl
-"(ferredoxin),"
+"\(ferredoxin\),"
 AT3G14595.1
 AT5G66170.2
 MULTIPLE
@@ -30097,7 +30097,7 @@ AT3G62240.1
 AT1G03960.1
 AT3G06190.3
 AT5G51640.1
-Glutamyl-tRNA(Gln)
+Glutamyl-tRNA\(Gln\)
 amidotransferase
 "C,"
 AT4G37510.1
@@ -30140,7 +30140,7 @@ AT2G11778.1
 AT3G14400.1
 AT2G01090.1
 AT4G25710.2
-NAD(P)H-dependent
+NAD\(P\)H-dependent
 At1g26515
 AT1G74720.1
 AT1G78890.2
@@ -30178,7 +30178,7 @@ AT5G55230.3
 "24,"
 AT5G65460.1
 AT5G13450.2
-(S)-2-hydroxy-acid
+\(S\)-2-hydroxy-acid
 GLO4
 AT2G24692.1
 AT1G58280.2
@@ -30315,7 +30315,7 @@ acylpyruvase
 "FAHD2,"
 AT3G23910.2
 AT1G54775.1
-K(+)
+K\(+\)
 antiporter
 AT5G40050.1
 AT1G15460.3
@@ -30338,7 +30338,7 @@ AT5G56190.2
 AT5G23930.1
 SLU7
 Glutamine-dependent
-NAD(+)
+NAD\(+\)
 AT1G15460.4
 AT4G01540.4
 AT4G30710.3
@@ -31048,7 +31048,7 @@ AT4G26210.1
 At5g18160
 AT1G79810.2
 AT2G27790.2
-Peptide-N(4)-(N-acetyl-beta-glucosaminyl)asparagine
+Peptide-N\(4\)-\(N-acetyl-beta-glucosaminyl\)asparagine
 amidase
 AT4G26630.2
 AT1G13160.1
@@ -31367,10 +31367,10 @@ AT5G41770.1
 AT5G26622.2
 AT1G76500.1
 AT3G19780.4
-DNA-(apurinic
+DNA-\(apurinic
 or
 apyrimidinic
-site)
+site\)
 "lyase,"
 AT4G33740.5
 AT1G72640.3
@@ -31514,7 +31514,7 @@ AT2G03290.1
 short
 AT1G07770.3
 Glycine
-(decarboxylating)
+\(decarboxylating\)
 AT1G01880.1
 AT1G35190.2
 AT4G28910.2
@@ -31542,7 +31542,7 @@ Magnesium-protoporphyrin
 IX
 monomethyl
 ester
-[oxidative]
+\[oxidative\]
 At3g58270
 At3g22350
 AT1G12810.2
@@ -31558,7 +31558,7 @@ AT4G36060.2
 AT3G54300.3
 lipoxygenase
 AT2G18025.1
-HBP-1b(c38)
+HBP-1b\(c38\)
 Monogalactosyldiacylglycerol
 AT5G04090.7
 AT4G35940.2
@@ -31695,7 +31695,7 @@ AT1G17460.2
 AT4G03460.1
 AT3G02500.2
 carboxykinase
-(ATP)
+\(ATP\)
 AT4G14060.1
 AT4G15563.9
 AT5G28646.3
@@ -32180,7 +32180,7 @@ AT4G14465.1
 AT5G38650.1
 AT3G27329.1
 AT4G15080.1
-(cytosine-5)-methyltransferase
+\(cytosine-5\)-methyltransferase
 AT3G56580.2
 AT3G26930.1
 AT4G39150.3
@@ -32408,7 +32408,7 @@ AT5G65180.1
 AT1G12600.1
 Beta-glucosidase
 Acyl-lipid
-(9-3)-desaturase
+\(9-3\)-desaturase
 Glucan
 "endo-1,3-beta-glucosidase"
 AT2G43810.1
@@ -32497,7 +32497,7 @@ AT2G13985.1
 AT2G17845.1
 AT3G30840.1
 AT1G79710.1
-"[NADH],"
+"\[NADH\],"
 clone
 PBNBR1412
 AT5G46420.1
@@ -32566,7 +32566,7 @@ AT5G47620.5
 S2-2
 AT3G02440.1
 Asparagine
-[glutamine-hydrolyzing]
+\[glutamine-hydrolyzing\]
 AT5G13740.2
 AT2G44581.1
 rRNA
@@ -33550,7 +33550,7 @@ AT5G48460.1
 AT5G51950.3
 AT1G08125.1
 AT1G36970.1
-"(3S,6E)-nerolidol"
+"\(3S,6E\)-nerolidol"
 AT1G27290.1
 AT3G16260.3
 AT4G11380.2
@@ -33845,7 +33845,7 @@ LHP1
 AT5G22870.1
 AT5G56250.1
 AT1G36380.1
-poly(A)
+poly\(A\)
 AT4G16165.1
 AT3G51690.1
 AT4G35020.4
@@ -34237,7 +34237,7 @@ AT1G33970.3
 AT2G30460.5
 AT2G43490.3
 AT4G05110.2
-Peptide-N4-(N-acetyl-beta-glucosaminyl)asparagine
+Peptide-N4-\(N-acetyl-beta-glucosaminyl\)asparagine
 AT3G11560.4
 AT2G38660.8
 CEP11
@@ -34448,7 +34448,7 @@ AT1G62870.1
 AT2G29320.2
 AT1G14840.2
 AT2G18950.2
-Fe(3+)-Zn(2+)
+Fe\(3+\)-Zn\(2+\)
 AT1G15290.2
 AT3G01516.1
 AT1G66580.1
@@ -35084,7 +35084,7 @@ AT1G74050.1
 AT5G11430.3
 AT1G70030.3
 AT5G18920.1
-Poly(A)-specific
+Poly\(A\)-specific
 PARN
 BRASSINOSTEROID
 INSENSITIVE
@@ -35157,7 +35157,7 @@ MSH6
 AT1G53645.1
 AT2G37975.2
 AT2G20230.1
-5-amino-6-(5-phospho-D-ribitylamino)uracil
+5-amino-6-\(5-phospho-D-ribitylamino\)uracil
 "phosphatase,"
 AT5G37780.2
 RP/EB
@@ -35799,7 +35799,7 @@ AT3G26922.3
 AT1G67790.1
 AT1G74160.1
 Nicotinate-nucleotide
-"[carboxylating],"
+"\[carboxylating\],"
 AT1G03120.1
 AT5G09800.1
 AT4G20535.1
@@ -36133,7 +36133,7 @@ AT4G15610.1
 AT4G28600.3
 AT2G47450.1
 AT1G68940.3
-poly(ADP-ribose)
+poly\(ADP-ribose\)
 glycohydrolase
 AT1G78640.1
 AT3G60070.1
@@ -36620,7 +36620,7 @@ AT1G35310.1
 AT2G26900.1
 AT5G67380.2
 AT3G24580.1
-Delta(12)-acyl-lipid-desaturase
+Delta\(12\)-acyl-lipid-desaturase
 AT5G50720.1
 LLG3
 AT4G27970.3
@@ -36747,7 +36747,7 @@ AT2G46495.1
 AT1G09050.2
 AT3G56950.2
 AT3G29130.5
-H(+)/hexose
+H\(+\)/hexose
 AT1G70620.3
 AT1G07650.4
 AT3G48190.1
@@ -37049,7 +37049,7 @@ AT1G75730.1
 AT3G12050.2
 AT5G20150.1
 AT4G33565.1
-NAD(H)
+NAD\(H\)
 AT2G47115.1
 AT2G43780.3
 AT3G63490.2
@@ -37424,7 +37424,7 @@ AT5G67080.1
 AT3G53235.1
 PIP1-5
 AT4G33280.3
-Delta(12)-fatty-acid
+Delta\(12\)-fatty-acid
 desaturase
 AT3G28785.1
 AT1G19400.4
@@ -37460,7 +37460,7 @@ AT5G63060.2
 AT1G76620.2
 AT4G16620.4
 AT2G38510.1
-3-oxoacyl-[acyl-carrier-protein]
+3-oxoacyl-\[acyl-carrier-protein\]
 AT1G35780.1
 AT5G40890.2
 AT3G25730.1
@@ -37930,7 +37930,7 @@ AT5G09960.3
 AT4G03820.3
 AT2G25670.1
 AT1G31930.2
-NAD(P)H:quinone
+NAD\(P\)H:quinone
 AT5G46140.1
 AT5G09960.2
 AT3G03720.1
@@ -38067,7 +38067,7 @@ C-10
 AT1G11620.1
 AT2G21520.1
 AT5G38895.2
-Poly(ADP-ribose)
+Poly\(ADP-ribose\)
 AT1G47271.1
 AT5G60580.1
 AT3G06330.4
@@ -38918,8 +38918,8 @@ AT1G54710.2
 AT3G62499.1
 "At1g55890,"
 AT3G18460.1
-[Pyruvate
-(acetyl-transferring)]
+\[Pyruvate
+\(acetyl-transferring\)\]
 AT4G18422.1
 Nucleotide-sugar
 AT3G18380.3
@@ -40337,7 +40337,7 @@ AT3G26900.1
 AT1G02410.1
 AT4G26870.1
 AT1G31650.1
-Chlorophyll(ide)
+Chlorophyll\(ide\)
 "NOL,"
 AT4G02540.2
 AT1G08680.4
@@ -40732,7 +40732,7 @@ AT4G31350.4
 AT1G22110.2
 AT3G19020.1
 AT5G49050.1
-(-)-alpha-terpineol
+\(-\)-alpha-terpineol
 AT2G31430.1
 AT2G44890.2
 AT4G06598.1
@@ -41015,7 +41015,7 @@ AT5G45080.1
 AT1G42680.1
 AT4G16860.2
 AT5G13240.3
-"[Mn],"
+"\[Mn\],"
 DOF1.7
 AT1G77930.2
 AT1G27380.1
@@ -42008,7 +42008,7 @@ AT4G18340.1
 AT1G62410.1
 KAN4
 AT3G44730.3
-Cation/H(+)
+Cation/H\(+\)
 AT2G24693.1
 AT5G53700.1
 AT1G03060.4
@@ -42854,7 +42854,7 @@ AT5G27240.3
 KLP1
 69
 AT2G29660.1
-Fe(2+)
+Fe\(2+\)
 AT1G49730.3
 HAC2
 AT3G55410.2
@@ -43260,7 +43260,7 @@ AT2G41417.1
 AT1G11840.4
 AT3G43700.1
 AT4G01023.1
-(S)-1-hydroxy-N-methylcanadine
+\(S\)-1-hydroxy-N-methylcanadine
 13-hydroxylase
 CYP82X2
 AT5G47130.1
@@ -43360,7 +43360,7 @@ AT5G58190.1
 AT3G63020.1
 AT4G10050.2
 Carotenoid
-"9,10(9',10')-cleavage"
+"9,10\(9',10'\)-cleavage"
 AT5G39930.1
 AT1G60080.1
 thimet
@@ -43716,7 +43716,7 @@ AT3G57760.2
 AT5G63135.1
 AT3G12250.1
 AT1G46480.2
-"Ent-pimara-8(14),15-diene"
+"Ent-pimara-8\(14\),15-diene"
 AT4G08590.5
 AT1G01710.1
 AT1G66465.2
@@ -44020,7 +44020,7 @@ AGL70
 AT3G61450.2
 TFIIS
 AT1G73885.1
-5-amino-6-(5-phosphoribosylamino)uracil
+5-amino-6-\(5-phosphoribosylamino\)uracil
 AT3G18760.2
 AT4G25110.2
 IAA29
@@ -44511,7 +44511,7 @@ ERF016
 AT1G24310.1
 AT1G61090.1
 AT4G17900.2
-A(1)
+A\(1\)
 "DAD1,"
 AT5G39340.3
 AT4G35520.6
@@ -49095,7 +49095,7 @@ AT3G57040.1
 AT5G60335.1
 AT1G80380.5
 Zeaxanthin
-"7,8(7',8')-cleavage"
+"7,8\(7',8'\)-cleavage"
 "dioxygenase,"
 AT2G22260.7
 AT5G56500.1
@@ -49402,7 +49402,7 @@ AT4G34930.1
 AT4G23090.2
 AT1G48700.1
 18S
-(guanine-N(7))-methyltransferase
+\(guanine-N\(7\)\)-methyltransferase
 RID2
 AT3G11740.1
 B-10
@@ -49778,7 +49778,7 @@ AT2G14580.1
 AT4G37490.1
 AT1G70590.1
 AT2G34310.2
-(+)-alpha-pinene
+\(+\)-alpha-pinene
 AT5G39760.1
 AT3G44190.2
 AT2G33180.1
@@ -50879,7 +50879,7 @@ Fructokinase-like
 AT1G29120.4
 AT2G48120.2
 CYP79F1
-(cytosine(38)-C(5))-methyltransferase
+\(cytosine\(38\)-C\(5\)\)-methyltransferase
 AT5G12330.3
 AT3G51540.1
 AT3G45090.2
@@ -51103,8 +51103,8 @@ AT5G58070.1
 60.1
 AT1G77410.2
 AT3G07760.1
-[Fructose-bisphosphate
-aldolase]-lysine
+\[Fructose-bisphosphate
+aldolase\]-lysine
 AT1G43320.1
 AT1G03860.2
 AT1G20560
@@ -51373,7 +51373,7 @@ AT2G41670.2
 AT4G21200.3
 type-2-B
 Hexokinase-3
-Enoyl-[acyl-carrier-protein]
+Enoyl-\[acyl-carrier-protein\]
 AT4G37090.1
 GII
 "Hexokinase-4,"
@@ -51890,7 +51890,7 @@ AT2G48130.4
 "At1g74850,"
 AT4G26145.1
 AT4G23670.1
-HBP-1b(c1)
+HBP-1b\(c1\)
 AT5G38160.1
 GORK
 "At1g62680,"
@@ -51915,7 +51915,7 @@ At1g47340
 GTL1
 At3g18340
 MEPFL8
-(-)-isopiperitenone
+\(-\)-isopiperitenone
 AT4G07995.1
 AT5G52530.2
 CONTINUOUS
@@ -52047,7 +52047,7 @@ AT2G16900.6
 Isoprenylcysteine
 MADS
 AFFECTING
-3'-hydroxy-N-methyl-(S)-coclaurine
+3'-hydroxy-N-methyl-\(S\)-coclaurine
 4'-O-methyltransferase
 4E
 Urea-proton
@@ -52058,7 +52058,7 @@ AT2G36220.1
 AT3G02060.2
 AT3G12400.2
 AT2G16900.5
-GDP-Man:Man(3)GlcNAc(2)-PP-Dol
+GDP-Man:Man\(3\)GlcNAc\(2\)-PP-Dol
 "alpha-1,2-mannosyltransferase"
 AT2G41880.6
 AT1G75550.2
@@ -52418,7 +52418,7 @@ AT3G01130.7
 HAT3.1
 Mannose-1-phosphate
 "ATP4,"
-"(decarboxylating),"
+"\(decarboxylating\),"
 AT1G65110.2
 AT3G29375.2
 AT3G18310.1
@@ -52470,7 +52470,7 @@ AT5G52970.2
 AT2G10260.1
 AtMg00430/AtMg01150
 DExH8
-(DL)-glycerol-3-phosphatase
+\(DL\)-glycerol-3-phosphatase
 AT1G26760.1
 CBBY-like
 At1g52490
@@ -53267,7 +53267,7 @@ deiminase
 At1g65710
 ORR31
 Os04g0590900
-"3-oxo-Delta(4,5)-steroid"
+"3-oxo-Delta\(4,5\)-steroid"
 5-beta-reductase
 "L32,"
 Kunitz-type
@@ -53312,7 +53312,7 @@ At1g67720
 XII
 At5g41680
 ATG12
-(S)-N-methylcanadine
+\(S\)-N-methylcanadine
 1-hydroxylase
 CYP82Y1
 At1g43171
@@ -53332,7 +53332,7 @@ Os08g0359500
 At1g69990
 BRICK1
 At3g21340
-(-)-beta-caryophyllene
+\(-\)-beta-caryophyllene
 charybdin
 Tetraspanin-19
 ASSOCIATED
@@ -53409,7 +53409,7 @@ Tetraspanin-20
 synthesis
 PD-S2
 Phenylalanine/tyrosine
-Na(+)/H(+)
+Na\(+\)/H\(+\)
 AT4G23880.1
 leucoagglutinin
 "3,5-epimerase"
@@ -53482,7 +53482,7 @@ Tricin
 At5g01610
 "At4g32430,"
 At1g70260
-"3'(2'),5'-bisphosphate"
+"3'\(2'\),5'-bisphosphate"
 nucleotidase
 GH3.1
 SPO11-1
@@ -53671,7 +53671,7 @@ At2g24330
 RTF1
 727
 Lb120-1
-(S)-coclaurine
+\(S\)-coclaurine
 BIPP2C1
 "Naringenin,2-oxoglutarate"
 3-dioxygenase
@@ -53735,7 +53735,7 @@ Galactoside
 2-alpha-L-fucosyltransferase
 TCP5
 multidrug
-(E)-beta-farnesene
+\(E\)-beta-farnesene
 At2g23090
 MET1
 AT4G27610.8
@@ -53806,7 +53806,7 @@ HOX19
 AT3G27185.1
 Xanthine
 ORR29
-Delta(12)
+Delta\(12\)
 DES8.11
 At2g28960
 Cytokinin-beta-glucosidase
@@ -53920,7 +53920,7 @@ S-6
 HAZ1
 ERF019
 At3g22720
-(S)-beta-macrocarpene
+\(S\)-beta-macrocarpene
 AT5G27220.2
 AT5G50890.1
 COP1
@@ -54018,7 +54018,7 @@ Napin-2
 AT4G00060.2
 1-B
 bHLH104
-tRNA(Ile)-lysidine
+tRNA\(Ile\)-lysidine
 CML28
 bHLH36
 2-carboxy-D-arabinitol-1-phosphatase
@@ -54036,13 +54036,13 @@ At2g29820
 AT4G00060.4
 histone-arginine
 AT4G12540.4
-Palmitoyl-[acyl-carrier-protein]
+Palmitoyl-\[acyl-carrier-protein\]
 4-desaturase
 "CLPT1,"
 PHOSPHATE-INDUCED
 Cold-responsive
 5-aromatic
-(-)-limonene
+\(-\)-limonene
 EMB564
 AT2G07617.1
 Chorismate
@@ -54116,7 +54116,7 @@ phosphatase-like
 BSK5
 DMP10
 AT4G01590.1
-(S)-N-methylcoclaurine
+\(S\)-N-methylcoclaurine
 3'-hydroxylase
 5NG4
 AT2G07820.1
@@ -54151,7 +54151,7 @@ ORR8
 AT1G43825.1
 AT4G17215.1
 AT1G23040.1
-(R)-mandelonitrile
+\(R\)-mandelonitrile
 bryodin
 ORR25
 "S12-B,"
@@ -54277,7 +54277,7 @@ D8
 CCR2
 aspartic
 GIP2
-(RS)-norcoclaurine
+\(RS\)-norcoclaurine
 6-O-methyltransferase
 NsW1
 Betv6
@@ -54328,10 +54328,10 @@ AVT6D
 B1-1
 AT4G10970.6
 AGL9
-(-)-5-epieremophilene
+\(-\)-5-epieremophilene
 STPS1
 RING1
-6(G)-fructosyltransferase
+6\(G\)-fructosyltransferase
 AT4G10970.7
 At1g29060
 AT1G21740.1
@@ -54380,7 +54380,7 @@ Alcohol-forming
 72A15
 CutA
 AT5G08600.1
-P-(S)-hydroxymandelonitrile
+P-\(S\)-hydroxymandelonitrile
 bHLH63
 Suberization-associated
 anionic
@@ -54406,7 +54406,7 @@ CLE20p
 Y14B
 H2A-III
 Concanavalin
-(S)-scoulerine
+\(S\)-scoulerine
 9-O-methyltransferase
 AT5G08440.3
 ATL75
@@ -54524,7 +54524,7 @@ ATL16
 Horcolin
 OMT3B
 blue
-(3R)-3-hydroxyacyl-CoA
+\(3R\)-3-hydroxyacyl-CoA
 PASTICCINO
 M1-B
 ATL39
@@ -54537,12 +54537,12 @@ At3g59210
 AT5G03400.1
 At3g12840
 omega-3
-(cytochrome
-"b5),"
+\(cytochrome
+"b5\),"
 mu
 Geraniol
 At-B
-Long-chain-fatty-acid--[acyl-carrier-protein]
+Long-chain-fatty-acid--\[acyl-carrier-protein\]
 "AEE15,"
 phospho-2-dehydro-3-deoxyheptonate
 15A
@@ -54613,7 +54613,7 @@ cyclohydrolase
 actin-5
 acid-inducible
 CLAVATA2
-(E)-2-epi-beta-caryophyllene
+\(E\)-2-epi-beta-caryophyllene
 SF18
 Tricyclon-A
 AT1G48725.1
@@ -54734,7 +54734,7 @@ Trypsin/factor
 XIIA
 AT3G61660.2
 RSZ21A
-(S)-canadine
+\(S\)-canadine
 SUVH4
 AT4G20835.1
 NAM-B2
@@ -54808,7 +54808,7 @@ AT3G10585.1
 ccmC-like
 I1
 "b1,"
-"6(G)-fructosyltransferase/2,1-fructan:2,1-fructan"
+"6\(G\)-fructosyltransferase/2,1-fructan:2,1-fructan"
 L29-1
 stress-induced
 hydrophobic
@@ -54859,7 +54859,7 @@ SEC31
 HOX18
 AT1G30880.2
 AT2G22180.1
-(+)-alpha-terpineol
+\(+\)-alpha-terpineol
 AT3G58110.2
 SPT4
 AT3G58110.1
@@ -54908,7 +54908,7 @@ GL1-1
 BvTI
 CMb
 AT1G47820.2
-"(neryl-diphosphate-cyclizing),"
+"\(neryl-diphosphate-cyclizing\),"
 mden-L
 Alpha/beta
 WAV2
@@ -55035,7 +55035,7 @@ AT3G01327.1
 TCP20
 NUP88
 AT4G31351.1
-Anti-H(O)
+Anti-H\(O\)
 Syntaxin-81
 AT3G26800.1
 RED
@@ -55266,7 +55266,7 @@ Patatin-17
 At4g16620
 SMR2
 SBT2.5
-Delta(24)-sterol
+Delta\(24\)-sterol
 84A2
 71K1
 Alpha-onocerin
@@ -55376,8 +55376,8 @@ Phylloplanin
 AT5G02720.2
 "TATA,"
 aminomutase
-(L-beta-phenylalanine
-forming)
+\(L-beta-phenylalanine
+forming\)
 NUP155
 SGR2
 AT5G11220.1
@@ -55390,7 +55390,7 @@ Profilin-11
 Aralin
 ARAC10
 AT4G32295.4
-Delta(8)-fatty-acid
+Delta\(8\)-fatty-acid
 PTL
 AT5G39140.1
 308
@@ -55434,7 +55434,7 @@ TGA1
 TSK-associating
 Nodulin-44
 AT1G10790.1
-(+)-delta-cadinene
+\(+\)-delta-cadinene
 XC1
 6.3
 TGA9
@@ -55596,7 +55596,7 @@ vesicle
 AT4G28180.1
 At4g28100
 At1g19565
-"3-beta-hydroxysteroid-Delta(8),Delta(7)-isomerase"
+"3-beta-hydroxysteroid-Delta\(8\),Delta\(7\)-isomerase"
 AT1G11490.1
 TOM40-2
 D-11
@@ -55666,8 +55666,8 @@ AT5G16120.3
 LECRK2
 37e
 DExH6
-NAD(P)H
-(quinone)
+NAD\(P\)H
+\(quinone\)
 FQR1-like
 AT4G03260.2
 AT3G60760.1
@@ -55865,7 +55865,7 @@ AT5G40900.1
 AT3G30305.2
 AT4G27240.1
 AT3G30305.4
-"(13E)-labda-7,13-dien-15-ol"
+"\(13E\)-labda-7,13-dien-15-ol"
 DOF5.1
 AT2G46360.1
 ycf20
@@ -56562,7 +56562,7 @@ WIR1B
 254
 Os03g0621600
 AT5G42146.1
-"Valerena-4,7(11)-diene"
+"Valerena-4,7\(11\)-diene"
 AT3G24200.1
 At3g56670
 At1g74510
@@ -56691,7 +56691,7 @@ Actin-100
 AT1G78172.1
 AT3G01331.1
 AT5G13090.1
-(acyl-glucose)
+\(acyl-glucose\)
 Nodulin-30
 AT1G55475.2
 Catalase-4
@@ -56770,7 +56770,7 @@ FEZ
 ASY3
 AT4G19975.1
 AT1G43005.1
-(+)-sabinene
+\(+\)-sabinene
 miPEP171b
 AT1G21080.3
 spot
@@ -56833,7 +56833,7 @@ Rust
 Lr10
 AT4G35890.2
 AT1G55205.1
-((2S)-flavan-3-ol-forming)
+\(\(2S\)-flavan-3-ol-forming\)
 GFS12
 gelonin
 AT2G31510.2
@@ -56917,7 +56917,7 @@ AT3G07180.1
 ARF
 guanine-nucleotide
 GNOM
-FIP1[III]-like
+FIP1\[III\]-like
 AT4G12680.1
 At3g17400
 multikinase
@@ -56990,7 +56990,7 @@ ARI13
 AT1G16560.5
 AT1G46336.1
 bHLH149
-(-)-isopiperitenol/(-)-carveol
+\(-\)-isopiperitenol/\(-\)-carveol
 AT1G16560.8
 ymf29
 S-4
@@ -57000,7 +57000,7 @@ BSK2
 X10A
 AT5G53020.4
 ymf28
-(S)-hydroxynitrile
+\(S\)-hydroxynitrile
 At5g03100
 AT5G48680.1
 AT5G08770.1
@@ -57217,7 +57217,7 @@ MYB3R-1
 AT5G13590.1
 RJ21
 LSM1B
-bis(5'-adenosyl)-triphosphatase/adenylylsulfatase
+bis\(5'-adenosyl\)-triphosphatase/adenylylsulfatase
 FHIT
 341.7
 psbD-psbC
@@ -57258,7 +57258,7 @@ AT5G13590.5
 714B2
 CLE25p
 At1g20360
-2-oxoglutarate/Fe(II)-dependent
+2-oxoglutarate/Fe\(II\)-dependent
 AT3G09570.1
 BLUS1
 AT5G13590.6
@@ -57556,7 +57556,7 @@ Rab21
 At5g48800
 Nodulin-16
 AT3G44703.2
-(S)-beta-bisabolene
+\(S\)-beta-bisabolene
 1C1-1
 AT1G34317.1
 At3g29740
@@ -57570,7 +57570,7 @@ vibi-F
 Syntaxin-related
 KNOLLE
 YUCCA8
-(-)-alpha-pinene
+\(-\)-alpha-pinene
 WIP6
 C-hordein
 SKIP3
@@ -57716,11 +57716,11 @@ GH3.7
 EC
 I/II
 ORR11
-"(7-3)-desaturase,"
+"\(7-3\)-desaturase,"
 VF30.1
 At2g24240
 AT2G38695.2
-(+)-6a-hydroxymaackiain
+\(+\)-6a-hydroxymaackiain
 L9-2
 AT5G41320.1
 AtMg00120
@@ -57754,7 +57754,7 @@ F3H1
 At5g53940
 AT2G12945.1
 Dihydroorotate
-"(quinone),"
+"\(quinone\),"
 L17
 "At3g13070,"
 "glutaredoxin-S7,"
@@ -57853,7 +57853,7 @@ Cycloviolacin-O5
 Patatin-14
 SUC8
 AT1G61165.1
-(S)-stylopine
+\(S\)-stylopine
 Chymomexicain
 AT3G14830.1
 At4g31250
@@ -57868,7 +57868,7 @@ PR-L6
 Cycloviolacin-O2
 SBT3.9
 Hordoindoline-B2
-(+)-germacrene
+\(+\)-germacrene
 AT2G15020.1
 AT5G35698.1
 Cycloviolacin-H1
@@ -57892,7 +57892,7 @@ Assimilatory
 sulfite
 UU7
 "STN8,"
-(+)-bornyl
+\(+\)-bornyl
 DB58
 Serpin-ZXA
 AT2G22440.1
@@ -58170,7 +58170,7 @@ SMR16
 AT5G56910.1
 AT1G80245.2
 At4g01580
-Delta(9)
+Delta\(9\)
 conjugase-like
 B21
 AT2G23985.18
@@ -58205,7 +58205,7 @@ AT1G80245.7
 Ferredoxin-1
 At1g51860
 Lb120-29
-NAD(P)-dependent
+NAD\(P\)-dependent
 PS5
 1U1
 c6
@@ -58296,7 +58296,7 @@ At1g44810
 98A2
 IAL1
 acyl-lipid
-"(11E,13E-forming)"
+"\(11E,13E-forming\)"
 SCAR1
 XEG113
 AT4G17310.10
@@ -58382,7 +58382,7 @@ AT3G15910.1
 2-MMP
 bHLH57
 BSK11
-(-)-beta-pinene
+\(-\)-beta-pinene
 At3g62440
 S-1
 AT1G33945.1
@@ -58481,7 +58481,7 @@ Phoratoxin
 CYP22
 ACR11
 HSP90
-Dol-P-Man:Man(5)GlcNAc(2)-PP-Dol
+Dol-P-Man:Man\(5\)GlcNAc\(2\)-PP-Dol
 "alpha-1,3-mannosyltransferase"
 ASHR1
 RuBisCO-associated
@@ -58499,8 +58499,8 @@ Alkaline
 "DEAH12,"
 GEA6
 AT3G56810.1
-tRNA-dihydrouridine(47)
-[NAD(P)(+)]-like
+tRNA-dihydrouridine\(47\)
+\[NAD\(P\)\(+\)\]-like
 AT5G22796.1
 Manganese-dependent
 ADP-ribose/CDP-alcohol
@@ -58543,7 +58543,7 @@ AT5G28530.4
 ACR10
 AT4G12540.1
 Sphingolipid
-delta(4)-desaturase
+delta\(4\)-desaturase
 DES1-like
 AT1G21928.1
 AT4G01790.1
@@ -58561,7 +58561,7 @@ cyclotide
 ARP1
 ATL72
 At4g18260
-FIP1[V]-like
+FIP1\[V\]-like
 2F
 CMA101
 AT5G28530.3
@@ -58631,8 +58631,8 @@ At5g63020
 AT3G06340.1
 78A5
 Pelargonidin
-3-O-(6-caffeoylglucoside)
-5-O-(6-O-malonylglucoside)
+3-O-\(6-caffeoylglucoside\)
+5-O-\(6-O-malonylglucoside\)
 4'''-malonyltransferase
 EME1A
 AT4G14301.1
@@ -58883,7 +58883,7 @@ AT2G43850.3
 At3g44090
 EXO70B1
 Artemisinic
-Delta(11(13))
+Delta\(11\(13\)\)
 PD-L1/PD-L2
 CML29
 mobo-B
@@ -59290,7 +59290,7 @@ AT3G13410.1
 At1g66290
 AtMg00750
 AT2G23834.1
-Stemod-13(17)-ene
+Stemod-13\(17\)-ene
 BSS
 "91R,"
 13b
@@ -59329,7 +59329,7 @@ At4g37920
 ERN1
 At5g63520
 Expansin-A29
-"(13S,14R)-1,13-dihydroxy-N-methylcanadine"
+"\(13S,14R\)-1,13-dihydroxy-N-methylcanadine"
 13-O-acetyltransferase
 "At4g08330,"
 LIN-2
@@ -59390,13 +59390,13 @@ extensin-related
 18b
 AT2G34720.3
 At5g20260
-Delta(12)-oleate
+Delta\(12\)-oleate
 27.9
 trnR-minE
 AT1G73470.1
 At1g50870
 Cardiolipin
-"(CMP-forming),"
+"\(CMP-forming\),"
 At2g23160
 259
 AT2G14390.1
@@ -59467,7 +59467,7 @@ AT4G08691.1
 AT2G42190.2
 w2
 YUCCA10
-(E)-beta-caryophyllene
+\(E\)-beta-caryophyllene
 bHLH30
 AT1G51430.1
 CSB
@@ -59544,7 +59544,7 @@ AT5G65250.1
 ORR13
 YUCCA7
 Arylsulfatase
-conjugase/Delta(12)-oleate
+conjugase/Delta\(12\)-oleate
 AT1G49260.1
 Alliumin
 AT3G05935.4
@@ -59554,7 +59554,7 @@ AT4G21515.1
 mden-J
 At5g03250
 DMI1
-Delta(7)-sterol-C5(6)-desaturase
+Delta\(7\)-sterol-C5\(6\)-desaturase
 At5g56400
 Varicose-related
 AT5G44910.1
@@ -59657,7 +59657,7 @@ HAT1
 CYP18-4
 AT3G61500.2
 eukaryotic
-"[NAD(+)],"
+"\[NAD\(+\)\],"
 At1g67470
 AT3G21480.1
 At1g14686
@@ -59717,7 +59717,7 @@ AT3G43700.2
 AT4G27320.2
 ERF115
 CML16
-PVI-3(2)
+PVI-3\(2\)
 AT3G27906.2
 AT4G25690.2
 B-II
@@ -59728,7 +59728,7 @@ At2g24250
 At2g02148
 Xylanase
 KIN-4C
-"Ent-sandaracopimara-8(14),15-diene"
+"Ent-sandaracopimara-8\(14\),15-diene"
 luffin-alpha
 Albumin
 b-32
@@ -59910,7 +59910,7 @@ At1g80640
 At3g26920
 At3g26922
 MST4
-(-)-camphene/tricyclene
+\(-\)-camphene/tricyclene
 AT1G42080.1
 Methylecgonone
 At1g08160
@@ -59993,7 +59993,7 @@ AT3G20070.1
 ATL41
 AT5G43211.1
 71B26
-tRNA:m(4)X
+tRNA:m\(4\)X
 modification
 TRM13
 3-O-rhamnosyltransferase
@@ -60071,7 +60071,7 @@ AT4G02830.3
 AGL17
 AT1G47395.1
 AT3G20610.1
-(+)-larreatricin
+\(+\)-larreatricin
 "hydroxylase,"
 ERF116
 Ycf3-interacting
@@ -60140,7 +60140,7 @@ AT5G21280.1
 AT5G57790.3
 AT2G31130.6
 AT2G02880.1
-"Alpha-(1,4)-fucosyltransferase"
+"Alpha-\(1,4\)-fucosyltransferase"
 ABP20
 AGL30
 AT2G17972.1
@@ -60319,7 +60319,7 @@ bHLH3
 EXO70H1
 AT3G55080.2
 Thaumatopain
-[NAD(P)H]
+\[NAD\(P\)H\]
 AT2G39300.2
 Lb120-8
 AT2G07658.1
@@ -60573,7 +60573,7 @@ AT5G03190.2
 26A
 AT2G39782.1
 P17
-(8-3)-desaturase
+\(8-3\)-desaturase
 AT5G07940.5
 AVT1H
 At5g03600
@@ -60593,7 +60593,7 @@ OMT2
 AT4G07965.1
 GSTF2
 DOF3.2
-"(2Z,6Z)-farnesyl"
+"\(2Z,6Z\)-farnesyl"
 Berbamunine
 Dr1
 AT3G52941.1
@@ -60618,7 +60618,7 @@ AT1G22510.1
 At3g17710
 At1g33420
 BC1
-"(13S,14R)-13-O-acetyl-1-hydroxy-N-methylcanadine"
+"\(13S,14R\)-13-O-acetyl-1-hydroxy-N-methylcanadine"
 CYP82X1
 At5g38396
 EXO84A
@@ -61185,7 +61185,7 @@ AT5G18150.1
 AT4G24110.1
 MYB48
 AT3G54780.3
-Dodecanoyl-[acyl-carrier-protein]
+Dodecanoyl-\[acyl-carrier-protein\]
 At3g28280
 71D9
 sn-2
@@ -61293,8 +61293,8 @@ MYB108
 AT3G04020.1
 AT1G58235.2
 Trifunctional
-2/(S)-nandinine
-synthase/(S)-canadine
+2/\(S\)-nandinine
+synthase/\(S\)-canadine
 "HLL,"
 glucosidase
 GCS1
@@ -61534,7 +61534,7 @@ AT5G47455.5
 At1g14910
 inward
 rectifier
-(Kir)-like
+\(Kir\)-like
 DMP1
 POLAR
 LOCALIZATION
@@ -62282,7 +62282,7 @@ ATL3
 Cyclase-associated
 "C2,"
 FLY2
-"(R,S)-reticuline"
+"\(R,S\)-reticuline"
 At4g26450
 Extensin-3
 AT5G17370.1
@@ -62452,7 +62452,7 @@ DX5
 WAVH2
 AGD2
 3-7
-(9+3)-(E)-desaturase
+\(9+3\)-\(E\)-desaturase
 ERDJ2
 AT4G39235.1
 ATP4
@@ -62485,7 +62485,7 @@ DExH13
 cycloviolacin
 O17
 mech-4
-H(+)-ATPase
+H\(+\)-ATPase
 PS8
 AT3G02245.1
 "20.1,"
@@ -62549,7 +62549,7 @@ F6H1-2
 AT1G65070.1
 AT4G33800.2
 AT5G07940.4
-CO(2)-response
+CO\(2\)-response
 Dammarenediol
 12-hydroxylase
 AT1G27565.1
@@ -62773,7 +62773,7 @@ CIK1
 YNR063W
 YDR120C
 YOL049W
-(R)-linalool
+\(R\)-linalool
 "TPS5,"
 YDR224C
 37S
@@ -62787,7 +62787,7 @@ YDR029W
 Germacrene-D
 Serine-rich
 TYE7
-(Iso)eugenol
+\(Iso\)eugenol
 ESR2Bp
 CBSCBSPB5
 NAB6
@@ -62806,7 +62806,7 @@ YPR177C
 DFG5
 SDC25
 AVO1
-(-)-endo-fenchol
+\(-\)-endo-fenchol
 YDL195W
 P322
 LA-a
@@ -62907,7 +62907,7 @@ Flattop
 Tm-AMP-D1.2
 SAUR71
 YGL001C
-(+)-gamma-cadinene
+\(+\)-gamma-cadinene
 ESR2p
 Y'
 copy
@@ -62946,8 +62946,8 @@ YFL059W
 YGR012W
 Calotropin-DI
 Aliphatic
-(R)-hydroxynitrile
-synthase/(S)-nandinine
+\(R\)-hydroxynitrile
+synthase/\(S\)-nandinine
 Factor-induced
 YIR022W
 Accumulates
@@ -63166,7 +63166,7 @@ metalloreductase
 AIM14
 At5g41330
 Galactose-inhibitable
-"(E,E)-alpha-farnesene"
+"\(E,E\)-alpha-farnesene"
 Syntaxin-123
 Cycloviolacin-O22
 5-demethoxyubiquinone
@@ -63185,7 +63185,7 @@ YIL166C
 RLM1
 COS10
 YJL078C
-(cytidine(32)-2'-O)-methyltransferase
+\(cytidine\(32\)-2'-O\)-methyltransferase
 TRM732
 caffeoyl-CoA
 NSP1
@@ -63471,7 +63471,7 @@ FIL1
 AT5G09270.1
 A-IV
 AT4G17310.13
-Bis(5'-adenosyl)-triphosphatase
+Bis\(5'-adenosyl\)-triphosphatase
 YPK2/YKR2
 YDL118W
 YCL075W
@@ -63714,7 +63714,7 @@ YDR215C
 PCF11
 YER089C
 YAR019W-A
-Poly(A)
+Poly\(A\)
 Galactose/lactose
 GAL80
 Ty1
@@ -63827,7 +63827,7 @@ YBR221W-A
 NGR1
 Chromosome
 meiosis
-[NU+]
+\[NU+\]
 prion
 SPT10
 YBL062W
@@ -63882,7 +63882,7 @@ YCR022C
 YIL025C
 OCA6
 YBR285W
-pseudouridine(38/39)
+pseudouridine\(38/39\)
 Hydroxyacyl-thioester
 Cohesin
 SCC3
@@ -64103,7 +64103,7 @@ NAD-specific
 RSC30
 Glucose-induced
 YHR091C
-Oligo(A)/oligo(T)-binding
+Oligo\(A\)/oligo\(T\)-binding
 YBR131C-A
 PTR3
 YGR226C
@@ -64149,7 +64149,7 @@ DIA1
 YLR419W
 JIP5
 MBP1
-[NADPH]
+\[NADPH\]
 YIR014W
 UPF0655
 YCR015C
@@ -64373,7 +64373,7 @@ YLR374C
 ATF/CREB
 YDR468C
 MSA2
-"2,5-diamino-6-ribosylamino-4(3H)-pyrimidinone"
+"2,5-diamino-6-ribosylamino-4\(3H\)-pyrimidinone"
 Phosphoribomutase
 Seripauperin-12
 URE2
@@ -64392,7 +64392,7 @@ CWF19-like
 DRN1
 Nonsense-mediated
 Curing
-[URE3]
+\[URE3\]
 YOL099C
 YKR015C
 YGL022W
@@ -64464,13 +64464,13 @@ YLR044C
 BOP3
 YGR204C-A
 RAP1
-holo-[acyl-carrier-protein]
+holo-\[acyl-carrier-protein\]
 SKG6
 YGL063C-A
 REC102
 YKL183C-A
 25S
-(uridine(2843)-N(3))-methyltransferase
+\(uridine\(2843\)-N\(3\)\)-methyltransferase
 YLR129W
 YOR008W-B
 YMR294W-A
@@ -64630,7 +64630,7 @@ YBR064W
 "38,"
 Rhomboid
 YDR042C
-[PIN+]
+\[PIN+\]
 RNQ1
 YER152C
 PRP3
@@ -64744,7 +64744,7 @@ PPS1
 redox
 "FMP46,"
 AFR1
-(guanosine(18)-2'-O)-methyltransferase
+\(guanosine\(18\)-2'-O\)-methyltransferase
 YOL131W
 UBR2
 SWI1
@@ -65229,7 +65229,7 @@ YBR002C
 YPL261C
 YNL302C
 YKL030W
-(adenine(2142)-N(1))-methyltransferase
+\(adenine\(2142\)-N\(1\)\)-methyltransferase
 ASK1
 YOR131C
 Haspin
@@ -65647,7 +65647,7 @@ YAR035C-A
 metallocarboxypeptidase
 ECM14
 YER084W
-(uridine(2634)-N(3))-methyltransferase
+\(uridine\(2634\)-N\(3\)\)-methyltransferase
 KCC4
 YDR361C
 YER163C
@@ -66014,7 +66014,7 @@ YFR032C-B
 YBL042C
 YDR492W
 MRF1
-N(5)-glutamine
+N\(5\)-glutamine
 MTQ1
 integral
 VPH2
@@ -66138,7 +66138,7 @@ Lysophospholipase
 NTE1
 YLR269C
 Nutrient
-(uracil-O(2)-)-methyltransferase
+\(uracil-O\(2\)-\)-methyltransferase
 SPC72
 YMR291W
 RPC9
@@ -66241,7 +66241,7 @@ uptake/efflux
 YNL146C-A
 ZRG17
 YBL040C
-"Delta(3,5)-Delta(2,4)-dienoyl-CoA"
+"Delta\(3,5\)-Delta\(2,4\)-dienoyl-CoA"
 G1/S-specific
 CLN1
 YBL068W-A
@@ -66258,7 +66258,7 @@ YPR050C
 YBR178W
 YML060W
 YCL068C
-Lethal(2)
+Lethal\(2\)
 giant
 larvae
 SRO77
@@ -66282,8 +66282,8 @@ p130
 glycogen
 TVP18
 SEC2
-tRNA-dihydrouridine(20a/20b)
-[NAD(P)+]
+tRNA-dihydrouridine\(20a/20b\)
+\[NAD\(P\)+\]
 YOR281C
 SQS1
 YLR153C
@@ -66310,7 +66310,7 @@ YRO2
 YER183C
 YOR114W
 monovalent
-cation/H(+)
+cation/H\(+\)
 YOR231C-A
 YDL153C
 YKL157W
@@ -66406,7 +66406,7 @@ YJL026W
 YBL021C
 YNL097W-A
 YKL131W
-(uracil(54)-C(5))-methyltransferase
+\(uracil\(54\)-C\(5\)\)-methyltransferase
 YJL133C-A
 YMR077C
 NNF2
@@ -66528,7 +66528,7 @@ YDR531W
 Box
 snoRNA
 YOR196C
-(fumarate)
+\(fumarate\)
 SRP68
 YPL040C
 COX1/OXI3
@@ -66538,7 +66538,7 @@ YER078W-A
 TEL2
 YLL007C
 YOR002W
-[starch]
+\[starch\]
 NUP49/NSP49
 YLR232W
 YIL177C
@@ -66579,7 +66579,7 @@ YEL039C
 YMR175W-A
 YGL072C
 Prephenate
-[NADP(+)]
+\[NADP\(+\)\]
 MFT1
 NUP42
 Styryl
@@ -66665,12 +66665,12 @@ Mating-type
 ALPHA2
 NYV1
 21S
-pseudouridine(2819)
+pseudouridine\(2819\)
 YHL036W
 YDR246W-A
 diacetyl
-[(R)-acetoin
-forming]
+\[\(R\)-acetoin
+forming\]
 YER103W
 SEN2
 YMR011W
@@ -66804,7 +66804,7 @@ PEX34
 YFR009W
 YOL123W
 YMR119W-A
-NAD(P)H-hydrate
+NAD\(P\)H-hydrate
 YHR171W
 YAR050W
 DNA2
@@ -66861,7 +66861,7 @@ Homothallic
 switching
 YIL067C
 YDR010C
-[acetyl-transferring]]-phosphatase
+\[acetyl-transferring\]\]-phosphatase
 YOL097C
 YCL021W-A
 YBR143C
@@ -67262,7 +67262,7 @@ AUR1
 MEI4
 YHR071C-A
 YHR170W
-(CMP-forming)
+\(CMP-forming\)
 YDR299W
 YGL011C
 YMR242W-A
@@ -67340,7 +67340,7 @@ Aromatic/aminoadipate
 YOL121C
 YLR027C
 YKL007W
-"Endo-1,3(4)-beta-glucanase"
+"Endo-1,3\(4\)-beta-glucanase"
 "L49,"
 "SOV1,"
 YOR139C
@@ -67377,8 +67377,8 @@ FMP33
 YGL042C
 YDR290W
 YNL017C
-tRNA-dihydrouridine(16/17)
-[NAD(P)(+)]
+tRNA-dihydrouridine\(16/17\)
+\[NAD\(P\)\(+\)\]
 DCW1
 YLL058W
 YKL149C
@@ -67580,7 +67580,7 @@ YDR453C
 YIL152W
 Yapsin-5
 YME1
-[PSI+]
+\[PSI+\]
 inducibility
 POM152
 YER189W
@@ -68435,7 +68435,7 @@ YBR025C
 YOL065C
 POP7
 YFR031C
-"(R,R)-butanediol"
+"\(R,R\)-butanediol"
 YMR049C
 SVP26
 YKL210W
@@ -68450,8 +68450,8 @@ pre-60S
 ECM1
 MET31
 ALR2
-tRNA(Thr)
-(cytosine(32)-N(3))-methyltransferase
+tRNA\(Thr\)
+\(cytosine\(32\)-N\(3\)\)-methyltransferase
 YHR020W
 YDL033C
 HSK3
@@ -68581,7 +68581,7 @@ YPR138C
 Cytokinesis
 YMR023C
 glutamine--fructose-6-phosphate
-[isomerizing]
+\[isomerizing\]
 YOR268C
 YOR161W-B
 API2
@@ -68655,7 +68655,7 @@ AST1
 YMR317W
 YBL063W
 YJL053W
-K(+)/H(+)
+K\(+\)/H\(+\)
 YBR126C
 YKR093W
 YCL018W
@@ -68911,8 +68911,8 @@ EFM1
 CTR2
 YKR023W
 Saccharopine
-"[NAD(+),"
-L-lysine-forming]
+"\[NAD\(+\),"
+L-lysine-forming\]
 YMR304C-A
 YDL050C
 YHR147C

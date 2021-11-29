@@ -17,9 +17,9 @@ AT1G67635.1
 peroxidase
 AT4G15660.1
 "ATPase, coupled to transmembrane movement of substances"
-"phosphogluconate dehydrogenase (decarboxylating)"
+"phosphogluconate dehydrogenase \(decarboxylating\)"
 AT2G15350
-"glutathione dehydrogenase (ascorbate)"
+"glutathione dehydrogenase \(ascorbate\)"
 AT3G26820.1
 "cinnamyl alcohol dehydrogenase"
 "oxidoreductase, acting on paired donors, with incorporation or reduction of molecular oxygen, 2-oxoglutarate as one donor, and incorporation of one atom each of oxygen into both donors"
@@ -65,7 +65,7 @@ AT1G74680.1
 AT2G39630
 AT2G46110-MONOMER
 AT1G71040.1
-"glutamate synthase (ferredoxin)"
+"glutamate synthase \(ferredoxin\)"
 AT5G49560.1
 AT1G75000.1
 AT2G37140.1
@@ -133,7 +133,7 @@ AT3G47590.1
 "ATPase activity, coupled"
 "polyamine oxidase"
 "indole-3-acetic acid amido synthetase"
-"aldehyde reductase (cytosolic)"
+"aldehyde reductase \(cytosolic\)"
 "ADP-glucose pyrophosphorylase"
 "succinate dehydrogenase"
 AT5G56610
@@ -212,7 +212,7 @@ AT4G28410-MONOMER
 AT1G73250-MONOMER
 AT1G02720.1
 AT1G69523.1
-"sterol-4-alpha-carboxylate 3-dehydrogenase (decarboxylating)"
+"sterol-4-alpha-carboxylate 3-dehydrogenase \(decarboxylating\)"
 "homogentisate solanesyltransferase"
 AT1G34270.1
 AT3G48720-MONOMER
@@ -231,7 +231,7 @@ AT1G78690.1
 AT1G54040-MONOMER
 AT4G22710
 AT1G56550.1
-"g(E,E)-geranyllinalool synthase"
+"g\(E,E\)-geranyllinalool synthase"
 AT4G29010-MONOMER
 AT4G13940-MONOMER
 AT1G07745.1
@@ -262,7 +262,7 @@ AT1G14110
 "IMP cyclohydrolase"
 "PLD gamma"
 AT2G19110
-"glutamate dehydrogenase [NAD(P)+]"
+"glutamate dehydrogenase \[NAD\(P\)+\]"
 "PsbP domain-containing protein 4"
 AT5G42590-MONOMER
 AT4G21534
@@ -314,7 +314,7 @@ AT1G53000.2
 AT4G02130.1
 AT3G56700-MONOMER
 MONOMER-14496
-"3-hydroxyacyl-[acyl-carrier-protein] dehydratase"
+"3-hydroxyacyl-\[acyl-carrier-protein\] dehydratase"
 AT1G64660-MONOMER
 "violaxanthin de-epoxidase"
 "agmatine iminohydrolase"
@@ -337,7 +337,7 @@ aminoalcoholphosphotransferase
 AT1G66680.1
 AT4G33420.2
 AT5G19290.1
-"a reduced [2Fe-2S] ferredoxin"
+"a reduced \[2Fe-2S\] ferredoxin"
 AT3G54900.1
 AT1G77660.1
 "AtBSMT1 subunit"
@@ -414,7 +414,7 @@ AT1G15210.1
 "cardiolipin synthase"
 AT5G44380.2
 "PsbP domain-containing protein 3"
-"hydrolase, acting on carbon-nitrogen (but not peptide) bonds"
+"hydrolase, acting on carbon-nitrogen \(but not peptide\) bonds"
 "spermine synthase"
 AT1G25230.3
 trehalase
@@ -444,7 +444,7 @@ AT2G38210.1
 AT1G33270.1
 AT2G34490-MONOMER
 AT1G63855.4
-"glycine dehydrogenase (decarboxylating)"
+"glycine dehydrogenase \(decarboxylating\)"
 nicotinamidase
 AT4G33120-MONOMER
 "copper-exporting ATPase"
@@ -513,7 +513,7 @@ AT4G01660.1
 "ferrochelatase I"
 "dihydroneopterin aldolase"
 AT2G46500.1
-"a carboxylated-biotinylated [BCCP dimer]"
+"a carboxylated-biotinylated \[BCCP dimer\]"
 1,2-alpha-L-fucosidase
 AT4G01950.2
 AT1G18580-MONOMER
@@ -612,7 +612,7 @@ AT5G38520.2
 AT5G12960.1
 AT1G26270.1
 AT4G27420.1
-"prephenate dehydrogenase (NADP+)"
+"prephenate dehydrogenase \(NADP+\)"
 "PSII-P subunit"
 AT5G58490-MONOMER
 "N-carbamoylputrescine amidase"
@@ -661,7 +661,7 @@ AT1G79050.1
 AT5G05690-MONOMER
 "complex II subunit 2"
 AT2G19550.1
-"an oxidized [2Fe-2S] ferredoxin"
+"an oxidized \[2Fe-2S\] ferredoxin"
 AT2G28860.1
 "complex II subunit 3"
 "3-sn-phosphatidate phosphohydrolase"
@@ -726,7 +726,7 @@ AT2G43600.2
 AT5G24970.2
 AT5G13380.1
 AT5G24950-MONOMER
-"a biotinylated [BCCP monomer]"
+"a biotinylated \[BCCP monomer\]"
 "inositol-tetrakisphosphate 1-kinase 4"
 "o-succinylbenzoate-CoA ligase"
 AT3G24190.1
@@ -755,7 +755,7 @@ AT2G23520.1
 AT2G38270.1
 AT3G11980-MONOMER
 AT4G20230.2
-"acetyl CoA:(Z)-3-hexen-1-ol acetyltransferase"
+"acetyl CoA:\(Z\)-3-hexen-1-ol acetyltransferase"
 AT5G48440.1
 AT3G22560.1
 AT1G76470-MONOMER
@@ -780,7 +780,7 @@ AT1G62940-MONOMER
 AT5G18640.2
 AT3G48290
 AT3G30200.1
-"formaldehyde dehydrogenase (glutathione)"
+"formaldehyde dehydrogenase \(glutathione\)"
 "ent-kaurene oxidase"
 AT1G15490.1
 AT4G32208.1
@@ -799,10 +799,10 @@ AT1G01190.2
 "acetyl-CoA carboxylase"
 AT2G35610.1
 AT1G60440-MONOMER
-"aryl-alcohol dehydrogenase (NADP+)"
+"aryl-alcohol dehydrogenase \(NADP+\)"
 AT5G63560-MONOMER
 "enoyl-CoA hydratase"
-"glutamate synthase (NADH)"
+"glutamate synthase \(NADH\)"
 AT5G13370.1
 "S-linalool synthase"
 AT2G29590.1
@@ -817,7 +817,7 @@ AT4G28020.1
 "UDP-sugar pyrophosphorylase"
 AT2G03210.2
 AT5G14470.1
-"4-(cytidine 5'-diphospho)-2-C-methyl-D-erythritol kinase"
+"4-\(cytidine 5'-diphospho\)-2-C-methyl-D-erythritol kinase"
 AT3G16170
 "L-aspartate oxidase"
 AT1G29890.2
@@ -842,7 +842,7 @@ AT5G13690
 AT2G02400-MONOMER
 "thioredoxin peroxidase"
 AT1G33700
-"N-(long-chain-acyl)ethanolamine deacylase"
+"N-\(long-chain-acyl\)ethanolamine deacylase"
 "glycerate kinase"
 MONOMER1F-38
 AT1G75420.1
@@ -884,7 +884,7 @@ AT2G47760.5
 AT2G47150.1
 "a reduced c-type cytochrome"
 AT2G34500-MONOMER
-"alpha (1,2) fucosyltransferase 4"
+"alpha \(1,2\) fucosyltransferase 4"
 AT1G10070-MONOMER
 AT3G14610
 AT5G44360.2
@@ -917,7 +917,7 @@ AT1G75920.1
 "sphingolipid delta-4 desaturase"
 "linoleate desaturase"
 MONOMER-15765
-"alpha (1,2)fucosyltransferase 6"
+"alpha \(1,2\)fucosyltransferase 6"
 AT1G32975.1
 AT4G30110
 AT4G30530-MONOMER
@@ -930,7 +930,7 @@ AT3G48320
 AT2G39190.2
 "oxidoreductase, acting on NADH or NADPH"
 "isocitrate lyase"
-"bis(5'-nucleosyl)-tetraphosphatase (asymmetrical)"
+"bis\(5'-nucleosyl\)-tetraphosphatase \(asymmetrical\)"
 AT1G30110
 AT5G44520.2
 AT3G21090.1
@@ -1011,13 +1011,13 @@ AT4G36610.1
 AT1G21640-MONOMER
 "5-formyltetrahydrofolate cyclo-ligase"
 "glycerol-3-phosphate dehydrogenase"
-"succinate-CoA ligase (GDP-forming)"
+"succinate-CoA ligase \(GDP-forming\)"
 AT1G31095.1
 AT5G36130
 AT4G15330
 "1-deoxy-D-xylulose-5-phosphate synthase"
 "maleylacetoacetate isomerase"
-"a holo-[acyl-carrier protein]"
+"a holo-\[acyl-carrier protein\]"
 AT4G38220-MONOMER
 AT1G72640.1
 AT5G15120.1
@@ -1035,7 +1035,7 @@ AT3G60190.1
 AT2G25710
 AT1G24793.1
 "GDP-L-galactose phosphorylase"
-"a reduced ferredoxin [iron-sulfur] cluster"
+"a reduced ferredoxin \[iron-sulfur\] cluster"
 AT4G24805.1
 "inositol-polyphosphate 5-phosphatase"
 AT1G62130.1
@@ -1103,7 +1103,7 @@ AT1G08310.2
 AT1G34340.1
 AT1G66540
 AT1G78490
-"NADH dehydrogenase (ubiquinone)"
+"NADH dehydrogenase \(ubiquinone\)"
 "phosphoethanolamine N-methyltransferase"
 "squalene monooxygenase"
 AT2G22960
@@ -1118,7 +1118,7 @@ AT1G14830.1
 AT1G77240.1
 AT2G22910-MONOMER
 AT5G28910.2
-"an [L-cysteine desulfurase]"
+"an \[L-cysteine desulfurase\]"
 AT2G32640.1
 "lipid phosphatidate phosphatase"
 "disulfide oxidoreductase"
@@ -1169,7 +1169,7 @@ AT5G53540.1
 AT1G64950
 UGT74B1
 CYP79F2
-"an oxidized [NADPH-hemoprotein reductase]"
+"an oxidized \[NADPH-hemoprotein reductase\]"
 AT2G41300.1
 "MPT synthase small subunit"
 AT3G24090-MONOMER
@@ -1204,7 +1204,7 @@ AT3G03780-MONOMER
 AT5G65690.2
 "histidinol-phosphate transaminase"
 AT4G01995.1
-"PHYLLO [multifunctional]"
+"PHYLLO \[multifunctional\]"
 AT3G15530.1
 "acyl-lipid thioesterase 1"
 AT5G59070.1
@@ -1216,8 +1216,8 @@ AT2G45570
 N-acetyltransferase
 "pyruvate kinase"
 AT3G20110
-"3'(2'),5'-bisphosphate nucleotidase"
-"a carboxy-adenylated [small subunit of molybdopterin synthase]"
+"3'\(2'\),5'-bisphosphate nucleotidase"
+"a carboxy-adenylated \[small subunit of molybdopterin synthase\]"
 AT4G20040
 AT5G36220
 "UDP-sulfoquinovose synthase"
@@ -1321,7 +1321,7 @@ AT1G72880.1
 AT5G04885.2
 AT5G07370-MONOMER
 AT3G23300.1
-"a poly-[gamma-glutamylcysteine]-glycine"
+"a poly-\[gamma-glutamylcysteine\]-glycine"
 AT1G08940.1
 "pyruvate kinase, beta subunit"
 "dUTP diphosphatase"
@@ -1329,7 +1329,7 @@ MONOMER-2363
 AT3G13640.1
 "sarcosine oxidase"
 "chlorophyll b reductase"
-"citrate synthase (mitochondrial)"
+"citrate synthase \(mitochondrial\)"
 AT5G34581.1
 AT4G35295.1
 AT3G48780-MONOMER
@@ -1395,7 +1395,7 @@ AT4G22530.1
 AT4G15230.1
 AT5G61250.1
 "xyloglucan:xyloglucosyl transferase"
-"a [biotin carboxyl-carrier protein] monomer"
+"a \[biotin carboxyl-carrier protein\] monomer"
 "methionine synthase"
 AT1G18020
 "mitochondrial lipoamide dehydrogenase 2"
@@ -1451,7 +1451,7 @@ AT1G24480.1
 AT2G46740.1
 AT2G41380.1
 AT3G55850.5
-"aldehyde reductase (chloroplastic)"
+"aldehyde reductase \(chloroplastic\)"
 AT2G41250.1
 "alcohol dehydrogenase"
 AT3G04480.1
@@ -1493,7 +1493,7 @@ AT1G25145.1
 AT5G13580.1
 AT2G42670.2
 AT1G12350-MONOMER
-"methylenetetrahydrofolate reductase (NADPH)"
+"methylenetetrahydrofolate reductase \(NADPH\)"
 AT2G25870.1
 AT5G61690.2
 "desulfoglucosinolate sulfotransferase"
@@ -1502,7 +1502,7 @@ AT2G27680.1
 AT5G61320
 "cycloeucalenol cycloisomerase"
 AT2G33070-MONOMER
-"a reduced [NADPH-hemoprotein reductase]"
+"a reduced \[NADPH-hemoprotein reductase\]"
 AT1G08470.1
 AT4G37760-MONOMER
 "selenocysteine lyase/cysteine desulfurase"
@@ -1569,7 +1569,7 @@ AT3G16410-MONOMER
 AT5G47400.1
 AT1G21530
 MONOMERQT-4120
-"tRNA (5-methylaminomethyl-2-thiouridylate)-methyltransferase"
+"tRNA \(5-methylaminomethyl-2-thiouridylate\)-methyltransferase"
 AT3G01980.3
 AT2G37940-MONOMER
 CYP83A1
@@ -1684,7 +1684,7 @@ AT3G02910.1
 AT3G20940
 AT2G18360.1
 AT2G23460.1
-"monoterpene synthese [multifunctional]"
+"monoterpene synthese \[multifunctional\]"
 AT4G35530.1
 "zeaxanthin epoxidase"
 "2-alkenal reductase"
@@ -1749,7 +1749,7 @@ AT4G19680-MONOMER
 AT2G45580
 AT3G25400.1
 AT2G23220
-bis(5'-adenosyl)-pentaphosphatase
+bis\(5'-adenosyl\)-pentaphosphatase
 AT3G44970
 AT2G28420.1
 AT3G19740.1
@@ -1837,7 +1837,7 @@ MONOMER-17456
 AT2G07785
 AT3G52340.6
 AT1G09910.1
-"isocitrate dehydrogenase (NADP+)"
+"isocitrate dehydrogenase \(NADP+\)"
 "dihydropyrimidine dehydrogenase"
 "malate synthase"
 AT1G33720
@@ -1873,7 +1873,7 @@ AT2G37690-MONOMER
 "acetylglutamate kinase"
 AT1G28430
 carboxy-lyase
-"an S-sulfanyl-[L-cysteine desulfurase]"
+"an S-sulfanyl-\[L-cysteine desulfurase\]"
 "acetaldehyde dehydrogenase"
 "dihydrofolate synthetase"
 AT3G61490.4
@@ -1897,7 +1897,7 @@ AT1G52420.1
 "acyl-lipid thioesterase 3"
 "alcohol-forming fatty acyl-CoA reductase"
 AT1G17990
-"a thiocarboxylated [small subunit of molybdopterin synthase]"
+"a thiocarboxylated \[small subunit of molybdopterin synthase\]"
 AT1G64940
 AT4G37950.1
 "phytochromobilin:ferredoxin oxidoreductase"
@@ -1956,7 +1956,7 @@ AT4G33540.1
 AT5G48545-MONOMER
 AT3G20950
 AT3G03540-MONOMER
-"an apo-[acyl-carrier protein]"
+"an apo-\[acyl-carrier protein\]"
 AT5G11540.1
 AT2G29090-MONOMER
 AT3G14075.1
@@ -2030,7 +2030,7 @@ AT2G17265-MONOMER
 AT3G03240.1
 AT5G23020-MONOMER
 "anthocyanidin reductase"
-"an oxidized ferredoxin [iron-sulfur] cluster"
+"an oxidized ferredoxin \[iron-sulfur\] cluster"
 AT1G32300.1
 "carotene beta-ring hydroxylase"
 AT2G42490.1
@@ -2039,7 +2039,7 @@ AT2G46950
 "cycloartenol synthase"
 "callose synthase"
 "S-methyl-5-thioribose kinase"
-"glyceraldehyde-3-phosphate dehydrogenase (phosphorylating)"
+"glyceraldehyde-3-phosphate dehydrogenase \(phosphorylating\)"
 AT2G17650
 sinapoylglucose:choline-O-sinapoyltransferase
 "phosphoribosylamine-glycine ligase"
@@ -2112,7 +2112,7 @@ AT5G50770.1
 AT5G47380.1
 "ADP:glucose-1-phosphate adenylyltransferase"
 AT3G51430.1
-"3-oxoacyl-[acyl-carrier-protein] synthase"
+"3-oxoacyl-\[acyl-carrier-protein\] synthase"
 AT1G15540.3
 AT2G22920
 "squalene synthase"
@@ -2205,7 +2205,7 @@ AT5G36180
 AT3G19820-MONOMER
 AT1G10830-MONOMER
 AT4G04670.1
-"monodehydroascorbate reductase (NADH)"
+"monodehydroascorbate reductase \(NADH\)"
 AT4G09520
 AT5G46240-MONOMER
 AT1G20990.1
@@ -2230,7 +2230,7 @@ AT5G66530.1
 AT3G26230
 AT1G27930.1
 AT4G39120-MONOMER
-"alpha-1,4-glucan-protein synthase (UDP-forming)"
+"alpha-1,4-glucan-protein synthase \(UDP-forming\)"
 AT5G13450.1
 AT1G07250-MONOMER
 "omega-3 fatty acid desaturase"
@@ -2290,7 +2290,7 @@ AT3G13110-MONOMER
 "geranylgeranyl pyrophosphate synthase"
 "threonine synthase"
 AT3G52430.1
-"fructose-bisphosphate aldolase (plastidic)"
+"fructose-bisphosphate aldolase \(plastidic\)"
 AT4G29540
 AT2G33630-MONOMER
 "diphosphomevalonate decarboxylase"
@@ -2299,14 +2299,14 @@ AT2G33630-MONOMER
 AT3G56130.1
 AT3G53620-MONOMER
 "a reduced flavodoxin"
-"asparagine synthase (glutamine-hydrolyzing)"
+"asparagine synthase \(glutamine-hydrolyzing\)"
 AT2G26400.2
 AT2G31810
 AT3G24290.1
 AT3G01590.1
 AT1G54940.1
 AT4G34200
-"pyruvate dehydrogenase (acetyl-transferring)"
+"pyruvate dehydrogenase \(acetyl-transferring\)"
 AT5G24750.1
 "cytochrome-c oxidase"
 AT1G34200.1
@@ -2340,20 +2340,20 @@ AT4G10230.1
 "an oxidized flavodoxin"
 "ATP synthase gamma chain 2"
 AT5G38970-MONOMER
-"(Z)-gamma-bisabolene synthase"
+"\(Z\)-gamma-bisabolene synthase"
 glucosyltransferase
 AT3G10390.3
 AT5G08680
 "UDP-galactose:DAG galactosyltransferase"
 "ADP-glucose pyrophosphorylase small subunit"
-"glycerol-3-phosphate dehydrogenase (NAD+)"
+"glycerol-3-phosphate dehydrogenase \(NAD+\)"
 AT1G13130.1
 AT1G20010.1
 AT2G43420-MONOMER
 "CDP-diacylglycerol-serine O-phosphatidyltransferase"
 "oxidoreductase, acting on sulfur group of donors, disulfide as acceptor"
 AT1G77410.3
-"aldehyde dehydrogenase (NAD)"
+"aldehyde dehydrogenase \(NAD\)"
 MONOMER-11913
 AT4G39480.1
 AT3G03350.2
@@ -2383,7 +2383,7 @@ AT2G37585.1
 phosphoribulokinase
 AT5G62690.1
 AT3G52970
-"peptide-N4-(N-acetyl-beta-glucosaminyl)asparagine amidase"
+"peptide-N4-\(N-acetyl-beta-glucosaminyl\)asparagine amidase"
 AT5G02270.2
 AT4G22330.1
 AT4G34900-MONOMER
@@ -2550,7 +2550,7 @@ AT4G38460.1
 AT4G17370.1
 AT2G38240.1
 AT4G09464.1
-"NAD(P)H oxidase"
+"NAD\(P\)H oxidase"
 "PSI-G subunit"
 AT2G21280.2
 "D-cysteine desulfhydrase"
@@ -2580,8 +2580,8 @@ AT3G05300.1
 "phosphoribosylanthranilate isomerase"
 AT5G57850-MONOMER
 "adenylosuccinate lyase"
-"nicotinate-nucleotide diphosphorylase (carboxylating)"
-"alpha,alpha-trehalose-phosphate synthase (UDP-forming)"
+"nicotinate-nucleotide diphosphorylase \(carboxylating\)"
+"alpha,alpha-trehalose-phosphate synthase \(UDP-forming\)"
 "hypoxanthine-guanine phosphoribosyltransferase"
 "glucan 1,3-beta-glucosidase"
 AT3G53300
@@ -2718,7 +2718,7 @@ AT3G01390.1
 AT3G62750.2
 AT4G33330.2
 "uridine nucleosidase"
-"an [2Fe-2S] cluster protein"
+"an \[2Fe-2S\] cluster protein"
 AT4G31810-MONOMER
 AT1G66930.2
 AT3G23640.3
@@ -2743,7 +2743,7 @@ AT1G13680.1
 "indole-3-acetic acid glucosyltransferase / abscisic acid glucosyltransferase"
 AT5G06050.1
 AT2G40890-MONOMER
-"fatty acid (omega-1)-hydroxylase"
+"fatty acid \(omega-1\)-hydroxylase"
 "hydroxymethylglutaryl-CoA lyase"
 "NADH-ubiquinone oxidoreductase 27kDa subunit"
 AT3G26140.3
@@ -2845,7 +2845,7 @@ AT5G44110.1
 AT3G42155.1
 AT3G53280
 AT4G13990.1
-"glyceraldehyde-3-phosphate dehydrogenase (NADP+)"
+"glyceraldehyde-3-phosphate dehydrogenase \(NADP+\)"
 AT3G08710.1
 AT5G57330.1
 AT2G04062.1
