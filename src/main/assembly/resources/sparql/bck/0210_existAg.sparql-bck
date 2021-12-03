@@ -1,0 +1,45 @@
+# Not exists + aggregation
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
+PREFIX bkr: <http://knetminer.org/data/rdf/resources/>
+PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
+
+SELECT ?pwName ( COUNT ( DISTINCT ?react ) AS ?nReact ) ( AVG ( ?np ) AS ?avgProt )
+FROM <http://knetminer.org/wheat>
+{
+  {
+    SELECT ?pwName ?react ( COUNT ( DISTINCT ?prot ) AS ?np )
+    {
+      ?prot a bk:Protein.
+      ?prot bk:pd_by|bk:cs_by ?react.
+      ?react a bk:Reaction.
+      ?react bk:part_of ?pw.
+      ?pw a bk:Path
+      
+			OPTIONAL { ?pw bk:prefName ?pwName }      
+
+      FILTER ( NOT EXISTS {
+        ?prot bk:is_a|^bk:ac_by ?enz.
+        ?enz a bk:Enzyme.
+        {
+          # "enz/cmp/trn" branch
+          ?enz bk:ac_by|bk:in_by ?cmp.
+          ?cmp a bk:Comp.
+          ?cmp bk:cs_by|bk:pd_by ?trn.
+        }
+        UNION {
+          # "enz/trn" branch
+          ?trn bk:ca_by ?enz.
+        }
+        ?trn a bk:Transport.
+        ?trn bk:part_of ?pw1.
+        ?pw1 a bk:Path
+      })
+    }
+    GROUP BY ?pwName ?react
+  } # Inner select
+}
+GROUP BY ?pwName
+HAVING ( COUNT ( DISTINCT ?react ) <= AVG ( ?np ) )
+LIMIT 100

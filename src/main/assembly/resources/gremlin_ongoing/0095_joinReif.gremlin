@@ -1,3 +1,31 @@
-g.V().has('labelV-idx', 'Concept:Protein:Resource').as('prot').outE('pd_by', 'cs_by').as('pr').inV().has('labelV-idx', 'Concept:Reaction:Resource').out('part_of').has('labelV-idx', 'Concept:Path:Resource').as('pw').V().has('iri', select('px').by('relatedConcept')).as('c').select('pw','c','c','prot').by('prefName').by('prefName').by(label).by('prefName')
+g.V().has('labelV-idx', 'Concept:Protein:Resource').as('prot').
+	outE('pd_by', 'cs_by').as('pr').
+	inV().has('labelV-idx', 'Concept:Reaction:Resource').
+	out('part_of').has('labelV-idx', 'Concept:Path:Resource').as('pw').
+	V().has('iri', select('px').by('relatedConceptValue')).as('c').
+	select('pw','c','c','prot').by('prefName').by('prefName').by(label).by('prefName')
+
+g.V().match(
+	__.as('v1').has('labelV-idx', 'Concept:Protein:Resource').as('prot').
+		outE('pd_by', 'cs_by').as('pr').
+		inV().has('labelV-idx', 'Concept:Reaction:Resource').
+		out('part_of').has('labelV-idx', 'Concept:Path:Resource').as('pw'), 
+	__.as('v').has('iri').where(values('iri').is(eq(select('pw').by('relatedConceptValue')))).as('c')).
+	limit(100).
+	select('pw', 'c', 'c', 'prot').by('prefName').by('prefName').by(label()).by('prefName')
 
 
+## Best version so far ... none without timeout due to the c.iri comparison, which forces to iterate all the graph looking for it
+
+g.withSack{[:]}{it.clone();}.
+	V().has('labelV-idx', 'Concept:Path:Resource').
+		sack{m,v->m['pw_prefName']=v.values('prefName').next();m}.
+	inE().has('labelE-idx', 'part_of').outV().
+	has('labelV-idx', 'Concept:Reaction:Resource').
+	inE().and(or(has('labelE-idx', 'cs_by'), has('labelE-idx', 'pd_by')), has('relatedConceptValue')).
+		sack{m,v->m['pr_relatedConceptValue'];m}.outV().
+	has('labelV-idx', 'Concept:Protein:Resource').
+		sack{m,v->m['prot_prefName']=v.values('prefName').next();m}.
+	V().filter(project('a', 'b').by('iri').by(sack().map{x->x.get()['pr_relatedConceptValue']}).where('a', eq('b'))).
+		sack{m,v->m['c_prefName'] = v.values('prefName').next(); m['c_label']=v.label();m}.
+		sack().map{x->[pw_prefName:x.get()['pw_prefName'], c_prefName:x.get()['c_prefName'], c_labels:x.get()['c_label'], prot_prefName:x.get()['prot_prefName']]}.limit(100)

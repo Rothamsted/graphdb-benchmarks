@@ -1,0 +1,23 @@
+# Simple join + attribute filter
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
+PREFIX bkr: <http://knetminer.org/data/rdf/resources/>
+PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
+
+SELECT ?pname ?c1name ?c2name 
+FROM <http://knetminer.org/wheat>
+{
+  ?p a bk:Protein;
+     bk:prefName ?pname.
+  FILTER ( ?pname = "$protName" )
+  
+  ?p bk:is_part_of ?cpx1.
+  ?cpx1 a bk:Protcmplx.
+  ?cpx bk:is_part_of ?cpx2.
+  ?cpx2 a bk:Protcmplx.
+
+  OPTIONAL { ?cpx1 bk:prefName ?c1name }
+  OPTIONAL { ?cpx2 bk:prefName ?c2name }
+}
+LIMIT 100

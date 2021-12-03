@@ -1,4 +1,56 @@
-g.V().has('labelV-idx','Concept:Path:Resource').as('pway')	.local(__.in('part_of').has('labelV-idx','Concept:Reaction:Resource').as('react').in('pd_by','cs_by').has('labelV-idx','Concept:Protein:Resource').as('prot').groupCount().by(select('react').by('prefName')).select(values).unfold().mean()).limit(100)
-		
+
+g.V().has('labelV-idx','Concept:Path:Resource').as('pway').
+	local(
+		__.in('part_of').has('labelV-idx','Concept:Reaction:Resource').as('react').
+		in('pd_by','cs_by').has('labelV-idx','Concept:Protein:Resource').as('prot').
+		groupCount().by(select('react').by('prefName')).
+		select(values).unfold().mean()
+	).
+	limit(100)
 		
 
+g.V().has('labelV-idx', 'Concept:Path:Resource').as('pway').
+	inE().has('labelE-idx', 'part_of').outV().
+	has('labelV-idx', 'Concept:Reaction:Resource').as('react').
+	inE().or(has('labelE-idx', 'pd_by'), has('labelE-idx', 'cs_by')).outV().
+	has('labelV-idx', 'Concept:Protein:Resource').as('prot').
+	groupCount().by(select('pway','react').by('prefName').by('prefName')).limit(100).
+	
+	
+g.V().has('labelV-idx', 'Concept:Path:Resource').as('pway').
+	map(
+		inE().has('labelE-idx', 'part_of').outV().
+		has('labelV-idx', 'Concept:Reaction:Resource').as('react').
+		inE().or(has('labelE-idx', 'pd_by'), has('labelE-idx', 'cs_by')).outV().
+		has('labelV-idx', 'Concept:Protein:Resource').as('prot').
+		groupCount().by(select('react').by('prefName'))).as('rest').limit(50).
+		project('pway','rest').by('prefName').by(select(values).unfold().mean())
+		
+
+g.withSack{[:]}{it.clone()}.V().has('labelV-idx','Concept:Path:Resource').
+	sack{m,v->m['iri']=v.values('iri').next();m}.
+	local(
+		__.in('part_of').has('labelV-idx','Concept:Reaction:Resource').as('react').
+		local(		
+			__.in('pd_by','cs_by').has('labelV-idx','Concept:Protein:Resource').as('prot').
+				dedup().count()
+			).mean().sack{m,v->m['mean_value']=v;m}
+		).sack()
+		
+
+g.V().has('labelV-idx','Concept:Path:Resource').as('pway').
+	local(
+		__.in('part_of').has('labelV-idx','Concept:Reaction:Resource').as('react').
+		local(			__.in('pd_by','cs_by').has('labelV-idx','Concept:Protein:Resource').as('prot').
+			dedup().count()
+		).mean()
+	).limit(100)
+	
+## THIS IS THE CLOSEST ONE SO FAR
+		
+g.V().has('labelV-idx', 'Concept:Path:Resource').limit(100).
+	group().
+		by('prefName').
+		by(__.inE().has('labelE-idx', 'part_of').outV().has('labelV-idx','Concept:Reaction:Resource').
+			local(__.in('pd_by','cs_by').has('labelV-idx','Concept:Protein:Resource').as('prot').
+						dedup().count()).mean()).limit(100)
