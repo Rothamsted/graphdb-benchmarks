@@ -1,0 +1,9 @@
+g.V().has('labelV-idx','Concept:Path:Resource').as('pw').
+	local(
+		__.inE().has('labelE-idx', 'part_of').outV().
+		has('labelV-idx', 'Concept:Reaction:Resource').
+		inE().or(has('labelE-idx', 'pd_by'), has('labelE-idx', 'cs_by')).outV().
+		has('labelV-idx','Concept:Protein:Resource').dedup().as('prot').
+		select('pw','prot').by('prefName').groupCount().by('pw')
+		).limit(100)
+		

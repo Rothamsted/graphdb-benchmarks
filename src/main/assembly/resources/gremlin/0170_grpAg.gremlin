@@ -1,0 +1,10 @@
+g.V().has('labelV-idx', 'Concept:Path:Resource').limit(100).
+	group().
+		by('prefName').
+		by(__.inE().has('labelE-idx', 'part_of').outV().has('labelV-idx','Concept:Reaction:Resource').
+			local(__.in('pd_by','cs_by').has('labelV-idx','Concept:Protein:Resource').as('prot').
+						dedup().count()).mean()).limit(100)
+
+						
+						
+						

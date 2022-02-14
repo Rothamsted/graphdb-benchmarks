@@ -27,9 +27,6 @@ g.V().union(
 
 )	
 	
-	
-	
-	
 ## NEW ATTEMPT 
 
 
@@ -57,7 +54,7 @@ g.V().has('labelV-idx','Concept:Path:Resource').as('pwy').limit(200).
 					has('labelV-idx','Concept:Enzyme:Resource'), 
 					inE().or(has('labelE-idx','cs_by'), has('labelE-idx', 'pd_by')).outV().
 					has('labelV-idx', 'Comp:Concept:Resource').
-					inE().or(has('labelE-idx', 'ac_by'), has('labelE-idx', 'ac_by')).outV().
+					inE().or(has('labelE-idx', 'ac_by'), has('labelE-idx', 'in_by')).outV().
 					has('labelV-idx','Concept:Enzyme:Resource')).
 				both('is_a', 'ac_by').
 				has('labelV-idx','Concept:Protein:Resource').as('prot').count()))).unfold().as('cnt').
@@ -68,3 +65,8 @@ g.V().has('labelV-idx','Concept:Path:Resource').as('pwy').limit(200).
 					by(select('cnt').by(values)).
 					by(constant('react'))
 		)
+		
+		
+		
+		
+		

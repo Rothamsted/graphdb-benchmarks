@@ -1,0 +1,22 @@
+g.V().has('labelV-idx', 'Concept:Path:Resource').as('pw').
+	inE().has('labelE-idx', 'part_of').outV().
+	union(
+		has('labelV-idx', 'Concept:Resource:Transport').
+			union(
+				inE().or(has('labelE-idx', 'cs_by'),has('labelE-idx','pd_by')).outV().
+				has('labelV-idx', 'Comp:Concept:Resource').
+				inE().or(has('labelE-idx', 'ac_by'),has('labelE-idx', 'in_by')).outV().
+				has('labelV-idx', 'Concept:Enzyme:Resource').
+				both('is_a', 'ac_by').
+				has('labelV-idx', 'Concept:Protein:Resource').as('prot').limit(100).
+				project('prot', 'pw', 'path').by('prefName').by('prefName').by(constant('enz/cmp/trn')),
+				outE().has('labelE-idx','ca_by').inV().
+				has('labelV-idx', 'Concept:Enzyme:Resource').
+				both('is_a', 'ac_by').
+				has('labelV-idx', 'Concept:Protein:Resource').as('prot').limit(100).
+				project('prot', 'pw', 'path').by('prefName').by('prefName').by(constant('enz/trn'))
+			), 
+		has('labelV-idx', 'Concept:Reaction:Resource').as('react').
+		inE().or(has('labelE-idx','pd_by'), has('labelE-idx', 'cs_by')).outV().
+		has('labelV-idx', 'Concept:Protein:Resource').as('prot').limit(100).
+		project('prot','pw','path').by('prefName').by('prefName').by(constant('react')))

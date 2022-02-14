@@ -11,7 +11,7 @@ g.withSack{[:]}{it.clone();}.
 	
 	
 g.withSack{[:]}{it.clone();}.
-	V().or(has('labelV-idx', 'DataSource:EvidenceType:Resource'), has('labelV-idx', 'EvidenceType:Resource')).as('ev')
+	V().or(has('labelV-idx', 'DataSource:EvidenceType:Resource'), has('labelV-idx', 'EvidenceType:Resource')).as('ev').
 		sack{m,v->m['ev_iri'] = v.values('iri').next(); m['ev_label'] = v.label();m}.
 	V().has('labelV-idx','Concept:Protcmplx:Resource').
 		sack{m,v->m['cpx1_prefName']=v.values('prefName').next();m}.
