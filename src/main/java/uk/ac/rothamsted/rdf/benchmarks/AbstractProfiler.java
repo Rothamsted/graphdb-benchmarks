@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -78,8 +79,53 @@ public abstract class AbstractProfiler
 			if ( rep > 0 && rep % 50 == 0) log.info ( "{} runs", rep );
 		}
 		
+		writeStats(names, times); 
+	}	
+	
+	public void profileForcingExecutions ( int repeatsPerQuery)
+	{
+		
+
+		log.info("Start profiling ..."); 
+
+		// all the tests
+		String names[] = getQueryNames ( this.basePath, this.queryFileExtension );
+				
+		// Do a number of iterations
+		int counts [] = new int [ names.length ];
+		ArrayList<Double>[] times = new ArrayList[ names.length ];
+		ArrayList<Integer> availableQueries = new ArrayList<Integer>(); 
+		
+		for (int i=0; i<names.length;i++) {
+			availableQueries.add(i); 
+		}
+		
+		for ( int rep = 0; rep < repeatsPerQuery*names.length; rep++ )
+		{
+			// pick up a random query from the available ones
+			int availableQueryPosition = RandomUtils.nextInt ( 0, availableQueries.size()); 
+			int queryPosition = availableQueries.get(availableQueryPosition);
+			log.info("QueryName: "+names[queryPosition]); 
+			counts [ queryPosition ]++;
+			if (times[queryPosition] == null) {
+				times[queryPosition] = new ArrayList<Double>(); 
+			}
+			times [ queryPosition ].add( Double.valueOf(profileQuery ( names [ queryPosition ] ) ) );
+			
+			if (counts[queryPosition] == repeatsPerQuery) {
+				// I remove it from the available ones
+				availableQueries.remove(availableQueryPosition); 
+			}
+			
+			if ( rep > 0 && rep % 50 == 0) log.info ( "{} runs", rep );
+		}
+		
+		writeStats(names, times); 
+	}	
+	
+	protected void writeStats (String names[], ArrayList<Double>[] times) {
 		// And finally, compute the average times and report
-		out.println ("Name\tAvgTime\tSTD\tMaxTime\tMinTime");
+		out.println ("Name\tAvgTime\tSTD\tMaxTime\tMinTime\tExecs");
 		double mean; 
 		double std; 
 		double min; 
@@ -89,13 +135,10 @@ public abstract class AbstractProfiler
 			std = stdeviation(times[i], mean); 
 			max = times[i].stream().mapToDouble(d->d).max().orElse(0.0); 
 			min = times[i].stream().mapToDouble(d->d).min().orElse(0.0); 
-			out.printf ( "%s\t%f\t%f\t%f\t%f\n", getQueryId ( names [ i ] ), mean, std, max, min );
+			out.printf ( "%s\t%f\t%f\t%f\t%f\t%d\n", getQueryId ( names [ i ] ), mean, std, max, min, times[i].size() );
 		}
-		
-		if (this instanceof GremlinProfiler) {
-			((GremlinProfiler)this).closeEverything(); 
-		}
-	}	
+	}
+	
 	
 	protected Double stdeviation(ArrayList<Double> v, double mean) {
 		return v.stream()

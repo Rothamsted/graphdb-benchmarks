@@ -1,1 +1,1 @@
-g.E().has('labelE-idx',textContains('$label')).count()
+g.E().has('labelE-idx','$relType').count()

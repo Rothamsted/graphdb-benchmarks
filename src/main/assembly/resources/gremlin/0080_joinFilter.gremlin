@@ -1,7 +1,3 @@
-g.V().has('labelV-idx', 'Concept:Protcmplx:Resource').as('cpx2').
-	in('is_part_of').has('labelV-idx', 'Concept:Protcmplx:Resource').as('cpx1').
-	in('is_part_of').has('labelV-idx', 'Concept:Protein:Resource').has('prefName', '$protName').as('p').
-	limit(100).
-	select('p', 'cpx1', 'cpx2').by('prefName')
+g.V().has('labelV-idx', 'Concept:Protcmplx:Resource').as('cpx2').in('is_part_of').has('labelV-idx', 'Concept:Protcmplx:Resource').as('cpx1').in('is_part_of').has('labelV-idx', 'Concept:Protein:Resource').has('prefName', '$protName').as('p').limit(100).select('p', 'cpx1', 'cpx2').by('prefName')
 	
 	

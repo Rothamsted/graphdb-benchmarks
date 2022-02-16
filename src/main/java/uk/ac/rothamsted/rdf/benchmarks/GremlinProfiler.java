@@ -2,10 +2,13 @@ package uk.ac.rothamsted.rdf.benchmarks;
 
 import static java.lang.System.out;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.lang3.RandomUtils;
 import org.apache.tinkerpop.gremlin.driver.Client;
 import org.apache.tinkerpop.gremlin.driver.Cluster;
 import org.apache.tinkerpop.gremlin.driver.MessageSerializer;
@@ -47,6 +50,10 @@ public class GremlinProfiler extends AbstractProfiler
     public static final int MAX_WAIT_FOR_CONNECTION = 30000; 
     public static final int RESULT_ITERATION_BATCH_SIZE = 256; 
 
+    /* max timeout in ms */ 
+    
+    public static final int QUERY_TIMEOUT = 120000; 
+    
     /* given the problems with executions in gremlin we count the potentials timeouts storing the
      * culprit*/
     
@@ -126,14 +133,26 @@ public class GremlinProfiler extends AbstractProfiler
 					 
 					 	log.info("Query: "+gremlinQuery); 
 						 // this is the setup
-						 RequestOptions options = RequestOptions.build().timeout(60000).create();
-						 List<Result> list = client.submitAsync(gremlinQuery, options).get().all().getNow(null);
+						 RequestOptions options = RequestOptions.build().timeout(QUERY_TIMEOUT).create();
+						 System.err.println("posed ... "); 
+//						 ResultSet list = client.submitAsync(gremlinQuery, options).get();
+						 List<Result> list = client.submit(gremlinQuery, options).all().get();
+						 System.err.println("returned ... "); 
+						 if (list != null) {
+							 for (Result r: list) {
+								 log.info(r.toString()); 
+							 }
+						 }
+						 else {
+							 log.info("Returning null ... NOK"); 
+						 }
+						 
 						 //ResultSet set = client.submit(gremlinQuery,options); 
 						 //while (!set.allItemsAvailable()) {}
 						 //for (Result l: set) {
 						 //}
 			        } 
-				 	catch (ExecutionException ex) {
+				 	catch (RuntimeException ex) {
 				 		log.debug("Probably timeout");
 				 		if (!timeouts.containsKey(name)) {
 				 			timeouts.put(name, 0); 
@@ -155,8 +174,6 @@ public class GremlinProfiler extends AbstractProfiler
 		
 	}
 
-
-
 	public Hashtable <String, Integer> getTimeouts() {
 		return timeouts;
 	}	
@@ -164,7 +181,7 @@ public class GremlinProfiler extends AbstractProfiler
 	public void profile ( int repeats )
 	{
 		int totalTimeouts = 0; 
-		super.profile(repeats); 
+		super.profileForcingExecutions(repeats); 
 		out.println("----"); 
 		out.println("Timeout Report"); 
 		out.println("----"); 
@@ -178,6 +195,8 @@ public class GremlinProfiler extends AbstractProfiler
 			}
 			System.out.println("Total number of timeouts: "+ totalTimeouts); 
 		}
+		
+		((GremlinProfiler)this).closeEverything(); 
 	}	
 	
 	public void closeEverything() {

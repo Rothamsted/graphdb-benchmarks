@@ -20,6 +20,6 @@ public class GremlinProfilerTest
 		GremlinProfiler profiler = new GremlinProfiler( "src/main/assembly/resources/gremlin/", "localhost", 8182);
 		System.out.println("Profiler created ..."); 
 		// profiler.profile ( 2100 );
-		profiler.profile ( 10 );
+		profiler.profile ( 5 );
 	}
 }
