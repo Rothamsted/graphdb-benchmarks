@@ -5,6 +5,7 @@ import static java.lang.System.out;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
@@ -135,22 +136,18 @@ public class GremlinProfiler extends AbstractProfiler
 						 // this is the setup
 						 RequestOptions options = RequestOptions.build().timeout(QUERY_TIMEOUT).create();
 						 System.err.println("posed ... "); 
-//						 ResultSet list = client.submitAsync(gremlinQuery, options).get();
-						 List<Result> list = client.submit(gremlinQuery, options).all().get();
-						 System.err.println("returned ... "); 
-						 if (list != null) {
-							 for (Result r: list) {
-								 log.info(r.toString()); 
-							 }
+						 
+						 // get is blocking ... moreover, under the submit, you have a get operation. 
+						 // List<Result> list = client.submit(gremlinQuery, options).all().get();
+						 Result r = client.submit(gremlinQuery, options).one(); 
+						 System.err.println("returned ... ");
+						 
+						 if (r != null) {
+							log.info(r.toString()); 
 						 }
 						 else {
 							 log.info("Returning null ... NOK"); 
 						 }
-						 
-						 //ResultSet set = client.submit(gremlinQuery,options); 
-						 //while (!set.allItemsAvailable()) {}
-						 //for (Result l: set) {
-						 //}
 			        } 
 				 	catch (RuntimeException ex) {
 				 		log.debug("Probably timeout");

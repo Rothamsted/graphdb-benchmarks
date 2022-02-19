@@ -1,1 +1,0 @@
- g.V().has('labelV-idx','Concept:Path:Resource').as('pw').local(__.in('part_of').has('labelV-idx', 'Concept:Reaction:Resource').in('pd_by', 'cs_by').has('labelV-idx', 'Concept:Protein:Resource').dedup().as('prot')).limit(100).select('pw','prot').by('prefName').by('prefName').groupCount().by('pw')

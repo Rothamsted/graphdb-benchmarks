@@ -1,3 +1,0 @@
-g.V().has('labelV-idx', 'BioProc:Concept:Resource').as('class').
-	repeat(out('is_a')).until(out('is_a').count().is(0)).as('top').
-	select('class', 'top').by('prefName').dedup().limit(100)

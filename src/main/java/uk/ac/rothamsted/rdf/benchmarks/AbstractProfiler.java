@@ -141,10 +141,10 @@ public abstract class AbstractProfiler
 	
 	
 	protected Double stdeviation(ArrayList<Double> v, double mean) {
-		return v.stream()
+		return Math.sqrt(v.stream()
 				.mapToDouble(d->d)
 				.map(x -> x - mean)
-				.map(x -> x * x).sum() / v.size();
+				.map(x -> x * x).sum() / v.size()) ;
 	}
 	
 	

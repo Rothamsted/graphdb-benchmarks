@@ -1,2 +1,0 @@
-g.V().has('labelV-idx', 'Concept:Protein:Resource').limit(100).
-	valueMap('description', 'prefName')

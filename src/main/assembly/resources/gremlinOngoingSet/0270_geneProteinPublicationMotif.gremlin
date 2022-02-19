@@ -1,0 +1,9 @@
+g.V().has('iri', '$iri').as('ini').
+	out('enc').
+	union( repeat(out('genetic').has('labelV-idx', 'Concept:Protein:Resource')).times(6).emit(), 
+	repeat(out('physical').has('labelV-idx', 'Concept:Protein:Resource')).times(6).emit(), 
+	repeat(out('h_s_s').has('labelV-idx', 'Concept:Protein:Resource')).times(4).emit(),
+	repeat(out('ortho').has('labelV-idx', 'Concept:Protein:Resource')).times(4).emit(), 
+	repeat(out('xref').has('labelV-idx', 'Concept:Protein:Resource')).times(4).emit()).
+		out('pub_in').has('labelV-idx', 'Concept:Publication:Resource').as('end'). 
+		select('ini', 'end').by('prefName')
