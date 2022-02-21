@@ -1,0 +1,32 @@
+	g.V().has('labelV-idx', 'Concept:Path:Resource').as('pwy').
+		inE().has('labelE-idx', 'part_of').outV().
+		has('labelV-idx', 'Concept:Reaction:Resource').
+		inE().or(has('labelE-idx','cs_by'), has('labelE-idx','pd_by')).outV().
+		has('labelV-idx', 'Concept:Protein:Resource').as('prot').
+		and(
+			__.not(both('is_a','ac_by').
+					has('labelV-idx', 'Concept:Enzyme:Resource').
+					outE().or(has('labelE-idx', 'ac_by'), has('labelE-idx', 'in_by')).inV().
+					has('labelV-idx','Comp:Concept:Resource').
+					outE().or(has('labelE-idx', 'cs_by'), has('labelE-idx','pd_by')).inV().
+					has('labelV-idx', 'Concept:Resource:Transport').
+					outE().has('labelE-idx', 'part_of').inV().
+					has('labelV-idx', 'Concept:Path:Resource')), 
+			__.not(both('is_a','ac_by').
+					has('labelV-idx', 'Concept:Enzyme:Resource').
+					inE().has('labelE-idx', 'ca_by').outV().
+					has('labelV-idx', 'Concept:Resource:Transport').
+					outE().has('labelE-idx', 'part_of').inV().
+					has('labelV-idx', 'Concept:Path:Resource'))).
+		limit(100).
+		select('pwy').	
+		match(
+			__.as('ini').inE().has('labelE-idx', 'part_of').outV().
+					has('labelV-idx','Concept:Reaction:Resource').dedup().count().as('nReact'), 
+			__.as('ini').inE().has('labelE-idx', 'part_of').outV().
+					has('labelV-idx','Concept:Reaction:Resource').
+					local(__.in('pd_by','cs_by').has('labelV-idx','Concept:Protein:Resource').as('prot').
+							dedup().count()).mean().as('avgProt') ).
+			select('pwy','nReact','avgProt').by('prefName').by().by().where('nReact', gte('avgProt')).limit(100)
+
+		
