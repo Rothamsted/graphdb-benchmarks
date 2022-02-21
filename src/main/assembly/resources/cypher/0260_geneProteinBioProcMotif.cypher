@@ -1,4 +1,4 @@
-MATCH (g:Gene {iri:'http://knetminer.org/data/rdf/resources/gene_at3g16840_locus_2086775'})-[:enc]->(p:Protein)
+MATCH (g:Gene {iri:'$iri'})-[:enc]->(p:Protein)
 WITH g,p
 CALL {
 	MATCH (p)-[:genetic*0..6] -> (p2:Protein)
