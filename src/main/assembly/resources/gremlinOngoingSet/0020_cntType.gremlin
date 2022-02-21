@@ -1,0 +1,1 @@
+g.V().has('labelV-idx', '$label').count()
