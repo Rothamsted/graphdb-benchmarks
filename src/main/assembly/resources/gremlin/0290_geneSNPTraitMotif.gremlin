@@ -4,3 +4,5 @@ g.V().has('iri', '$iri').as('ini').
 	out('associated_with').
 	has('labelV-idx', 'Concept:Resource:Trait').as('end').
 	select('ini','end').by('prefName')
+	
+	
