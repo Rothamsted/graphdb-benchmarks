@@ -178,7 +178,10 @@ public class GremlinProfiler extends AbstractProfiler
 	public void profile ( int repeats )
 	{
 		int totalTimeouts = 0; 
-		super.profileForcingExecutions(repeats); 
+		// we could use 
+		// super.profileForcingExecutions(repeats);
+		// to throw the queries in a different way (forcing the execution of all of them) 
+		super.profile(repeats);
 		out.println("----"); 
 		out.println("Timeout Report"); 
 		out.println("----"); 
