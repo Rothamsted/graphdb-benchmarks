@@ -51,7 +51,10 @@ public class SparqlProfiler extends AbstractProfiler
 				try ( QueryExecution qx = this.rdfConnection.query ( query ) )
 				{
 					ResultSet rs = qx.execSelect ();
-					if ( rs.hasNext () ) rs.next ();
+					System.out.print(name+" "); 
+					if ( rs.hasNext () ) System.out.println(rs.next ());
+					else System.out.println("NOK"); 
+					
 				}
 			});
 		}

@@ -1,7 +1,7 @@
 # http://knetminer.org/data/rdf/resources/gene_traescs1a02g266300
 		
 SELECT ?gPref ?pubPref
-FROM <http://knetminer.org/wheat>
+FROM <http://knetminer.org/arabidopsis>
 {
 	{
 		SELECT ?gPref ?prot

@@ -1,7 +1,7 @@
 # http://knetminer.org/data/rdf/resources/gene_a0a1i9lmv6_at3g16565_locus_504955757
 		
 SELECT ?gPref ?pubPref
-FROM <http://knetminer.org/wheat>
+FROM <http://knetminer.org/arabidopsis>
 {
 	<$iri> <http://knetminer.org/data/rdf/terms/biokno/prefName> ?gPref; 
 		<http://knetminer.org/data/rdf/terms/biokno/has_variation> ?var. 

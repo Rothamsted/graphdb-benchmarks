@@ -1,0 +1,17 @@
+# Variable path query (unbound len and top restricted)
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
+PREFIX bkr: <http://knetminer.org/data/rdf/resources/>
+PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
+
+SELECT ?class ?top
+FROM <http://knetminer.org/wheat>
+{
+  ?top a bk:BioProc.
+  FILTER ( NOT EXISTS { ?top bk:is_a ?any } )
+
+  ?class a bk:BioProc;
+    bk:is_a* ?top.
+}
+LIMIT 100

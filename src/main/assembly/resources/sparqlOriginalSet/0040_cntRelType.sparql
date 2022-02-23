@@ -1,0 +1,6 @@
+# CountRelations of a given type
+SELECT ( COUNT ( * ) AS ?ct ) 
+FROM <http://knetminer.org/wheat>
+{
+	?s <$relUri> ?o
+}

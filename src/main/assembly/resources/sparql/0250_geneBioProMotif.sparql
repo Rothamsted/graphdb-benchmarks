@@ -1,5 +1,5 @@
 SELECT ?gPref ?bPref
-FROM <http://knetminer.org/wheat>
+FROM <http://knetminer.org/arabidopsis>
 {
   <$iri> <http://knetminer.org/data/rdf/terms/biokno/prefName> ?gPref; 
 	<http://knetminer.org/data/rdf/terms/biokno/participates_in> ?b .

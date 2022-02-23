@@ -1,7 +1,7 @@
 # http://knetminer.org/data/rdf/resources/gene_traescs2a02g233600
 		
 SELECT ?gPref ?tPref
-FROM <http://knetminer.org/wheat>
+FROM <http://knetminer.org/arabidopsis>
 {
 	<$iri> <http://knetminer.org/data/rdf/terms/biokno/prefName> ?gPref. 
 	

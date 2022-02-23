@@ -1,6 +1,0 @@
-# Instances of a given type
-SELECT ( COUNT ( DISTINCT ?iri ) AS ?ct ) 
-FROM <http://knetminer.org/wheat>
-{
-	?iri a <$class>.
-}

@@ -1,0 +1,11 @@
+# http://knetminer.org/data/rdf/resources/gene_traescs2a02g233600
+		
+SELECT ?gPref ?tPref
+FROM <http://knetminer.org/wheat>
+{
+	<$iri> <http://knetminer.org/data/rdf/terms/biokno/prefName> ?gPref. 
+	
+	?t <http://knetminer.org/data/rdf/terms/biokno/cooc_wi> <$iri>; 
+		<http://knetminer.org/data/rdf/terms/biokno/prefName> ?tPref; 
+		a <http://knetminer.org/data/rdf/terms/biokno/Trait>. 
+}
