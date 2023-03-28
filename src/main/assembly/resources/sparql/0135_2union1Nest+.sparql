@@ -1,4 +1,7 @@
-# 2 unions, 1 nesting
+# 2 unions, 1 nesting (with Cypher CALL)
+# This is exactly the same of 2union1Nest, it is here just to allow the chart renderer 
+# to pair the same union made with the new CALL method in Cypher.
+#
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>

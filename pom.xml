@@ -8,6 +8,12 @@
 	<name></name>
 	<description></description>
 
+	<parent>
+	  <groupId>uk.ac.rothamsted.knetminer</groupId>
+	  <artifactId>knetminer-common</artifactId>
+	  <version>2.0.1-SNAPSHOT</version>
+	</parent>  
+
 	<url></url>
 	<scm>
 		<developerConnection></developerConnection>
@@ -43,26 +49,6 @@
 			<artifactId>log4j-over-slf4j</artifactId>
 			<version>${slf4j.version}</version>
 		</dependency>
-		
-		<!-- Same for Jakarta Commons Logging -->
-		<!-- dependency>
-		  <groupId>org.slf4j</groupId>
-		  <artifactId>jcl-over-slf4j</artifactId>
-			<version>${slf4j.version}</version>
-		</dependency -->
-		
-		<!-- Same for Java Logging -->
-		<!-- IMPORTANT: If you're really using this, you will probably want to fix performance too:
-		  http://www.slf4j.org/api/org/slf4j/bridge/SLF4JBridgeHandler.html
-		  http://logback.qos.ch/manual/configuration.html#LevelChangePropagator
-		 -->
-		<!-- dependency>
-		  <groupId>org.slf4j</groupId>
-		  <artifactId>jul-to-slf4j</artifactId>
-			<version>${slf4j.version}</version>
-		</dependency -->
-		
-		
 
 		<dependency>
 			<groupId>commons-cli</groupId>
@@ -73,7 +59,6 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -95,11 +80,23 @@
 			<version>4.1</version>
 		</dependency>
 		
+		
+    <dependency>
+      <groupId>org.neo4j.driver</groupId>
+      <artifactId>neo4j-java-driver</artifactId>
+    </dependency>
+
+		<!-- JanusDB/Gremlin -->    
 		<dependency>
-			<groupId>org.neo4j.driver</groupId>
-			<artifactId>neo4j-java-driver</artifactId>
-			<version>1.6.2</version>
-		</dependency> 
+			<groupId>org.janusgraph</groupId>
+		  <artifactId>janusgraph-driver</artifactId>
+		  <version>0.5.3</version>
+		</dependency>
+    <dependency>
+      <groupId>org.apache.tinkerpop</groupId>
+      <artifactId>gremlin-driver</artifactId>
+      <version>3.4.6</version>
+    </dependency>
 		
 	</dependencies>
 
@@ -178,19 +175,21 @@
 		</plugins>
 
 	</build>
-	
-	
+
 	<repositories>
 
-		<repository>
-			<!-- jutils and rdfutils -->
-    	<id>mbrandizi.jfrog.io</id>
-			<url>https://mbrandizi.jfrog.io/artifactory/maven</url>
-	    <snapshots>
-        <enabled>true</enabled>
-	    </snapshots>
-    </repository>
-		
-  </repositories>
+	  <repository>
+	  	<!-- 
+	  		As usually, this points to both releases and snapshots and caches Maven Central
+	  		plus other repos.
+	  	 -->
+			<id>knetminer-repo</id>
+			<name>Knetminer Unified Repository</name>
+			<url>https://knetminer.org/artifactory/repository/maven-public</url>
+			<snapshots><enabled>true</enabled></snapshots>
+			<releases><enabled>true</enabled></releases>
+	  </repository>
+
+	</repositories>	
 
 </project>
