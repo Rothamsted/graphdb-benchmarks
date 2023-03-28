@@ -3,6 +3,10 @@
 This module is used to perform tests with [KnetMiner](http://knetminer.rothamsted.ac.uk/) data, encoded either as RDF 
 or Neo4j, by means of the [rdf2pg tool](https://github.com/Rothamsted/rdf2pg).
 
+An [older version](/Rothamsted/graphdb-benchmarks/releases/tag/swat4ls18) of this work was presented with our [paper presented at SWAT4HCLS 2018](https://figshare.com/articles/Getting_the_best_of_Linked_Data_and_Property_Graphs_rdf2neo_and_the_KnetMiner_Use_Case/7314323). 
+A [presentation](https://www.slideshare.net/mbrandizi/swat4l-2018brandizi) from the workshop is also available.
+
+
 
 ## Contents
 
