@@ -3,7 +3,7 @@ package uk.ac.rothamsted.rdf.benchmarks;
 import org.junit.Test;
 
 /**
- * Entry point to spawn a SPARQL query list for the documentation.
+ * Entry point to spawn a query list for the documentation.
  * 
  * TODO: we have to turn tests like this into line commands.
  * 

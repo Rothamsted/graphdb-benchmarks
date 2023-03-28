@@ -23,8 +23,7 @@ import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 
-import info.marcobrandizi.rdfutils.jena.SparqlUtils;
-import uk.ac.ebi.utils.io.IOUtils;
+import uk.ac.ebi.utils.opt.io.IOUtils;
 
 /**
  * Abstract class to drive the a benchmark test with Cypher or SPARQL queries.
@@ -38,7 +37,7 @@ public abstract class AbstractProfiler
 	protected String basePath;
 	protected final String queryFileExtension;
 	
-	protected Logger log = LoggerFactory.getLogger ( SparqlUtils.class );
+	protected Logger log = LoggerFactory.getLogger ( this.getClass () );
 	protected String endPointUrl;	
 
 	protected AbstractProfiler ( String queryFileExtension )
@@ -131,10 +130,10 @@ public abstract class AbstractProfiler
 			
 			return StringUtils.replaceEach ( queryStr, headers, row );
 		}
-		catch ( IOException ex )
+		catch ( UncheckedIOException ex )
 		{
 			String msg = String.format ( "Error while loading query for '%s': %s", name, ex.getMessage () );
-			throw new UncheckedIOException ( msg, ex );
+			throw new RuntimeException ( msg, ex );
 		}
 	}
 	

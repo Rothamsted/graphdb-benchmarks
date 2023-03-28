@@ -40,7 +40,7 @@ public class SparqlProfiler extends AbstractProfiler
 		String sparql = getQueryString ( name );
 					
 		if ( this.rdfConnection == null )
-			this.rdfConnection = RDFConnectionFactory.connect ( endPointUrl );
+			this.rdfConnection = RDFConnection.connect ( endPointUrl );
 		
 		// Clock the query
 		try

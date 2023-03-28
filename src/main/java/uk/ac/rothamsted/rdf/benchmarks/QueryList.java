@@ -2,10 +2,9 @@ package uk.ac.rothamsted.rdf.benchmarks;
 
 import static java.lang.System.out;
 
-import java.io.IOException;
 import java.io.UncheckedIOException;
 
-import uk.ac.ebi.utils.io.IOUtils;
+import uk.ac.ebi.utils.opt.io.IOUtils;
 
 /**
  * Lists the test queries.
@@ -39,10 +38,10 @@ public class QueryList
 					i + 1, qid, qdescr, urlPrefix, cypherPath, sparqlPath, name 	
 				);
 			}
-			catch ( IOException ex )
+			catch ( UncheckedIOException ex )
 			{
 				String msg = String.format ( "Error while loading query for '%s': %s", name, ex.getMessage () );
-				throw new UncheckedIOException ( msg, ex );
+				throw new RuntimeException ( msg, ex );
 			}
 		}
 	}
