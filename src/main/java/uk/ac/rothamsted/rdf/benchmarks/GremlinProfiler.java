@@ -132,22 +132,22 @@ public class GremlinProfiler extends AbstractProfiler
 				
 				 try {
 					 
-					 	log.info("Query: "+gremlinQuery); 
+					 	//log.info("Query: "+gremlinQuery); 
 						 // this is the setup
 						 RequestOptions options = RequestOptions.build().timeout(QUERY_TIMEOUT).create();
-						 System.err.println("posed ... "); 
+						 //System.err.println("posed ... "); 
 						 
 						 // get is blocking ... moreover, under the submit, you have a get operation. 
 						 // List<Result> list = client.submit(gremlinQuery, options).all().get();
 						 Result r = client.submit(gremlinQuery, options).one(); 
-						 System.err.println("returned ... ");
+						 //System.err.println("returned ... ");
 						 
-						 if (r != null) {
-							log.info(r.toString()); 
-						 }
-						 else {
-							 log.info("Returning null ... NOK"); 
-						 }
+//						 if (r != null) {
+//							log.info(r.toString()); 
+//						 }
+//						 else {
+//							 log.info("Returning null ... NOK"); 
+//						 }
 			        } 
 				 	catch (RuntimeException ex) {
 				 		log.debug("Probably timeout");

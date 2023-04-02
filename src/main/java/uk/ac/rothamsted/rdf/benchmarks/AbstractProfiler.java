@@ -69,7 +69,7 @@ public abstract class AbstractProfiler
 			
 			// pick up a random query
 			int i = RandomUtils.nextInt ( 0, names.length );
-			log.info("QueryName: "+names[i]); 
+			//log.info("QueryName: "+names[i]); 
 			counts [ i ]++;
 			if (times[i] == null) {
 				times[i] = new ArrayList<Double>(); 
