@@ -1,0 +1,1 @@
+g.V().has('labelV-idx', 'BioProc:Concept:Resource').as('class').repeat(out('is_a')).times($steps).has('labelV-idx', 'BioProc:Concept:Resource').as('top').select('class', 'top').by('prefName').limit(100)

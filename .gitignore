@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 .project
 .settings/
 target/
 .classpath
 .DS_Store
 /bin/
+=======
+.project
+.settings/
+target/
+.classpath
+.DS_Store
+/bin/
+>>>>>>> refs/heads/Java1.8-Compatible

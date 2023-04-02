@@ -1,1 +1,0 @@
-g.V().has('labelV-idx', 'Concept:Protein:Resource').sample(100).valueMap('description', 'prefName')

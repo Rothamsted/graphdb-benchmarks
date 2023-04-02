@@ -1,0 +1,4 @@
+# Instances of a given type
+SELECT ( COUNT ( DISTINCT ?iri ) AS ?ct ) {
+	?iri a <$class>.
+}

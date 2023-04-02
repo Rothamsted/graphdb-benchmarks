@@ -1,0 +1,24 @@
+# Nested and outer aggregations (see Q6 from the [Berlin benchmark](https://goo.gl/v4YbQ2))
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX bk: <http://www.ondex.org/bioknet/terms/>
+PREFIX bkr: <http://www.ondex.org/bioknet/resources/>
+PREFIX bka: <http://www.ondex.org/bioknet/attributes/>
+
+SELECT ?pwName ( COUNT ( DISTINCT ?react ) AS ?nReact ) ( AVG ( ?np ) AS ?avgProt )
+{
+  SELECT ?pwName ?react ( COUNT ( DISTINCT ?prot ) AS ?np )
+  {
+    ?prot a bk:Protein.
+    ?prot bk:pd_by|bk:cs_by ?react.
+    ?react a bk:Reaction.
+    ?react bk:part_of ?pw.
+    ?pw a bk:Path.
+		
+    OPTIONAL { ?pw bk:prefName ?pwName }
+  }
+  GROUP BY ?pwName ?react
+}
+GROUP BY ?pwName
+HAVING ( COUNT ( DISTINCT ?react ) <= AVG ( ?np ) )
+LIMIT 100

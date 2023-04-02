@@ -1,0 +1,6 @@
+g.V().has('iri', '$iri').as('ini').
+	out('has_variation').
+	has('labelV-idx', 'Concept:Resource:SNP').
+	out('associated_with').
+	has('labelV-idx', 'Concept:Resource:Trait').as('end').
+	select('ini','end').by('prefName')

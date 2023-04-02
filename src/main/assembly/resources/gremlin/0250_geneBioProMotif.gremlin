@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 g.V().has('iri', '$iri').as('ini').
 	out('participates_in').
 	has('labelV-idx', 'BioProc:Concept:Resource').as('end').
@@ -8,3 +9,9 @@ g.V().has('labelV-idx', 'Concept:Gene:Resource').as('ini').
 	has('labelV-idx', 'BioProc:Concept:Resource').as('end').
 	select('ini').count()
 	
+=======
+g.V().has('iri', '$iri').as('ini').
+	out('participates_in').
+	has('labelV-idx', 'BioProc:Concept:Resource').as('end').
+	select('ini','end').by('prefName')
+>>>>>>> refs/heads/Java1.8-Compatible
