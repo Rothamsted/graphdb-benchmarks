@@ -16,8 +16,11 @@ public class GremlinProfilerTest
 	@Test
 	public void testBasics ()
 	{
+		// TODO: use the logger! 
+		System.out.println("Creating ..."); 
 		GremlinProfiler profiler = new GremlinProfiler( "src/main/assembly/resources/gremlin/", "localhost", 8182);
-		profiler.profile ( 2100 );
+		System.out.println("Profiler created ..."); 
+		profiler.profile ( 1000 );
 		
 	}
 }

@@ -15,6 +15,7 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.math3.stat.descriptive.SummaryStatistics;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,6 +25,7 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 
 import uk.ac.ebi.utils.opt.io.IOUtils;
+import uk.ac.ebi.utils.runcontrol.ProgressLogger;
 
 /**
  * Abstract class to drive the a benchmark test with Cypher or SPARQL queries.
@@ -49,29 +51,108 @@ public abstract class AbstractProfiler
 	/**
 	 * The general profiling procedure, see the main README. 
 	 */
-	public void profile ( int repeats )
+	public void profile ( int repeatsPerQuery )
 	{
-		// all the tests
+		log.info ( "Start profiling with {}", this.getClass ().getSimpleName () ); 
+		
+		// all the tests/queries
 		String names[] = getQueryNames ( this.basePath, this.queryFileExtension );
 				
-		// Do a number of iterations
-		int counts [] = new int [ names.length ];
-		double times [] = new double [ names.length ];
-		for ( int rep = 0; rep < repeats; rep++ )
+		// Do a number of iterations and collect per-query results
+		// See the Apache Commons documentation about this class:
+		// https://commons.apache.org/proper/commons-math/userguide/stat.html
+		SummaryStatistics[] stats = new SummaryStatistics [ names.length ];
+		
+		ProgressLogger progress = new ProgressLogger ( "{} runs", 100 );
+		final int totalRepeats = repeatsPerQuery * names.length;
+		for ( int rep = 0; rep < totalRepeats; rep++ )
 		{
-			// pick up a random query
+			// pick up a random query to run
 			int i = RandomUtils.nextInt ( 0, names.length );
-			counts [ i ]++;
-			times [ i ] += profileQuery ( names [ i ] );
 			
-			if ( rep > 0 && rep % 100 == 0) log.info ( "{} runs", rep );
+			long time = profileQuery ( names [ i ] );
+			stats [ i ].addValue ( time );
+			
+			progress.update ( rep );
 		}
 		
-		// And finally, compute the average times and report
-		out.println ("Name\tAvgTime");
-		for ( int i = 0; i < names.length; i++  )
-			out.printf ( "%s\t%f\n", getQueryId ( names [ i ] ), times [ i ] / counts [ i ] );
+		// And finally report everything
+		writeStats ( names, stats );
 	}	
+	
+	/*
+	 * TODO: this is a variant that tries to ensure every query is executed at least once. However, 
+	 * 1. looks like it's not used
+	 * 2. it only ensures each query is run at least once, but doesn't ensure any balance in runs/query
+	 * 3. if there are enough repeats wrt the no of queries (thousands), then it's the large numbers law
+	 *    that ensures an even distribution
+	 * 4. if we really need each query is ran exactly repeatsPerQuery times, a better method is:
+	 *    for repeat in 1 .. repeatsPerQuery:
+	 *      for query in shuffle(queries): // shuffle the queries array randomly
+	 *        profile ( query ) and collect
+	 *  
+	 * In conclusion, either delete this, or re-arrange it as above.
+	 */
+//	public void profileForcingExecutions ( int repeatsPerQuery )
+//	{
+//		log.info("Start profiling ..."); 
+//
+//		// all the tests
+//		String names[] = getQueryNames ( this.basePath, this.queryFileExtension );
+//				
+//		// Do a number of iterations
+//		int counts [] = new int [ names.length ];
+//		ArrayList<Double>[] times = new ArrayList[ names.length ];
+//		ArrayList<Integer> availableQueries = new ArrayList<Integer>(); 
+//		
+//		for (int i=0; i<names.length;i++) {
+//			availableQueries.add(i); 
+//		}
+//		
+//		for ( int rep = 0; rep < repeatsPerQuery*names.length; rep++ )
+//		{
+//			// pick up a random query from the available ones
+//			int availableQueryPosition = RandomUtils.nextInt ( 0, availableQueries.size()); 
+//			int queryPosition = availableQueries.get(availableQueryPosition);
+//			log.info("QueryName: "+names[queryPosition]); 
+//			counts [ queryPosition ]++;
+//			if (times[queryPosition] == null) {
+//				times[queryPosition] = new ArrayList<Double>(); 
+//			}
+//			times [ queryPosition ].add( Double.valueOf(profileQuery ( names [ queryPosition ] ) ) );
+//			
+//			if (counts[queryPosition] == repeatsPerQuery) {
+//				// I remove it from the available ones
+//				availableQueries.remove(availableQueryPosition); 
+//			}
+//			
+//			if ( rep > 0 && rep % 50 == 0) log.info ( "{} runs", rep );
+//		}
+//		
+//		writeStats(names, times); 
+//	}	
+
+	
+	
+	protected void writeStats ( String queryNames[], SummaryStatistics[] stats )
+	{
+		out.println ( "Name\tAvgTime\tSTD\tMaxTime\tMinTime\tExecs" );
+		for ( int i = 0; i < queryNames.length; i++ )
+		{	
+			out.printf ( 
+				"%s\t%f\t%f\t%f\t%f\t%d\n",
+				getQueryId ( queryNames[ i ] ), 
+				stats [ i ].getMean (),
+				stats [ i ].getStandardDeviation (),
+				stats [ i ].getMax (),
+				stats [ i ].getMin (),
+				stats [ i ].getN ()
+			);
+		}
+	}	
+	
+	
+	
 	
 	/**
 	 * Should use {@link #getQueryString(String)}, issue the query and get the required time.
@@ -108,6 +189,7 @@ public abstract class AbstractProfiler
 		}
 	}
 
+	
 	
 	/**
 	 * Injects params into str, looking for $colName placeholders.

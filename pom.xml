@@ -65,7 +65,6 @@
 		<dependency>
 			<groupId>uk.ac.ebi</groupId>
 			<artifactId>jutils</artifactId>
-			<version>11.0.1</version>
 		</dependency>
 
 		<dependency>
@@ -97,6 +96,13 @@
       <artifactId>gremlin-driver</artifactId>
       <version>3.4.6</version>
     </dependency>
+		
+		<!-- To compute statistics -->
+		<dependency>
+		  <groupId>org.apache.commons</groupId>
+		  <artifactId>commons-math3</artifactId>
+		  <version>3.2</version>
+		</dependency>		
 		
 	</dependencies>
 
