@@ -1,0 +1,18 @@
+# 3-step semantic motif
+
+PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
+		
+SELECT ?gPref ?pubPref
+FROM <http://knetminer.org/arabidopsis>
+{
+	<$iri> bk:prefName ?gPref; 
+		bk:has_variation ?var. 
+	?var a bk:SNP; 
+		bk:associated_with ?t. 
+	?t a bk:Trait;
+		bk:pub_in ?pub. 
+	?pub a bk:Publication; 
+		bk:prefName ?pubPref. 
+		
+}
+

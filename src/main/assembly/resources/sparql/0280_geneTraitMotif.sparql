@@ -1,0 +1,12 @@
+# Semantic motif path about co-occurrence
+PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
+		
+SELECT ?gPref ?tPref
+FROM <http://knetminer.org/arabidopsis>
+{
+	<$iri> bk:prefName ?gPref. 
+	
+	?t bk:cooc_wi <$iri>; 
+		bk:prefName ?tPref; 
+		a bk:Trait. 
+}
