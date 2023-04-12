@@ -63,7 +63,9 @@ public abstract class AbstractProfiler
 		// https://commons.apache.org/proper/commons-math/userguide/stat.html
 		SummaryStatistics[] stats = new SummaryStatistics [ names.length ];
 		
-		ProgressLogger progress = new ProgressLogger ( "{} runs", 100 );
+		ProgressLogger progressLogger = new ProgressLogger ( "{} query executions profiled", 100 );
+		progressLogger.setIsThreadSafe ( true );
+		
 		final int totalRepeats = repeatsPerQuery * names.length;
 		for ( int rep = 0; rep < totalRepeats; rep++ )
 		{
@@ -71,9 +73,11 @@ public abstract class AbstractProfiler
 			int i = RandomUtils.nextInt ( 0, names.length );
 			
 			long time = profileQuery ( names [ i ] );
+			
+			if ( stats [ i ] == null ) stats [ i ] = new SummaryStatistics ();
 			stats [ i ].addValue ( time );
 			
-			progress.update ( rep );
+			progressLogger.update ( rep );
 		}
 		
 		// And finally report everything
