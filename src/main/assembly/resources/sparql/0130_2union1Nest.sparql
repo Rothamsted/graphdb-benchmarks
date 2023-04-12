@@ -19,7 +19,7 @@ SELECT ?pname ?ename ?rtype ?cname
   }
 
   ?e bk:ac_by|bk:in_by ?c.
-  c a bk:Comp.
+  ?c a bk:Comp.
   
   OPTIONAL { ?p bk:prefName ?pname }
   OPTIONAL { ?e bk:prefName ?ename }
