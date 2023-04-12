@@ -1,4 +1,6 @@
-# http://knetminer.org/data/rdf/resources/gene_traescs1a02g266300
+# Semantic motif with branching node 
+#
+PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
 		
 SELECT ?gPref ?bPref
 FROM <http://knetminer.org/arabidopsis>
@@ -6,29 +8,29 @@ FROM <http://knetminer.org/arabidopsis>
 	{
 		SELECT ?gPref ?prot
 		WHERE 
-		{ <$iri> <http://knetminer.org/data/rdf/terms/biokno/prefName> ?gPref; 
-				<http://knetminer.org/data/rdf/terms/biokno/enc> ?prot .
-			?prot a <http://knetminer.org/data/rdf/terms/biokno/Protein>. 
+		{ <$iri> bk:prefName ?gPref; 
+				bk:enc ?prot .
+			?prot a bk:Protein. 
 		}
 	}
 	
 	{
 		
-			{ ?prot <http://knetminer.org/data/rdf/terms/biokno/genetic>{0,6} ?prot2  }
+			{ ?prot bk:genetic{0,6} ?prot2  }
 			UNION 
-			{ ?prot <http://knetminer.org/data/rdf/terms/biokno/phisical>{0,6} ?prot2  }
+			{ ?prot bk:phisical{0,6} ?prot2  }
 			UNION 
-			{ ?prot <http://knetminer.org/data/rdf/terms/biokno/h_s_s>{0,4} ?prot2  }
+			{ ?prot bk:h_s_s{0,4} ?prot2  }
 			UNION 
-			{ ?prot <http://knetminer.org/data/rdf/terms/biokno/ortho>{0,4} ?prot2  }
+			{ ?prot bk:ortho{0,4} ?prot2  }
 			UNION 
-			{ ?prot <http://knetminer.org/data/rdf/terms/biokno/xref>{0,4} ?prot2  }
+			{ ?prot bk:xref{0,4} ?prot2  }
 		
 	}
 	
-	?prot2 <http://knetminer.org/data/rdf/terms/biokno/participates_in> ?b.
-	?b a <http://knetminer.org/data/rdf/terms/biokno/BioProc>; 
-	  <http://knetminer.org/data/rdf/terms/biokno/prefName> ?bPref. 
+	?prot2 bk:participates_in ?b.
+	?b a bk:BioProc; 
+	  bk:prefName ?bPref. 
 	
 }
 LIMIT 100

@@ -1,4 +1,4 @@
-# Semantic motif path with branching node
+# Semantic motif with branching node/2
 PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
 		
 SELECT ?gPref ?pubPref
