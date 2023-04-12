@@ -114,6 +114,9 @@ public class GremlinProfiler extends AbstractProfiler
 				}
 				catch ( ExecutionException ex )
 				{
+					// TODO: is this always a timeout? Can't it be another failure? Isn't there a specific 
+					// exception?
+					//
 					this.numberOfTimeouts++;
 					log.debug ( "timeout for Gremlin query '{}'", name );
 				}
