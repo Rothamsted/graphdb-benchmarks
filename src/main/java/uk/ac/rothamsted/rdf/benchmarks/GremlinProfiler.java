@@ -6,15 +6,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+import org.apache.commons.math3.stat.descriptive.SummaryStatistics;
 import org.apache.tinkerpop.gremlin.driver.Client;
 import org.apache.tinkerpop.gremlin.driver.Cluster;
-import org.apache.tinkerpop.gremlin.driver.MessageSerializer;
 import org.apache.tinkerpop.gremlin.driver.RequestOptions;
-import org.apache.tinkerpop.gremlin.driver.ser.GryoMessageSerializerV3d0;
 import org.apache.tinkerpop.gremlin.structure.io.gryo.GryoMapper;
 import org.janusgraph.graphdb.tinkerpop.JanusGraphIoRegistry;
-
-import com.machinezoo.noexception.Exceptions;
 
 import org.apache.tinkerpop.gremlin.driver.Result;
 
@@ -36,7 +33,12 @@ import uk.ac.ebi.utils.time.XStopWatch;
  */
 public class GremlinProfiler extends AbstractProfiler
 {
-	/** some configuration parameters that we have found useful via experimentation */
+	/** 
+	 * Some configuration parameters that we have found useful via experimentation.
+	 * 
+	 * TODO: should become class fields, with setters and possibly getters.
+	 * 
+	 */
 	public static final int MIN_CONNECTION_POOL_SIZE = 2,
 		MAX_CONNECTION_POOL_SIZE = 8,
 		MIN_USAGES_PER_CONNECTION = 8,
@@ -52,16 +54,23 @@ public class GremlinProfiler extends AbstractProfiler
 
 	private Cluster cluster;
 
-	private Integer port;
+	private int port;
 
-	public GremlinProfiler ( String basePath, String endPointUrl, Integer port )
+	public GremlinProfiler ( String basePath, String host, int port )
 	{
 		this ();
 		this.basePath = basePath;
-		this.endPointUrl = endPointUrl;
+		// As you can see, this isn't used as an URL, but as the host. Apparently, Janus 
+		// doesn't accept URLs
+		this.endPointUrl = host;
 		this.port = port;
 	}
-
+	
+	public GremlinProfiler ( String basePath )
+	{
+		this ( basePath, "localhost", 8182 );
+	}
+		
 	public GremlinProfiler ()
 	{
 		super ( "gremlin" );
@@ -77,13 +86,12 @@ public class GremlinProfiler extends AbstractProfiler
 			// we build another cluster also if the one is already closed or is already closing
 			//
 			
-			GryoMapper.Builder builder = GryoMapper.build ()
-				.addRegistry ( JanusGraphIoRegistry.getInstance () );
-			MessageSerializer serializer = new GryoMessageSerializerV3d0 ( builder );
+			// TODO: remove? Doesn't seem to be used in recent Janus (1.0.0-rc2)
+			//GryoMapper.Builder builder = GryoMapper.build ()
+			//	.addRegistry ( JanusGraphIoRegistry.instance () );
 			
 			cluster = Cluster.build ( this.endPointUrl )
 				.port ( this.port )
-				.serializer ( serializer )
 				.minConnectionPoolSize ( MIN_CONNECTION_POOL_SIZE ).maxConnectionPoolSize ( MAX_CONNECTION_POOL_SIZE )
 				.minSimultaneousUsagePerConnection ( MIN_USAGES_PER_CONNECTION )
 				.maxSimultaneousUsagePerConnection ( MAX_USAGES_PER_CONNECTION )
@@ -100,7 +108,7 @@ public class GremlinProfiler extends AbstractProfiler
 			final Client clientRO = client; // required in the lambda
 
 			RequestOptions options = RequestOptions.build ()
-				.timeout ( 500 )
+				.timeout ( 5 * 1000 )
 				.create ();
 			
 			return XStopWatch.profile ( () -> 
@@ -140,10 +148,14 @@ public class GremlinProfiler extends AbstractProfiler
 		return numberOfTimeouts;
 	}
 
-	public void profile ( int repeats )
+
+	@Override
+	protected void writeStats ( String[] queryNames, SummaryStatistics[] stats )
 	{
-		super.profile ( repeats );
+		super.writeStats ( queryNames, stats );
+
 		out.println ( "----" );
 		out.println ( "Number of timeouts: " + this.numberOfTimeouts );
 	}
+		
 }

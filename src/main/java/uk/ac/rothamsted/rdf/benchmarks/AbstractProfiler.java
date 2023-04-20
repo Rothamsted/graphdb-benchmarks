@@ -82,6 +82,8 @@ public abstract class AbstractProfiler
 		
 		// And finally report everything
 		writeStats ( names, stats );
+		
+		log.info ( "Benchmark finished" );
 	}	
 	
 	/*
@@ -143,14 +145,16 @@ public abstract class AbstractProfiler
 		out.println ( "Name\tAvgTime\tSTD\tMaxTime\tMinTime\tExecs" );
 		for ( int i = 0; i < queryNames.length; i++ )
 		{	
+			SummaryStatistics statsi = stats [ i ];
+			if ( statsi == null ) continue;
 			out.printf ( 
 				"%s\t%f\t%f\t%f\t%f\t%d\n",
 				getQueryId ( queryNames[ i ] ), 
-				stats [ i ].getMean (),
-				stats [ i ].getStandardDeviation (),
-				stats [ i ].getMax (),
-				stats [ i ].getMin (),
-				stats [ i ].getN ()
+				statsi.getMean (),
+				statsi.getStandardDeviation (),
+				statsi.getMax (),
+				statsi.getMin (),
+				statsi.getN ()
 			);
 		}
 	}	

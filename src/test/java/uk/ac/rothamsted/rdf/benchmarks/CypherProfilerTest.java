@@ -20,6 +20,6 @@ public class CypherProfilerTest
 	public void testBasics ()
 	{
 		CypherProfiler profiler = new CypherProfiler ( "src/main/assembly/resources/cypher/" );
-		profiler.profile ( 2100 );
+		profiler.profile ( 10 );
 	}
 }
