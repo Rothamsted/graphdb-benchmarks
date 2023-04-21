@@ -40,10 +40,10 @@ public class GremlinProfiler extends AbstractProfiler
 		MAX_WAIT_FOR_CONNECTION = 30000,
 		RESULT_ITERATION_BATCH_SIZE = 64;
 
+	private int port;
 
 	private Cluster cluster;
 
-	private int port;
 
 	public GremlinProfiler ( String basePath, String host, int port )
 	{
@@ -112,6 +112,9 @@ public class GremlinProfiler extends AbstractProfiler
 			// TODO: is this always a timeout? Can't it be another failure? Isn't there a specific 
 			// exception?
 			//
+			log.error ( "Error while running {}, query is:\n{}\nError is:", name, gremlinQuery, ex );
+			
+			// Count it as failed
 			return -1;
 		}		
 		finally

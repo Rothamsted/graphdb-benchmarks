@@ -70,8 +70,9 @@ public class CypherProfiler extends AbstractProfiler
 		}
 		catch ( Neo4jException ex )
 		{
-			log.error ( "Error while parsing {}, query is:\n{}", name, cypher );
-			throw new IllegalArgumentException ( "Error while parsing Cypher '" + name + "': " + ex.getMessage (), ex ); 
+			log.error ( "Error while running {}, query is:\n{}\nError is:", name, cypher, ex );
+			// Count it as failed
+			return -1;
 		}
 	}
 

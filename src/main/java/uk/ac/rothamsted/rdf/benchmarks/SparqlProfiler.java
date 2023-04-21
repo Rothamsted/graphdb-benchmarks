@@ -63,8 +63,9 @@ public class SparqlProfiler extends AbstractProfiler
 		}
 		catch ( QueryException ex ) 
 		{
-			log.error ( "Error while parsing {}, query is:\n{}", name, sparql );
-			throw new IllegalArgumentException ( "Error while parsing SPARQL '" + name + "': " + ex.getMessage (), ex ); 
+			log.error ( "Error while running {}, query is:\n{}\nError is:", name, sparql, ex );
+			// Count it as failed
+			return -1;
 		}
 	}	
 }
