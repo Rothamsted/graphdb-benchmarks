@@ -40,7 +40,8 @@ public abstract class AbstractProfiler
 	protected final String queryFileExtension;
 	
 	protected Logger log = LoggerFactory.getLogger ( this.getClass () );
-	protected String endPointUrl;	
+	protected String endPointUrl;
+	
 
 	protected AbstractProfiler ( String queryFileExtension )
 	{
@@ -62,6 +63,7 @@ public abstract class AbstractProfiler
 		// See the Apache Commons documentation about this class:
 		// https://commons.apache.org/proper/commons-math/userguide/stat.html
 		SummaryStatistics[] stats = new SummaryStatistics [ names.length ];
+		Integer timeoutCounts[] = new Integer [ names.length ];
 		
 		ProgressLogger progressLogger = new ProgressLogger ( "{} query executions profiled", 100 );
 		progressLogger.setIsThreadSafe ( true );
@@ -74,14 +76,25 @@ public abstract class AbstractProfiler
 			
 			long time = profileQuery ( names [ i ] );
 			
-			if ( stats [ i ] == null ) stats [ i ] = new SummaryStatistics ();
-			stats [ i ].addValue ( time );
+			if ( time == -1 )
+			{
+				log.warn ( "Timeout/error for query {}", names [ i ] );
+				if ( timeoutCounts [ i ] == null )
+					timeoutCounts [ i ] = 1;
+				else
+					timeoutCounts [ i ]++;
+			}
+			else
+			{
+				if ( stats [ i ] == null ) stats [ i ] = new SummaryStatistics ();
+				stats [ i ].addValue ( time );
+			}
 			
 			progressLogger.update ( rep );
 		}
 		
 		// And finally report everything
-		writeStats ( names, stats );
+		writeStats ( names, stats, timeoutCounts );
 		
 		log.info ( "Benchmark finished" );
 	}	
@@ -140,22 +153,28 @@ public abstract class AbstractProfiler
 
 	
 	
-	protected void writeStats ( String queryNames[], SummaryStatistics[] stats )
+	protected void writeStats ( String queryNames[], SummaryStatistics[] stats, Integer[] timeoutCounts )
 	{
-		out.println ( "Name\tAvgTime\tSTD\tMaxTime\tMinTime\tExecs" );
+		out.println ( "Name\tAvgTime\tSTD\tMinTime\tMaxTime\tExecs\tTimeouts" );
 		for ( int i = 0; i < queryNames.length; i++ )
 		{	
+			out.printf ( "%s", getQueryId ( queryNames[ i ] ) );
+
 			SummaryStatistics statsi = stats [ i ];
-			if ( statsi == null ) continue;
-			out.printf ( 
-				"%s\t%f\t%f\t%f\t%f\t%d\n",
-				getQueryId ( queryNames[ i ] ), 
-				statsi.getMean (),
-				statsi.getStandardDeviation (),
-				statsi.getMax (),
-				statsi.getMin (),
-				statsi.getN ()
-			);
+
+			if ( statsi == null )
+				out.printf ( "\t-\t-\t-\t-\t-" );
+			else
+				out.printf ( 
+					"\t%f\t%f\t%f\t%f\t%d",
+					statsi.getMean (),
+					statsi.getStandardDeviation (),
+					statsi.getMin (),
+					statsi.getMax (),
+					statsi.getN ()
+				);
+
+			out.printf ( "\t%d\n", timeoutCounts [ i ] == null ? 0 : timeoutCounts [ i ] );
 		}
 	}	
 	
@@ -166,6 +185,8 @@ public abstract class AbstractProfiler
 	 * Should use {@link #getQueryString(String)}, issue the query and get the required time.
 	 * You should time the query from when you send the string to the server to when you get results back
 	 * It's OK to keep an HTTP connection pool, but you should reset the client session every time.
+	 * 
+	 * It should return -1 when it fails for timeout or other reason.
 	 * 
 	 */
 	protected abstract long profileQuery ( String name );
