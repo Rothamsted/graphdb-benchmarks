@@ -1,21 +1,12 @@
 package uk.ac.rothamsted.rdf.benchmarks;
 
-import static java.lang.System.out;
-
 import java.util.Iterator;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
 
-import org.apache.commons.math3.stat.descriptive.SummaryStatistics;
 import org.apache.tinkerpop.gremlin.driver.Client;
 import org.apache.tinkerpop.gremlin.driver.Cluster;
 import org.apache.tinkerpop.gremlin.driver.RequestOptions;
-import org.apache.tinkerpop.gremlin.structure.io.gryo.GryoMapper;
-import org.janusgraph.graphdb.tinkerpop.JanusGraphIoRegistry;
-
 import org.apache.tinkerpop.gremlin.driver.Result;
 
-import uk.ac.ebi.utils.exceptions.ExceptionUtils;
 import uk.ac.ebi.utils.time.XStopWatch;
 
 /**
@@ -49,8 +40,6 @@ public class GremlinProfiler extends AbstractProfiler
 		MAX_WAIT_FOR_CONNECTION = 30000,
 		RESULT_ITERATION_BATCH_SIZE = 64;
 
-	/** given the problems with executions in gremlin we count the potentials timeouts */
-	private int numberOfTimeouts = 0;
 
 	private Cluster cluster;
 
@@ -105,57 +94,30 @@ public class GremlinProfiler extends AbstractProfiler
 		try
 		{
 			client = cluster.connect ();
-			final Client clientRO = client; // required in the lambda
 
 			RequestOptions options = RequestOptions.build ()
-				.timeout ( 5 * 1000 )
+				.timeout ( 60 * 1000 )
 				.create ();
 			
-			return XStopWatch.profile ( () -> 
-			{
-				try
-				{
-					List<Result> list = clientRO.submit ( gremlinQuery, options ).all ().get ();
-					// Force fetching of the first result, just in case it's lazy
-					Iterator<Result> itr = list.iterator ();
-					if ( itr.hasNext () ) itr.next ();
-				}
-				catch ( ExecutionException ex )
-				{
-					// TODO: is this always a timeout? Can't it be another failure? Isn't there a specific 
-					// exception?
-					//
-					this.numberOfTimeouts++;
-					log.debug ( "timeout for Gremlin query '{}'", name );
-				}
-				catch ( Exception ex )
-				{
-					ExceptionUtils.throwEx ( 
-						RuntimeException.class, ex, 
-						"Error while running Gremlin query '%s': $cause, query is:\n%s\n", name, gremlinQuery
-					);
-				}
-			});
+			XStopWatch watch = new XStopWatch ();
+			watch.start ();
+
+			Iterator<Result> itr = client.submit ( gremlinQuery, options ).iterator ();
+			// Force fetching of the first result, just in case it's lazy
+			if ( itr.hasNext () ) itr.next ();
+			return watch.getTime ();
 		}
+		catch ( Exception ex )
+		{
+			// TODO: is this always a timeout? Can't it be another failure? Isn't there a specific 
+			// exception?
+			//
+			return -1;
+		}		
 		finally
 		{
 			if ( client != null ) client.close (); // client does not implement auto-closeable interface
 		}
-	}
-
-	public int getNumberOfTimeouts ()
-	{
-		return numberOfTimeouts;
-	}
-
-
-	@Override
-	protected void writeStats ( String[] queryNames, SummaryStatistics[] stats )
-	{
-		super.writeStats ( queryNames, stats );
-
-		out.println ( "----" );
-		out.println ( "Number of timeouts: " + this.numberOfTimeouts );
 	}
 		
 }

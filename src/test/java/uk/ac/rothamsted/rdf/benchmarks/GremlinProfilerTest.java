@@ -17,8 +17,8 @@ public class GremlinProfilerTest
 	public void testBasics ()
 	{
 		GremlinProfiler profiler = new GremlinProfiler( 
-			// "src/main/assembly/resources/gremlin/"
-			"/tmp/gremlin/"
+			"src/main/assembly/resources/gremlin/"
+			// "/tmp/gremlin/"
 		);
 		profiler.profile ( 10 );
 	}

@@ -13,6 +13,7 @@ Default uses Berkeley on the mentioned volume
 * Starting the client
 
 ```bash
+# -e not needed when connecting conf/docker-host-remote.yaml
 docker run --rm --link janus:janusgraph -e GREMLIN_REMOTE_HOSTS=janusgraph -it janusgraph/janusgraph ./bin/gremlin.sh
 ```
 
@@ -22,6 +23,8 @@ docker run --rm --link janus:janusgraph -e GREMLIN_REMOTE_HOSTS=janusgraph -it j
 
 ```groovy
 :remote connect tinkerpop.server conf/remote.yaml
+# Or this for testing that it is reachable from the outside 
+# :remote connect tinkerpop.server conf/docker-host-remote.yaml
 :remote console
 g.addV('person').property('name', 'chris')
 g.V()
