@@ -98,13 +98,19 @@ public class GremlinProfiler extends AbstractProfiler
 			RequestOptions options = RequestOptions.build ()
 				.timeout ( 60 * 1000 )
 				.create ();
+
+			// As usually, we time the fetch of the first result, and then we flush the rest of 
+			// the stream
 			
 			XStopWatch watch = new XStopWatch ();
 			watch.start ();
 
 			Iterator<Result> itr = client.submit ( gremlinQuery, options ).iterator ();
-			// Force fetching of the first result, just in case it's lazy
 			if ( itr.hasNext () ) itr.next ();
+			watch.stop ();
+			
+			itr.forEachRemaining ( rs -> rs.hashCode () );
+			
 			return watch.getTime ();
 		}
 		catch ( Exception ex )

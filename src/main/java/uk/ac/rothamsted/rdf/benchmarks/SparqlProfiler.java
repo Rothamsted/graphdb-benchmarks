@@ -53,13 +53,13 @@ public class SparqlProfiler extends AbstractProfiler
 				// According to the most recent Jena, result streams are always consumed when reusing the 
 				// connections. Because the latter is typical, we are going to consume everything, but
 				// we're timing the first fetch only, as this is what we want to test and compare.
-				for ( ResultSet rs = qx.execSelect (); rs.hasNext (); )
-				{
-					rs.next ();
-					if ( watch.isStarted () ) watch.stop ();
-				}
+				ResultSet rs = qx.execSelect ();
+				if ( rs.hasNext () ) rs.next ();
+				watch.stop ();
+				
+				rs.forEachRemaining ( sol -> sol.hashCode () );
+				return watch.getTime ();
 			}
-			return watch.getTime ();
 		}
 		catch ( QueryException ex ) 
 		{
