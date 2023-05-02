@@ -1,0 +1,31 @@
+## Import from GraphML
+Usual syntax: 
+
+```groovy
+g.io ( "/tmp/test.xml" ).read ().iterate ()
+# Didn't try, but it should work
+graph.io(graphml()).readGraph('/tmp/test.graphml')
+```
+
+## Labels
+
+Gremlin doesn't have multiple labels, so use the syntax `L1:L2:L3`. Then you can at least filter 
+by label
+
+```groovy
+g.V().hasLabel ( containing ( 'Person' ) )
+```
+
+## Indexes
+
+In SQL:
+
+```sql
+create property `Person:Resource`.`label` string
+create index on `Person:Resource` ( `label` ) notunique
+```
+
+there is also the full_text type, but [I can't make it working](https://github.com/ArcadeData/arcadedb/issues/1062).
+
+
+
