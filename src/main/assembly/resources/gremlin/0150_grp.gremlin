@@ -1,0 +1,27 @@
+## TIME OUT 
+
+g.V().has('labelV-idx', 'Concept:Protein:Resource').as('prot').
+	out('pd_by','cs_by').has('labelV-idx', 'Concept:Reaction:Resource').as('react').
+	out('part_of').has('labelV-idx','Concept:Path:Resource').as('pw').
+	groupCount().by(select('pw').by('prefName')).limit(100)
+
+## THIS ONE WORKS 
+
+g.V().has('labelV-idx', 'Concept:Path:Resource').as('pw').
+	inE().has('labelE-idx', 'part_of').outV().
+	has('labelV-idx', 'Concept:Reaction:Resource').
+	inE().or(has('labelE-idx', 'pd_by'), has('labelE-idx', 'cs_by')).outV().
+	has('labelV-idx', 'Concept:Protein:Resource').as('prot').dedup().
+	groupCount().by(select('pw').by('prefName')).limit(100)
+	
+## ANOTHER POSSIBILITY:: This is the closest one 
+	
+ g.V().has('labelV-idx','Concept:Path:Resource').as('pw').
+	local(
+		__.inE().has('labelE-idx', 'part_of').outV().
+		has('labelV-idx', 'Concept:Reaction:Resource').
+		inE().or(has('labelE-idx', 'pd_by'), has('labelE-idx', 'cs_by')).outV().
+		has('labelV-idx','Concept:Protein:Resource').dedup().as('prot').
+		select('pw','prot').by('prefName').groupCount().by('pw')
+		).limit(100)
+		
