@@ -1,0 +1,43 @@
+## TIME OUT
+
+g.V().union(
+	__.has('labelV-idx', 'Concept:Protein:Resource').as('p').
+	outE('is_a').as('r').inV().has('labelV-idx', 'Concept:Enzyme:Resource').as('e').
+	out('ac_by', 'in_by').has('labelV-idx', 'Comp:Concept:Resource').as('c').limit(100), __.has('labelV-idx', 'Concept:Protein:Resource').as('p').
+	inE('ac_by').as('r').outV().has('labelV-idx', 'Concept:Enzyme:Resource').as('e').
+	out('ac_by','in_by').has('labelV-idx', 'Comp:Concept:Resource').as('c').limit(100)).
+	select('p','e','c','r').by('prefName').by('prefName').by('prefName').by('labelE-idx')
+	
+	
+## ANOTHER PURE APPROACH => TIME OUT IF YOU DON'T SPLIT IT
+## USING UNION AFTER g.V() SEEMS TO BE EXPENSIVE 
+## IT COMPLAINS ABOUT NOT USING INDEXES
+
+g.union(V().
+	has('labelV-idx', 'Comp:Concept:Resource').as('c').
+	inE().or(has('labelE-idx', 'ac_by'), has('labelE-idx', 'in_by')).outV().
+	has('labelV-idx', 'Concept:Enzyme:Resource').as('e').
+	inE().has('labelE-idx','is_a').as('r').outV().
+	has('labelV-idx', 'Concept:Protein:Resource').as('p').limit(100).
+	select('p','e','c','r').by('prefName').by('prefName').by('prefName').by('labelE-idx'), 
+	has('labelV-idx', 'Comp:Concept:Resource').as('c').
+	inE().or(has('labelE-idx', 'ac_by'), has('labelE-idx', 'in_by')).outV().
+	has('labelV-idx', 'Concept:Enzyme:Resource').as('e').
+	outE().has('labelE-idx', 'ac_by').as('r').inV().
+	has('labelV-idx', 'Concept:Protein:Resource').as('p').limit(100).
+	select('p','e','c','r').by('prefName').by('prefName').by('prefName').by('labelE-idx'))
+	
+## SOME REWRITING DONE AND IT WORKS
+	
+g.V().has('labelV-idx', 'Comp:Concept:Resource').as('c').
+	union(
+		__.inE().or(has('labelE-idx', 'ac_by'), has('labelE-idx', 'in_by')).outV().
+			has('labelV-idx', 'Concept:Enzyme:Resource').as('e').
+			inE().has('labelE-idx','is_a').as('r').outV().
+			has('labelV-idx', 'Concept:Protein:Resource').as('p').limit(100).
+				select('p','e','c','r').by('prefName').by('prefName').by('prefName').by('labelE-idx'), 
+		__.inE().or(has('labelE-idx', 'ac_by'), has('labelE-idx', 'in_by')).outV().
+			has('labelV-idx', 'Concept:Enzyme:Resource').as('e').
+			outE().has('labelE-idx', 'ac_by').as('r').inV().
+			has('labelV-idx', 'Concept:Protein:Resource').as('p').limit(100).
+			select('p','e','c','r').by('prefName').by('prefName').by('prefName').by('labelE-idx'))

@@ -1,0 +1,10 @@
+# THIS IS OURS
+g.V().has('labelV-idx', 'Concept:Path:Resource').limit(100).as('pway').	
+	match(
+		__.as('ini').inE().has('labelE-idx', 'part_of').outV().
+				has('labelV-idx','Concept:Reaction:Resource').dedup().count().as('nReact'), 
+		__.as('ini').inE().has('labelE-idx', 'part_of').outV().
+				has('labelV-idx','Concept:Reaction:Resource').
+				local(__.in('pd_by','cs_by').has('labelV-idx','Concept:Protein:Resource').as('prot').
+						dedup().count()).mean().as('avgProt') ).
+		select('pway','nReact','avgProt').by('prefName').by().by().where('nReact', gte('avgProt'))
