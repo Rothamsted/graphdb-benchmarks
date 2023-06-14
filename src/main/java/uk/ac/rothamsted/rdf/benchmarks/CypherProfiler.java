@@ -60,18 +60,14 @@ public class CypherProfiler extends AbstractProfiler
 			.withDefaultAccessMode ( AccessMode.READ )
 			.build ();
 		
-		try ( Session session = this.driver.session ( sc ); )
-		{
-			// As usually, we time the fetching of the first result, then we consume all the stream
-			// to prevent possible problems.
-			//
-			XStopWatch watch = new XStopWatch ();
-			Result rs = session.run ( cypher );		
-			if ( rs.hasNext () ) rs.next ();					
-			watch.stop ();
-			
-			rs.forEachRemaining ( rec -> rec.hashCode () );
-			return watch.getTime ();
+		try  {
+			return XStopWatch.profile ( () -> {
+				try ( Session session = this.driver.session ( sc ); )
+				{
+					Result rs = session.run ( cypher );		
+					rs.forEachRemaining ( rec -> rec.hashCode () );
+				}
+			});
 		}
 		catch ( Neo4jException ex )
 		{

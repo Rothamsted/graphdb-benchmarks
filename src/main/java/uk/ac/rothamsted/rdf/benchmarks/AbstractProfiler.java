@@ -184,10 +184,14 @@ public abstract class AbstractProfiler
 	
 	/**
 	 * Should use {@link #getQueryString(String)}, issue the query and get the required time.
+	 * 
 	 * You should time the query from when you send the string to the server to when you get results back
 	 * It's OK to keep an HTTP connection pool, but you should reset the client session every time.
 	 * 
 	 * It should return -1 when it fails for timeout or other reason.
+	 * 
+	 * To be fair, you should clock the fetch of all results, since some driver might do that
+	 * lazily and some others might not. Number of results should be limited by the queries.
 	 * 
 	 */
 	protected abstract long profileQuery ( String name );

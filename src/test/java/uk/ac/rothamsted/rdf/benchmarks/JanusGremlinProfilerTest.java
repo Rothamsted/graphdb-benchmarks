@@ -11,12 +11,12 @@ import org.junit.Test;
  * <dl><dt>Date:</dt><dd>25 May 2021</dd></dl>
  *
  */
-public class GremlinProfilerTest
+public class JanusGremlinProfilerTest
 {
 	@Test
 	public void testBasics ()
 	{
-		GremlinProfiler profiler = new GremlinProfiler( 
+		JanusGremlinProfiler profiler = new JanusGremlinProfiler( 
 			"src/main/assembly/resources/gremlin/"
 			// "/tmp/gremlin/"
 		);

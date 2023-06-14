@@ -20,9 +20,12 @@
 	</scm>
 
 	<properties>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+		
 		<slf4j.version>1.7.36</slf4j.version>
-		<maven.compiler.source>17</maven.compiler.source>
-		<maven.compiler.target>17</maven.compiler.target>
+		<arcadedb.version>23.5.1</arcadedb.version>
+
 	</properties>
 
 
@@ -67,6 +70,7 @@
 		<dependency>
 			<groupId>uk.ac.ebi</groupId>
 			<artifactId>jutils</artifactId>
+			<version>11.1</version>			
 		</dependency>
 
 		<dependency>
@@ -99,7 +103,23 @@
 		  <version>3.6.2</version>
 		</dependency>
     
-    
+		<!-- ArcadeDB -->
+		<dependency>
+		  <groupId>com.arcadedb</groupId>
+		  <artifactId>arcadedb-engine</artifactId>
+		  <version>${arcadedb.version}</version>
+		</dependency>
+		<dependency>
+		  <groupId>com.arcadedb</groupId>
+		  <artifactId>arcadedb-network</artifactId>
+		  <version>${arcadedb.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.arcadedb</groupId>
+			<artifactId>arcadedb-gremlin</artifactId>
+		  <version>${arcadedb.version}</version>
+		</dependency>
+		    
 		
 		<!-- To compute statistics -->
 		<dependency>

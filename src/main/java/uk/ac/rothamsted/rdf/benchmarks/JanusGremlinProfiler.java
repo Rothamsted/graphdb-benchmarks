@@ -22,7 +22,7 @@ import uk.ac.ebi.utils.time.XStopWatch;
  *         </dl>
  *
  */
-public class GremlinProfiler extends AbstractProfiler
+public class JanusGremlinProfiler extends AbstractProfiler
 {
 	/** 
 	 * Some configuration parameters that we have found useful via experimentation.
@@ -45,7 +45,7 @@ public class GremlinProfiler extends AbstractProfiler
 	private Cluster cluster;
 
 
-	public GremlinProfiler ( String basePath, String host, int port )
+	public JanusGremlinProfiler ( String basePath, String host, int port )
 	{
 		this ();
 		this.basePath = basePath;
@@ -55,12 +55,12 @@ public class GremlinProfiler extends AbstractProfiler
 		this.port = port;
 	}
 	
-	public GremlinProfiler ( String basePath )
+	public JanusGremlinProfiler ( String basePath )
 	{
 		this ( basePath, "localhost", 8182 );
 	}
 		
-	public GremlinProfiler ()
+	public JanusGremlinProfiler ()
 	{
 		super ( "gremlin" );
 	}
@@ -90,28 +90,25 @@ public class GremlinProfiler extends AbstractProfiler
 				.create ();
 		} 
 
-		Client client = null;
 		try
 		{
-			client = cluster.connect ();
-
 			RequestOptions options = RequestOptions.build ()
 				.timeout ( 60 * 1000 )
 				.create ();
 
-			// As usually, we time the fetch of the first result, and then we flush the rest of 
-			// the stream
-			
-			XStopWatch watch = new XStopWatch ();
-			watch.start ();
-
-			Iterator<Result> itr = client.submit ( gremlinQuery, options ).iterator ();
-			if ( itr.hasNext () ) itr.next ();
-			watch.stop ();
-			
-			itr.forEachRemaining ( rs -> rs.hashCode () );
-			
-			return watch.getTime ();
+			return XStopWatch.profile ( () -> 
+			{
+				Client client = null;
+				try {
+					client = cluster.connect ();
+					Iterator<Result> itr = client.submit ( gremlinQuery, options ).iterator ();
+					itr.forEachRemaining ( result -> result.getObject () );
+				}
+				finally
+				{
+					if ( client != null ) client.close (); // client does not implement auto-closeable interface
+				}
+			});
 		}
 		catch ( Exception ex )
 		{
@@ -123,10 +120,6 @@ public class GremlinProfiler extends AbstractProfiler
 			// Count it as failed
 			return -1;
 		}		
-		finally
-		{
-			if ( client != null ) client.close (); // client does not implement auto-closeable interface
-		}
 	}
 		
 }

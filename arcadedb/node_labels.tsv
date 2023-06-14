@@ -1,0 +1,15 @@
+Concept:EC:Resource
+Concept:Protein:Resource
+Concept:Publication:Resource
+Concept:Enzyme:Resource
+Accession:Resource
+Comp:Concept:Resource
+DataSource:Resource
+Concept:Protcmplx:Resource
+EvidenceType:Resource
+Concept:Reaction:Resource
+Concept:Path:Resource
+BioProc:Concept:Resource
+Concept:Resource:Transport
+CelComp:Concept:Resource
+Concept:MolFunc:Resource

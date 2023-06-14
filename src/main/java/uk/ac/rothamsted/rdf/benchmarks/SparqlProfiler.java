@@ -41,25 +41,20 @@ public class SparqlProfiler extends AbstractProfiler
 		if ( this.rdfConnection == null )
 			this.rdfConnection = RDFConnection.connect ( endPointUrl );
 		
-		XStopWatch watch = new XStopWatch ();
-		
-		// Clock the query
-		try
-		{
-			watch.start ();
-			Query query = QueryFactory.create ( sparql, Syntax.syntaxARQ );
-			try ( QueryExecution qx = this.rdfConnection.query ( query ) )
-			{
-				// According to the most recent Jena, result streams are always consumed when reusing the 
-				// connections. Because the latter is typical, we are going to consume everything, but
-				// we're timing the first fetch only, as this is what we want to test and compare.
-				ResultSet rs = qx.execSelect ();
-				if ( rs.hasNext () ) rs.next ();
-				watch.stop ();
-				
-				rs.forEachRemaining ( sol -> sol.hashCode () );
-				return watch.getTime ();
-			}
+		Query query = QueryFactory.create ( sparql, Syntax.syntaxARQ );
+
+		try {
+			return XStopWatch.profile ( () -> {
+				try ( QueryExecution qx = this.rdfConnection.query ( query ) )
+				{
+					ResultSet rs = qx.execSelect ();
+					rs.forEachRemaining ( sol -> {
+						// I don't know another way to be sure the result is consumed
+						sol.varNames ()
+						.forEachRemaining ( var -> sol.get ( var ) );
+					});
+				}
+			});
 		}
 		catch ( QueryException ex ) 
 		{

@@ -4,6 +4,7 @@ Usual syntax:
 ```groovy
 g.io ( "/tmp/test.xml" ).read ().iterate ()
 # Didn't try, but it should work
+g=graph
 graph.io(graphml()).readGraph('/tmp/test.graphml')
 ```
 
@@ -28,4 +29,20 @@ create index on `Person:Resource` ( `label` ) notunique
 there is also the full_text type, but [I can't make it working](https://github.com/ArcadeData/arcadedb/issues/1062).
 
 
+## All node labels and all node edges
 
+```groovy
+g.V().label().dedup ()
+g.E().label().dedup ()
+```
+
+Probably there's a more efficient method, but anyway
+
+
+## Inspecting the schema
+
+As reported by the manual:
+
+* select from schema:types to retrieve the defined types
+* select from schema:indexes to retrieve the defined indexes
+* select from schema:database to retrieve information about database settings
