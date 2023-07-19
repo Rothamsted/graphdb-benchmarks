@@ -1,0 +1,9 @@
+g.V()
+// exact selection just to check both this and containing()
+.hasLabel( 'Concept:Protein:Resource' )
+// Not using valuesMap, just to reproduce the selection of 1 value per tuple
+// instead values collated into arrays.
+.project ( 'prefName', 'description' )
+.by ( 'prefName' )
+.by ( 'description' )
+.limit ( 100 )

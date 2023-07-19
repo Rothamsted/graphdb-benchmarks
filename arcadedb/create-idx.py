@@ -24,12 +24,21 @@ all_rels = [ r [ 0 ] for r in all_rels ]
 idx_defs = read_tsv ( idx_defs_path )
 del idx_defs [ 0 ]
 
+print ( "Adding 'iri' indexing automatically", file = sys.stderr )
+idx_defs.append ( [ "*", "iri", "false" ] )
+idx_defs.append ( [ "*", "iri", "true" ] )
+
 for (type, prop, is_rel) in idx_defs:
-  if prop == '_type_':
-    # index on label or rel type, not supported
-    continue
 
   is_rel = is_rel == 'true'
+
+  if prop == '_type_':
+    type_lbl = "relation" if is_rel else "label" 
+    print ( 
+      f"Ignoring index _type_ entry on {type_lbl} '{type}', since ArcadeDB doesn't support type indexes",
+      file = sys.stderr
+    )
+    continue
 
   types = [ type ]
   if type == '*':
@@ -42,3 +51,4 @@ for (type, prop, is_rel) in idx_defs:
     #print ( f"CREATE INDEX `{itype}_{prop}{'_r' if is_rel else ''}` ON `{itype}` ( {prop} ) NOTUNIQUE" )
     print ( f"CREATE INDEX IF NOT EXISTS ON `{itype}` ( {prop} ) NOTUNIQUE;" )
     
+print ( "COMMIT;" )

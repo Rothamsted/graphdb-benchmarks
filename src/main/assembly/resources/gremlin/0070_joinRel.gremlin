@@ -1,0 +1,24 @@
+/*
+  See here regarding the optimisation of an initial version: https://stackoverflow.com/questions/76527659 
+  Using variables/Groovy is supported by Java driver, I'm not investigating if it's supported in general
+*/
+evLabels = [:]
+g.V().hasLabel ( containing ( 'Protcmplx' ) ).as ( 'cpx' )
+  // Trying to put the limit early-on
+  .inE().hasLabel ( 'is_part_of' ).limit ( 100 ).as ( 'pr' )
+  .outV ().hasLabel ( containing ( 'Protein' ) ).as ( 'p' )
+.select ( 'p', 'cpx', 'pr' )
+  .by ( 'prefName' )
+  .by ( 'prefName' )
+  .by ( map{
+    pr = it.get();
+    evIri = pr.values ( 'evidence' )?.next ();
+    if ( !evIri ) return "<NA>";
+    lbl = evLabels [ evIri ];
+    if ( lbl ) return lbl;
+    lbl = g.V().hasLabel ( containing ( 'EvidenceType' ) )
+             .has ( 'iri', evIri )
+             .values ( 'label' ).next ();
+    evLabels [ evIri ] = lbl == null ? "" : lbl;
+    return lbl;
+  })

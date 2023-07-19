@@ -4,8 +4,7 @@ Usual syntax:
 ```groovy
 g.io ( "/tmp/test.xml" ).read ().iterate ()
 # Didn't try, but it should work
-g=graph
-graph.io(graphml()).readGraph('/tmp/test.graphml')
+g.graph.io(graphml()).readGraph('/tmp/test.graphml')
 ```
 
 ## Labels
