@@ -1,9 +1,16 @@
 /*
-  See here regarding the optimisation of an initial version: https://stackoverflow.com/questions/76527659 
-  Using variables/Groovy is supported by Java driver, I'm not investigating if it's supported in general
+  See here regarding the optimisation of an initial version: https://stackoverflow.com/questions/76527659
+  
+  This doesn't need to use query-external variables (uses the side effect instead) and uses a cache to
+  keep intermediate results in memory.
+  
+  ArcadeDB allows for Groovy imports. 
 */
-evLabels = [:]
-g.V().hasLabel ( containing ( 'Protcmplx' ) ).as ( 'cpx' )
+import org.codehaus.groovy.runtime.memoize.CommonCache
+import java.util.concurrent.ConcurrentHashMap
+
+g.withSideEffect ( 'evLabels', new CommonCache( new ConcurrentHashMap () ) )
+  .V().hasLabel ( containing ( 'Protcmplx' ) ).as ( 'cpx' )
   // Trying to put the limit early-on
   .inE().hasLabel ( 'is_part_of' ).limit ( 100 ).as ( 'pr' )
   .outV ().hasLabel ( containing ( 'Protein' ) ).as ( 'p' )
@@ -11,14 +18,17 @@ g.V().hasLabel ( containing ( 'Protcmplx' ) ).as ( 'cpx' )
   .by ( 'prefName' )
   .by ( 'prefName' )
   .by ( map{
-    pr = it.get();
-    evIri = pr.values ( 'evidence' )?.next ();
-    if ( !evIri ) return "<NA>";
-    lbl = evLabels [ evIri ];
-    if ( lbl ) return lbl;
+    pr = it.get()
+    evIri = pr.value ( 'evidence' )
+    if ( !evIri ) return "<NA>"
+
+    evLabels = it.getSideEffects().get ( 'evLabels' )
+    lbl = evLabels [ evIri ]
+    if ( lbl ) return lbl
+       
     lbl = g.V().hasLabel ( containing ( 'EvidenceType' ) )
              .has ( 'iri', evIri )
-             .values ( 'label' ).next ();
-    evLabels [ evIri ] = lbl == null ? "" : lbl;
+             .values ( 'label' ).next ()
+    evLabels [ evIri ] = lbl == null ? "" : lbl
     return lbl;
   })
