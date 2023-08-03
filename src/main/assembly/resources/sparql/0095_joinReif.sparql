@@ -1,31 +1,23 @@
-# Join through relation property
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
 PREFIX bkr: <http://knetminer.org/data/rdf/resources/>
 PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
 
-SELECT DISTINCT ?pwName ?protName ?relatedConcept ?relatedType ?relatedName
+SELECT ?pname ?c1name ?evlabel
 {
-  VALUES ( ?relType ) {
-    ( bk:pd_by )
-    ( bk:cs_by )
-  }
-  ?prot a bk:Protein.
-  ?prot ?relType ?react.
-  ?react a bk:Reaction.
-  ?react bk:part_of ?pw.
-  ?pw a bk:Path.
+  ?p a bk:Protein.
+  ?p bk:is_part_of ?cpx1.
+  ?cpx1 a bk:Protcmplx.
 
-  ?rel bk:relFrom ?prot;
-       bk:relTo ?react;
-       bk:relTypeRef ?relType.
+  ?rel bk:relFrom ?p;
+       bk:relTo ?cpx1;
+       bk:relTypeRef bk:is_part_of.
 
-  ?rel bk:relatedConcept ?relatedConcept.
-  ?relatedConcept a ?relatedType.
+  ?rel bk:evidence ?ev.
 
-  OPTIONAL { ?pw bk:prefName ?pwName }
-  OPTIONAL { ?prot bk:prefName ?protName }
-  OPTIONAL { ?relatedConcept bk:prefName ?relatedName }
+  OPTIONAL { ?p bk:prefName ?pname }
+  OPTIONAL { ?cpx1 bk:prefName ?c1name }
+  OPTIONAL { ?ev rdfs:label ?evlabel }
 }
 LIMIT 100

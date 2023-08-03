@@ -1,24 +1,7 @@
-g.V().has('labelV-idx', 'Concept:Protein:Resource').has('prefName', textContainsRegex('.*$protName.*')).as('p').
-	out('is_part_of').has('labelV-idx', 'Concept:Protcmplx:Resource').as('cpx1').
-	out('is_part_of').has('labelV-idx', 'Concept:Protcmplx:Resource').as('cpx2').
-	select('p', 'cpx1', 'cpx2').by('prefName').limit(100)
-
-
-
-g.V().has('labelV-idx', 'Concept:Protein:Resource').has('prefName', textContains('3-isopropylmalate')).as('p').
-	out('is_part_of').has('labelV-idx', 'Concept:Protcmplx:Resource').as('cpx1').
-	out('is_part_of').has('labelV-idx', 'Concept:Protcmplx:Resource').as('cpx2').
-	select('p', 'cpx1', 'cpx2').by('prefName').limit(100)
-
-g.V().has('labelV-idx', 'Concept:Protcmplx:Resource').as('cpx2').
-	inE().has('labelE-idx', 'is_part_of').outV().has('labelV-idx', 'Concept:Protcmplx:Resource').as('cpx1').
-	inE().has('labelE-idx', 'is_part_of').outV().has('labelV-idx', 'Concept:Protein:Resource').
-		has('prefName', textContains('$protName').as('p'). 
-	select('p', 'cpx1', 'cpx2').by('prefName').limit(100)
-
-
-g.V().has('labelV-idx', 'Concept:Protcmplx:Resource').as('cpx2').
-	inE().has('labelE-idx', 'is_part_of').outV().has('labelV-idx', 'Concept:Protcmplx:Resource').as('cpx1').
-	inE().has('labelE-idx', 'is_part_of').outV().has('labelV-idx', 'Concept:Protein:Resource').
-		has('prefName', textContains('3-isopropylmalate')).as('p'). 
-	select('p', 'cpx1', 'cpx2').by('prefName').limit(100)
+g.V().hasLabel ( 'Concept:Protein:Resource' )
+  .has ( 'prefName', regex ( "(?i).*$protWord.*" ) ).as ( 'p' )
+.out ( 'is_part_of' ).hasLabel ( 'Concept:Protcmplx:Resource' ).as ( 'cpx1' )
+.out ( 'is_part_of' ).hasLabel ( 'Concept:Protcmplx:Resource' ).as ( 'cpx2' )
+.select ( 'p', 'cpx1', 'cpx2' )
+.by ( 'prefName' )
+.limit ( 100 )

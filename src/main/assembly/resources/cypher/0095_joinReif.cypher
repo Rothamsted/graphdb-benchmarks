@@ -1,5 +1,5 @@
-MATCH (prot:Protein)-[pr:pd_by|cs_by]->(:Reaction)-[:part_of]->(pw:Path),
-(c:Concept)
-WHERE pr.relatedConcept = c.iri
-RETURN DISTINCT pw.prefName, c.prefName, LABELS ( c ), prot.prefName
+MATCH (p:Protein) - [pr:is_part_of] -> (cpx:Protcmplx),
+(ev:EvidenceType)
+WHERE pr.evidence = ev.iri
+RETURN p.prefName, cpx.prefName, ev.label
 LIMIT 100

@@ -1,5 +1,3 @@
-MATCH (p:Protein) - [pr:is_part_of] -> (cpx:Protcmplx),
-(ev:EvidenceType)
-WHERE pr.evidence = ev.iri
-RETURN p.prefName, cpx.prefName, ev.label
+MATCH (p:Protein) - [pr:is_part_of] -> (cpx:Protcmplx)
+RETURN p.prefName, cpx.prefName, pr.evidence
 LIMIT 100

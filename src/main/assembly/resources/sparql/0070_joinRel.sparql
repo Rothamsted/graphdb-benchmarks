@@ -1,24 +1,27 @@
-# Join matching reified relation properties
+# Join literal properties of reified relations
+# (see also joinReif)
+# 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
 PREFIX bkr: <http://knetminer.org/data/rdf/resources/>
 PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
 
-SELECT ?pname ?c1name ?evlabel
-{
+SELECT ?pname ?c1name ?ev
+WHERE {
   ?p a bk:Protein.
   ?p bk:is_part_of ?cpx1.
   ?cpx1 a bk:Protcmplx.
-
+  
   ?rel bk:relFrom ?p;
        bk:relTo ?cpx1;
        bk:relTypeRef bk:is_part_of.
-
+  
+  # Here we just report the URI, in joinRef we go further and find its label
   ?rel bk:evidence ?ev.
-
+  
   OPTIONAL { ?p bk:prefName ?pname }
-  OPTIONAL { ?cpx1 bk:prefName ?c1name }
-  OPTIONAL { ?ev rdfs:label ?evlabel }
+  OPTIONAL { ?cpx1 bk:prefName ?c1name }  
 }
 LIMIT 100
+
