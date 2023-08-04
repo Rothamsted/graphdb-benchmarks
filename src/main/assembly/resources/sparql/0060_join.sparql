@@ -18,4 +18,5 @@ SELECT ?pname ?c1name ?c2name {
   OPTIONAL { ?cpx1 bk:prefName ?c1name }
   OPTIONAL { ?cpx2 bk:prefName ?c2name }
 }
+ORDER BY RAND()
 LIMIT 100

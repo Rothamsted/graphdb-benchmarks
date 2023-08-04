@@ -6,13 +6,12 @@ PREFIX bkr: <http://knetminer.org/data/rdf/resources/>
 PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
 
 SELECT ?pname ?ename ?cname ?rtype
-{
-  { ?p a bk:Protein;
-     bk:is_a ?e.
+{ 
+  { ?e a bk:Enzyme;
+       ^bk:is_a ?p;
+       bk:ac_by|bk:in_by ?c.
 
-    ?e a bk:Enzyme.
-    ?e bk:ac_by|bk:in_by ?c.
-
+    ?p a bk:Protein.
     ?c a bk:Comp.
     BIND ( "is_a" AS ?rtype )
   }
@@ -29,4 +28,6 @@ SELECT ?pname ?ename ?cname ?rtype
   OPTIONAL { ?e bk:prefName ?ename }
   OPTIONAL { ?c bk:prefName ?cname }
 }
+# Random order ensures that sometimes one or the other path is selected
+ORDER BY RAND()
 LIMIT 100

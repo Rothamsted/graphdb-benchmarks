@@ -23,5 +23,6 @@ WHERE {
   OPTIONAL { ?p bk:prefName ?pname }
   OPTIONAL { ?cpx1 bk:prefName ?c1name }  
 }
+ORDER BY RAND()
 LIMIT 100
 

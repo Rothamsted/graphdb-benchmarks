@@ -10,10 +10,15 @@ import org.codehaus.groovy.runtime.memoize.CommonCache
 import java.util.concurrent.ConcurrentHashMap
 
 g.withSideEffect ( 'evLabels', new CommonCache( new ConcurrentHashMap () ) )
+
   .V().hasLabel ( 'Concept:Protcmplx:Resource' ).as ( 'cpx' )
   // Trying to put the limit early-on
-  .inE().hasLabel ( 'is_part_of' ).limit ( 100 ).as ( 'pr' )
+  .inE().hasLabel ( 'is_part_of' )
+  // Trying to put the limit early-on
+  .order ().by ( shuffle ).limit ( 100 ).as ( 'pr' )
+  
   .outV ().hasLabel ( 'Concept:Protein:Resource' ).as ( 'p' )
+
 .select ( 'p', 'cpx', 'pr' )
   .by ( coalesce ( values ( 'prefName' ), constant ( '' ) ) )
   .by ( coalesce ( values ( 'prefName' ), constant ( '' ) ) )

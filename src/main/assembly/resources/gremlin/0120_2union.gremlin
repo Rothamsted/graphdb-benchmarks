@@ -1,0 +1,21 @@
+g.inject (0).union (
+  V().hasLabel ( 'Concept:Enzyme:Resource' ).as ( 'e' )
+  .in ( 'is_a' ).hasLabel ( 'Concept:Protein:Resource' ).as ( 'p' )
+  .select ( 'e' )
+  .out ( 'ac_by', 'in_by' ).hasLabel ( 'Comp:Concept:Resource' ).as ( 'c' )
+  .constant ( 'is_a' ).as ( 'r' ),  
+
+  V().hasLabel ( 'Concept:Enzyme:Resource' ).as ( 'e' )
+  .out ( 'ac_by' ).hasLabel ( 'Concept:Protein:Resource' ).as ( 'p' )
+  .select ( 'e' )
+  .out ( 'ac_by', 'in_by' ).hasLabel ( 'Comp:Concept:Resource' ).as ( 'c' )
+  .constant ( 'ac_by' ).as ( 'r' )
+)
+.select ( 'p', 'e', 'c', 'r' )
+  .by ( coalesce ( values ( 'prefName' ), constant ( '' ) ) )
+  .by ( coalesce ( values ( 'prefName' ), constant ( '' ) ) )
+  .by ( coalesce ( values ( 'prefName' ), constant ( '' ) ) )
+  .by ()
+.order().by ( shuffle )
+.limit ( 100 )
+// DEBUG .filter ( select ( 'r' ).is ( 'ac_by' ) )

@@ -20,4 +20,5 @@ SELECT ?pname ?c1name ?evlabel
   OPTIONAL { ?cpx1 bk:prefName ?c1name }
   OPTIONAL { ?ev rdfs:label ?evlabel }
 }
+ORDER BY RAND()
 LIMIT 100

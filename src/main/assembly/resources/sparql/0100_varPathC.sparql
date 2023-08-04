@@ -5,11 +5,12 @@ PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
 PREFIX bkr: <http://knetminer.org/data/rdf/resources/>
 PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
 
-SELECT ?class ?top
+SELECT DISTINCT ?class ?top
 {
   ?class a bk:BioProc;
     bk:is_a{$steps} ?top.
     
   ?top a bk:BioProc
 }
+ORDER BY RAND()
 LIMIT 100
