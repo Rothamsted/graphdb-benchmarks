@@ -1,0 +1,7 @@
+g.V().hasLabel ( 'BioProc:Concept:Resource' ).as( 'class' )
+  .repeat( out ( 'is_a' ) ).times ( $steps )
+  .hasLabel ( 'BioProc:Concept:Resource' ).as( 'top' )
+.select ( 'class', 'top' )
+.by ( id () )
+.dedup ()
+.limit ( 100 )
