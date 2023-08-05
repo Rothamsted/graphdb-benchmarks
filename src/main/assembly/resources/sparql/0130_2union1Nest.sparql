@@ -8,8 +8,8 @@ PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
 SELECT ?pname ?ename ?rtype ?cname
 {
   {
-    ?p a bk:Protein; bk:is_a ?e.
-    ?e a bk:Enzyme.
+    ?e a bk:Enzyme; ^bk:is_a ?p.
+    ?p a bk:Protein.
     BIND ( "is_a" AS ?rtype )
   }
   UNION {
