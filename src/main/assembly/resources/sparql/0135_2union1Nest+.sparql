@@ -1,4 +1,5 @@
 # 2 unions, 1 nesting (with Cypher CALL)
+#
 # This is exactly the same of 2union1Nest, it is here just to allow the chart renderer 
 # to pair the same union made with the new CALL method in Cypher.
 #
@@ -7,12 +8,14 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
 PREFIX bkr: <http://knetminer.org/data/rdf/resources/>
 PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
+PREFIX bkg: <http://knetminer.org/data/rdf/resources/graphs/>
 
 SELECT ?pname ?ename ?rtype ?cname
+# DEBUG FROM bkg:poaceae
 {
   {
-    ?p a bk:Protein; bk:is_a ?e.
-    ?e a bk:Enzyme.
+    ?e a bk:Enzyme; ^bk:is_a ?p.
+    ?p a bk:Protein.
     BIND ( "is_a" AS ?rtype )
   }
   UNION {
@@ -28,4 +31,5 @@ SELECT ?pname ?ename ?rtype ?cname
   OPTIONAL { ?e bk:prefName ?ename }
   OPTIONAL { ?c bk:prefName ?cname }
 }
+ORDER BY RAND()
 LIMIT 100

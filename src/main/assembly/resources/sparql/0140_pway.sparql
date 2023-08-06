@@ -1,31 +1,39 @@
-# Complex union of paths over pathways
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
 PREFIX bkr: <http://knetminer.org/data/rdf/resources/>
 PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
+PREFIX bkg: <http://knetminer.org/data/rdf/resources/graphs/>
 
 SELECT ?protName ?pwName ?branch
-{
+# DEBUG FROM bkg:poaceae
+{ 
   ?prot a bk:Protein.
   {
     ?prot bk:is_a|^bk:ac_by ?enz.
     ?enz a bk:Enzyme.
+    
     {
       BIND ( "enz/cmp/trn" AS ?branch )
+      
       ?enz bk:ac_by|bk:in_by ?cmp.
       ?cmp a bk:Comp.
+      
       ?cmp bk:cs_by|bk:pd_by ?trn.
     }
     UNION {
+      
       BIND ( "enz/trn" AS ?branch )
-      ?trn bk:ca_by ?enz.
+      ?enz ^bk:ca_by ?trn.
     }
     ?trn a bk:Transport.
+    ?trn bk:part_of ?pw
   }
   UNION {
     BIND ( "react" AS ?branch )
+    
     ?prot bk:pd_by|bk:cs_by ?react.
+    
     ?react a bk:Reaction.
     ?react bk:part_of ?pw.
   }
@@ -34,4 +42,5 @@ SELECT ?protName ?pwName ?branch
   OPTIONAL { ?prot bk:prefName ?protName }
   OPTIONAL { ?pw bk:prefName ?pwName }
 }
+ORDER BY RAND()
 LIMIT 100
