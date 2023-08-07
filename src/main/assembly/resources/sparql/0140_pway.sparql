@@ -14,7 +14,7 @@ SELECT ?protName ?pwName ?branch
     ?enz a bk:Enzyme.
     
     {
-      BIND ( "enz/cmp/trn" AS ?branch )
+      BIND ( "enz/cmp/trn" AS ?branch ) // starting from prot
       
       ?enz bk:ac_by|bk:in_by ?cmp.
       ?cmp a bk:Comp.
@@ -23,13 +23,18 @@ SELECT ?protName ?pwName ?branch
     }
     UNION {
       
-      BIND ( "enz/trn" AS ?branch )
+      BIND ( "enz/trn" AS ?branch ) // another branch starting from prot
       ?enz ^bk:ca_by ?trn.
     }
+    
+    // trn -> pathway
     ?trn a bk:Transport.
     ?trn bk:part_of ?pw
   }
-  UNION {
+  UNION
+  {
+    // prot -> react -> pathway
+     
     BIND ( "react" AS ?branch )
     
     ?prot bk:pd_by|bk:cs_by ?react.

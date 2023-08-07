@@ -1,27 +1,30 @@
-CALL { 
-  MATCH (prot:Protein) - [:is_a|ac_by] - (enz:Enzyme)
-
-  CALL {
-    WITH enz
-    MATCH (enz) - [:ac_by|in_by] -> (cmp:Comp)
-      - [:cs_by|pd_by] -> (trn:Transport)
-    RETURN trn, "enz/cmp/trn" AS branch
-    
-    UNION
-    
-    WITH enz
-    MATCH (enz) <- [:ca_by] - (trn:Transport) 
-    RETURN trn, "enz/trn" AS branch
-  }
-  MATCH (trn) - [:part_of] -> (pw:Path)
-  RETURN prot, pw, branch
+g.inject ( 0 )
+.union (
+  // protein - enzyme path
+  V().hasLabel ( 'Concept:Protein:Resource' ).as ( 'prot' )
+  .both ( 'is_a', 'ac_by' ).hasLabel ( 'Concept:Enzyme:Resource' ).as ( 'enz' )
+  .union (
+    // protein -> enzyme -> compound -> transport 
+    out ( 'ac_by', 'in_by' ).hasLabel ( 'Comp:Concept:Resource' ).as ( 'cmp' )
+    .out ( 'cs_by', 'pd_by' ).hasLabel ( 'Concept:Resource:Transport' ).as ( 'trn' )
+    .constant ( 'enz/cmp/trn' ).as ( 'branch' ),
   
-  UNION
+    // protein -> enzyme -> compound -> transport 
+    select ( 'enz' ).in ( 'ca_by' ).hasLabel ( 'Concept:Resource:Transport' ).as ( 'trn' )
+    .constant ( 'enz/trn' ).as ( 'branch' )
+  )
+  // either transport -> pathway
+  .select ( 'trn' ).out ( 'part_of' ).hasLabel ( 'Concept:Path:Resource' ).as ( 'pw' ),
   
-  MATCH (prot:Protein) - [:pd_by|cs_by] -> (react:Reaction)
-    - [:part_of] -> (pw:Path)
-  RETURN prot, pw, "react" AS branch
-}
-RETURN prot.prefName, pw.prefName, branch, rand()
-ORDER BY rand()
-LIMIT 100
+  // protein -> reaction -> pathway
+  V().hasLabel ( 'Concept:Protein:Resource' ).as ( 'prot' )
+  .out ( 'pd_by', 'cs_by' ).hasLabel ( 'Concept:Reaction:Resource' )
+  .out ( 'part_of' ).hasLabel ( 'Concept:Path:Resource' ).as ( 'pw' )
+  .constant ( 'react' ).as ( 'branch' )
+)
+.select ( 'prot', 'pw', 'branch' )
+  .by ( coalesce ( values ( 'prefName' ), constant ( '' ) ) )
+  .by ( coalesce ( values ( 'prefName' ), constant ( '' ) ) )
+  .by ()
+.order ().by ( shuffle )
+.limit ( 100 )
