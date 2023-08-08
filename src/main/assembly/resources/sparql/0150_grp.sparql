@@ -4,13 +4,17 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
 PREFIX bkr: <http://knetminer.org/data/rdf/resources/>
 PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
+PREFIX bkg: <http://knetminer.org/data/rdf/resources/graphs/>
 
 SELECT ?pwName (COUNT ( DISTINCT ?prot ) AS ?nprot)
+# DEBUG FROM bkg:poaceae
 {
   ?prot a bk:Protein.
   ?prot bk:pd_by|bk:cs_by ?react.
+  
   ?react a bk:Reaction.
   ?react bk:part_of ?pw.
+  
   ?pw a bk:Path.
   OPTIONAL { ?pw bk:prefName ?pwName }
 }
