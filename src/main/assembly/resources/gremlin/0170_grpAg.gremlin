@@ -1,0 +1,18 @@
+// This is slightly different than the SPARQL/Cypher version, cause it groups
+// by pathway and not by pathway name. However, in this case we're sure there is only
+// one prefName per pathway
+//
+g.V().hasLabel ( 'Concept:Path:Resource' ).as ( 'pway', 'avgReactProts' )
+.select ( 'pway', 'avgReactProts' )
+.by ( 'prefName' )
+.by (
+	in ( 'part_of' ).hasLabel ( 'Concept:Reaction:Resource' ).as ( 'react' )
+	.in ( 'pd_by', 'cs_by' ).hasLabel ( 'Concept:Protein:Resource' ).as ( 'prot' )
+	
+	.groupCount().by ( select ( 'react' ) )
+	.select ( values ).unfold ()
+	.mean()
+)
+.order().by ( 'pway' )
+// .order().by ( 'avgReactProts', desc )
+.limit ( 100 )
