@@ -1,0 +1,31 @@
+g.V().hasLabel ( 'Concept:Path:Resource' ).as ( 'pw' )
+.coalesce ( values ( 'prefName' ), constant ( '' ) ).as ( 'pwName' )
+.union
+(
+  // From pway back to enzyme
+  constant ( 'enz' ).as ( 'type' ).select ( 'pw' )
+  .in ( 'part_of' ).hasLabel ( 'Concept:Resource:Transport' ).as ( 'trn' )
+  .union
+  (
+    // via compound
+    __.in ( 'cs_by', 'pd_by' ).hasLabel ( 'Comp:Concept:Resource' ).as ( 'cmp' )
+    .in ( 'ac_by', 'in_by' ).hasLabel ( 'Concept:Enzyme:Resource' ),
+    
+    // via transport
+    select ( 'trn' ).out ( 'ca_by' ).hasLabel ( 'Concept:Enzyme:Resource' )
+  
+  ).as ( 'enz' )
+  // From enzyme back to protein
+  .both ( 'is_a', 'ac_by' ).hasLabel ( 'Concept:Protein:Resource' ).as ( 'prot' ),
+  
+  // From pway back to protein, via reaction
+  constant ( 'react' ).as ( 'type' ).select ( 'pw' )
+  .in ( 'part_of' ).hasLabel ( 'Concept:Reaction:Resource' )
+  .in ( 'pd_by', 'cs_by' ).hasLabel ( 'Concept:Protein:Resource' ).as ( 'prot' )
+)
+// count the proteins
+.groupCount ()
+.by ( select ( 'pwName', 'type' ) )
+.limit ( 100 )
+.unfold ()
+// DEBUG .order ().by ( keys )
