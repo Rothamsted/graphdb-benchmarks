@@ -4,8 +4,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
 PREFIX bkr: <http://knetminer.org/data/rdf/resources/>
 PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
+PREFIX bkg: <http://knetminer.org/data/rdf/resources/graphs/>
 
 SELECT ?pwName ( COUNT ( DISTINCT ?react ) AS ?nReact ) ( AVG ( ?np ) AS ?avgProt )
+# DEBUG FROM bkg:poaceae
 {
   SELECT ?pwName ?react ( COUNT ( DISTINCT ?prot ) AS ?np )
   {
@@ -21,4 +23,5 @@ SELECT ?pwName ( COUNT ( DISTINCT ?react ) AS ?nReact ) ( AVG ( ?np ) AS ?avgPro
 }
 GROUP BY ?pwName
 HAVING ( COUNT ( DISTINCT ?react ) <= AVG ( ?np ) )
+// DEBUG ORDER BY ?pwName
 LIMIT 100

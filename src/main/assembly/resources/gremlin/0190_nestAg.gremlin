@@ -1,0 +1,16 @@
+// As said in 170_grpAg, we're grouping by pathway and not by pathway name, but it's equivalent in 
+// our data
+//
+g.V().hasLabel ( 'Concept:Path:Resource' ).project ( 'pwName', 'nReact', 'avgProt' )
+  .by ( 'prefName' )
+  .by ( __.in ( 'part_of' ).hasLabel ( 'Concept:Reaction:Resource' ).count () ) 
+  .by ( coalesce (
+    __.in ( 'part_of' ).hasLabel ( 'Concept:Reaction:Resource' )
+      // no of proteins per reaction
+      .local ( __.in ( 'cs_by', 'pd_by' ).hasLabel ( 'Concept:Protein:Resource' ).count () )
+  	  // avg proteins per reaction
+  	  .mean (),
+    constant ( 0 ) // when there isn't even a reaction
+  ))
+.where ( 'nReact', lte ( 'avgProt' ) )
+.limit ( 100 )

@@ -1,14 +1,12 @@
-CALL 
-{
-	CALL 
-	{
-		MATCH (p:Protein)-[:cs_by|:pd_by]->(r:Reaction)-[:part_of]->(pwy:Path)
-		return pwy, COUNT(DISTINCT p) as np, r as react
+CALL {
+	CALL {
+		MATCH (prot:Protein) - [:cs_by|pd_by] -> (react:Reaction) - [:part_of] -> (pwy:Path)
+		RETURN pwy, react, COUNT(DISTINCT prot) as np
 	}
-	
-	return pwy, COUNT ( DISTINCT react ) AS nReact, 	AVG ( np ) AS avgProt
+	RETURN pwy, COUNT ( DISTINCT react ) AS nReact, AVG ( np ) AS avgProt
 }
 WITH pwy, nReact, avgProt 
 WHERE nReact <= avgProt
 RETURN pwy.prefName, nReact, avgProt
+// DEBUG ORDER BY pwy.prefName
 LIMIT 100
