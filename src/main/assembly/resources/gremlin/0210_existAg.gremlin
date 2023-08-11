@@ -1,32 +1,38 @@
-	g.V().has('labelV-idx', 'Concept:Path:Resource').as('pwy').
-		inE().has('labelE-idx', 'part_of').outV().
-		has('labelV-idx', 'Concept:Reaction:Resource').
-		inE().or(has('labelE-idx','cs_by'), has('labelE-idx','pd_by')).outV().
-		has('labelV-idx', 'Concept:Protein:Resource').as('prot').
-		and(
-			__.not(both('is_a','ac_by').
-					has('labelV-idx', 'Concept:Enzyme:Resource').
-					outE().or(has('labelE-idx', 'ac_by'), has('labelE-idx', 'in_by')).inV().
-					has('labelV-idx','Comp:Concept:Resource').
-					outE().or(has('labelE-idx', 'cs_by'), has('labelE-idx','pd_by')).inV().
-					has('labelV-idx', 'Concept:Resource:Transport').
-					outE().has('labelE-idx', 'part_of').inV().
-					has('labelV-idx', 'Concept:Path:Resource')), 
-			__.not(both('is_a','ac_by').
-					has('labelV-idx', 'Concept:Enzyme:Resource').
-					inE().has('labelE-idx', 'ca_by').outV().
-					has('labelV-idx', 'Concept:Resource:Transport').
-					outE().has('labelE-idx', 'part_of').inV().
-					has('labelV-idx', 'Concept:Path:Resource'))).
-		limit(100).
-		select('pwy').	
-		match(
-			__.as('ini').inE().has('labelE-idx', 'part_of').outV().
-					has('labelV-idx','Concept:Reaction:Resource').dedup().count().as('nReact'), 
-			__.as('ini').inE().has('labelE-idx', 'part_of').outV().
-					has('labelV-idx','Concept:Reaction:Resource').
-					local(__.in('pd_by','cs_by').has('labelV-idx','Concept:Protein:Resource').as('prot').
-							dedup().count()).mean().as('avgProt') ).
-			select('pwy','nReact','avgProt').by('prefName').by().by().where('nReact', gte('avgProt')).limit(100)
+// As said in 170_grpAg, we're grouping by pathway and not by pathway name, but it's equivalent in 
+// our data
 
-		
+// First, select pway/protein paths, excluding unwanted routes
+g.V().hasLabel ( 'Concept:Path:Resource' ).as ( 'pw' )
+.in ( 'part_of' ).hasLabel ( 'Concept:Reaction:Resource' )
+.in ( 'pd_by', 'cs_by' ).hasLabel ( 'Concept:Protein:Resource' ).as ( 'prot' )
+.and (
+  __.not (
+    both ( 'is_a', 'ac_by' ).hasLabel ( 'Concept:Enzyme:Resource' ).as ( 'enz' )
+    .out ( 'ac_by', 'in_by' ).hasLabel ( 'Comp:Concept:Resource' ).as ( 'cmp' )
+    .out ( 'cs_by', 'pd_by' ).hasLabel ( 'Concept:Resource:Transport' ).as ( 'trn' )
+  	.out ( 'part_of' ).hasLabel ( 'Concept:Path:Resource' )
+  ),
+  	
+  __.not ( 
+    both ( 'is_a', 'ac_by' ).hasLabel ( 'Concept:Enzyme:Resource' ).as ( 'enz' )
+  	.in ( 'ca_by' ).hasLabel ( 'Concept:Resource:Transport' ).as ( 'trn' )
+  	.out ( 'part_of' ).hasLabel ( 'Concept:Path:Resource' )
+  )
+)
+// Now, restart from valid pathways and do the aggregations, as in 190_nestAg
+.select ( 'pw' )
+.project ( 'pwName', 'nReact', 'avgProt' )
+  .by ( 'prefName' )
+  .by ( __.in ( 'part_of' ).hasLabel ( 'Concept:Reaction:Resource' ).count () ) 
+  .by ( coalesce (
+    __.in ( 'part_of' ).hasLabel ( 'Concept:Reaction:Resource' )
+      // no of proteins per reaction
+      .local ( __.in ( 'cs_by', 'pd_by' ).hasLabel ( 'Concept:Protein:Resource' ).count () )
+  	  // avg proteins per reaction
+  	  .mean (),
+    constant ( 0 ) // when there isn't even a reaction
+  ))
+.where ( 'nReact', lte ( 'avgProt' ) )
+.dedup ()
+// DEBUG .order ().by ( 'pwName' )
+.limit ( 100 )
