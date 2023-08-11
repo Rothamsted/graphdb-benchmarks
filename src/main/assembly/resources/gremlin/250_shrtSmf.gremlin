@@ -1,0 +1,8 @@
+g.V().hasLabel ( 'Concept:Gene:Resource' ).as ( 'gene' )
+  .out ( 'has_mutant', 'has_variation' ).hasLabel ( 'Concept:Resource:SNP' )
+  .out ( 'associated_with' ).hasLabel ( 'Concept:Phenotype:Resource' )
+  .out ( 'part_of' ).hasLabel ( 'Concept:Resource:Trait' )
+  .optional ( out ( 'is_a' ).hasLabel ( 'Concept:Resource:Trait' ) )
+.path().by ( 'iri' )
+.order ().by ( shuffle )
+.limit ( 100 )

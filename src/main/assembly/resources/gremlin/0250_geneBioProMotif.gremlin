@@ -1,4 +1,0 @@
-g.V().has('iri', '$iri').as('ini').
-	out('participates_in').
-	has('labelV-idx', 'BioProc:Concept:Resource').as('end').
-	select('ini','end').by('prefName')

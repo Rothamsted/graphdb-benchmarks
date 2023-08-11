@@ -1,0 +1,32 @@
+# Long and Complex Semantic Motif
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
+PREFIX bkr: <http://knetminer.org/data/rdf/resources/>
+PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
+PREFIX bkg: <http://knetminer.org/data/rdf/resources/graphs/>
+
+SELECT *
+# DEBUG FROM bkg:poaceae
+{
+  ?gene a bk:Gene.
+  ?gene bk:enc ?prot.
+  
+  ?prot a bk:Protein.
+  ?prot (bk:h_s_s|bk:ortho|bk:xref|^bk:h_s_s|^bk:ortho|^bk:xref){0,2} ?prot1.
+  
+  ?prot1 a bk:Protein.
+  ?prot1 bk:is_a|^bk:ac_by ?enz.
+  
+  ?enz a bk:Enzyme.
+  ?enz bk:ac_by|bk:in_by ?cmp.
+  
+  ?cmp a bk:Comp.
+  ?cmp bk:cs_by|bk:pd_by ?trn.
+  
+  ?trn a bk:Transport.
+  ?trn bk:part_of{0,3} ?pwy.
+  
+  ?pwy a bk:Path.
+}
+ORDER BY RAND()
+LIMIT 100

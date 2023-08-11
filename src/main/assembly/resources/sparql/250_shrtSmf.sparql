@@ -1,0 +1,29 @@
+# Short Semantic Motif
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
+PREFIX bkr: <http://knetminer.org/data/rdf/resources/>
+PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
+PREFIX bkg: <http://knetminer.org/data/rdf/resources/graphs/>
+
+SELECT *
+# DEBUG FROM bkg:poaceae
+{
+  ?gene a bk:Gene.
+  ?gene bk:has_mutant|bk:has_variation ?snp.
+  
+  ?snp a bk:SNP.
+  ?snp bk:associated_with ?pheno.
+  
+  ?pheno a bk:Phenotype.
+  ?pheno bk:part_of ?trait.
+  
+  ?trait a bk:Trait.
+  
+  OPTIONAL { 
+    ?trait bk:is_a ?parent.
+    ?parent a bk:Trait.
+  }
+}
+ORDER BY RAND()
+LIMIT 100
+

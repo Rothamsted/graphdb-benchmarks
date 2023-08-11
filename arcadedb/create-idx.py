@@ -6,9 +6,9 @@ import sys
 
 # Idx definitions, as produced by rdf2pg
 idx_defs_path = sys.argv [ 1 ]
-# List of all nodes. TODO: get them via SQL
+# List of all node labels. TODO: get them via SQL
 all_nodes_path = sys.argv [ 2 ]
-# List of all labels. TODO: get them via SQL
+# List of all relation types. TODO: get them via SQL
 all_rels_path = sys.argv [ 3 ]
 
 def read_tsv ( path ):

@@ -1,0 +1,18 @@
+// TODO: works with Cypher, not in SPARQL, not even attempted in Gremlin
+MATCH path = (ptrait:Trait) <- [:is_a*0..1] - (trait:Trait) 
+  <- [:part_of*0..1] - (pheno:Phenotype)
+  <- [:associated_with*0..1] - (snp:SNP) 
+  <- [:has_mutant|has_variation*0..1] - (gene:Gene)
+
+  - [:enc] -> (prot:Protein)
+  - [:h_s_s|ortho|xref*0..2] - (prot1:Protein)
+  - [:is_a|ac_by] - (enz:Enzyme)
+  - [:ac_by|in_by] -> (cmp:Comp)
+  - [:cs_by|pd_by] -> (trn:Transport) 
+  - [:part_of] -> (pwy:Path)
+  <- [:part_of*0..2] - (react:Reaction)
+  <- [:cs_by|pd_by*0..1] - (rprot:Protein)
+  <- [:h_s_s|ortho|xref*0..2] - (rprot1:Protein)
+RETURN path, rand() AS rnd
+ORDER BY rnd
+LIMIT 100

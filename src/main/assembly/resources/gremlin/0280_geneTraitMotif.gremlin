@@ -1,4 +1,0 @@
-g.V().has('iri', '$iri').as('ini').
-	in('cooc_wi').
-	has('labelV-idx', 'Concept:Resource:Trait').as('end').
-	select('ini','end').by('prefName')
