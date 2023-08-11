@@ -4,13 +4,17 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
 PREFIX bkr: <http://knetminer.org/data/rdf/resources/>
 PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
+PREFIX bkg: <http://knetminer.org/data/rdf/resources/graphs/>
 
 SELECT DISTINCT ?pwName ?protName
+# FROM bkg:poaceae
 {
   ?prot a bk:Protein.
   ?prot bk:pd_by|bk:cs_by ?react.
+  
   ?react a bk:Reaction.
   ?react bk:part_of ?pw.
+  
   ?pw a bk:Path
 
   FILTER ( NOT EXISTS {
@@ -19,6 +23,7 @@ SELECT DISTINCT ?pwName ?protName
     {
       # "enz/cmp/trn" branch
       ?enz bk:ac_by|bk:in_by ?cmp.
+      
       ?cmp a bk:Comp.
       ?cmp bk:cs_by|bk:pd_by ?trn.
     }
@@ -28,10 +33,12 @@ SELECT DISTINCT ?pwName ?protName
     }
     ?trn a bk:Transport.
     ?trn bk:part_of ?pw1.
+    
     ?pw1 a bk:Path
   })
 
   OPTIONAL { ?prot bk:prefName ?protName }
   OPTIONAL { ?pw bk:prefName ?pwName }
 }
+ORDER BY rand()
 LIMIT 100

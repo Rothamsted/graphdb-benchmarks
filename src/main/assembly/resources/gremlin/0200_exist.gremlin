@@ -1,23 +1,21 @@
-	g.V().has('labelV-idx', 'Concept:Path:Resource').as('pwy').
-		inE().has('labelE-idx', 'part_of').outV().
-		has('labelV-idx', 'Concept:Reaction:Resource').
-		inE().or(has('labelE-idx','cs_by'), has('labelE-idx','pd_by')).outV().
-		has('labelV-idx', 'Concept:Protein:Resource').as('prot').
-		and(
-			__.not(both('is_a','ac_by').
-					has('labelV-idx', 'Concept:Enzyme:Resource').
-					outE().or(has('labelE-idx', 'ac_by'), has('labelE-idx', 'in_by')).inV().
-					has('labelV-idx','Comp:Concept:Resource').
-					outE().or(has('labelE-idx', 'cs_by'), has('labelE-idx','pd_by')).inV().
-					has('labelV-idx', 'Concept:Resource:Transport').
-					outE().has('labelE-idx', 'part_of').inV().
-					has('labelV-idx', 'Concept:Path:Resource')), 
-			__.not(both('is_a','ac_by').
-					has('labelV-idx', 'Concept:Enzyme:Resource').
-					inE().has('labelE-idx', 'ca_by').outV().
-					has('labelV-idx', 'Concept:Resource:Transport').
-					outE().has('labelE-idx', 'part_of').inV().
-					has('labelV-idx', 'Concept:Path:Resource'))).
-		select('pwy','prot').
-			by('prefName').
-			by('prefName').dedup().limit(100)
+g.V().hasLabel ( 'Concept:Path:Resource' ).as ( 'pw' )
+.in ( 'part_of' ).hasLabel ( 'Concept:Reaction:Resource' )
+.in ( 'pd_by', 'cs_by' ).hasLabel ( 'Concept:Protein:Resource' ).as ( 'prot' )
+.and (
+  __.not (
+    both ( 'is_a', 'ac_by' ).hasLabel ( 'Concept:Enzyme:Resource' ).as ( 'enz' )
+    .out ( 'ac_by', 'in_by' ).hasLabel ( 'Comp:Concept:Resource' ).as ( 'cmp' )
+    .out ( 'cs_by', 'pd_by' ).hasLabel ( 'Concept:Resource:Transport' ).as ( 'trn' )
+  	.out ( 'part_of' ).hasLabel ( 'Concept:Path:Resource' )
+  ),
+  	
+  __.not ( 
+    both ( 'is_a', 'ac_by' ).hasLabel ( 'Concept:Enzyme:Resource' ).as ( 'enz' )
+  	.in ( 'ca_by' ).hasLabel ( 'Concept:Resource:Transport' ).as ( 'trn' )
+  	.out ( 'part_of' ).hasLabel ( 'Concept:Path:Resource' )
+  )
+)
+.select ( 'pw', 'prot' )
+.by ( coalesce ( values ( 'prefName' ), constant ( '' ) ) )
+.order().by ( shuffle )
+.limit ( 100 )
