@@ -6,7 +6,7 @@ PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
 PREFIX bkg: <http://knetminer.org/data/rdf/resources/graphs/>
 
 SELECT *
-FROM bkg:poaceae
+# FROM bkg:poaceae
 {
   ?gene a bk:Gene.
   ?gene bk:enc ?prot.
