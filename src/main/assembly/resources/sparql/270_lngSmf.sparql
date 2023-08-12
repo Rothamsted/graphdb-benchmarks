@@ -1,0 +1,53 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
+PREFIX bkr: <http://knetminer.org/data/rdf/resources/>
+PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
+PREFIX bkg: <http://knetminer.org/data/rdf/resources/graphs/>
+
+SELECT *
+FROM bkg:poaceae
+{
+  ?gene a bk:Gene.
+  ?gene bk:enc ?prot.
+  
+  ?prot a bk:Protein.
+  ?prot (bk:h_s_s|bk:ortho|bk:xref|^bk:h_s_s|^bk:ortho|^bk:xref){0,3} ?prot1.
+  
+  ?prot1 a bk:Protein.
+  ?prot1 bk:is_a|^bk:ac_by ?enz.
+  
+  ?enz a bk:Enzyme.
+  ?enz bk:ac_by|bk:in_by ?cmp.
+  
+  ?cmp a bk:Comp.
+  ?cmp bk:cs_by|bk:pd_by ?trn.
+  
+  ?trn a bk:Transport.
+  ?trn bk:part_of{0,3} ?pwy.
+  
+  ?pwy a bk:Path.
+  
+  ?pwy (^bk:part_of){0,3} ?react.
+  ?react a bk:Reaction.
+  
+  ?react ^(bk:cs_by|bk:pd_by){0,3} ?rprot.
+  ?rprot a bk:Protein.
+    
+  ?rprot (bk:h_s_s|bk:ortho|bk:xref|^bk:h_s_s|^bk:ortho|^bk:xref){0,2} ?rprot1.
+  ?rprot1 a bk:Protein.
+ 
+  # To emulate the variable length relation pattern in Cypher, you 
+  # need to make the rdf:type restriction optional too. Else, if bk:enc is optional, 
+  # the pattern might end up matching with ?rgene == ?rprot1, and it will try
+  # match that ?rprot1 is a Gene too. 
+  # 
+  # On the contrary, in Cypher, rprot1 <- [enc*0..1] - (rgene:Gene) means that the whole
+  # path enc -> gene might not be in a valid result. 
+  # 
+  OPTIONAL {
+    ?rprot1 ^bk:enc ?rgene.
+    ?rgene a bk:Gene.
+  } 
+}
+ORDER BY RAND()
+LIMIT 100
