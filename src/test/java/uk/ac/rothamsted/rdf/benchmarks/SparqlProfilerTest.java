@@ -17,7 +17,7 @@ public class SparqlProfilerTest
 	public void testBasics ()
 	{
 		String sparqlUrl = "http://localhost:8890/sparql";
-		sparqlUrl = "http://knetminer-data.cyverseuk.org/lodestar/sparql";
+		//sparqlUrl = "http://knetminer-data.cyverseuk.org/lodestar/sparql";
 		SparqlProfiler profiler = new SparqlProfiler ( "src/main/assembly/resources/sparql/", sparqlUrl );
 		profiler.profile ( 100 );
 	}
