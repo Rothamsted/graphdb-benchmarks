@@ -24,6 +24,7 @@ import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 
+import uk.ac.ebi.utils.exceptions.ExceptionUtils;
 import uk.ac.ebi.utils.opt.io.IOUtils;
 import uk.ac.ebi.utils.runcontrol.ProgressLogger;
 
@@ -50,6 +51,15 @@ public abstract class AbstractProfiler
 		this.queryFileExtension = queryFileExtension;
 	}
 
+	/** 
+	 * Defaults to 120 repetitions.
+	 * 
+	 */
+	public void profile ()
+	{
+		profile ( 120 );
+	}
+
 	/**
 	 * The general profiling procedure, see the main README. 
 	 */
@@ -73,25 +83,34 @@ public abstract class AbstractProfiler
 		for ( int rep = 0; rep < totalRepeats; rep++ )
 		{
 			// pick up a random query to run
-			int i = RandomUtils.nextInt ( 0, names.length );
+			int iq = RandomUtils.nextInt ( 0, names.length );
+			String qname = names [ iq ];
 			
-			long time = profileQuery ( names [ i ] );
-			
-			if ( time == -1 )
+			try 
 			{
-				log.warn ( "Timeout/error for query {}", names [ i ] );
-				if ( timeoutCounts [ i ] == null )
-					timeoutCounts [ i ] = 1;
+				long time = profileQuery ( qname );
+				
+				if ( time == -1 )
+				{
+					log.warn ( "Timeout/error for query {}", qname );
+					if ( timeoutCounts [ iq ] == null )
+						timeoutCounts [ iq ] = 1;
+					else
+						timeoutCounts [ iq ]++;
+				}
 				else
-					timeoutCounts [ i ]++;
+				{
+					if ( stats [ iq ] == null ) stats [ iq ] = new SummaryStatistics ();
+					stats [ iq ].addValue ( time );
+				}
+				
+				progressLogger.update ( rep );
 			}
-			else
-			{
-				if ( stats [ i ] == null ) stats [ i ] = new SummaryStatistics ();
-				stats [ i ].addValue ( time );
+			catch ( Exception ex ) {
+				ExceptionUtils.throwEx ( RuntimeException.class, ex, 
+					"Error while running the query: %s: $cause", qname
+				);
 			}
-			
-			progressLogger.update ( rep );
 		}
 		
 		// And finally report everything

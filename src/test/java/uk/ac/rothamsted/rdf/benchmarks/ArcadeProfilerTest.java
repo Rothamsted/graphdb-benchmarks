@@ -18,6 +18,7 @@ public class ArcadeProfilerTest
 		// DEBUG queriesPath = "/tmp/queries/";
 		// NOTE: don't store multiple DB in the same server instance, we do not know if this affects performance.
 		var profiler = new ArcadeProfiler ( queriesPath, "biopax", "TestTest" );
-		profiler.profile ( 10 );
+		//profiler.profile ();
+		profiler.profile ();
 	}
 }
