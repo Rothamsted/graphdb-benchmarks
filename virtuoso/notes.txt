@@ -1,0 +1,3 @@
+Server was prepared with Docker, see
+  virtuoso-docker.sh
+  virtuoso.ini
