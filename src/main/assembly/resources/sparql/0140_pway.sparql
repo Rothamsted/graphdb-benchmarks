@@ -1,3 +1,4 @@
+# Complex union of paths over pathways
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
@@ -6,7 +7,6 @@ PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
 PREFIX bkg: <http://knetminer.org/data/rdf/resources/graphs/>
 
 SELECT ?protName ?pwName ?branch
-# DEBUG FROM bkg:poaceae
 { 
   ?prot a bk:Protein.
   {
@@ -14,7 +14,7 @@ SELECT ?protName ?pwName ?branch
     ?enz a bk:Enzyme.
     
     {
-      BIND ( "enz/cmp/trn" AS ?branch ) // starting from prot
+      BIND ( "enz/cmp/trn" AS ?branch ) # starting from prot
       
       ?enz bk:ac_by|bk:in_by ?cmp.
       ?cmp a bk:Comp.
@@ -23,17 +23,17 @@ SELECT ?protName ?pwName ?branch
     }
     UNION {
       
-      BIND ( "enz/trn" AS ?branch ) // another branch starting from prot
+      BIND ( "enz/trn" AS ?branch ) # another branch starting from prot
       ?enz ^bk:ca_by ?trn.
     }
     
-    // trn -> pathway
+    # trn -> pathway
     ?trn a bk:Transport.
     ?trn bk:part_of ?pw
   }
   UNION
   {
-    // prot -> react -> pathway
+    # prot -> react -> pathway
      
     BIND ( "react" AS ?branch )
     
