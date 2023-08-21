@@ -65,7 +65,10 @@ public abstract class AbstractProfiler
 	 */
 	public void profile ( int repeatsPerQuery )
 	{
-		log.info ( "Start profiling with {}", this.getClass ().getSimpleName () ); 
+		log.info ( 
+			"Start profiling with {} and {} repeats/query",
+			this.getClass ().getSimpleName (), repeatsPerQuery
+		); 
 		
 		// all the tests/queries
 		String names[] = getQueryNames ( this.basePath, this.queryFileExtension );
