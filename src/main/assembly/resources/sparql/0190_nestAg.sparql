@@ -23,5 +23,5 @@ SELECT ?pwName ( COUNT ( DISTINCT ?react ) AS ?nReact ) ( AVG ( ?np ) AS ?avgPro
 }
 GROUP BY ?pwName
 HAVING ( COUNT ( DISTINCT ?react ) <= AVG ( ?np ) )
-// DEBUG ORDER BY ?pwName
+# DEBUG ORDER BY ?pwName
 LIMIT 100

@@ -10,7 +10,7 @@ SELECT DISTINCT ?pwName ?type ?n
 # DEBUG FROM bkg:poaceae
 {
   {
-  	// Two ways to transport
+  	# Two ways to transport
     SELECT ?pw ( COUNT ( DISTINCT ?prot ) AS ?n ) ( "enz" AS ?type )
     {
       ?prot a bk:Protein.
@@ -29,7 +29,7 @@ SELECT DISTINCT ?pwName ?type ?n
         ?trn bk:ca_by ?enz.
       }
       
-			// From either transport to pathway
+			# From either transport to pathway
       ?trn a bk:Transport.
       
       ?trn bk:part_of ?pw.
@@ -40,7 +40,7 @@ SELECT DISTINCT ?pwName ?type ?n
 
   UNION 
   {
-	  // To pathway, via protein and reaction
+	  # To pathway, via protein and reaction
     SELECT ?pw ( COUNT ( DISTINCT ?prot ) AS ?n ) ( "react" AS ?type )
     {
       # react branch
