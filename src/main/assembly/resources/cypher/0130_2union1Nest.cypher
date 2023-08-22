@@ -3,7 +3,8 @@ WITH COLLECT ({prot:p, react:r, enz:e}) AS rows
 
 MATCH (p:Protein)<-[r:ac_by]-(e:Enzyme)
 
-WITH rows + COLLECT ({prot:p, react:r, enz:e}) AS allRows
+WITH COLLECT ({prot:p, react:r, enz:e}) AS prows, rows
+WITH rows + prows AS allRows
 UNWIND allRows AS row
 WITH row.prot AS p, row.react AS r, row.enz AS e
 
@@ -12,4 +13,3 @@ MATCH (e)-[:ac_by|:in_by]->(c:Comp)
 RETURN p.prefName, e.prefName, TYPE (r) AS rtype, c.prefName, rand() AS rnd
 ORDER BY rnd
 LIMIT 100
-
