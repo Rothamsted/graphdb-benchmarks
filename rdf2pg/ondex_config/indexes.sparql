@@ -1,0 +1,48 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX bk: <http://knetminer.org/data/rdf/terms/biokno/>
+PREFIX bkr: <http://knetminer.org/data/rdf/resources/>
+PREFIX bka: <http://knetminer.org/data/rdf/terms/biokno/attributes/>
+
+SELECT DISTINCT ?label ?propertyName ?isRelation
+{
+  {
+		VALUES ( ?label ?propertyName ?isRelation )
+		{
+			( '*' dcterms:identifier false )
+			( '*' bk:prefName false )
+			( '*' bk:altName false )
+			( '*' rdfs:label false )
+			( '*' rdfs:label true )
+			( '*' bk:evidence true )
+			
+			# New Neo 4.3 indexing at label/relation-type level
+	  	( '*' '_type_' false)
+	  	( '*' '_type_' true)
+		}
+	}
+		
+	UNION 
+	{
+		# All the Ondex-indexed properties are indexed in Neo, both for 
+		# nodes and relations
+		#
+	  ?propertyName rdfs:subPropertyOf* bk:attribute;
+					  bk:isIndexed true.
+
+	  # Use the data to get where the attributes are applied
+	  # TODO: verify performance.
+		{
+			?concept ?propertyName ?val;
+		  				 a ?label.
+	    BIND ( false as ?isRelation )
+	  }
+	  UNION {
+	    ?rel ?propertyName ?val;
+	     	 	 a bk:Relation;
+					 bk:relTypeRef ?label.
+	  	BIND ( true as ?isRelation )
+	  }
+	}
+}
