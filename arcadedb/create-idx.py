@@ -28,6 +28,8 @@ print ( "Adding 'iri' indexing automatically", file = sys.stderr )
 idx_defs.append ( [ "*", "iri", "false" ] )
 idx_defs.append ( [ "*", "iri", "true" ] )
 
+print ( "COMMIT;" )
+
 for (type, prop, is_rel) in idx_defs:
 
   is_rel = is_rel == 'true'

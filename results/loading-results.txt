@@ -1,5 +1,18 @@
-BioPax	Virtuoso	14.415
-BioPax	Neo4j
-  TDB	24.420
-  DB Load 38.919
-  Indexing 2.513
+=== BioPax ===
+
+Virtuoso 14.415
+
+* Neo4j
+TDB	24.420
+DB Load 38.919
+DB Indexing 2.513
+
+* ArcadeDB
+TDB 24.512
+graphml 7.178
+DB Load 15.568
+SQL for indexes:
+  listing node labels in SQL: 0.081
+  listing rel types in SQL: 0.098
+  py script to generate indexing SQL 0.028908209
+	Indexing SQL: 6

@@ -7,6 +7,15 @@ g.io ( "/tmp/test.xml" ).read ().iterate ()
 g.graph.io(graphml()).readGraph('/tmp/test.graphml')
 ```
 
+This should allow for timing:
+```
+fpath = '/local/docker/tmp/rdf2pg-benchmark/data/biopax_20210322-graphml.xml'
+clockWithResult (1) {
+  g.io ( fpath ).read ().iterate ()
+}
+```
+
+
 ## Labels
 
 Gremlin doesn't have multiple labels, so use the syntax `L1:L2:L3`. Then you can at least filter 
@@ -35,8 +44,7 @@ g.V().label().dedup ()
 g.E().label().dedup ()
 ```
 
-Probably there's a more efficient method, but anyway
-
+See below for a faster version
 
 ## Inspecting the schema
 

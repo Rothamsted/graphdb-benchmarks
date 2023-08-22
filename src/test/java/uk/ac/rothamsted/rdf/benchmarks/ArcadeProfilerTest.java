@@ -17,8 +17,8 @@ public class ArcadeProfilerTest
 		var queriesPath = "src/main/assembly/resources/gremlin/";
 		// DEBUG queriesPath = "/tmp/queries/";
 		// NOTE: don't store multiple DB in the same server instance, we do not know if this affects performance.
-		var profiler = new ArcadeProfiler ( queriesPath, "biopax", "TestTest" );
-		//profiler.profile ();
+		var profiler = new ArcadeProfiler ( queriesPath, "rdf2pgbench", "testTest" );
+		//profiler.profile ( 10 );
 		profiler.profile ();
 	}
 }
