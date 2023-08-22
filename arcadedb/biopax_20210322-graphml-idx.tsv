@@ -1,0 +1,12 @@
+Type	Property	IsRelation
+*	identifier	false
+*	prefName	false
+*	altName	false
+*	label	false
+*	label	true
+*	evidence	true
+*	_type_	false
+*	_type_	true
+Publication	AbstractHeader	false
+Publication	AUTHORS	false
+Publication	JOURNAL_REF	false
