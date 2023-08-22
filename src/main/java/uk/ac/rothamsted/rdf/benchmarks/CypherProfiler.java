@@ -34,11 +34,14 @@ public class CypherProfiler extends AbstractProfiler
 	}
 
 	/**
-	 * Connects to "bolt://127.0.0.1:7687", "neo4j", "test".
+	 * Connects to "bolt://127.0.0.1:7687", "neo4j", "testTest".
+	 * 
+	 * Since 5.10, a password like 'test' isn't accepted anynmore.
+	 * 
 	 */
 	public CypherProfiler ( String basePath )
 	{
-		this ( basePath, "bolt://127.0.0.1:7687", "neo4j", "test" );
+		this ( basePath, "bolt://127.0.0.1:7687", "neo4j", "testTest" );
 	}
 	
 	public CypherProfiler ()
