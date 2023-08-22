@@ -74,7 +74,7 @@ public class CypherProfiler extends AbstractProfiler
 		}
 		catch ( Neo4jException ex )
 		{
-			log.error ( "Error while running {}, query is:\n{}\nError is:", name, cypher, ex );
+			log.error ( "Error while running {}", name, ex );
 			// Count it as failed
 			return -1;
 		}

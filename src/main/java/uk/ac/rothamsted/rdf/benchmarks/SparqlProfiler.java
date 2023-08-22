@@ -43,7 +43,8 @@ public class SparqlProfiler extends AbstractProfiler
 		
 		Query query = QueryFactory.create ( sparql, Syntax.syntaxARQ );
 
-		try {
+		try 
+		{
 			return XStopWatch.profile ( () -> {
 				try ( QueryExecution qx = this.rdfConnection.query ( query ) )
 				{
@@ -58,7 +59,7 @@ public class SparqlProfiler extends AbstractProfiler
 		}
 		catch ( QueryException ex ) 
 		{
-			log.error ( "Error while running {}, query is:\n{}\nError is:", name, sparql, ex );
+			log.error ( "Error while running {}", name, ex );
 			// Count it as failed
 			return -1;
 		}

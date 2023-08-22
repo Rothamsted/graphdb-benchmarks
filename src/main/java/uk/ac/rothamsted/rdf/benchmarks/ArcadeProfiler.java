@@ -74,7 +74,8 @@ public class ArcadeProfiler extends AbstractProfiler
 		}
 		catch ( Exception ex )
 		{
-			return -1;
+			log.error ( "Error while running {}", name, ex );
+			return -1; // count as failed
 		}
 	}
 }
