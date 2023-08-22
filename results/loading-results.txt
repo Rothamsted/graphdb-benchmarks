@@ -1,1 +1,5 @@
-BioPax 14.415
+BioPax	Virtuoso	14.415
+BioPax	Neo4j
+  TDB	24.420
+  DB Load 38.919
+  Indexing 2.513
