@@ -230,6 +230,7 @@ public abstract class AbstractProfiler
 		CSVParser csvParser = new CSVParserBuilder ()
 			.withSeparator ( '\t' )
 			.withQuoteChar ( '"' )
+			.withEscapeChar ( '\0' )
 			.build ();
 		
 		try ( CSVReader rdr = new CSVReaderBuilder ( new FileReader ( csvf ) )
