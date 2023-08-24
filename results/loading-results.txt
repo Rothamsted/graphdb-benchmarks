@@ -29,3 +29,11 @@ SQL for indexes:
 Triples 21354351
 Load 153.925
 
+* Neo4j
+Nodes 1834954
+Relations 22652346 
+
+TDB	256.036
+DB Load 515
+DB Indexing 68
+
