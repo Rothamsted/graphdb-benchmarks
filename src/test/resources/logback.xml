@@ -10,7 +10,6 @@
     <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
       <level>ALL</level>
     </filter>
-    <immediateFlush>true</immediateFlush>    
   </appender>
   
   <appender name="FileApp" class="ch.qos.logback.core.FileAppender">
