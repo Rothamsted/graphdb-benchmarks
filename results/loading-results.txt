@@ -1,8 +1,14 @@
 === BioPax ===
 
-Virtuoso 14.415
+* Virtuoso 
+Triples 1894700
+Load 14.415
+
 
 * Neo4j
+Nodes 173704
+Relations 527615
+
 TDB	24.420
 DB Load 38.919
 DB Indexing 2.513
@@ -16,3 +22,10 @@ SQL for indexes:
   listing rel types in SQL: 0.098
   py script to generate indexing SQL 0.028908209
 	Indexing SQL: 6
+	
+	
+=== Arabidopsis
+* Virtuoso 
+Triples 21354351
+Load 153.925
+
