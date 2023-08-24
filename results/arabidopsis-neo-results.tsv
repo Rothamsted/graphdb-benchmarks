@@ -1,26 +1,102 @@
+nohup: ignoring input
+Thu 24 Aug 19:32:53 BST 2023
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< uk.ac.rothamsted.rdf:graphdb-benchmarks >---------------
+[INFO] Building  2.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The metadata /local/docker/.m2/repository/org/slf4j/slf4j-api/maven-metadata-mbrandizi.jfrog.io.xml is invalid: entity reference name can not contain character =' (position: END_TAG seen ...s://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=... @1:326) 
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ graphdb-benchmarks ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /local/docker/tmp/rdf2pg-benchmark/graphdb-benchmarks/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ graphdb-benchmarks ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ graphdb-benchmarks ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ graphdb-benchmarks ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.1.2:test (default-test) @ graphdb-benchmarks ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junit4.JUnit4Provider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running uk.ac.rothamsted.rdf.benchmarks.CypherProfilerTest
+19:32:56.599 [INFO ]:      =-=-=-=-=-=-=-=-=-=-=-= testBasics(uk.ac.rothamsted.rdf.benchmarks.CypherProfilerTest) =-=-=-=-=-=-=-=-=-=-=-=
+19:32:56.604 [INFO ]: Start profiling with CypherProfiler and 120 repeats/query
+19:33:09.250 [INFO ]: 100 query executions profiled
+19:33:20.316 [INFO ]: 200 query executions profiled
+19:33:32.851 [INFO ]: 300 query executions profiled
+19:33:44.722 [INFO ]: 400 query executions profiled
+19:33:58.140 [INFO ]: 500 query executions profiled
+19:34:07.838 [INFO ]: 600 query executions profiled
+19:34:19.799 [INFO ]: 700 query executions profiled
+19:34:37.992 [INFO ]: 800 query executions profiled
+19:34:48.701 [INFO ]: 900 query executions profiled
+19:34:57.010 [INFO ]: 1000 query executions profiled
+19:35:11.413 [INFO ]: 1100 query executions profiled
+19:35:23.844 [INFO ]: 1200 query executions profiled
+19:35:35.842 [INFO ]: 1300 query executions profiled
+19:35:46.514 [INFO ]: 1400 query executions profiled
+19:35:56.819 [INFO ]: 1500 query executions profiled
+19:36:08.130 [INFO ]: 1600 query executions profiled
+19:36:19.516 [INFO ]: 1700 query executions profiled
+19:36:32.495 [INFO ]: 1800 query executions profiled
+19:36:43.555 [INFO ]: 1900 query executions profiled
+19:36:54.570 [INFO ]: 2000 query executions profiled
+19:37:10.666 [INFO ]: 2100 query executions profiled
+19:37:25.392 [INFO ]: 2200 query executions profiled
+19:37:37.467 [INFO ]: 2300 query executions profiled
+19:37:50.006 [INFO ]: 2400 query executions profiled
+19:38:00.516 [INFO ]: 2500 query executions profiled
+19:38:14.542 [INFO ]: 2600 query executions profiled
+19:38:28.079 [INFO ]: 2700 query executions profiled
+19:38:38.179 [INFO ]: 2800 query executions profiled
+19:38:51.859 [INFO ]: 2900 query executions profiled
 Name	AvgTime	STD	MinTime	MaxTime	Execs	Timeouts
-cnt	1.680328	14.916443	0.000000	165.000000	122	0
-cntType	3.219298	4.225416	0.000000	13.000000	114	0
-cntRel	0.273504	0.484660	0.000000	2.000000	117	0
-cntRelType	4.726619	5.209809	0.000000	14.000000	139	0
-sel	26.245763	0.521937	26.000000	29.000000	118	0
-join	2.971963	0.422436	2.000000	4.000000	107	0
-joinRel	1.526786	0.683919	1.000000	5.000000	112	0
-joinFilter	9.537736	1.674313	0.000000	12.000000	106	0
-joinRe	12.807143	1.790850	3.000000	15.000000	140	0
-joinReif	2.060606	0.321199	1.000000	4.000000	132	0
-varPathC	44.528846	2.339848	42.000000	52.000000	104	0
-varPath	36.728070	1.553102	31.000000	39.000000	114	0
-2union	19.306931	0.561116	18.000000	21.000000	101	0
-2union1Nest	266.299065	3.914692	258.000000	278.000000	107	0
-2union1Nest+	245.679389	8.362248	239.000000	281.000000	131	0
-pway	904.854545	10.096631	897.000000	943.000000	110	0
-grp	86.588235	2.800716	81.000000	93.000000	136	0
-grpAg	82.824000	3.105832	77.000000	88.000000	125	0
-mulGrpAg	863.852713	6.653360	856.000000	898.000000	129	0
-nestAg	82.396694	2.879466	76.000000	91.000000	121	0
-exist	58.554622	7.783835	41.000000	81.000000	119	0
-existAg	94.056452	3.010287	88.000000	100.000000	124	0
-shrtSmf	2.897260	0.521661	2.000000	5.000000	146	0
-medSmf	2.627273	1.445392	1.000000	12.000000	110	0
-lngSmf	83.112069	63.487318	5.000000	239.000000	116	0
+cnt	0.260163	0.525379	0.000000	3.000000	123	0
+cntType	1.388889	2.825519	0.000000	10.000000	126	0
+cntRel	0.296296	0.478691	0.000000	2.000000	108	0
+cntRelType	3.531532	4.688128	0.000000	12.000000	111	0
+sel	28.604651	18.826314	26.000000	200.000000	86	0
+join	2.907563	0.344241	2.000000	4.000000	119	0
+joinRel	1.573770	0.601898	1.000000	5.000000	122	0
+joinFilter	9.636364	1.211060	1.000000	18.000000	121	0
+joinRe	12.193277	2.876784	2.000000	17.000000	119	0
+joinReif	2.027273	0.344261	1.000000	4.000000	110	0
+varPathC	45.017241	3.103946	42.000000	59.000000	116	0
+varPath	36.904000	1.240603	32.000000	41.000000	125	0
+2union	19.328571	0.661836	18.000000	22.000000	140	0
+2union1Nest	266.190083	3.264236	259.000000	277.000000	121	0
+2union1Nest+	248.413043	11.324496	239.000000	282.000000	138	0
+pway	906.816794	11.951055	897.000000	946.000000	131	0
+grp	87.676471	2.700061	83.000000	94.000000	102	0
+grpAg	82.619403	3.289982	77.000000	97.000000	134	0
+mulGrpAg	868.445455	11.115397	857.000000	899.000000	110	0
+nestAg	82.462810	2.729595	77.000000	87.000000	121	0
+exist	58.007519	6.858412	42.000000	75.000000	133	0
+existAg	93.880000	3.125339	88.000000	101.000000	125	0
+shrtSmf	2.950000	0.757121	2.000000	9.000000	100	0
+medSmf	2.404762	0.671459	1.000000	5.000000	126	0
+lngSmf	86.090226	62.739657	4.000000	240.000000	133	0
+19:39:01.490 [INFO ]: Benchmark finished
+19:39:01.493 [INFO ]:     =-=-=-=-=-=-=-=-=-=- /end: testBasics(uk.ac.rothamsted.rdf.benchmarks.CypherProfilerTest) =-=-=-=-=-=-=-=-=-=-
+
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 364.9 s -- in uk.ac.rothamsted.rdf.benchmarks.CypherProfilerTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 06:07 min
+[INFO] Finished at: 2023-08-24T19:39:01+01:00
+[INFO] ------------------------------------------------------------------------
