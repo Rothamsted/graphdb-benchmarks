@@ -30,10 +30,17 @@ Triples 21354351
 Load 153.925
 
 * Neo4j
-Nodes 1834954
-Relations 22652346 
+Nodes 898075
+Relations 3486599 
 
-TDB	256.036
-DB Load 515
-DB Indexing 68
+TDB	264.974
+DB Load 338
+DB Indexing 67
 
+* ArcadeDB
+TDB -
+graphml 325
+DB Load 110.892
+Indexing
+  TSV 71
+  
