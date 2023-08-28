@@ -53,3 +53,6 @@ As reported by the manual:
 * select from schema:types to retrieve the defined types
 * select from schema:indexes to retrieve the defined indexes
 * select from schema:database to retrieve information about database settings
+
+## Console
+* connect remote:localhost/rdf2pgbench root testTest
