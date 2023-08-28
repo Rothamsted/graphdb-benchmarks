@@ -1,0 +1,49 @@
+{
+  "databases": {
+    "*": {
+      "groups": {
+        "admin": {
+          "access": [
+            "updateSecurity",
+            "updateSchema"
+          ],
+          "resultSetLimit": -1,
+          "readTimeout": 20000,
+          "types": {
+            "*": {
+              "access": [
+                "createRecord",
+                "readRecord",
+                "updateRecord",
+                "deleteRecord"
+              ]
+            }
+          }
+        },
+        "readonly": {
+          "access": [],
+          "resultSetLimit": -1,
+          "readTimeout": 20000,
+          "types": {
+            "*": {
+              "access": [
+                "readRecord"
+              ]
+            }
+          }
+        },
+        "*": {
+          "access": [],
+          "resultSetLimit": -1,
+          "readTimeout": 20000,
+          "types": {
+            "*": {
+              "access": []
+            }
+          }
+        }
+      }
+    }
+  },
+  "version": 1
+}
