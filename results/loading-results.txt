@@ -40,11 +40,11 @@ DB Indexing 67
 * ArcadeDB
 TDB -
 graphml 325
-DB Load 110.892
+DB Load 115.005
 Indexing
   TSV 71
-  listing node labels in SQL: 0.076
-  listing rel types in SQL: 0.051
+  listing node labels in SQL: 0.08
+  listing rel types in SQL: 0.072
   py script to generate indexing SQL 0.028907654
 	Indexing SQL: 36.132
   
