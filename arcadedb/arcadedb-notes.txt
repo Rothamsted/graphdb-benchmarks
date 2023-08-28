@@ -51,8 +51,11 @@ See below for a faster version
 As reported by the manual:
 
 * select from schema:types to retrieve the defined types
+  * select name from schema:types where type = 'vertex'
+  * select name from schema:types where type = 'edge'
 * select from schema:indexes to retrieve the defined indexes
 * select from schema:database to retrieve information about database settings
+
 
 ## Console
 * connect remote:localhost/rdf2pgbench root testTest
