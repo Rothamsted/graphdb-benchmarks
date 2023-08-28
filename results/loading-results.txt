@@ -16,12 +16,12 @@ DB Indexing 2.513
 * ArcadeDB
 TDB 24.512
 graphml 7.178
-DB Load 15.568
+DB Load 15.926
 SQL for indexes:
   listing node labels in SQL: 0.081
   listing rel types in SQL: 0.098
   py script to generate indexing SQL 0.028908209
-	Indexing SQL: 6
+	Indexing SQL: 5.818
 	
 	
 === Arabidopsis
