@@ -2,7 +2,9 @@
 Usual syntax: 
 
 ```groovy
-g.io ( "/tmp/test.xml" ).read ().iterate ()
+p = '/local/docker/tmp/rdf2pg-benchmark/data/ara-graphml.xml'
+g.io ( p ).read ().iterate ()
+
 # Didn't try, but it should work
 g.graph.io(graphml()).readGraph('/tmp/test.graphml')
 ```
