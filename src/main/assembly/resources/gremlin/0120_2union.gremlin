@@ -14,6 +14,5 @@ g.inject (0).union (
   .by ( coalesce ( values ( 'prefName' ), constant ( '' ) ) )
   .by ( coalesce ( values ( 'prefName' ), constant ( '' ) ) )
   .by ( label )
-.order().by ( shuffle )
-.limit ( 100 )
+.sample ( 100 )
 // DEBUG .filter ( select ( 'r' ).is ( 'ac_by' ) )

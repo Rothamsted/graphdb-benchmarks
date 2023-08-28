@@ -15,7 +15,7 @@ g.withSideEffect ( 'evLabels', new CommonCache( new ConcurrentHashMap () ) )
   // Trying to put the limit early-on
   .inE().hasLabel ( 'is_part_of' )
   // Trying to put the limit early-on
-  .order ().by ( shuffle ).limit ( 100 ).as ( 'pr' )
+  .sample ( 100 ).as ( 'pr' )
   
   .outV ().hasLabel ( 'Concept:Protein:Resource' ).as ( 'p' )
 
