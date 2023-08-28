@@ -39,10 +39,10 @@ public abstract class AbstractProfiler
 {
 	protected String basePath;
 	protected final String queryFileExtension;
+	protected String endPointUrl;
 	
 	protected Logger log = LoggerFactory.getLogger ( this.getClass () );
 	
-	protected String endPointUrl;
 	
 
 	protected AbstractProfiler ( String queryFileExtension )
