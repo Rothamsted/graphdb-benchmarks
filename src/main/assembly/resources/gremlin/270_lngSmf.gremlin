@@ -1,42 +1,37 @@
 g.V().hasLabel ( 'Concept:Gene:Resource' )
   .out ( 'enc' ).hasLabel ( 'Concept:Protein:Resource' )
 
-  .local ( 
-    repeat ( both ( 'h_s_s', 'ortho', 'xref' ) )
-    .until ( hasLabel ( 'Concept:Protein:Resource' ) )
-  ).limit ( 3 )
-  
+  .emit ()
+  .repeat ( both ( 'h_s_s', 'ortho', 'xref' ).simplePath().hasLabel ( 'Concept:Protein:Resource' ) )
+  .times ( 3 )
   
   .both ( 'is_a', 'ac_by' ).hasLabel ( 'Concept:Enzyme:Resource' )
   .out ( 'ac_by', 'in_by' ).hasLabel ( 'Comp:Concept:Resource' )
   .out ( 'cs_by', 'pd_by' ).hasLabel ( 'Concept:Resource:Transport' )
   
-  .local ( 
-    repeat ( out ( 'part_of' ) )
-    .until ( hasLabel ( 'Concept:Path:Resource' ) )
-  ).limit ( 3 )
+  .repeat ( out ( 'part_of' ).simplePath().hasLabel ( 'Concept:Path:Resource' ) )
+  .emit ()
+  .times ( 3 )
+
+
+  .repeat ( in ( 'part_of' ).simplePath ().hasLabel ( 'Concept:Reaction:Resource' ) )
+  .emit ()
+  .times ( 3 )
 
   // Go back to other proteins in this reaction
   // optional() is to achieve the same behaviour as in the Cypher and SPARQL queries
-  .local ( 
-    repeat ( __.in ( 'part_of' ) )
-    .until ( hasLabel ( 'Concept:Reaction:Resource' ) )
-  ).limit ( 3 )
-
-  .local ( 
-    repeat ( __.in ( 'cs_by', 'pd_by' ) )
-    .until ( hasLabel ( 'Concept:Protein:Resource' ) )
-  ).limit ( 3 )
-
-  .local ( 
-    repeat ( both ( 'h_s_s', 'ortho', 'xref' ) )
-    .until ( hasLabel ( 'Concept:Protein:Resource' ) )
-  ).limit ( 2 )
-
-  .optional ( 
-    __.in ( 'enc' ).hasLabel ( 'Concept:Gene:Resource'  )
+  
+  .optional (
+    emit ()
+    .repeat ( __.in ( 'cs_by', 'pd_by' ).simplePath ().hasLabel ( 'Concept:Protein:Resource' ) )
+    .times ( 3 )
+    
+    .emit ()
+    .repeat ( both ( 'h_s_s', 'ortho', 'xref' ).simplePath ().hasLabel ( 'Concept:Protein:Resource' ) )
+    .times ( 2 )
+    
+    .optional ( __.in ( 'enc' ) ) // Gene
   ) 
   
 .path ().by ( 'iri' )
-.order ().by ( shuffle )
-.limit ( 100 )
+.sample ( 100 )

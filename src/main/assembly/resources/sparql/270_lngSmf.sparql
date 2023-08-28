@@ -31,23 +31,17 @@ SELECT *
   ?pwy (^bk:part_of){0,3} ?react.
   ?react a bk:Reaction.
   
-  ?react ^(bk:cs_by|bk:pd_by){0,3} ?rprot.
-  ?rprot a bk:Protein.
-    
-  ?rprot (bk:h_s_s|bk:ortho|bk:xref|^bk:h_s_s|^bk:ortho|^bk:xref){0,2} ?rprot1.
-  ?rprot1 a bk:Protein.
- 
-  # To emulate the variable length relation pattern in Cypher, you 
-  # need to make the rdf:type restriction optional too. Else, if bk:enc is optional, 
-  # the pattern might end up matching with ?rgene == ?rprot1, and it will try
-  # match that ?rprot1 is a Gene too. 
-  # 
-  # On the contrary, in Cypher, rprot1 <- [enc*0..1] - (rgene:Gene) means that the whole
-  # path enc -> gene might not be in a valid result. 
-  # 
   OPTIONAL {
-    ?rprot1 ^bk:enc ?rgene.
-    ?rgene a bk:Gene.
+    ?react ^(bk:cs_by|bk:pd_by){0,3} ?rprot.
+    ?rprot a bk:Protein.
+    
+    ?rprot (bk:h_s_s|bk:ortho|bk:xref|^bk:h_s_s|^bk:ortho|^bk:xref){0,2} ?rprot1.
+    ?rprot1 a bk:Protein.
+ 
+    OPTIONAL {
+      # Don't know why sometimes (^bk:enc)? doesn't work
+      ?rprot1 ^bk:enc ?rgene.
+    }
   } 
 }
 ORDER BY RAND()
