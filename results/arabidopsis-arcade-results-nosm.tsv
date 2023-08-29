@@ -1,0 +1,158 @@
+nohup: ignoring input
+Tue 29 Aug 14:38:33 BST 2023
+[INFO] Scanning for projects...
+Downloading from knetminer-repo: https://knetminer.com/artifactory/repository/maven-public/uk/ac/rothamsted/knetminer/knetminer-common/2.0.1-SNAPSHOT/maven-metadata.xml
+Progress (1): 621 B                   Downloaded from knetminer-repo: https://knetminer.com/artifactory/repository/maven-public/uk/ac/rothamsted/knetminer/knetminer-common/2.0.1-SNAPSHOT/maven-metadata.xml (621 B at 1.6 kB/s)
+[INFO] 
+[INFO] --------------< uk.ac.rothamsted.rdf:graphdb-benchmarks >---------------
+[INFO] Building  2.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+Downloading from knetminer-repo: https://knetminer.com/artifactory/repository/maven-public/org/slf4j/slf4j-api/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml
+Downloading from jena-snapshots: https://repository.apache.org/content/groups/snapshots/org/slf4j/slf4j-api/maven-metadata.xml
+Downloading from mbrandizi.jfrog.io: https://mbrandizi.jfrog.io/artifactory/maven/org/slf4j/slf4j-api/maven-metadata.xml
+Progress (1): 1.4/3.4 kBProgress (1): 2.7/3.4 kBProgress (1): 3.4 kB    Progress (2): 3.4 kB | 3.4 kB                             Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/maven-metadata.xml (3.4 kB at 31 kB/s)
+Downloaded from knetminer-repo: https://knetminer.com/artifactory/repository/maven-public/org/slf4j/slf4j-api/maven-metadata.xml (3.4 kB at 17 kB/s)
+Progress (1): 1.1/11 kBProgress (1): 2.5/11 kBProgress (1): 3.9/11 kBProgress (1): 5.3/11 kBProgress (1): 6.7/11 kBProgress (1): 8.1/11 kBProgress (1): 9.5/11 kBProgress (1): 11 kB                       [WARNING] Checksum validation failed, expected <!DOCTYPE but is 298ef93114b190b3db00a115d2d947bb61734a2a from mbrandizi.jfrog.io for https://mbrandizi.jfrog.io/artifactory/maven/org/slf4j/slf4j-api/maven-metadata.xml
+Progress (1): 1.1/11 kBProgress (1): 2.5/11 kBProgress (1): 3.9/11 kBProgress (1): 5.3/11 kBProgress (1): 6.7/11 kBProgress (1): 8.1/11 kBProgress (1): 9.5/11 kBProgress (1): 11 kB    [WARNING] Could not validate integrity of download from https://mbrandizi.jfrog.io/artifactory/maven/org/slf4j/slf4j-api/maven-metadata.xml: Checksum validation failed, expected <!DOCTYPE but is 298ef93114b190b3db00a115d2d947bb61734a2a
+                   [WARNING] Checksum validation failed, expected <!DOCTYPE but is 298ef93114b190b3db00a115d2d947bb61734a2a from mbrandizi.jfrog.io for https://mbrandizi.jfrog.io/artifactory/maven/org/slf4j/slf4j-api/maven-metadata.xml
+Downloaded from mbrandizi.jfrog.io: https://mbrandizi.jfrog.io/artifactory/maven/org/slf4j/slf4j-api/maven-metadata.xml (11 kB at 7.9 kB/s)
+[WARNING] The metadata /local/docker/.m2/repository/org/slf4j/slf4j-api/maven-metadata-mbrandizi.jfrog.io.xml is invalid: entity reference name can not contain character =' (position: END_TAG seen ...s://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=... @1:326) 
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ graphdb-benchmarks ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /local/docker/tmp/rdf2pg-benchmark/graphdb-benchmarks/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ graphdb-benchmarks ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ graphdb-benchmarks ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ graphdb-benchmarks ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.1.2:test (default-test) @ graphdb-benchmarks ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junit4.JUnit4Provider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running uk.ac.rothamsted.rdf.benchmarks.ArcadeProfilerTest
+14:38:37.804 [INFO ]:      =-=-=-=-=-=-=-=-=-=-=-= testBasics(uk.ac.rothamsted.rdf.benchmarks.ArcadeProfilerTest) =-=-=-=-=-=-=-=-=-=-=-=
+14:38:37.808 [INFO ]: Start profiling with ArcadeProfiler and 120 repeats/query
+14:39:56.589 [INFO ]: 100 query executions profiled
+14:41:17.919 [INFO ]: 200 query executions profiled
+14:42:13.378 [INFO ]: 300 query executions profiled
+14:43:26.863 [INFO ]: 400 query executions profiled
+14:44:45.927 [INFO ]: 500 query executions profiled
+14:45:53.219 [INFO ]: 600 query executions profiled
+14:47:03.627 [INFO ]: 700 query executions profiled
+14:48:10.784 [INFO ]: 800 query executions profiled
+14:48:48.671 [ERROR]: Error while running 0080_joinFilter
+com.arcadedb.remote.RemoteException: Error on executing remote operation g.V().hasLabel ( 'Concept:Protein:Resource' )
+  .has ( 'prefName', "Stearoyl-\[acyl-carrier-protein\] 9-desaturase 4, chloroplastic" ).as ( 'p' )
+.out ( 'is_part_of' ).hasLabel ( 'Concept:Protcmplx:Resource' ).as ( 'cpx1' )
+.out ( 'is_part_of' ).hasLabel ( 'Concept:Protcmplx:Resource' ).as ( 'cpx2' )
+.select ( 'p', 'cpx1', 'cpx2' )
+.by ( coalesce ( values ( 'prefName' ), constant ( '' ) ) )
+.limit ( 100 )
+ (cause:com.arcadedb.exception.CommandExecutionException detail:Error on executing command)
+	at com.arcadedb.remote.RemoteDatabase.manageException(RemoteDatabase.java:903)
+	at com.arcadedb.remote.RemoteDatabase.httpCommand(RemoteDatabase.java:563)
+	at com.arcadedb.remote.RemoteDatabase.databaseCommand(RemoteDatabase.java:517)
+	at com.arcadedb.remote.RemoteDatabase.query(RemoteDatabase.java:415)
+	at uk.ac.rothamsted.rdf.benchmarks.ArcadeProfiler.lambda$profileQuery$1(ArcadeProfiler.java:70)
+	at uk.ac.ebi.utils.time.XStopWatch.trackNano(XStopWatch.java:78)
+	at uk.ac.ebi.utils.time.XStopWatch.profileNano(XStopWatch.java:50)
+	at uk.ac.ebi.utils.time.XStopWatch.profile(XStopWatch.java:58)
+	at uk.ac.rothamsted.rdf.benchmarks.ArcadeProfiler.profileQuery(ArcadeProfiler.java:64)
+	at uk.ac.rothamsted.rdf.benchmarks.AbstractProfiler.profile(AbstractProfiler.java:94)
+	at uk.ac.rothamsted.rdf.benchmarks.AbstractProfiler.profile(AbstractProfiler.java:60)
+	at uk.ac.rothamsted.rdf.benchmarks.ArcadeProfilerTest.testBasics(ArcadeProfilerTest.java:22)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+14:48:48.671 [WARN ]: Timeout/error for query 0080_joinFilter
+14:49:07.090 [INFO ]: 900 query executions profiled
+14:50:06.875 [INFO ]: 1000 query executions profiled
+14:51:05.562 [INFO ]: 1100 query executions profiled
+14:52:00.174 [INFO ]: 1200 query executions profiled
+14:53:13.029 [INFO ]: 1300 query executions profiled
+14:54:17.174 [INFO ]: 1400 query executions profiled
+14:55:26.293 [INFO ]: 1500 query executions profiled
+14:56:44.086 [INFO ]: 1600 query executions profiled
+14:57:48.659 [INFO ]: 1700 query executions profiled
+14:58:41.470 [INFO ]: 1800 query executions profiled
+14:59:57.008 [INFO ]: 1900 query executions profiled
+15:01:08.414 [INFO ]: 2000 query executions profiled
+15:02:18.511 [INFO ]: 2100 query executions profiled
+15:03:25.253 [INFO ]: 2200 query executions profiled
+15:04:13.777 [INFO ]: 2300 query executions profiled
+15:05:25.265 [INFO ]: 2400 query executions profiled
+15:06:24.411 [INFO ]: 2500 query executions profiled
+15:07:53.314 [INFO ]: 2600 query executions profiled
+Name	AvgTime	STD	MinTime	MaxTime	Execs	Timeouts
+cnt	1041.495726	8.791281	1033.000000	1072.000000	117	0
+cntType	1075.000000	12.002584	1064.000000	1138.000000	130	0
+cntRel	4480.556452	20.333921	4439.000000	4551.000000	124	0
+cntRelType	0.469565	0.501257	0.000000	1.000000	115	0
+sel	2536.272727	247.826115	1934.000000	2968.000000	121	0
+join	740.689922	8.624817	732.000000	776.000000	129	0
+joinRel	9.807018	0.650081	8.000000	12.000000	114	0
+joinFilter	218.046875	4.427650	216.000000	245.000000	128	1
+joinRe	580.583942	2.038751	579.000000	598.000000	137	0
+joinReif	10.595420	4.727625	8.000000	63.000000	131	0
+varPathC	88.287037	37.108089	52.000000	177.000000	108	0
+varPath	67.294643	3.748005	60.000000	88.000000	112	0
+2union	117.440000	3.915231	114.000000	152.000000	125	0
+2union1Nest	119.027273	5.657599	115.000000	148.000000	110	0
+2union1Nest+	118.297710	3.707984	114.000000	146.000000	131	0
+pway	2182.581197	13.913674	2164.000000	2216.000000	117	0
+grp	830.133858	7.599459	823.000000	862.000000	127	0
+grpAg	7.614754	0.537006	7.000000	9.000000	122	0
+mulGrpAg	63.028037	10.070935	61.000000	166.000000	107	0
+nestAg	58.682243	2.099408	57.000000	77.000000	107	0
+exist	54.616071	1.224712	53.000000	62.000000	112	0
+existAg	61.721739	0.743956	60.000000	66.000000	115	0
+15:08:18.690 [INFO ]: Benchmark finished
+15:08:18.691 [INFO ]:     =-=-=-=-=-=-=-=-=-=- /end: testBasics(uk.ac.rothamsted.rdf.benchmarks.ArcadeProfilerTest) =-=-=-=-=-=-=-=-=-=-
+
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1781 s -- in uk.ac.rothamsted.rdf.benchmarks.ArcadeProfilerTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 29:44 min
+[INFO] Finished at: 2023-08-29T15:08:18+01:00
+[INFO] ------------------------------------------------------------------------
