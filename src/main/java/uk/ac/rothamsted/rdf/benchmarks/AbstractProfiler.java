@@ -186,7 +186,7 @@ public abstract class AbstractProfiler
 			SummaryStatistics statsi = stats [ i ];
 
 			if ( statsi == null )
-				out.printf ( "\t-\t-\t-\t-\t-" );
+				out.printf ( "\t0\t-\t-\t-\t-" );
 			else
 				out.printf ( 
 					"\t%f\t%f\t%f\t%f\t%d",
