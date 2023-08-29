@@ -41,6 +41,10 @@ SELECT *
     OPTIONAL {
       # Don't know why sometimes (^bk:enc)? doesn't work
       ?rprot1 ^bk:enc ?rgene.
+      
+      # We don't do this for sake of consistency with the Cypher counterpart which 
+      # doesn't do it either to keep things a bit simpler.
+      # ?rgene a bk:Gene.      
     }
   } 
 }
