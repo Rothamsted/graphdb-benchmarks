@@ -60,9 +60,9 @@ protName
 3-ketoacyl-CoA thiolase 1, peroxisomal
 3-ketodihydrosphinganine reductase
 3-mercaptopyruvate sulfurtransferase
-3-oxo-Delta\(4,5\)-steroid 5-beta-reductase
-3-oxoacyl-\[acyl-carrier-protein\] synthase 3 B, chloroplastic
-3-oxoacyl-\[acyl-carrier-protein\] synthase
+3-oxo-Delta(4,5)-steroid 5-beta-reductase
+3-oxoacyl-[acyl-carrier-protein] synthase 3 B, chloroplastic
+3-oxoacyl-[acyl-carrier-protein] synthase
 3-phosphoshikimate 1-carboxyvinyltransferase 1, chloroplastic
 30 kDa ribonucleoprotein, chloroplastic
 30S ribosomal protein 3-1, chloroplastic
@@ -260,7 +260,7 @@ Acyl transferase 8
 Acyl-CoA-binding domain-containing protein 1
 Acyl-CoA-binding domain-containing protein 6
 Acyl-CoA-binding protein 1
-Acyl-\[acyl-carrier-protein\] desaturase 3, chloroplastic
+Acyl-[acyl-carrier-protein] desaturase 3, chloroplastic
 Acyl-coenzyme A oxidase 3, peroxisomal
 Acylamino-acid-releasing enzyme
 Adagio-like protein 1
@@ -314,7 +314,7 @@ Anthranilate phosphoribosyltransferase
 Anthranilate synthase beta subunit 1, chloroplastic
 Anthranilate synthase beta subunit 2, chloroplastic
 Anthranilate synthase component 2
-Anti-H\(O\) lectin 1
+Anti-H(O) lectin 1
 Antimicrobial peptide 1a
 Antimicrobial peptide MBP-1
 Antiviral protein S
@@ -333,7 +333,7 @@ Arginine attenuator peptide
 Arginine--tRNA ligase, cytoplasmic
 Aromatic-L-amino-acid decarboxylase
 Arsenate reductase 2.2
-Asparagine synthetase, nodule \[glutamine-hydrolyzing\]
+Asparagine synthetase, nodule [glutamine-hydrolyzing]
 Asparagine--tRNA ligase, cytoplasmic 1
 Aspartate carbamoyltransferase 2, chloroplastic
 Aspartate carbamoyltransferase 3, chloroplastic
@@ -343,7 +343,7 @@ Aspartic proteinase 3
 Aspartic proteinase MKC7
 Aspartic proteinase yapsin-6
 Aspartyl protease family protein 2
-Assimilatory sulfite reductase \(ferredoxin\), chloroplastic
+Assimilatory sulfite reductase (ferredoxin), chloroplastic
 Autonomous transposable element EN-1 mosaic protein
 Autophagy protein 16
 Autophagy-related protein 31
@@ -440,7 +440,7 @@ Bifunctional adenosine 5'-phosphosulfate phosphorylase/adenylylsulfatase HINT4
 Bifunctional chrysanthemol synthase, chloroplastic
 Bifunctional cis-abienol synthase, chloroplastic
 Biotin synthase, mitochondrial
-Bowman-Birk type proteinase inhibitor PVI-3\(2\)
+Bowman-Birk type proteinase inhibitor PVI-3(2)
 Bowman-Birk type proteinase inhibitor
 Bowman-Birk type proteinase inhibitors I-A, I-B, and I-A'
 Bowman-Birk type trypsin inhibitor TI1
@@ -525,9 +525,9 @@ Casein kinase I homolog 1
 Casein kinase II subunit beta-2
 Cation transporter HKT2
 Cation-transporting ATPase HMA5
-Cation/H\(+\) antiporter 11
-Cation/H\(+\) antiporter 16
-Cation/H\(+\) antiporter 8
+Cation/H(+) antiporter 11
+Cation/H(+) antiporter 16
+Cation/H(+) antiporter 8
 Cationic amino acid transporter 2, vacuolar
 Cationic amino acid transporter 2, vacuolar
 Cationic amino acid transporter 8, vacuolar
@@ -539,7 +539,7 @@ Cell division cycle protein 27 homolog A
 Cell number regulator 5
 Cell wall synthesis protein KNH1
 Cell wall synthesis protein KRE9
-Cellulose synthase A catalytic subunit 7 \[UDP-forming\]
+Cellulose synthase A catalytic subunit 7 [UDP-forming]
 Cellulose synthase-like protein D2
 Cellulose synthase-like protein D4
 Centromere DNA-binding protein complex CBF3 subunit B
@@ -723,7 +723,7 @@ DExH-box ATP-dependent RNA helicase DExH1
 DExH-box ATP-dependent RNA helicase DExH14
 DExH-box ATP-dependent RNA helicase DExH6
 DIBOA-glucoside dioxygenase BX6
-DNA \(cytosine-5\)-methyltransferase CMT3
+DNA (cytosine-5)-methyltransferase CMT3
 DNA damage checkpoint protein 1
 DNA damage-inducible protein DIN7
 DNA damage-repair/toleration protein DRT102
@@ -793,8 +793,8 @@ Dehydration-responsive element-binding protein 1F
 Dehydration-responsive element-binding protein 2D
 Dehydration-responsive element-binding protein 2F
 Dehydrin Rab15
-Delta\(12\)-fatty-acid desaturase FAD2
-Delta\(9\) fatty acid conjugase-like enzyme
+Delta(12)-fatty-acid desaturase FAD2
+Delta(9) fatty acid conjugase-like enzyme
 Deoxycytidylate deaminase
 Desiccation stress protein DSP-22, chloroplastic
 Diacylglycerol O-acyltransferase 3, cytosolic
@@ -888,7 +888,7 @@ Enhancer of translation termination 1
 Enolase 1
 Enoyl-[acyl-carrier-protein] reductase [NADH] 1, chloroplastic
 Enoyl-[acyl-carrier-protein] reductase [NADH] 2, chloroplastic
-Enoyl-\[acyl-carrier-protein\] reductase \[NADH\] 2, chloroplastic
+Enoyl-[acyl-carrier-protein] reductase [NADH] 2, chloroplastic
 Ent-copalyl diphosphate synthase 1, chloroplastic
 Ent-copalyl diphosphate synthase AN1, chloroplastic
 Ent-copalyl diphosphate synthase AN2, chloroplastic
@@ -1113,7 +1113,7 @@ Glutamate--tRNA ligase, chloroplastic/mitochondrial
 Glutamine synthetase root isozyme B
 Glutamine synthetase, chloroplastic
 Glutamine--tRNA ligase
-Glutamyl-tRNA\(Gln\) amidotransferase subunit F, mitochondrial
+Glutamyl-tRNA(Gln) amidotransferase subunit F, mitochondrial
 Glutathione S-transferase U21
 Glutathione S-transferase
 Glutathione peroxidase 1, mitochondrial
@@ -1140,7 +1140,7 @@ Glycine-rich cell wall structural protein 1.0
 Glycine-rich cell wall structural protein 2
 Glycine-rich protein A3
 Glycine-rich protein DOT1
-Glycogen \[starch\] synthase isoform 1
+Glycogen [starch] synthase isoform 1
 Glycogen synthase kinase-3 homolog YGK3
 Glycolipid 2-alpha-mannosyltransferase
 Glycolipid transfer protein 3
@@ -1248,7 +1248,7 @@ Inositol-pentakisphosphate 2-kinase
 Inositol-tetrakisphosphate 1-kinase 6
 Inositolphosphotransferase 1
 Internal alternative NAD(P)H-ubiquinone oxidoreductase A1, mitochondrial
-Internal alternative NAD\(P\)H-ubiquinone oxidoreductase A1, mitochondrial
+Internal alternative NAD(P)H-ubiquinone oxidoreductase A1, mitochondrial
 Intraflagellar transport protein 46
 Ion channel CASTOR
 Ion channel POLLUX
@@ -1256,7 +1256,7 @@ Iron-phytosiderophore transporter yellow stripe 1
 Isoamylase 3, chloroplastic
 Isochorismate synthase, chloroplastic
 Isocitrate dehydrogenase [NAD] regulatory subunit 1, mitochondrial
-Isocitrate dehydrogenase \[NAD\] catalytic subunit 5, mitochondrial
+Isocitrate dehydrogenase [NAD] catalytic subunit 5, mitochondrial
 Isoflavone 7-O-glucosyltransferase 1
 Isoflavone reductase homolog A622
 Isoflavone reductase
@@ -1277,7 +1277,7 @@ KH domain-containing protein At2g38610
 KH domain-containing protein At4g18375
 KH domain-containing protein At5g56140
 KH domain-containing protein YLL032C
-K\(+\)/H\(+\) antiporter 1
+K(+)/H(+) antiporter 1
 Kelch repeat-containing protein 1
 Kinase-interacting protein 1
 Kinesin-like protein KIN-12B
@@ -1489,17 +1489,17 @@ NAD-dependent malic enzyme
 NAD-dependent protein deacetylase HST2
 NAD-dependent protein deacylase SRT2
 NAD-specific glutamate dehydrogenase
-NADH dehydrogenase \[ubiquinone\] 1 beta subcomplex subunit 2
+NADH dehydrogenase [ubiquinone] 1 beta subcomplex subunit 2
 NADH-ubiquinone oxidoreductase 18 kDa subunit
 NADH-ubiquinone oxidoreductase 51 kDa subunit
 NADH-ubiquinone oxidoreductase subunit 9
 NADPH--cytochrome P450 reductase 1
 NADPH--cytochrome P450 reductase
-NAD\(P\)H dehydrogenase \(quinone\) FQR1
-NAD\(P\)H oxidase
-NAD\(P\)H-quinone oxidoreductase subunit 2, chloroplastic
-NAD\(P\)H-quinone oxidoreductase subunit T, chloroplastic
-NAD\(P\)H-quinone oxidoreductase subunit U, chloroplastic
+NAD(P)H dehydrogenase (quinone) FQR1
+NAD(P)H oxidase
+NAD(P)H-quinone oxidoreductase subunit 2, chloroplastic
+NAD(P)H-quinone oxidoreductase subunit T, chloroplastic
+NAD(P)H-quinone oxidoreductase subunit U, chloroplastic
 NDR1/HIN1-like protein 13
 NEDD8-conjugating enzyme Ubc12
 NEDD8-specific protease 1
@@ -1515,7 +1515,7 @@ NifU-like protein 2, chloroplastic
 NifU-like protein 5, mitochondrial
 Ninja-family protein 6
 Nitrate reductase [NADH], clone PBNBR1405
-Nitrate reductase \[NADH\] 3
+Nitrate reductase [NADH] 3
 Nitrogen regulatory protein GLN3
 Non-classical export protein 1
 Non-cyanogenic beta-glucosidase
@@ -1532,7 +1532,7 @@ Non-specific lipid-transfer protein-like protein At2g13820
 Non-structural maintenance of chromosomes element 4 homolog A
 Non-symbiotic hemoglobin 4
 Nuclear envelope-associated protein 3
-Nuclear poly\(A\) polymerase 3
+Nuclear poly(A) polymerase 3
 Nuclear pore complex protein NUP133
 Nuclear pore complex protein NUP214
 Nuclear pore complex protein NUP62
@@ -1714,7 +1714,7 @@ Peroxiredoxin-2E, chloroplastic
 Peroxiredoxin-2E-2, chloroplastic
 Peroxiredoxin-2F, mitochondrial
 Peroxisomal ATPase PEX6
-Peroxisomal \(S\)-2-hydroxy-acid oxidase GLO2
+Peroxisomal (S)-2-hydroxy-acid oxidase GLO2
 Peroxisomal biogenesis factor 8
 Peroxisomal membrane protein PEX14
 Peroxisomal membrane protein PMP27
@@ -1851,8 +1851,8 @@ Probable LRR receptor-like serine/threonine-protein kinase At3g47570
 Probable LRR receptor-like serine/threonine-protein kinase At4g20450
 Probable LRR receptor-like serine/threonine-protein kinase At5g45780
 Probable LRR receptor-like serine/threonine-protein kinase PAM74
-Probable NAD\(P\)H dehydrogenase \(quinone\) FQR1-like 1
-Probable NAD\(P\)H dehydrogenase \(quinone\) FQR1-like 3
+Probable NAD(P)H dehydrogenase (quinone) FQR1-like 1
+Probable NAD(P)H dehydrogenase (quinone) FQR1-like 3
 Probable NEDD8-conjugating enzyme Ubc12-like
 Probable O-methyltransferase 3
 Probable U3 small nucleolar RNA-associated protein 11
@@ -1866,7 +1866,7 @@ Probable WRKY transcription factor 40
 Probable WRKY transcription factor 56
 Probable WRKY transcription factor 61
 Probable WRKY transcription factor 62
-Probable \(S\)-tetrahydroprotoberberine N-methyltransferase 2
+Probable (S)-tetrahydroprotoberberine N-methyltransferase 2
 Probable acid phosphatase DIA3
 Probable adenylate kinase 1, chloroplastic
 Probable aldehyde oxidase 4
@@ -1875,7 +1875,7 @@ Probable alkaline/neutral invertase F
 Probable alpha,alpha-trehalose-phosphate synthase [UDP-forming] 11
 Probable alpha,alpha-trehalose-phosphate synthase [UDP-forming] 2
 Probable alpha,alpha-trehalose-phosphate synthase [UDP-forming] 9
-Probable alpha,alpha-trehalose-phosphate synthase \[UDP-forming\] 10
+Probable alpha,alpha-trehalose-phosphate synthase [UDP-forming] 10
 Probable aminodeoxychorismate synthase, chloroplastic
 Probable aminotransferase TAT4
 Probable anion transporter 2, chloroplastic
@@ -1897,7 +1897,7 @@ Probable calcium-binding protein CML22
 Probable calcium-binding protein CML28
 Probable calcium-binding protein CML40
 Probable calcium-binding protein CML43
-Probable cellulose synthase A catalytic subunit 8 \[UDP-forming\]
+Probable cellulose synthase A catalytic subunit 8 [UDP-forming]
 Probable cinnamyl alcohol dehydrogenase 2
 Probable cyclic nucleotide-gated ion channel 5
 Probable cysteine protease RD21B
@@ -2358,7 +2358,7 @@ Putative GDSL-motif lipase/hydrolase-like protein
 Putative L-cysteine desulfhydrase 2
 Putative L-type lectin-domain containing receptor kinase V.2
 Putative Myb family transcription factor At1g14600
-Putative NAD\(P\)-dependent glyceraldehyde-3-phosphate dehydrogenase PS5
+Putative NAD(P)-dependent glyceraldehyde-3-phosphate dehydrogenase PS5
 Putative Pol polyprotein from transposon element Bs1
 Putative RING-H2 finger protein ATL12
 Putative RING-H2 finger protein ATL21A
@@ -2779,7 +2779,7 @@ Squamosa promoter-binding-like protein 17
 Squamosa promoter-binding-like protein 18
 Squamosa promoter-binding-like protein 7
 Staphylococcal-like nuclease CAN1
-Stearoyl-\[acyl-carrier-protein\] 9-desaturase 4, chloroplastic
+Stearoyl-[acyl-carrier-protein] 9-desaturase 4, chloroplastic
 Stem 28 kDa glycoprotein
 Sterol O-acyltransferase 2
 Stilbene synthase 1
@@ -2799,8 +2799,8 @@ Subtilisin-like protease SBT3.13
 Subtilisin-like protease SBT4.7
 Subtilisin-like protease SBT5.5
 Succinate dehydrogenase [ubiquinone] iron-sulfur subunit, mitochondrial
-Succinate dehydrogenase \[ubiquinone\] cytochrome b subunit, mitochondrial
-Succinate dehydrogenase \[ubiquinone\] iron-sulfur subunit 2, mitochondrial
+Succinate dehydrogenase [ubiquinone] cytochrome b subunit, mitochondrial
+Succinate dehydrogenase [ubiquinone] iron-sulfur subunit 2, mitochondrial
 Succinate dehydrogenase cytochrome b560 subunit
 Succinate dehydrogenase subunit 4, mitochondrial
 Succinate dehydrogenase subunit 4, mitochondrial
@@ -2821,12 +2821,12 @@ Sulfate/thiosulfate import ATP-binding protein cysA
 Sulfiredoxin, chloroplastic/mitochondrial
 Sulfite exporter TauE/SafE family protein 2
 Sulfite exporter TauE/SafE family protein 4
-Sulfite reductase \[NADPH\] subunit beta
+Sulfite reductase [NADPH] subunit beta
 Superoxide dismutase [Mn] 1, mitochondrial
 Superoxide dismutase [Mn] 3.2, mitochondrial
-Superoxide dismutase \[Cu-Zn\] 3
-Superoxide dismutase \[Cu-Zn\] 4A
-Superoxide dismutase \[Fe\] 1, chloroplastic
+Superoxide dismutase [Cu-Zn] 3
+Superoxide dismutase [Cu-Zn] 4A
+Superoxide dismutase [Fe] 1, chloroplastic
 Suppressor of lethality of KEX2 GAS1 double null mutant protein 1
 Sweet protein mabinlin-3
 Syn-pimara-7,15-diene synthase
@@ -3199,7 +3199,7 @@ Vacuolar-sorting receptor 6
 Valine N-monooxygenase 1
 Varv peptide E
 Vascular-related unknown protein 4
-Very-long-chain \(3R\)-3-hydroxyacyl-CoA dehydratase PASTICCINO 2A
+Very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase PASTICCINO 2A
 Vesicle-associated membrane protein 712
 Vesicle-associated membrane protein 713
 Vicilin, 14 kDa component
@@ -3248,9 +3248,9 @@ Zinc finger protein WIP5
 Zinc finger protein YPR022C
 Zinc finger protein ZOP1
 Zinc finger/BTB domain protein, putative (DUF1644)
-\(3S,6E\)-nerolidol synthase
-\(S\)-N-methylcoclaurine 3'-hydroxylase isozyme 2
-\[PIN+\] prion protein RNQ1
+(3S,6E)-nerolidol synthase
+(S)-N-methylcoclaurine 3'-hydroxylase isozyme 2
+[PIN+] prion protein RNQ1
 a ferrocytochrome b5
 a reduced c-type cytochrome
 acetyl-CoA carboxyltransferase beta
@@ -3258,7 +3258,7 @@ acyl-lipid thioesterase 3
 adenylylsulfate sulfohydrolase
 aldehyde oxidase
 aldehyde reductase
-an \[2Fe-2S\] cluster protein
+an [2Fe-2S] cluster protein
 bZIP transcription factor 18
 bZIP transcription factor 44
 bZIP transcription factor 53
@@ -3273,7 +3273,7 @@ cellobiose glucosidase
 chalcone isomerase
 chlorophyll synthetase
 chorismate synthase
-citrate synthase \(mitochondrial\)
+citrate synthase (mitochondrial)
 complex II subunit 5
 complex II subunit 8
 cytochrome b-559 a-subunit
@@ -3283,13 +3283,13 @@ fatty acid in-chain hydroxylase
 fatty aldehyde decarbonylase
 flavonol 3-O-glucosyltransferase
 flavonol synthase
-g\(E,E\)-geranyllinalool synthase
+g(E,E)-geranyllinalool synthase
 galactinol synthase
 ghydrolase, acting on ester bonds
 glutamine synthetase, type II
-glutathione dehydrogenase \(ascorbate\)
-glyceraldehyde-3-phosphate dehydrogenase \(NADP+\)
-glycerol-3-phosphate dehydrogenase \(NAD+\)
+glutathione dehydrogenase (ascorbate)
+glyceraldehyde-3-phosphate dehydrogenase (NADP+)
+glycerol-3-phosphate dehydrogenase (NAD+)
 histidinol dehydrogenase
 homogentisate 1,2-dioxygenase
 hydrogen ion transporting ATPase activity, rotational mechanism
@@ -3301,8 +3301,8 @@ inositol-3-phosphate synthase
 inositol-tetrakisphosphate 1-kinase 2
 jasmonoyl-amino acid synthetase
 linoleate desaturase
-methylenetetrahydrofolate reductase \(NADPH\)
-monodehydroascorbate reductase \(NADH\)
+methylenetetrahydrofolate reductase (NADPH)
+monodehydroascorbate reductase (NADH)
 nicotinamide-nucleotide adenylyltransferase
 nitrate reductase 2 subunit
 nucleobase, nucleoside, nucleotide kinase
@@ -3329,11 +3329,11 @@ sn-2 acyl-lipid omega-3 desaturase (ferredoxin), chloroplastic
 steroid 22alpha-hydroxylase
 succinate dehydrogenase
 sucrose synthase
-tRNA \(guanine\(37\)-N1\)-methyltransferase 2
-tRNA \(guanosine\(18\)-2'-O\)-methyltransferase
+tRNA (guanine(37)-N1)-methyltransferase 2
+tRNA (guanosine(18)-2'-O)-methyltransferase
 tRNA acetyltransferase TAN1
 tRNA synthetase class I (I, L, M and V) family protein
-tRNA\(His\) guanylyltransferase 1
+tRNA(His) guanylyltransferase 1
 tRNase Z TRZ2, chloroplastic
 thiazole synthase subunit
 trihydroxyferuloyl spermidine O-methyltransferase
@@ -15106,7 +15106,7 @@ Alfin-like 2
 Aliphatic (R)-hydroxynitrile lyase
 Alliin lyase 1
 Alpha carbonic anhydrase 8
-Alpha-\(1,4\)-fucosyltransferase
+Alpha-(1,4)-fucosyltransferase
 Alpha-amylase inhibitor
 Alpha-amylase inhibitor 2
 Alpha-amylase inhibitor BDAI-1
@@ -34917,7 +34917,7 @@ beta-ureidopropionase
 betaine aldehyde / aminoaldehyde dehydrogenase
 biotin synthase
 bis(5'-nucleosyl)-tetraphosphatase (asymmetrical)
-bis\(5'-adenosyl\)-pentaphosphatase
+bis(5'-adenosyl)-pentaphosphatase
 carboxylesterase
 carboxylic ester hydrolase
 catalase
