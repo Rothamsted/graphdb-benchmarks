@@ -27,6 +27,5 @@ CALL {
     - [:part_of] -> (pw:Path)
   RETURN prot, pw, "react" AS branch
 }
-RETURN prot.prefName, pw.prefName, branch, rand()
-ORDER BY rand()
+RETURN prot.prefName, pw.prefName, branch
 LIMIT 100

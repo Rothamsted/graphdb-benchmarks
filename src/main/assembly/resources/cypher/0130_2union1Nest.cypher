@@ -10,6 +10,5 @@ WITH row.prot AS p, row.react AS r, row.enz AS e
 
 MATCH (e)-[:ac_by|:in_by]->(c:Comp)
 
-RETURN p.prefName, e.prefName, TYPE (r) AS rtype, c.prefName, rand() AS rnd
-ORDER BY rnd
+RETURN p.prefName, e.prefName, TYPE (r) AS rtype, c.prefName
 LIMIT 100

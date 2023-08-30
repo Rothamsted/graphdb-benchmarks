@@ -5,6 +5,5 @@ WHERE NOT EXISTS
 AND NOT EXISTS
   ( (p) - [:is_a|ac_by] - (:Enzyme) <- [:ca_by] - (:Transport) - [:part_of] -> (:Path) )
 
-RETURN DISTINCT pwy.prefName, p.prefName, rand() AS rnd
-ORDER BY rnd
+RETURN DISTINCT pwy.prefName, p.prefName
 LIMIT 100

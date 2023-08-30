@@ -12,7 +12,5 @@ MATCH path = (gene:Gene) - [:enc] -> (prot:Protein)
   <- [:enc*0..1] - (rgene) 
 RETURN 
   // This is to emulate the corresponding SPARQL, see 270_lngSmf.cypher 
-  [ n in nodes(path) | n.iri ] as nodeIris, 
-  rand() AS rnd
-ORDER BY rnd
+  [ n in nodes(path) | n.iri ] as nodeIris
 LIMIT 100

@@ -5,7 +5,5 @@ MATCH path = (gene:Gene) - [:has_mutant|has_variation] -> (snp:SNP)
 RETURN
   // This is to emulate the corresponding SPARQL, which returns node IRIs only
   // Returning the whole path is time consuming and distorts the speed engine assessment.  
-  [ n in nodes(path) | n.iri ] as nodeIris, 
-  rand() AS rnd
-ORDER BY rnd
+  [ n in nodes(path) | n.iri ] as nodeIris
 LIMIT 100

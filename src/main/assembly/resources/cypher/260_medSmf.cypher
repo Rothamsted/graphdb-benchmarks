@@ -7,7 +7,5 @@ MATCH path = (gene:Gene) - [:enc] -> (prot:Protein)
 
 RETURN 
   // This is to emulate the corresponding SPARQL, see 250_shrtSmf.cypher
-  [ n in nodes(path) | n.iri ] as nodeIris, 
-  rand() AS rnd
-ORDER BY rnd
+  [ n in nodes(path) | n.iri ] as nodeIris
 LIMIT 100

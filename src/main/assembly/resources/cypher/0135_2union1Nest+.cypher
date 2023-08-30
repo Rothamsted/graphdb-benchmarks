@@ -12,6 +12,5 @@ CALL {
 WITH e, proteinName, enzName, relType
 MATCH (e)-[:ac_by|:in_by]->(c:Comp)
 
-RETURN proteinName, enzName, relType, c.prefName, rand() AS rnd
-ORDER BY rnd
+RETURN proteinName, enzName, relType, c.prefName
 LIMIT 100

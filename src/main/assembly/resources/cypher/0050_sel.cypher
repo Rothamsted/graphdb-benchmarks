@@ -1,4 +1,3 @@
 MATCH (p:Protein) 
-RETURN p.description, p.prefName, rand() AS rnd
-ORDER BY rnd
+RETURN p.description, p.prefName
 LIMIT 100
