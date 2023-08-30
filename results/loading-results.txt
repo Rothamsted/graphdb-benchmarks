@@ -47,4 +47,11 @@ Indexing
   listing rel types in SQL: 0.072
   py script to generate indexing SQL 0.028907654
 	Indexing SQL: 36.132
-  
+
+
+=== Poaceae ===
+
+* Virtuoso
+Triples 96537034
+Load 681.030
+
