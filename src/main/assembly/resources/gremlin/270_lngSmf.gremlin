@@ -34,4 +34,4 @@ g.V().hasLabel ( 'Concept:Gene:Resource' )
   ) 
   
 .path ().by ( 'iri' )
-.sample ( 100 )
+.limit ( 100 )

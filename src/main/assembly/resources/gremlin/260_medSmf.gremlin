@@ -14,6 +14,6 @@ g.V().hasLabel ( 'Concept:Gene:Resource' )
   .repeat ( both ( 'part_of' ).simplePath().hasLabel ( 'Concept:Path:Resource' ) ) 
   .times ( 3 )
 
-.sample ( 100 )
+.limit ( 100 )
 .path ().by ( 'iri' )
 
