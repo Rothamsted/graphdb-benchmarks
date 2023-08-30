@@ -15,5 +15,5 @@ SELECT DISTINCT ?class ?top
   ?class a bk:BioProc;
     bk:is_a* ?top. 
 }
-ORDER BY RAND()
+# ORDER BY RAND()
 LIMIT 100

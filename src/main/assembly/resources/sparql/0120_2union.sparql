@@ -29,5 +29,5 @@ SELECT ?pname ?ename ?cname ?rtype
   OPTIONAL { ?c bk:prefName ?cname }
 }
 # Random order ensures that sometimes one or the other path is selected
-ORDER BY RAND()
+# ORDER BY RAND()
 LIMIT 100

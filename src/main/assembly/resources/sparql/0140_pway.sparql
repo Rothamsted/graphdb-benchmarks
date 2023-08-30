@@ -47,5 +47,5 @@ SELECT ?protName ?pwName ?branch
   OPTIONAL { ?prot bk:prefName ?protName }
   OPTIONAL { ?pw bk:prefName ?pwName }
 }
-ORDER BY RAND()
+# ORDER BY RAND()
 LIMIT 100

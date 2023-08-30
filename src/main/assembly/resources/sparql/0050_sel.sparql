@@ -13,5 +13,5 @@ SELECT ?p ?name ?description
   OPTIONAL { ?p bk:prefName ?name }
   OPTIONAL { ?p dcterms:description ?description }
 }
-ORDER BY RAND ()
+# ORDER BY RAND ()
 LIMIT 100

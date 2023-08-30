@@ -24,6 +24,6 @@ SELECT *
     ?parent a bk:Trait.
   }
 }
-ORDER BY RAND()
+# ORDER BY RAND()
 LIMIT 100
 

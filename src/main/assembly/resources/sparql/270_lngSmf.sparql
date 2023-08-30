@@ -48,5 +48,5 @@ SELECT *
     }
   } 
 }
-ORDER BY RAND()
+# ORDER BY RAND()
 LIMIT 100

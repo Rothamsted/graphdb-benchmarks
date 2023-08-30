@@ -31,5 +31,5 @@ SELECT ?pname ?ename ?rtype ?cname
   OPTIONAL { ?e bk:prefName ?ename }
   OPTIONAL { ?c bk:prefName ?cname }
 }
-ORDER BY RAND()
+# ORDER BY RAND()
 LIMIT 100

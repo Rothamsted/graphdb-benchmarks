@@ -40,5 +40,5 @@ SELECT DISTINCT ?pwName ?protName
   OPTIONAL { ?prot bk:prefName ?protName }
   OPTIONAL { ?pw bk:prefName ?pwName }
 }
-ORDER BY rand()
+# ORDER BY RAND()
 LIMIT 100
