@@ -2,33 +2,42 @@ g.V().hasLabel ( 'Concept:Gene:Resource' )
   .out ( 'enc' ).hasLabel ( 'Concept:Protein:Resource' )
 
   .emit ()
-  .repeat ( both ( 'h_s_s', 'ortho', 'xref' ).simplePath().hasLabel ( 'Concept:Protein:Resource' ) )
+  .repeat ( both ( 'h_s_s', 'ortho', 'xref' ).simplePath() )
   .times ( 3 )
+  
+  .hasLabel ( 'Concept:Protein:Resource' )
   
   .both ( 'is_a', 'ac_by' ).hasLabel ( 'Concept:Enzyme:Resource' )
   .out ( 'ac_by', 'in_by' ).hasLabel ( 'Comp:Concept:Resource' )
   .out ( 'cs_by', 'pd_by' ).hasLabel ( 'Concept:Resource:Transport' )
   
-  .repeat ( out ( 'part_of' ).simplePath().hasLabel ( 'Concept:Path:Resource' ) )
+  .repeat ( out ( 'part_of' ).simplePath() )
   .emit ()
   .times ( 3 )
+  
+  .hasLabel ( 'Concept:Path:Resource' )
 
-
-  .repeat ( in ( 'part_of' ).simplePath ().hasLabel ( 'Concept:Reaction:Resource' ) )
+  .repeat ( in ( 'part_of' ).simplePath () )
   .emit ()
   .times ( 3 )
-
+  
+  .hasLabel ( 'Concept:Reaction:Resource' )
+  
   // Go back to other proteins in this reaction
   // optional() is to achieve the same behaviour as in the Cypher and SPARQL queries
   
   .optional (
     emit ()
-    .repeat ( __.in ( 'cs_by', 'pd_by' ).simplePath ().hasLabel ( 'Concept:Protein:Resource' ) )
+    .repeat ( __.in ( 'cs_by', 'pd_by' ).simplePath () )
     .times ( 3 )
     
+    .hasLabel ( 'Concept:Protein:Resource' )
+    
     .emit ()
-    .repeat ( both ( 'h_s_s', 'ortho', 'xref' ).simplePath ().hasLabel ( 'Concept:Protein:Resource' ) )
+    .repeat ( both ( 'h_s_s', 'ortho', 'xref' ).simplePath () )
     .times ( 2 )
+    
+    .hasLabel ( 'Concept:Protein:Resource' )
     
     .optional ( __.in ( 'enc' ) ) // Gene
   ) 

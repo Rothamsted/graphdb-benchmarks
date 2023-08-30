@@ -2,17 +2,21 @@ g.V().hasLabel ( 'Concept:Gene:Resource' )
   .out ( 'enc' ).hasLabel ( 'Concept:Protein:Resource' )
 
   .emit ()
-  .repeat ( both ( 'h_s_s', 'ortho', 'xref' ).simplePath().hasLabel ( 'Concept:Protein:Resource' ) )
+  .repeat ( both ( 'h_s_s', 'ortho', 'xref' ).simplePath() )
   .times ( 2 )
-
+  
+  .hasLabel ( 'Concept:Protein:Resource' )
+  
   .both ( 'is_a', 'ac_by' ).hasLabel ( 'Concept:Enzyme:Resource' )
 
   .out ( 'ac_by', 'in_by' ).hasLabel ( 'Comp:Concept:Resource' ) 
   .out ( 'cs_by', 'pd_by' ).hasLabel ( 'Concept:Resource:Transport' )
 
   .emit ()
-  .repeat ( both ( 'part_of' ).simplePath().hasLabel ( 'Concept:Path:Resource' ) ) 
+  .repeat ( both ( 'part_of' ).simplePath() ) 
   .times ( 3 )
+  
+  .hasLabel ( 'Concept:Path:Resource' )
 
 .limit ( 100 )
 .path ().by ( 'iri' )
