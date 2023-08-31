@@ -8,7 +8,7 @@
             "updateSchema"
           ],
           "resultSetLimit": -1,
-          "readTimeout": 5000,
+          "readTimeout": 20000,
           "types": {
             "*": {
               "access": [
@@ -23,7 +23,7 @@
         "readonly": {
           "access": [],
           "resultSetLimit": -1,
-          "readTimeout": 5000,
+          "readTimeout": 20000,
           "types": {
             "*": {
               "access": [
@@ -35,7 +35,7 @@
         "*": {
           "access": [],
           "resultSetLimit": -1,
-          "readTimeout": 5000,
+          "readTimeout": 20000,
           "types": {
             "*": {
               "access": []
