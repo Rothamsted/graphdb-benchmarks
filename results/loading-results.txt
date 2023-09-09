@@ -64,13 +64,16 @@ DB Load: 1445
 Indexing: 420
 
 * Arcade
-Nodes: 
-Relations: 
 
-DB Load: 685.125
+TDB:  -
+graphml: 
+
+DB Load: 649.051
+
 Indexing
   TSV 
   listing node labels in SQL: 0.08
   listing rel types in SQL: 0.08
   py script to generate indexing SQL 0.028907654
-	Indexing SQL: 36.132
+	Indexing SQL: 17.016
+
