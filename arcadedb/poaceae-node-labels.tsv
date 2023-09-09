@@ -10,7 +10,7 @@ Concept:Gene:Resource
 Concept:MolFunc:Resource
 Concept:Path:Resource
 Concept:Phenotype:Resource
-Concept:PlantOntologyTerm:Reso...
+Concept:PlantOntologyTerm:Resource
 Concept:Protcmplx:Resource
 Concept:ProtDomain:Resource
 Concept:Protein:Resource
@@ -21,6 +21,6 @@ Concept:Resource:SNPEffect
 Concept:Resource:Species
 Concept:Resource:Trait
 Concept:Resource:Transport
-DataSource:EvidenceType:Resour...
+DataSource:EvidenceType:Resource
 DataSource:Resource
 EvidenceType:Resource
