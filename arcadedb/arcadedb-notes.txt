@@ -46,6 +46,12 @@ g.V().label().dedup ()
 g.E().label().dedup ()
 ```
 
+## Counting nodes and labels
+
+```groovy
+g.inject(0).union ( V().count(), E().count() )
+```
+
 See below for a faster version
 
 ## Inspecting the schema
@@ -56,6 +62,7 @@ As reported by the manual:
   * select name from schema:types where type = 'vertex'
   * select name from schema:types where type = 'edge'
 * select from schema:indexes to retrieve the defined indexes
+  * for a count: select distinct typeName, properties from schema:indexes
 * select from schema:database to retrieve information about database settings
 
 
