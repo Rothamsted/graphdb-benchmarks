@@ -38,15 +38,15 @@ DB Load 338
 DB Indexing 67
 
 * ArcadeDB
-TDB -
-graphml 325 + 6 for post-processing
-DB Load 115.005
+TDB: -
+graphml: 325 + 6 for post-processing
+DB Load: 135.547
 Indexing
   TSV: 71
   listing node labels in SQL: 0.08
   listing rel types in SQL: 0.072
   py script to generate indexing SQL 0.028907654
-	Indexing SQL: 36.132
+	Indexing SQL: 55.666
 
 
 === Poaceae ===
