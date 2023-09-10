@@ -1,26 +1,66 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< uk.ac.rothamsted.rdf:graphdb-benchmarks >---------------
+[INFO] Building  2.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The metadata /local/docker/.m2/repository/org/slf4j/slf4j-api/maven-metadata-mbrandizi.jfrog.io.xml is invalid: entity reference name can not contain character =' (position: END_TAG seen ...s://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=... @1:326) 
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ graphdb-benchmarks ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /local/docker/tmp/rdf2pg-benchmark/graphdb-benchmarks/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ graphdb-benchmarks ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ graphdb-benchmarks ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ graphdb-benchmarks ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.1.2:test (default-test) @ graphdb-benchmarks ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junit4.JUnit4Provider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running uk.ac.rothamsted.rdf.benchmarks.ArcadeProfilerTest
 Name	AvgTime	STD	MinTime	MaxTime	Execs	Timeouts
-cnt	1041.715596	7.381272	1026.000000	1074.000000	109	0
-cntType	1077.984496	24.545234	1066.000000	1324.000000	129	0
-cntRel	4512.990291	95.868322	4460.000000	5449.000000	103	0
-cntRelType	0.992308	0.762454	0.000000	5.000000	130	0
-sel	2605.495652	252.036490	1960.000000	3082.000000	115	0
-join	739.824561	7.709603	732.000000	772.000000	114	0
-joinRel	10.351562	1.264848	9.000000	20.000000	128	0
-joinFilter	219.304348	4.915379	216.000000	248.000000	115	1
-joinRe	582.720000	6.044993	580.000000	629.000000	125	0
-joinReif	15.495868	51.305478	9.000000	575.000000	121	0
-varPathC	97.500000	44.213618	52.000000	203.000000	126	0
-varPath	68.642202	3.787218	60.000000	85.000000	109	0
-2union	119.200000	3.332243	116.000000	149.000000	105	0
-2union1Nest	121.225806	12.906694	116.000000	262.000000	124	0
-2union1Nest+	120.400000	2.565277	116.000000	140.000000	125	0
-pway	2204.225806	25.109464	2180.000000	2336.000000	124	0
-grp	835.992806	42.182917	825.000000	1316.000000	139	0
-grpAg	8.172414	1.894045	7.000000	27.000000	116	0
-mulGrpAg	76.391667	128.959331	62.000000	1477.000000	120	0
-nestAg	61.368852	7.101625	58.000000	135.000000	122	0
-exist	55.500000	1.850843	54.000000	72.000000	122	0
-existAg	63.476190	3.341172	61.000000	96.000000	126	0
-shrtSmf	4218.864865	373.258933	3339.000000	4942.000000	37	61
-medSmf	0	-	-	-	-	132
-lngSmf	0	-	-	-	-	122
+cnt	917.713178	8.815996	860.000000	942.000000	129	0
+cntType	995.419118	24.277884	982.000000	1266.000000	136	0
+cntRel	3881.508333	48.566336	3817.000000	4295.000000	120	0
+cntRelType	0.495413	0.789091	0.000000	5.000000	109	0
+sel	2.190476	0.677812	1.000000	7.000000	126	0
+join	655.873874	7.773050	649.000000	724.000000	111	0
+joinRel	3.131783	1.127635	2.000000	12.000000	129	0
+joinFilter	1.141593	0.924539	0.000000	8.000000	113	0
+joinRe	711.323308	78.095081	588.000000	879.000000	133	0
+joinReif	12.348214	75.335013	3.000000	802.000000	112	0
+varPathC	92.681416	39.223095	54.000000	176.000000	113	0
+varPath	70.511628	5.661156	64.000000	120.000000	129	0
+2union	26.688000	0.901755	25.000000	31.000000	125	0
+2union1Nest	28.500000	14.958802	25.000000	185.000000	112	0
+2union1Nest+	27.257143	1.859726	25.000000	46.000000	140	0
+pway	712.776786	159.023807	688.000000	2378.000000	112	0
+grp	724.880734	4.837593	718.000000	737.000000	109	0
+grpAg	7.443478	2.506802	6.000000	33.000000	115	0
+mulGrpAg	58.500000	11.618311	55.000000	173.000000	102	0
+nestAg	56.308725	2.013130	54.000000	72.000000	149	0
+exist	12.669643	0.809720	12.000000	16.000000	112	0
+existAg	57.297030	8.412544	55.000000	140.000000	101	0
+shrtSmf	4.052632	6.688839	3.000000	74.000000	114	0
+medSmf	2094.091743	38.902666	2066.000000	2219.000000	109	0
+lngSmf	0	-	-	-	-	140
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4151 s -- in uk.ac.rothamsted.rdf.benchmarks.ArcadeProfilerTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:09 h
+[INFO] Finished at: 2023-09-10T18:11:34+01:00
+[INFO] ------------------------------------------------------------------------
