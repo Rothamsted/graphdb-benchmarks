@@ -16,7 +16,7 @@ DB Indexing 2.513
 * ArcadeDB
 TDB 24.512
 graphml 7.178
-DB Load 15.926
+DB Load 17.376
 SQL for indexes:
   listing node labels in SQL: 0.081
   listing rel types in SQL: 0.098
@@ -39,10 +39,10 @@ DB Indexing 67
 
 * ArcadeDB
 TDB -
-graphml 325
+graphml 325 + 6 for post-processing
 DB Load 115.005
 Indexing
-  TSV 71
+  TSV: 71
   listing node labels in SQL: 0.08
   listing rel types in SQL: 0.072
   py script to generate indexing SQL 0.028907654
@@ -52,8 +52,8 @@ Indexing
 === Poaceae ===
 
 * Virtuoso
-Triples 96537034
-Load 681.030
+Triples: 96537034
+Load: 681.030
 
 * Neo
 Nodes: 3381073
@@ -66,14 +66,14 @@ Indexing: 420
 * Arcade
 
 TDB:  -
-graphml: 
+graphml: 1420 + 02 for post-process
 
 DB Load: 649.051
 
 Indexing
-  TSV 
+  TSV: 419 
   listing node labels in SQL: 0.08
   listing rel types in SQL: 0.08
   py script to generate indexing SQL 0.028907654
-	Indexing SQL: 17.016
+	Indexing SQL: 35 (~)
 
