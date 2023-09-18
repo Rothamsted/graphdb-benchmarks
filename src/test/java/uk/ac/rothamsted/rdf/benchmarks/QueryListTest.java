@@ -13,10 +13,17 @@ import org.junit.Test;
  */
 public class QueryListTest
 {
+	public final static String BASE_PATH = "src/main/assembly/resources/";
+
 	@Test
 	public void testBasics ()
 	{
-		String basePath = "src/main/assembly/resources/";
-		QueryList.listQueries ( basePath + "cypher/", basePath + "sparql/", "" );
+		QueryList.listQueries ( BASE_PATH, "" );
+	}
+	
+	@Test
+	public void testJsonOut ()
+	{
+		QueryList.listQueriesAsJsonFromBasePath ( BASE_PATH );
 	}
 }

@@ -1,4 +1,4 @@
-# 2 unions, 1 nesting (with Cypher CALL)
+# [unions] 2 unions, 1 nesting (with Cypher CALL)
 #
 # This is exactly the same of 2union1Nest, it is here just to allow the chart renderer 
 # to pair the same union made with the new CALL method in Cypher.

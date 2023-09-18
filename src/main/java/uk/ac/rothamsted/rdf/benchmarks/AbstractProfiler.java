@@ -122,59 +122,6 @@ public abstract class AbstractProfiler
 		log.info ( "Benchmark finished" );
 	}	
 	
-	/*
-	 * TODO: this is a variant that tries to ensure every query is executed at least once. However, 
-	 * 1. looks like it's not used
-	 * 2. it only ensures each query is run at least once, but doesn't ensure any balance in runs/query
-	 * 3. if there are enough repeats wrt the no of queries (thousands), then it's the large numbers law
-	 *    that ensures an even distribution
-	 * 4. if we really need each query is ran exactly repeatsPerQuery times, a better method is:
-	 *    for repeat in 1 .. repeatsPerQuery:
-	 *      for query in shuffle(queries): // shuffle the queries array randomly
-	 *        profile ( query ) and collect
-	 *  
-	 * In conclusion, either delete this, or re-arrange it as above.
-	 */
-//	public void profileForcingExecutions ( int repeatsPerQuery )
-//	{
-//		log.info("Start profiling ..."); 
-//
-//		// all the tests
-//		String names[] = getQueryNames ( this.basePath, this.queryFileExtension );
-//				
-//		// Do a number of iterations
-//		int counts [] = new int [ names.length ];
-//		ArrayList<Double>[] times = new ArrayList[ names.length ];
-//		ArrayList<Integer> availableQueries = new ArrayList<Integer>(); 
-//		
-//		for (int i=0; i<names.length;i++) {
-//			availableQueries.add(i); 
-//		}
-//		
-//		for ( int rep = 0; rep < repeatsPerQuery*names.length; rep++ )
-//		{
-//			// pick up a random query from the available ones
-//			int availableQueryPosition = RandomUtils.nextInt ( 0, availableQueries.size()); 
-//			int queryPosition = availableQueries.get(availableQueryPosition);
-//			log.info("QueryName: "+names[queryPosition]); 
-//			counts [ queryPosition ]++;
-//			if (times[queryPosition] == null) {
-//				times[queryPosition] = new ArrayList<Double>(); 
-//			}
-//			times [ queryPosition ].add( Double.valueOf(profileQuery ( names [ queryPosition ] ) ) );
-//			
-//			if (counts[queryPosition] == repeatsPerQuery) {
-//				// I remove it from the available ones
-//				availableQueries.remove(availableQueryPosition); 
-//			}
-//			
-//			if ( rep > 0 && rep % 50 == 0) log.info ( "{} runs", rep );
-//		}
-//		
-//		writeStats(names, times); 
-//	}	
-
-	
 	
 	protected void writeStats ( String queryNames[], SummaryStatistics[] stats, Integer[] timeoutCounts )
 	{

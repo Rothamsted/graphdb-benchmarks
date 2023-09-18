@@ -1,4 +1,4 @@
-# CountRelations of a given type
+# [counts] Count relations of a given type
 SELECT ( COUNT ( * ) AS ?ct ) {
 	?s <$relUri> ?o
 }

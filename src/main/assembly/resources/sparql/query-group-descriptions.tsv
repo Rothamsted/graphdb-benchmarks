@@ -1,0 +1,5 @@
+counts	Common counts of elements like number of nodes, number of relations, etc.
+selects	Queries that selects elements, including simple joins.
+unions	Queries that perform graph pattern and subquery unions.
+aggregation	Queries that perform data grouping and aggregations.
+paths	Queries that select and traverse paths.

@@ -113,28 +113,59 @@ are based on the graph pattern in figure, which models biological pathway relati
 [<img src = 'results/ara_knet_pattern.png' width = '45%' />](results/ara_knet_pattern.png)
 
  
-### Query List
+## Query List
 
-  1. **cnt**: Counts instances, [Cypher](src/main/assembly/resources/cypher/0010_cnt.cypher), [SPARQL](src/main/assembly/resources/sparql/0010_cnt.sparql)
-  2. **cntType**: Instances of a given type, [Cypher](src/main/assembly/resources/cypher/0020_cntType.cypher), [SPARQL](src/main/assembly/resources/sparql/0020_cntType.sparql)
-  3. **cntRel**: Count relations, [Cypher](src/main/assembly/resources/cypher/0030_cntRel.cypher), [SPARQL](src/main/assembly/resources/sparql/0030_cntRel.sparql)
-  4. **cntRelType**: CountRelations of a given type, [Cypher](src/main/assembly/resources/cypher/0040_cntRelType.cypher), [SPARQL](src/main/assembly/resources/sparql/0040_cntRelType.sparql)
-  5. **sel**: Select entity and properties, [Cypher](src/main/assembly/resources/cypher/0050_sel.cypher), [SPARQL](src/main/assembly/resources/sparql/0050_sel.sparql)
-  6. **join**: Simple Join, [Cypher](src/main/assembly/resources/cypher/0060_join.cypher), [SPARQL](src/main/assembly/resources/sparql/0060_join.sparql)
-  7. **joinRel**: Join matching relation, [Cypher](src/main/assembly/resources/cypher/0070_joinRel.cypher), [SPARQL](src/main/assembly/resources/sparql/0070_joinRel.sparql)
-  8. **joinFilter**: Simple join + attribute filter, [Cypher](src/main/assembly/resources/cypher/0080_joinFilter.cypher), [SPARQL](src/main/assembly/resources/sparql/0080_joinFilter.sparql)
-  9. **joinRe**: Simple join + regex search, [Cypher](src/main/assembly/resources/cypher/0090_joinRe.cypher), [SPARQL](src/main/assembly/resources/sparql/0090_joinRe.sparql)
-  10. **joinReif**: Join through relation property, [Cypher](src/main/assembly/resources/cypher/0095_joinReif.cypher), [SPARQL](src/main/assembly/resources/sparql/0095_joinReif.sparql)
-  11. **varPathC**: Variable path query (max len), [Cypher](src/main/assembly/resources/cypher/0100_varPathC.cypher), [SPARQL](src/main/assembly/resources/sparql/0100_varPathC.sparql)
-  12. **varPath**: Variable path query (unbound len and top restricted), [Cypher](src/main/assembly/resources/cypher/0110_varPath.cypher), [SPARQL](src/main/assembly/resources/sparql/0110_varPath.sparql)
-  13. **2union**: 2 unions, no nesting, [Cypher](src/main/assembly/resources/cypher/0120_2union.cypher), [SPARQL](src/main/assembly/resources/sparql/0120_2union.sparql)
-  14. **2union1Nest**: 2 unions, 1 nesting, [Cypher](src/main/assembly/resources/cypher/0130_2union1Nest.cypher), [SPARQL](src/main/assembly/resources/sparql/0130_2union1Nest.sparql)
-  15. **2union1Nest+**: 2 unions, 1 nesting (with Cypher CALL), [Cypher](src/main/assembly/resources/cypher/0135_2union1Nest+.cypher), [SPARQL](src/main/assembly/resources/sparql/0135_2union1Nest+.sparql)
-  16. **pway**: Complex union of paths over pathways, [Cypher](src/main/assembly/resources/cypher/0140_pway.cypher), [SPARQL](src/main/assembly/resources/sparql/0140_pway.sparql)
-  17. **grp**: Group by, [Cypher](src/main/assembly/resources/cypher/0150_grp.cypher), [SPARQL](src/main/assembly/resources/sparql/0150_grp.sparql)
-  18. **grpAg**: Group by + 2 aggregation functions, [Cypher](src/main/assembly/resources/cypher/0170_grpAg.cypher), [SPARQL](src/main/assembly/resources/sparql/0170_grpAg.sparql)
-  19. **mulGrpAg**: Multiple subqueries having aggregations , [Cypher](src/main/assembly/resources/cypher/0180_mulGrpAg.cypher), [SPARQL](src/main/assembly/resources/sparql/0180_mulGrpAg.sparql)
-  20. **nestAg**: Nested and outer aggregations (see Q6 from the [Berlin benchmark](https://goo.gl/v4YbQ2)), [Cypher](src/main/assembly/resources/cypher/0190_nestAg.cypher), [SPARQL](src/main/assembly/resources/sparql/0190_nestAg.sparql)
-  21. **exist**: Not exists, [Cypher](src/main/assembly/resources/cypher/0200_exist.cypher), [SPARQL](src/main/assembly/resources/sparql/0200_exist.sparql)
-  22. **existAg**: Not exists + aggregation, [Cypher](src/main/assembly/resources/cypher/0210_existAg.cypher), [SPARQL](src/main/assembly/resources/sparql/0210_existAg.sparql)
-  
+### Category: counts
+
+Common counts of elements like number of nodes, number of relations, etc.
+
+1. **cnt**: Counts instances, [SPARQL](src/main/assembly/resources/sparql/0010_cnt.sparql), [Cypher](src/main/assembly/resources/cypher/0010_cnt.cypher), [Gremlin](src/main/assembly/resources/gremlin/0010_cnt.gremlin)
+1. **cntType**: Instances of a given type, [SPARQL](src/main/assembly/resources/sparql/0020_cntType.sparql), [Cypher](src/main/assembly/resources/cypher/0020_cntType.cypher), [Gremlin](src/main/assembly/resources/gremlin/0020_cntType.gremlin)
+1. **cntRel**: Count relations, [SPARQL](src/main/assembly/resources/sparql/0030_cntRel.sparql), [Cypher](src/main/assembly/resources/cypher/0030_cntRel.cypher), [Gremlin](src/main/assembly/resources/gremlin/0030_cntRel.gremlin)
+1. **cntRelType**: Count relations of a given type, [SPARQL](src/main/assembly/resources/sparql/0040_cntRelType.sparql), [Cypher](src/main/assembly/resources/cypher/0040_cntRelType.cypher), [Gremlin](src/main/assembly/resources/gremlin/0040_cntRelType.gremlin)
+
+
+### Category: selects
+
+Queries that selects elements, including simple joins.
+
+1. **sel**: Select entity and properties, [SPARQL](src/main/assembly/resources/sparql/0050_sel.sparql), [Cypher](src/main/assembly/resources/cypher/0050_sel.cypher), [Gremlin](src/main/assembly/resources/gremlin/0050_sel.gremlin)
+1. **join**: Simple Join, [SPARQL](src/main/assembly/resources/sparql/0060_join.sparql), [Cypher](src/main/assembly/resources/cypher/0060_join.cypher), [Gremlin](src/main/assembly/resources/gremlin/0060_join.gremlin)
+1. **joinRel**: Join literal properties of reified relations, [SPARQL](src/main/assembly/resources/sparql/0070_joinRel.sparql), [Cypher](src/main/assembly/resources/cypher/0070_joinRel.cypher), [Gremlin](src/main/assembly/resources/gremlin/0070_joinRel.gremlin)
+1. **joinFilter**: Simple join + attribute filter, [SPARQL](src/main/assembly/resources/sparql/0080_joinFilter.sparql), [Cypher](src/main/assembly/resources/cypher/0080_joinFilter.cypher), [Gremlin](src/main/assembly/resources/gremlin/0080_joinFilter.gremlin)
+1. **joinRe**: Simple join + regex search, [SPARQL](src/main/assembly/resources/sparql/0090_joinRe.sparql), [Cypher](src/main/assembly/resources/cypher/0090_joinRe.cypher), [Gremlin](src/main/assembly/resources/gremlin/0090_joinRe.gremlin)
+1. **joinReif**: Join through relation property, [SPARQL](src/main/assembly/resources/sparql/0095_joinReif.sparql), [Cypher](src/main/assembly/resources/cypher/0095_joinReif.cypher), [Gremlin](src/main/assembly/resources/gremlin/0095_joinReif.gremlin)
+
+
+### Category: unions
+
+Queries that perform graph pattern and subquery unions.
+
+1. **2union**: 2 unions, no nesting, [SPARQL](src/main/assembly/resources/sparql/0120_2union.sparql), [Cypher](src/main/assembly/resources/cypher/0120_2union.cypher), [Gremlin](src/main/assembly/resources/gremlin/0120_2union.gremlin)
+1. **2union1Nest**: 2 unions, 1 nesting, [SPARQL](src/main/assembly/resources/sparql/0130_2union1Nest.sparql), [Cypher](src/main/assembly/resources/cypher/0130_2union1Nest.cypher), [Gremlin](src/main/assembly/resources/gremlin/0130_2union1Nest.gremlin)
+1. **2union1Nest+**: 2 unions, 1 nesting (with Cypher CALL), [SPARQL](src/main/assembly/resources/sparql/0135_2union1Nest+.sparql), [Cypher](src/main/assembly/resources/cypher/0135_2union1Nest+.cypher), [Gremlin](src/main/assembly/resources/gremlin/0135_2union1Nest+.gremlin)
+1. **pway**: Complex union of paths over pathways, [SPARQL](src/main/assembly/resources/sparql/0140_pway.sparql), [Cypher](src/main/assembly/resources/cypher/0140_pway.cypher), [Gremlin](src/main/assembly/resources/gremlin/0140_pway.gremlin)
+1. **exist**: Not exists, [SPARQL](src/main/assembly/resources/sparql/0200_exist.sparql), [Cypher](src/main/assembly/resources/cypher/0200_exist.cypher), [Gremlin](src/main/assembly/resources/gremlin/0200_exist.gremlin)
+1. **existAg**: Not exists + aggregation, [SPARQL](src/main/assembly/resources/sparql/0210_existAg.sparql), [Cypher](src/main/assembly/resources/cypher/0210_existAg.cypher), [Gremlin](src/main/assembly/resources/gremlin/0210_existAg.gremlin)
+
+
+### Category: aggregation
+
+Queries that perform data grouping and aggregations.
+
+1. **grp**: Group by, [SPARQL](src/main/assembly/resources/sparql/0150_grp.sparql), [Cypher](src/main/assembly/resources/cypher/0150_grp.cypher), [Gremlin](src/main/assembly/resources/gremlin/0150_grp.gremlin)
+1. **grpAg**: Group by + 2 aggregation functions, [SPARQL](src/main/assembly/resources/sparql/0170_grpAg.sparql), [Cypher](src/main/assembly/resources/cypher/0170_grpAg.cypher), [Gremlin](src/main/assembly/resources/gremlin/0170_grpAg.gremlin)
+1. **mulGrpAg**: Multiple subqueries having aggregations , [SPARQL](src/main/assembly/resources/sparql/0180_mulGrpAg.sparql), [Cypher](src/main/assembly/resources/cypher/0180_mulGrpAg.cypher), [Gremlin](src/main/assembly/resources/gremlin/0180_mulGrpAg.gremlin)
+1. **nestAg**: Nested and outer aggregations (see Q6 from the [Berlin benchmark](https://goo.gl/v4YbQ2)), [SPARQL](src/main/assembly/resources/sparql/0190_nestAg.sparql), [Cypher](src/main/assembly/resources/cypher/0190_nestAg.cypher), [Gremlin](src/main/assembly/resources/gremlin/0190_nestAg.gremlin)
+
+
+### Category: paths
+
+Queries that select and traverse paths.
+
+1. **varPathC**: Variable path query (fixed len), [SPARQL](src/main/assembly/resources/sparql/0100_varPathC.sparql), [Cypher](src/main/assembly/resources/cypher/0100_varPathC.cypher), [Gremlin](src/main/assembly/resources/gremlin/0100_varPathC.gremlin)
+1. **varPath**: Variable path query (unbound len and restricted on top), [SPARQL](src/main/assembly/resources/sparql/0110_varPath.sparql), [Cypher](src/main/assembly/resources/cypher/0110_varPath.cypher), [Gremlin](src/main/assembly/resources/gremlin/0110_varPath.gremlin)
+1. **shrtSmf**: Short Semantic Motif, [SPARQL](src/main/assembly/resources/sparql/250_shrtSmf.sparql), [Cypher](src/main/assembly/resources/cypher/250_shrtSmf.cypher), [Gremlin](src/main/assembly/resources/gremlin/250_shrtSmf.gremlin)
+1. **medSmf**: Medium length Semantic Motif, [SPARQL](src/main/assembly/resources/sparql/260_medSmf.sparql), [Cypher](src/main/assembly/resources/cypher/260_medSmf.cypher), [Gremlin](src/main/assembly/resources/gremlin/260_medSmf.gremlin)
+1. **lngSmf**: Long and Complex Semantic Motif, [SPARQL](src/main/assembly/resources/sparql/270_lngSmf.sparql), [Cypher](src/main/assembly/resources/cypher/270_lngSmf.cypher), [Gremlin](src/main/assembly/resources/gremlin/270_lngSmf.gremlin)
+
