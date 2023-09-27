@@ -1,119 +1,97 @@
-# Benchmarking kNetMiner Data, Neo4j vs Virtuoso
-
-This module is used to perform tests with [KnetMiner](http://knetminer.rothamsted.ac.uk/) data, encoded either as RDF 
-or Neo4j, by means of the [rdf2pg tool](https://github.com/Rothamsted/rdf2pg).
-
-An [older version](/Rothamsted/graphdb-benchmarks/releases/tag/swat4ls18) of this work was presented with our [paper presented at SWAT4HCLS 2018](https://figshare.com/articles/Getting_the_best_of_Linked_Data_and_Property_Graphs_rdf2neo_and_the_KnetMiner_Use_Case/7314323). 
-A [presentation](https://www.slideshare.net/mbrandizi/swat4l-2018brandizi) from the workshop is also available.
-
-
-
-## Contents
-
-  * [Contents](#contents)
-  * [Test Results](#test-results)
-    * [Figure 1: Loading Performance](#figure-1-loading-performance)
-    * [Figure 2: Query Performance](#figure-2-query-performance)
-  * [Test Conditions](#test-conditions)
-  * [Test Approach](#test-approach)
-  * [Test Data Sets](#test-data-sets)
-  * [Queries](#queries)
-    * [Figure 3: Graph Pattern Used with Test Queries](#figure-3-graph-pattern-used-with-test-queries)
-    * [Query List](#query-list)
-    
-
-## Test Results
-
-Results are summarised in the following figures. It is recommended that you first read this hereby document.
-See this [Excel file](results/gdb_benchmark_results.xlsx) for details. 
-
-Click on the images to see a bigger version.
-
-### Figure 1: Loading Performance
-
-[<img src = 'results/loading_results.png' width = '45%' />](results/loading_results.png)
-
-
-### Figure 2: Query Performance
-
-[<img src = 'results/query_results_chart.png' width = '100%' />](results/query_results_chart.png)
-
-
-A detailed table is [here](results/query_results_table.png).
-
-## Test Conditions
-
-  * Hardware: MacBook Pro, 2.9 GHz Intel Core i7, 16GB RAM
-  * Both the servers and the client (this package) are run on the same computer, thus network latency is minimsed
-  * Only one server at a time is on while running a test of a given type (Neo4j/Virtuoso)
-
-
-## Test Approach
-
-  * For each database (Neo4/Virtuoso) a number of query typed is tested (see below). For each query type  a Cypher
-  and a SPARQL version were written, aiming at keeping the same or very similar semantics, as well as similar
-  graph patterns and other language constructs known to affect the database performance (e.g., filters, `ORDER BY` clauses).
-
-  * Queries were written considering:
-  	* the typical query needs for our data
-  	* the aim to test particular query language operations and features
-  	* taking example from existing benchmarks (e.g., `nestAg`)
-  	* Certain queries are instantiated with parameters at each execution (e.g., `joinFilter` retrieves proteins by name,
-  	the name is a required parameter). For those cases, files with predefined parameter valued were prepared (taking values
-  	from the database). Every time the query has to be executed, a value is picked randomly and injected into the query.
-    * Queries were written by first defining a data retrieval goal and then writing an implementation in both Cypher and 
-    SPARQL matching the goal as much as possible. Moreover, the respective language constructs we have used are chosen 
-    trying to replicate similar graph pattern structures and similar database engine challenges 
-    (e.g., [2union1Nest(results/src/main/assembly/resources/cypher/0130_2union1Nest.cypher) could be written by 
-    replicating branches, rather than unifying them with multiple WITH clauses, but the result would be significantly 
-    different than the corresponding SPARQL and would not contain the nested unions that the query is supposed to test).
-
-  * There are two test types: [Cypher](src/main/java/uk/ac/rothamsted/rdf/benchmarks/CypherProfiler.java) and
-	[Sparql](src/main/java/uk/ac/rothamsted/rdf/benchmarks/SparqlProfiler.java), which are run separately.
-	Every test type is based on the procedure:
-
-    1. The Database server is started
-    1. A number of predefined iterations (usually a few thousands) are run, for each iteration:
-      1. a query is randomly selected from the set of competence ([Cypher](src/main/assembly/resources/cypher),
-			or [SPARQL](src/main/assembly/resources/sparql))
-      1. if it's a parametric query, a random parameter is chosen (see above)
-      1. the query is run, the execution time is tracked. We track the time going from when the query string is sent to
-      the server to when the first result is fetched. This includes network latency, which we want include in the
-      evaluation, for several reasons:
-      	1. network latency is a small overhead and comparable between the two datbase engines (our primary goal is to
-      	compare the two)
-      	1. in real use cases it is a relevant time
-    1. At the end of all the iterations, the times of each query are averaged and results are reported.    
-
-	* Repeating the queries is done to get an average behavoir, running them in random order avoids biases like the
-  exploitation of caches. We are not testing the parallel performance (i.e., many clients running queries simultaneously)
-  since we're interested in comparing speeds with respect to the query types.
-
-
-## Test Data Sets
-
-Each test type is run against database instances containing three different datasets:
-
-  * BioPax: a small dataset with BioPAX and GeneOntology data.
-    [RDF dump](https://tinyurl.com/y832jbxw). [Neo4j dump](https://tinyurl.com/ycukubme)
-  * Arabidopsis: the kNetMiner data set about arabidopsis, medium size.
-    [RDF dump](https://tinyurl.com/yd65w6a3). [Neo4j dump](https://tinyurl.com/y8pg6str)
-  * Wheat: the kNetMiner data set about wheat, biggest size.
-    [RDF dump](https://tinyurl.com/y9oz4zfj). [Neo4j dump](https://tinyurl.com/yd7beezu).
-
-
-
-## Queries
-
-All the queries listed below, and used in the tests, are based on the BioKNO ontology schematisation. Several of them
-are based on the graph pattern in figure, which models biological pathway relations in BioKNO.
-
-### Figure 3: Graph Pattern Used with Test Queries
-
-[<img src = 'results/ara_knet_pattern.png' width = '45%' />](results/ara_knet_pattern.png)
-
+# Managing FAIR Knowledge Graphs as Polyglot and Data End Points: A Benchmark based on the rdf2pg Framework and Plant Biology Data   
  
+This repository contains code to benchmark three different graph databases and graph query languages, against 
+plant biology datasets, which are conceptually aligned (based on the same data model) in the different database/language flavours.
+
+This is work by the KnetMiner team and [Carlos Bobed][I5]
+
+The alignment is produced by means of the [rdf2pg framework][I10], and this work contributes to assess the benefits of managing data in multiple data languages and formats, by means of our rdf2pg tools.
+
+This work is an extension of [previous work by the KnetMiner team][I20], which we presented at [SWAT4LS 2018][I30] ([old presentation here][I40]).
+
+[I5]: https://scholar.google.com/citations?user=ycIA_f4AAAAJ
+[I10]: https://github.com/Rothamsted/rdf2pg
+[I20]: /Rothamsted/graphdb-benchmarks/releases/tag/swat4ls18
+[I30]: https://figshare.com/articles/Getting_the_best_of_Linked_Data_and_Property_Graphs_rdf2neo_and_the_KnetMiner_Use_Case/7314323
+[I40]: https://www.slideshare.net/mbrandizi/swat4l-2018brandizi
+
+## Test settings
+
+We have tested three combinations of graph database, graph query language, data formats:
+
+1. SPARQL on the Virtuoso triple store, dealing with RDF data (and the corresponding model).
+1. Cypher on the Neo4j graph database, with data directly imported into the database from our rdf2neo tool.
+1. Gremlin on ArcadeDB, with data imported from files in graphML format.
+
+Details on the test settings used are in the [dataset loading results report][TS10].
+
+## Test datasets
+
+For each of the graph databases mentioned above, we have tested the loading and the query performance of three datasets:
+
+1. Biopax: a small dataset, mostly containing data about the Arabidopsis model organisms, including 
+   pathways from [AraCyc][DS10] and gene annotations from [Gene Ontology][DS20].
+1. Arabidopsis: a medium-size dataset, containing more data about Arabidopsis, including AraCyc, Gene Ontology, gene annotations from [ENSEMBL Plants][DS30] and [TAIR][DS35], protein annotations from [UniProt][DS40], scientific publications from [PubMed][DS45].
+1. Poaceae: a large dataset with integrated data about different cereals (wheat, rice and barley), obtained from a variety of sources, including the ones mentioned above, plus genome-wide study data from [AraGWAS][DS50] and more.
+
+[DS10]: https://academic.oup.com/plphys/article/132/2/453/6111635?login=false
+[DS20]: https://academic.oup.com/nar/article/32/suppl_1/D258/2505186?login=false
+[DS30]: https://link.springer.com/protocol/10.1007/978-1-4939-3167-5_6
+[DS35]: https://doi.org/10.1093/nar/gkm965
+[DS40]: https://academic.oup.com/nar/article/43/D1/D204/2439939?login=false
+[DS45]: https://doi.org/10.1073/pnas.98.2.381
+[DS50]: https://doi.org/10.1093/nar/gkx954
+
+
+### Data schematisation
+
+The figure below shows the main types contained in each dataset:
+
+[<img src = 'results/knet-schema-ex.png' width = '45%' />](results/knet-schema-ex.png)
+
+
+These model was encoded based on [BioKNO, an application ontology][TS20], defined within the KnetMiner platform, to represent the data we deal with in the KnetMiner platform. This models common plant biology entities, some specific pattern used by KnetMiner applications and mappings to existing biology ontology and life science standards.
+
+[TS10]: results/loading-results.ipynb
+[TS20]: https://github.com/Rothamsted/bioknet-onto
+
+## Test approach
+
+We have done two types of tests: 
+
+### Data Loading tests
+
+[Loading tests][TS10], where we tested the time taken to populate each dataset with each of the tested datasets. See the linked report for details
+
+### Querying tests
+
+After loading each dataset, we performed [querying tests][TA10], where, for each dataset, we tested all of the chosen databases and query languages, each time timing the same set of queries. More precisely, for each of the tested query languages, we wrote conceptually equivalent queries.
+
+While "conceptually equivalent" is difficult to define precisely, informally, it means the best effort to search for data that have the same semantics and equivalent representations in the different technologies and formats being tested. It also means writing queries that, across different technologies, present similar levels of complexity and search engine challenges.
+
+For example, where it is easy for Neo4 to return a node property or an empty value (because they are attached to the nodes), we have translated this as OPTIONAL matches in SPARQL (since looking for a resource property is a triple pattern like any other). 
+
+[TA10]: results/querying-results.ipynb
+
+
+## Test results
+
+The (Jupyter-based) reports linked above has more test details and detailed results linked above.
+
+
 ## Query List
+
+Like the data, the queries listed below are based on the already-mentioned [BioKNO ontology][TS20].
+We have split the benchmark queries into categories that take into account both the query semantics and the kind of challenge it puts on the query engines.  
+
+Regarding the semantic motif queries, these produce patterns that occur often in KnetMiner, when we want to associate genes to relevant other entities (such as encoded proteins, biological processes, publications about genes or processes). In practice, a semantic motif query is a 'chain' pattern, it tries to follow a linear path from a gene to another entity, through a known chain of relations (eg, Gene -> encodes -> Protein -> participates -> Process -> mentioend -> Publication). Details in the [KnetMiner Wiki][QL10] and in the [KnetMiner paper][QL20]
+ 
+**WARNING**: *do not edit this part! It is automatically generated via [this code][QL100].*
+
+[QL10]: https://github.com/Rothamsted/knetminer/wiki/Semantic-Motif-Searching-in-Knetminer
+[QL20]: https://onlinelibrary.wiley.com/doi/10.1111/pbi.13583
+[QL100]: https://github.com/Rothamsted/graphdb-benchmarks/blob/master/src/test/java/uk/ac/rothamsted/rdf/benchmarks/QueryListTest.java
+
 
 ### Category: counts
 
