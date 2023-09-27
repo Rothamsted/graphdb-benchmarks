@@ -47,7 +47,7 @@ For each of the graph databases mentioned above, we have tested the loading and 
 
 The figure below shows the main types contained in each dataset:
 
-[<img src = 'results/knet-schema-ex.png' width = '45%' />](results/knet-schema-ex.png)
+[<img src = 'results/knet-schema-ex.png' width = '60%' />](results/knet-schema-ex.png)
 
 
 These model was encoded based on [BioKNO, an application ontology][TS20], defined within the KnetMiner platform, to represent the data we deal with in the KnetMiner platform. This models common plant biology entities, some specific pattern used by KnetMiner applications and mappings to existing biology ontology and life science standards.
