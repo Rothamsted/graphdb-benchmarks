@@ -3,12 +3,13 @@
 This repository contains code to benchmark three different graph databases and graph query languages, against 
 plant biology datasets, which are conceptually aligned (based on the same data model) in the different database/language flavours.
 
-This is work by the KnetMiner team and [Carlos Bobed][I5]
+This is work by the [KnetMiner team][I4] and [Carlos Bobed][I5].
 
 The alignment is produced by means of the [rdf2pg framework][I10], and this work contributes to assess the benefits of managing data in multiple data languages and formats, by means of our rdf2pg tools.
 
 This work is an extension of [previous work by the KnetMiner team][I20], which we presented at [SWAT4LS 2018][I30] ([old presentation here][I40]).
 
+[I4]: https://knetminer.com
 [I5]: https://scholar.google.com/citations?user=ycIA_f4AAAAJ
 [I10]: https://github.com/Rothamsted/rdf2pg
 [I20]: /Rothamsted/graphdb-benchmarks/releases/tag/swat4ls18
@@ -32,7 +33,7 @@ For each of the graph databases mentioned above, we have tested the loading and 
 1. Biopax: a small dataset, mostly containing data about the Arabidopsis model organisms, including 
    pathways from [AraCyc][DS10] and gene annotations from [Gene Ontology][DS20].
 1. Arabidopsis: a medium-size dataset, containing more data about Arabidopsis, including AraCyc, Gene Ontology, gene annotations from [ENSEMBL Plants][DS30] and [TAIR][DS35], protein annotations from [UniProt][DS40], scientific publications from [PubMed][DS45].
-1. Poaceae: a large dataset with integrated data about different cereals (wheat, rice and barley), obtained from a variety of sources, including the ones mentioned above, plus genome-wide study data from [AraGWAS][DS50] and more.
+1. Poaceae: a large dataset with integrated data about different cereals (wheat, rice and barley), obtained from a variety of sources, including the ones mentioned above, plus genome-wide study data from [AraGWAS][DS50] and more. Partial access to this dataset is available via [KnetMiner programmatic data access endpoints][DS60].
 
 [DS10]: https://academic.oup.com/plphys/article/132/2/453/6111635?login=false
 [DS20]: https://academic.oup.com/nar/article/32/suppl_1/D258/2505186?login=false
@@ -41,7 +42,7 @@ For each of the graph databases mentioned above, we have tested the loading and 
 [DS40]: https://academic.oup.com/nar/article/43/D1/D204/2439939?login=false
 [DS45]: https://doi.org/10.1073/pnas.98.2.381
 [DS50]: https://doi.org/10.1093/nar/gkx954
-
+[DS60]: https://knetminer.com/data
 
 ### Data schematisation
 
@@ -63,7 +64,7 @@ We have done two types of tests:
 
 [Loading tests][TS10], where we tested the time taken to populate each dataset with each of the tested datasets. See the linked report for details
 
-### Querying tests
+### Querying tests
 
 After loading each dataset, we performed [querying tests][TA10], where, for each dataset, we tested all of the chosen databases and query languages, each time timing the same set of queries. More precisely, for each of the tested query languages, we wrote conceptually equivalent queries.
 
@@ -86,12 +87,12 @@ We have split the benchmark queries into categories that take into account both 
 
 Regarding the semantic motif queries, these produce patterns that occur often in KnetMiner, when we want to associate genes to relevant other entities (such as encoded proteins, biological processes, publications about genes or processes). In practice, a semantic motif query is a 'chain' pattern, it tries to follow a linear path from a gene to another entity, through a known chain of relations (eg, Gene -> encodes -> Protein -> participates -> Process -> mentioend -> Publication). Details in the [KnetMiner Wiki][QL10] and in the [KnetMiner paper][QL20]
  
-**WARNING**: *do not edit this part! It is automatically generated via [this code][QL100].*
 
 [QL10]: https://github.com/Rothamsted/knetminer/wiki/Semantic-Motif-Searching-in-Knetminer
 [QL20]: https://onlinelibrary.wiley.com/doi/10.1111/pbi.13583
 [QL100]: https://github.com/Rothamsted/graphdb-benchmarks/blob/master/src/test/java/uk/ac/rothamsted/rdf/benchmarks/QueryListTest.java
 
+**WARNING**: *do not edit what follows! It is automatically generated via [this code][QL100].*
 
 ### Category: counts
 
