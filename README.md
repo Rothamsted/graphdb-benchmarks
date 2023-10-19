@@ -1,4 +1,4 @@
-# Managing FAIR Knowledge Graphs as Polyglot and Data End Points: A Benchmark based on the rdf2pg Framework and Plant Biology Data   
+# Managing FAIR Knowledge Graphs as Polyglot Data End Points: A Benchmark based on the rdf2pg Framework and Plant Biology Data   
  
 This repository contains code to benchmark three different graph databases and graph query languages, against 
 plant biology datasets, which are conceptually aligned (based on the same data model) in the different database/language flavours.
