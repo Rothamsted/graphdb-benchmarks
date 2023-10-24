@@ -22,7 +22,7 @@ g.withSideEffect ( 'evLabels', new CommonCache( new ConcurrentHashMap () ) )
 .select ( 'p', 'cpx', 'pr' )
   .by ( coalesce ( values ( 'prefName' ), constant ( '' ) ) )
   .by ( coalesce ( values ( 'prefName' ), constant ( '' ) ) )
-  .by ( map{
+  .by ( map {
     pr = it.get()
     evIri = pr.value ( 'evidence' )
     if ( !evIri ) return "<NA>"
