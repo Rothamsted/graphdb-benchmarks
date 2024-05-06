@@ -1,0 +1,17 @@
+label
+Accession:Resource
+BioProc:Concept:Resource
+CelComp:Concept:Resource
+Comp:Concept:Resource
+Concept:EC:Resource
+Concept:Enzyme:Resource
+Concept:MolFunc:Resource
+Concept:Path:Resource
+Concept:Protcmplx:Resource
+Concept:Protein:Resource
+Concept:Publication:Resource
+Concept:Reaction:Resource
+Concept:Resource:Transport
+DataSource:Resource
+EvidenceType:Resource
+vertex

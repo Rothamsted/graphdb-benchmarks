@@ -9,16 +9,8 @@
    ]
   },
   {
-   "cell_type": "markdown",
-   "id": "3cd393d8-911d-4f27-b65c-cafbfb2dfaf1",
-   "metadata": {},
-   "source": [
-    "**Note**: *the [query_reports](query_reports.py) module imported below is in the hereby notebook directory.*"
-   ]
-  },
-  {
    "cell_type": "code",
-   "execution_count": 1,
+   "execution_count": 10,
    "id": "37de8ae1-eef0-4225-b4e0-f47eedca7253",
    "metadata": {},
    "outputs": [],
@@ -30,8 +22,7 @@
     "import numpy as np\n",
     "from IPython.core.display import HTML\n",
     "\n",
-    "# As said above, this is in the same dir where this notebook is\n",
-    "import query_reports as qrep\n",
+    "from reputils import get_raw_results\n",
     "\n",
     "pd.set_option ( 'display.max_columns', 500 )"
    ]
@@ -49,7 +40,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 2,
+   "execution_count": 11,
    "id": "8b7e8584-595b-4026-a05a-33e19220c192",
    "metadata": {},
    "outputs": [],
@@ -106,7 +97,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 12,
    "id": "baea341a-6ab8-424a-b71f-a65112960669",
    "metadata": {},
    "outputs": [],
@@ -136,12 +127,25 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 13,
    "id": "7371c6aa-0cce-4107-8460-079580cc157b",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'pd' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[0;32mIn[13], line 1\u001b[0m\n\u001b[0;32m----> 1\u001b[0m raw_results \u001b[38;5;241m=\u001b[39m \u001b[43mget_raw_results\u001b[49m\u001b[43m \u001b[49m\u001b[43m(\u001b[49m\u001b[43m \u001b[49m\u001b[43mdatasets\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mdatabases\u001b[49m\u001b[43m \u001b[49m\u001b[43m)\u001b[49m\n",
+      "File \u001b[0;32m~/Documents/Work/RRes/events/2018_swat4ls/paper/graphdb-benchmarks/results/reputils.py:7\u001b[0m, in \u001b[0;36mget_raw_results\u001b[0;34m(datasets, databases)\u001b[0m\n\u001b[1;32m      5\u001b[0m combo \u001b[38;5;241m=\u001b[39m \u001b[38;5;124mf\u001b[39m\u001b[38;5;124m\"\u001b[39m\u001b[38;5;132;01m{\u001b[39;00mdataset\u001b[38;5;132;01m}\u001b[39;00m\u001b[38;5;124m-\u001b[39m\u001b[38;5;132;01m{\u001b[39;00mdb\u001b[38;5;132;01m}\u001b[39;00m\u001b[38;5;124m\"\u001b[39m\n\u001b[1;32m      6\u001b[0m raw_res_path \u001b[38;5;241m=\u001b[39m \u001b[38;5;124mf\u001b[39m\u001b[38;5;124m\"\u001b[39m\u001b[38;5;132;01m{\u001b[39;00mcombo\u001b[38;5;132;01m}\u001b[39;00m\u001b[38;5;124m-results.tsv\u001b[39m\u001b[38;5;124m\"\u001b[39m\n\u001b[0;32m----> 7\u001b[0m raw_res \u001b[38;5;241m=\u001b[39m \u001b[43mpd\u001b[49m\u001b[38;5;241m.\u001b[39mread_csv ( raw_res_path, sep \u001b[38;5;241m=\u001b[39m \u001b[38;5;124m\"\u001b[39m\u001b[38;5;130;01m\\t\u001b[39;00m\u001b[38;5;124m\"\u001b[39m )\n\u001b[1;32m      8\u001b[0m raw_res\u001b[38;5;241m.\u001b[39mset_index ( \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mName\u001b[39m\u001b[38;5;124m\"\u001b[39m, inplace \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;01mTrue\u001b[39;00m, drop \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;01mFalse\u001b[39;00m )\n\u001b[1;32m      9\u001b[0m raw_results [ combo ] \u001b[38;5;241m=\u001b[39m raw_res\n",
+      "\u001b[0;31mNameError\u001b[0m: name 'pd' is not defined"
+     ]
+    }
+   ],
    "source": [
-    "raw_results = qrep.get_raw_results ( datasets, databases )"
+    "raw_results = get_raw_results ( datasets, databases )"
    ]
   },
   {
@@ -158,8 +162,12 @@
   {
    "cell_type": "code",
    "execution_count": 5,
-   "id": "ceba97ef-96b6-4d2b-9918-a6018d2584ba",
-   "metadata": {},
+   "id": "d0bcf037-e7c1-46ec-b7bf-40b8e59f930a",
+   "metadata": {
+    "jupyter": {
+     "source_hidden": true
+    }
+   },
    "outputs": [
     {
      "data": {
@@ -1334,7 +1342,41 @@
    ],
    "source": [
     "# You can skip the following code if you're interested in the resulting tables only.\n",
-    "data_summaries = qrep.get_all_summary_data ( datasets, databases, all_queries, raw_results )"
+    "\n",
+    "# Extracts the queries about a given group\n",
+    "def get_group_data ( raw_data, queries ):\n",
+    "  gdata = raw_data [ raw_data [ 'Name' ].isin ( queries ) ]\n",
+    "  gdata = gdata [ [ 'Name', 'AvgTime', 'STD' ] ] \n",
+    "  return gdata\n",
+    "\n",
+    "# Gets the summary table about a given group of queries\n",
+    "def get_summary_data ( qgroup ):\n",
+    "  gdata = pd.DataFrame ()\n",
+    "  queries = all_queries [ qgroup ]\n",
+    "  for dataset in datasets.keys ():\n",
+    "    for db in databases.keys():\n",
+    "      combo = f\"{dataset}-{db}\"\n",
+    "\n",
+    "      qdata = raw_results [ combo ]\n",
+    "      qdata = get_group_data ( qdata, queries )\n",
+    "\n",
+    "      was_empty = gdata.empty\n",
+    "      ylabel = datasets [ dataset ] + \"/\" + databases [ db ]\n",
+    "      gdata [ ylabel + \" Time\" ] = qdata [ \"AvgTime\" ].copy ()\n",
+    "      gdata [ ylabel + \" sdev\" ] = qdata [ \"STD\" ].copy ()\n",
+    "\n",
+    "      if was_empty:\n",
+    "        gdata.set_index ( qdata [ \"Name\" ].copy (), inplace = True )\n",
+    "        gdata.index_name = \"Queries\"\n",
+    "  \n",
+    "  return gdata\n",
+    "  \n",
+    "data_summaries = {}      \n",
+    "for qgroup in all_queries.keys ():\n",
+    "  gdata = get_summary_data ( qgroup )\n",
+    "  data_summaries [ qgroup ] = gdata\n",
+    "  display ( HTML ( f\"<h3>Group: {qgroup}</h3>\" ) )\n",
+    "  display ( gdata )"
    ]
   },
   {
@@ -1353,6 +1395,9 @@
    "execution_count": 6,
    "id": "cd3a59e1-becc-4033-84f2-1d9604de74b8",
    "metadata": {
+    "jupyter": {
+     "source_hidden": true
+    },
     "scrolled": true
    },
    "outputs": [
@@ -1409,7 +1454,112 @@
    ],
    "source": [
     "# You can skip the following code if you're interested in the resulting charts only.\n",
-    "qrep.query_charts ( datasets, databases, all_queries, data_summaries )"
+    "\n",
+    "from matplotlib.ticker import ScalarFormatter\n",
+    "\n",
+    "# Conventional top value to represent timed out results\n",
+    "# We set up the database servers with a time out of 20s to complete the queries. Some of them returned \n",
+    "# results with a total clocked time of 20 + a few more secs. That's due to overheads like network latency, \n",
+    "# or data stream processing. This value here is a threshold well above all the results.\n",
+    "INF_VALUE = 25E3 \n",
+    "\n",
+    "# Assigns bar colors based on the DB\n",
+    "def get_db_color ( db ):\n",
+    "  colors = { \"sparql\": \"Blue\", \"neo\": \"Green\", \"arcade\": \"Red\" }\n",
+    "  return colors [ db ]\n",
+    "\n",
+    "# Assigns bar hatch patterns based on the dataset \n",
+    "def get_dataset_hatch ( dset ):\n",
+    "  hatches = { \"biopax\": \"///\", \"arabidopsis\": \"\\\\\\\\\\\\\", \"poaceae\": \"XXX\" }\n",
+    "  return hatches [ dset ]\n",
+    "\n",
+    "\"\"\"\n",
+    "Gets the x vector to locate the ibar (starts at 0) correctly, assuming you want have nbars \n",
+    "vertical bars of each of the nlabels labels, and all the bars will take wbar_total units of \n",
+    "width, where the bar groups (ie, each label) are spaced 1 unit from each other.\n",
+    "\n",
+    "Returns (the x vector, the single bar width, the next ibar ).\n",
+    "\n",
+    "The method is based on:\n",
+    "https://matplotlib.org/3.1.1/gallery/lines_bars_and_markers/barchart.html#sphx-glr-gallery-lines-bars-and-markers-barchart-py\n",
+    "\n",
+    "TODO: move to an imported module.\n",
+    "\"\"\"\n",
+    "def bar_get_xs ( ibar, nbars, nlabels, wbar_total = 0.8 ):\n",
+    "  x = np.arange ( nlabels )\n",
+    "  # wbar_total = 0.8 # Because x = 0, 1, 2, you've a total of 1\n",
+    "  wbar = wbar_total / nbars \n",
+    "  xi = x - wbar_total / 2  + wbar / 2 + ibar * wbar\n",
+    "  return (xi, wbar, ibar + 1)\n",
+    "\n",
+    "\"\"\"\n",
+    "Sets the x ticks that match what was computed by get_bar_xs()\n",
+    "\"\"\"\n",
+    "def bar_set_xticks ( ax, nlabels ):\n",
+    "  x = np.arange ( nlabels )\n",
+    "  ax.set_xticks ( x )\n",
+    "\n",
+    "\"\"\"\n",
+    "Draws the bar chart for a given query group\n",
+    "\"\"\"\n",
+    "def group_chart ( qgroup ):\n",
+    "  gdata = data_summaries [ qgroup ]\n",
+    "    \n",
+    "  # In these cases, all queries timed out\n",
+    "  gdata = gdata.replace ( np.inf, INF_VALUE ) \n",
+    "\n",
+    "  fig, ax = plt.subplots()\n",
+    "  nbars = len ( datasets.keys () ) * len ( databases.keys() )\n",
+    "  nlabels = len ( gdata.index )\n",
+    "  ibar = 0\n",
+    "    \n",
+    "  for dataset in datasets.keys ():\n",
+    "    for db in databases.keys():\n",
+    "      combo_prefx = datasets [ dataset ] + \"/\" + databases [ db ]\n",
+    "      ylabel = combo_prefx\n",
+    "      \n",
+    "      yid = combo_prefx + \" Time\"\n",
+    "      y = gdata [ yid ]\n",
+    "\n",
+    "      # Tried to show errors, but the log scale distorts and confuse things, plus\n",
+    "      # <1 values yield errors\n",
+    "      #yerr_id = combo_prefx + \" sdev\"\n",
+    "      #yerr = gdata [ yerr_id ].tolist ()\n",
+    "        \n",
+    "      ycolor = get_db_color ( db )\n",
+    "      yhatch = get_dataset_hatch ( dataset )\n",
+    "\n",
+    "      xi, wbar, ibar = bar_get_xs ( ibar, nbars, nlabels )\n",
+    "        \n",
+    "      ax.bar ( xi, y, width = wbar, label = ylabel, \n",
+    "        color = ycolor, edgecolor = \"DarkGrey\", hatch = yhatch, log = True )\n",
+    "\n",
+    "  bar_set_xticks ( ax, nlabels )\n",
+    "  ax.set_xticklabels ( gdata.index )\n",
+    "\n",
+    "  ax.set_xlabel ( qgroup )\n",
+    "  ax.set_ylabel ( \"ms\" )\n",
+    "\n",
+    "  # To cope with y = 0 in log scale and to have the same range in each chart\n",
+    "  ax.set_ylim ( ymin = 0.1, ymax = 1E5 )\n",
+    "\n",
+    "  # No sci notation, but 10000 takes more space\n",
+    "  #ax.yaxis.set_major_formatter ( ScalarFormatter () ) \n",
+    "\n",
+    "  ax.grid ( axis = \"y\", which = \"both\", linestyle = 'dotted' )\n",
+    "\n",
+    "  ax.legend ( loc = \"upper center\", ncol = 3, framealpha = 0.7 );\n",
+    "    \n",
+    "  # Give it a good size\n",
+    "  ax.figure.set_size_inches ( 13, 5.5 )\n",
+    "\n",
+    "  # And save!\n",
+    "  img_fmt = \"svg\"\n",
+    "  ax.figure.savefig ( f\"querying-results-{qgroup}.\" + img_fmt, format = img_fmt )  \n",
+    "\n",
+    "\n",
+    "for qgroup in all_queries.keys ():\n",
+    "  group_chart ( qgroup )"
    ]
   },
   {

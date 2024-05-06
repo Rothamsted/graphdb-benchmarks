@@ -1,0 +1,1 @@
+select description, prefName from `Concept:Protein:Resource` LIMIT 100
