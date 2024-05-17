@@ -1,3 +1,4 @@
+BEGIN;
 CREATE PROPERTY `Accession:Resource`.identifier IF NOT EXISTS STRING;
 CREATE INDEX IF NOT EXISTS ON `Accession:Resource` ( identifier ) NOTUNIQUE;
 CREATE PROPERTY `BioProc:Concept:Resource`.identifier IF NOT EXISTS STRING;
@@ -250,3 +251,4 @@ CREATE PROPERTY `regulates`.iri IF NOT EXISTS STRING;
 CREATE INDEX IF NOT EXISTS ON `regulates` ( iri ) NOTUNIQUE;
 CREATE PROPERTY `relatedConcept`.iri IF NOT EXISTS STRING;
 CREATE INDEX IF NOT EXISTS ON `relatedConcept` ( iri ) NOTUNIQUE;
+COMMIT;

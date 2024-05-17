@@ -27,7 +27,7 @@
 		<!-- Working on localhost 
 		<arcadedb.version>23.5.1</arcadedb.version>
 		-->
-		<arcadedb.version>23.7.1</arcadedb.version>
+		<arcadedb.version>24.4.1</arcadedb.version>
 
 	</properties>
 

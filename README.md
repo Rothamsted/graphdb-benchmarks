@@ -82,10 +82,6 @@ The (Jupyter-based) reports linked above has more test details and detailed resu
 
 * We have started testing ArcadeDB with its SQL dialect, using the same datasets and the same queries. [This is a preliminary result](querying-results-arcade-sql.ipynb), work to be continued.
 
-* Recently, we have (re)tested a recent version of Arcade DB. As you can see in the dedicated branch ([loading][ARCSNPLD], [querying][ARCSNPQRY]), they've made some improvements, though the collected times are similar to the previous benchmark, for both loading and querying.
-
-[ARCSNPLD]: https://github.com/Rothamsted/graphdb-benchmarks/blob/202405-newarcade/results/loading-results.ipynb
-[ARCSNPQRY]: https://github.com/Rothamsted/graphdb-benchmarks/blob/202405-newarcade/results/querying-results.ipynb
 
 ## Query List
 
@@ -94,12 +90,12 @@ We have split the benchmark queries into categories that take into account both 
 
 Regarding the semantic motif queries, these produce patterns that occur often in KnetMiner, when we want to associate genes to relevant other entities (such as encoded proteins, biological processes, publications about genes or processes). In practice, a semantic motif query is a 'chain' pattern, it tries to follow a linear path from a gene to another entity, through a known chain of relations (eg, Gene -> encodes -> Protein -> participates -> Process -> mentioend -> Publication). Details in the [KnetMiner Wiki][QL10] and in the [KnetMiner paper][QL20]
  
-**WARNING**: do not edit what follows! It is automatically generated via [this code][QL100]*
 
 [QL10]: https://github.com/Rothamsted/knetminer/wiki/Semantic-Motif-Searching-in-Knetminer
 [QL20]: https://onlinelibrary.wiley.com/doi/10.1111/pbi.13583
 [QL100]: https://github.com/Rothamsted/graphdb-benchmarks/blob/master/src/test/java/uk/ac/rothamsted/rdf/benchmarks/QueryListTest.java
 
+**WARNING**: *do not edit what follows! It is automatically generated via [this code][QL100].*
 
 ### Category: counts
 
